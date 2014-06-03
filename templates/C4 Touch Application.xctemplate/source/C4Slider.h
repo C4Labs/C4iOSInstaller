@@ -1,10 +1,22 @@
+// Copyright © 2012 Travis Kirton
 //
-//  NewSlider.h
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by moi on 13-02-27.
-//  Copyright (c) 2013 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
+
 #import "C4Control.h"
 /**This document describes the C4Slider class. An instance of the C4Slider class implements a slider on the touch screen. A slider intercepts touch events and sends an action message to a target object when its value has changed, or for other touch events.
  
@@ -12,20 +24,20 @@
  
  The most common way to customize the slider’s appearance is to provide custom minimum and maximum value images. These images sit at either end of the slider control and indicate which value that end of the slider represents. For example, a slider used to control volume might display a small speaker with no sound waves emanating from it for the minimum value and display a large speaker with many sound waves emanating from it for the maximum value.
  
- The bar on which the thumb rides is referred to as the slider’s track. Slider controls draw the track using two distinct images, which are customizable. 
+ The bar on which the thumb rides is referred to as the slider’s track. Slider controls draw the track using two distinct images, which are customizable.
  
- The region between the thumb and the end of the track associated with the slider’s minimum value is drawn using the minimum track image. 
+ The region between the thumb and the end of the track associated with the slider’s minimum value is drawn using the minimum track image.
  
  The region between the thumb and the end of the track associated with the slider’s maximum value is drawn using the maximum track image.
  
- Different track images are used in order to provide context as to which end contains the minimum value. For example, the minimum track image typically contains a blue highlight while the maximum track image contains a white highlight. 
+ Different track images are used in order to provide context as to which end contains the minimum value. For example, the minimum track image typically contains a blue highlight while the maximum track image contains a white highlight.
  
  You can assign different tint colors for all of the standard parts provided by the slider, or you customize the appearance further by assigning different pairs of track images to each of the control states of the slider. Assigning different images to each state lets you customize the appearance of the slider when it is enabled, disabled, highlighted, and so on.
  
  In addition to customizing the track images, you can also customize the appearance of the thumb itself. Like the track images, you can assign different thumb images to each control state of the slider.
  
  Note: The slider control provides a set of default images for both the track and thumb. If you do not specify any custom images, those images are used automatically.
-
+ 
  */
 @interface C4Slider : C4Control <C4UIElement>
 
@@ -36,7 +48,7 @@
  @param rect a CGRect structure used to construct the slider's view.
  @return a new C4Slider object.
  */
-+(C4Slider *)slider:(CGRect)rect;
++ (instancetype)slider:(CGRect)rect;
 
 /**Initializes and returns a new slider object fit inside the given frame.
  
@@ -56,12 +68,12 @@
  
  If you try to set a value that is below the minimum or above the maximum value, the minimum or maximum value is set instead. The default value of this property is 0.0.
  */
-@property (readwrite, nonatomic) CGFloat value;
+@property(nonatomic) CGFloat value;
 
 /**Sets the receiver’s current value, allowing you to animate the change visually.
  
  If you try to set a value that is below the minimum or above the maximum value, the minimum or maximum value is set instead. The default value of this property is 0.0.
-
+ 
  @param value The new value to assign to the value property
  @param animated Specify YES to animate the change in value when the receiver is redrawn; otherwise, specify NO to draw the receiver with the new value only. Animations are performed asynchronously and do not block the calling thread.
  */
@@ -75,7 +87,7 @@
  
  The default value of this property is 0.0.
  */
-@property (readwrite, nonatomic) CGFloat minimumValue;
+@property(nonatomic) CGFloat minimumValue;
 
 /**Contains the maximum value of the receiver.
  
@@ -83,7 +95,7 @@
  
  The default value of this property is 1.0.
  */
-@property (readwrite, nonatomic) CGFloat maximumValue;
+@property(nonatomic) CGFloat maximumValue;
 
 #pragma mark - Modifying the Slider’s Behavior
 ///@name Modifying the Slider’s Behavior
@@ -103,7 +115,7 @@
  
  This default value of this property is nil.
  */
-@property(nonatomic, weak) C4Image *minimumValueImage;
+@property(nonatomic, strong) C4Image *minimumValueImage;
 
 /**Contains the image that is drawn on the side of the slider representing the maximum value.
  
@@ -111,13 +123,13 @@
  
  This default value of this property is nil.
  */
-@property(nonatomic, weak) C4Image *maximumValueImage;
+@property(nonatomic, strong) C4Image *maximumValueImage;
 
 /*The color used to tint the standard minimum track images.
  
  Setting this property removes any custom minimum track images associated with the slider.
  */
-@property(readwrite, nonatomic,weak) UIColor *minimumTrackTintColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) UIColor *minimumTrackTintColor;
 
 /**Contains the minimum track image currently being used to render the receiver. (read-only)
  
@@ -125,7 +137,7 @@
  
  If no custom track images have been set using the setMinimumTrackImage:forState: method, this property contains the value nil. In that situation, the receiver uses the default minimum track image for drawing.
  */
-@property(readonly, nonatomic, weak) C4Image* currentMinimumTrackImage;
+@property(nonatomic, readonly, strong) C4Image* currentMinimumTrackImage;
 
 /**Returns the minimum track image associated with the specified control state.
  
@@ -135,13 +147,13 @@
 -(C4Image *)minimumTrackImageForState:(C4ControlState)state;
 
 /**Assigns a minimum track image to the specified control states.
-
+ 
  The orientation of the track image must match the orientation of the slider control. To facilitate the stretching of the image to fill the space between the thumb and end point, track images are usually defined in three regions. A stretchable region sits between two end cap regions. The end caps define the portions of the image that remain as is and are not stretched. The stretchable region is a 1-point wide area between the end caps that can be replicated to make the image appear longer.
  
  To define the end cap sizes for a slider, assign an appropriate value to the image’s leftCapWidth property. For more information about how this value defines the regions of the slider, see the C4Image class.
  
  Setting a new track image for any state clears any custom tint color you may have provided for minimum track images.
-
+ 
  @param image The minimum track image to associate with the specified states.
  @param state The control state with which to associate the image (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).
  */
@@ -151,7 +163,7 @@
  
  Setting this property removes any custom maximum track images associated with the slider.
  */
-@property(readwrite, nonatomic,weak) UIColor *maximumTrackTintColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) UIColor *maximumTrackTintColor;
 
 /**Contains the maximum track image currently being used to render the receiver. (read-only)
  
@@ -159,7 +171,7 @@
  
  If no custom track images have been set using the setMaximumTrackImage:forState: method, this property contains the value nil. In that situation, the receiver uses the default maximum track image for drawing.
  */
-@property(readonly, nonatomic, weak) C4Image* currentMaximumTrackImage;
+@property(nonatomic, readonly, strong) C4Image* currentMaximumTrackImage;
 
 /**Returns the maximum track image associated with the specified control state.
  
@@ -175,7 +187,7 @@
  To define the end cap sizes for a slider, assign an appropriate value to the image’s leftCapWidth property. For more information about how this value defines the regions of the slider, see the UIImage class.
  
  Setting a new track image for any state clears any custom tint color you may have provided for maximum track images.
-
+ 
  @param image The maximum track image to associate with the specified states.
  @param state The control state with which to associate the image (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).
  */
@@ -185,7 +197,7 @@
  
  Setting this property removes any custom thumb images associated with the slider.
  */
-@property(readwrite, nonatomic,weak) UIColor *thumbTintColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) UIColor *thumbTintColor;
 
 /**Contains the thumb image currently being used to render the receiver. (read-only)
  
@@ -193,7 +205,7 @@
  
  If no custom thumb images have been set using the setThumbImage:forState: method, this property contains the value nil. In that situation, the receiver uses the default thumb image for drawing.
  */
-@property(readonly, nonatomic, weak) C4Image* currentThumbImage;
+@property(nonatomic, readonly, strong) C4Image* currentThumbImage;
 
 /**Returns the thumb image associated with the specified control state.
  
@@ -205,7 +217,7 @@
 /**Assigns a thumb image to the specified control states.
  
  Setting a new thumb image for any state clears any custom tint color you may have provided for thumb images.
-
+ 
  @param image The thumb image to associate with the specified states.
  @param state The control state with which to associate the image (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).
  */
@@ -215,16 +227,6 @@
 ///@name Accessing The UISlider
 /**The UISlider object which is the primary subview of the receiver.
  */
-@property (readonly, nonatomic) UISlider *UISlider;
-
-#pragma mark - Default Style
-///@name Default Style
-/**Returns the appearance proxy for the object, cast as a C4Slider rather than the standard (id) cast provided by UIAppearance.
- 
- You use this method to grab the appearance object that allows you to change the default style for C4Slider objects.
- 
- @return The appearance proxy for the receiver, cast as a C4Slider.
- */
-+(C4Slider *)defaultStyle;
+@property(nonatomic, readonly) UISlider *UISlider;
 
 @end

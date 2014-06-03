@@ -1,16 +1,27 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Label.h
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 12-02-27.
-//  Copyright (c) 2012 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
 
 /** The C4Label class implements a read-only text view. You can use this class to draw one or multiple lines of static text, such as those you might use to identify other parts of your user interface. The base C4Label class provides control over the appearance of your text, including whether it uses a shadow or draws with a highlight. If needed, you can customize the appearance of your text further by subclassing.
  
- C4Label is a subclass of C4Control, and so inherits all the functionality of animation and interaction provided by C4Control. It encapsulates a UILabel and provides all the necessary methods to access and manipulate its label. 
+ C4Label is a subclass of C4Control, and so inherits all the functionality of animation and interaction provided by C4Control. It encapsulates a UILabel and provides all the necessary methods to access and manipulate its label.
  
  Unlike [C4Shape](C4Shape), which has an underlying backing layer, C4Label adds its encapsulated UILabel as a subview.
  */
@@ -26,7 +37,7 @@
  @param text An NSString that will make up the text for the label.
  @return A new C4Label.
  */
-+(C4Label *)labelWithText:(NSString *)text;
++ (instancetype)labelWithText:(NSString *)text;
 
 /**Creates and returns a new label with the specified text, using the specified font.
  
@@ -34,7 +45,7 @@
  @param font A C4Font that will be used to render the label's text.
  @return A new C4Label.
  */
-+(C4Label *)labelWithText:(NSString *)text font:(C4Font *)font;
++ (instancetype)labelWithText:(NSString *)text font:(C4Font *)font;
 
 /**Creates and returns a new label with the specified text, using the specified font.
  
@@ -43,7 +54,7 @@
  @param frame A CGRect that will make up the size of the view for the label.
  @return A new C4Label.
  */
-+(C4Label *)labelWithText:(NSString *)text font:(C4Font *)font frame:(CGRect)frame;
++ (instancetype)labelWithText:(NSString *)text font:(C4Font *)font frame:(CGRect)frame;
 
 /**Initializes and returns a new label with the specified text, using the default font.
  
@@ -84,28 +95,28 @@
 #pragma mark Properties
 
 /**The text displayed by the label.
-  */
-@property (readwrite, strong, nonatomic) NSString *text;
+ */
+@property(nonatomic, strong) NSString *text;
 
 /**The font for the label.
  
  This property applies to the entire text string. The default value for this property is the system font at a size of 17 points (using the systemFontOfSize: class method of C4Font). The value for the property can only be set to a non-nil value; setting this property to nil raises an exception.
  */
-@property (readwrite, strong, nonatomic) C4Font *font;
+@property(nonatomic, strong) C4Font *font;
 
 /**A Boolean value indicating whether the font size should be reduced in order to fit the title string into the label’s bounding rectangle.
  
  Normally, the label text is drawn with the font you specify in the font property. If this property is set to YES, however, and the text in the text property exceeds the label’s bounding rectangle, the receiver starts reducing the font size until the string fits or the minimum font size is reached. This property is effective only when the numberOfLines property is set to 1.
  
  The default value for this property is NO. If you change it to YES, you should also set an appropriate minimum font size by modifying the minimumFontSize property.
-*/
-@property (readwrite, nonatomic) BOOL adjustsFontSizeToFitWidth;
+ */
+@property(nonatomic) BOOL adjustsFontSizeToFitWidth;
 
 /**Controls how text baselines are adjusted when text needs to shrink to fit in the label.
-
+ 
  If the adjustsFontSizeToFitWidth property is set to YES, this property controls the behavior of the text baselines in situations where adjustment of the font size is required. The default value of this property is ALIGNBASELINES. This property is effective only when the numberOfLines property is set to 1.
  */
-@property (readwrite, nonatomic) C4BaselineAdjustment baselineAdjustment;
+@property(nonatomic) C4BaselineAdjustment baselineAdjustment;
 
 /**A Boolean value indicating whether the receiver should be drawn with a highlight.
  
@@ -113,25 +124,25 @@
  
  The default value of this property is NO.
  */
-@property (nonatomic, getter=isHighlighted) BOOL highlighted;
+@property(nonatomic, getter=isHighlighted) BOOL highlighted;
 
 /**The color of the text.
  
  This property applies to the entire text string. The default value for this property is a black color (set through the blackColor class method of UIColor). The value for the property can only be set to a non-nil value; setting this property to nil raises an exception.
  */
-@property (readwrite, strong, nonatomic) UIColor *textColor;
+@property(nonatomic, strong) UIColor *textColor;
 
 /**The technique to use for aligning the text.
  
  This property applies to the entire text string. The default value of this property is ALIGNTEXTLEFT.
  */
-@property (readwrite, nonatomic) C4TextAlignment textAlignment;
+@property(nonatomic) C4TextAlignment textAlignment;
 
 /**The technique to use for wrapping and truncating the label’s text.
  
  This property is in effect both during normal drawing and in cases where the font size must be reduced to fit the label’s text in its bounding box. For label objects, this property is set to TRUNCATEEND by default.
  */
-@property (readwrite, nonatomic) C4LineBreakMode lineBreakMode;
+@property(nonatomic) C4LineBreakMode lineBreakMode;
 
 /**The size of the smallest permissible font with which to draw the label’s text.
  
@@ -139,7 +150,7 @@
  
  The default value for this property is 0.0. If you enable font adjustment for the label, you should always increase this value. This property is effective only when the numberOfLines property is set to 1.
  */
-@property (readwrite, nonatomic) CGFloat minimumFontSize;
+@property(nonatomic) CGFloat minimumFontSize;
 
 /**The maximum number of lines to use for rendering text.
  
@@ -149,7 +160,7 @@
  
  When the receiver is resized using the sizeToFit method, resizing takes into account the value stored in this property. For example, if this property is set to 3, the sizeToFit method resizes the receiver so that it is big enough to display three lines of text.
  */
-@property (readwrite, nonatomic) NSUInteger numberOfLines;
+@property(nonatomic) NSUInteger numberOfLines;
 
 /**The highlight color applied to the label’s text.
  
@@ -157,20 +168,20 @@
  
  The default value of this property is nil .
  */
-@property (readwrite, strong, nonatomic) UIColor *highlightedTextColor;
+@property(nonatomic, strong) UIColor *highlightedTextColor;
 
 /**The shadow color of the text.
  
  The default value for this property is nil, which indicates that no shadow is drawn. In addition to this property, you may also want to change the default shadow offset by modifying the shadowOffset property. Text shadows are drawn with the specified offset and color and no blurring.
  
  */
-@property (readwrite, strong, nonatomic) UIColor *textShadowColor;
+@property(nonatomic, strong) UIColor *textShadowColor;
 
 /**The shadow offset (measured in points) for the text.
  
  The shadow color must be non-nil for this property to have any effect. The default offset size is (0, -1), which indicates a shadow one point above the text. Text shadows are drawn with the specified offset and color and no blurring.
  */
-@property (readwrite, nonatomic) CGSize textShadowOffset;
+@property(nonatomic) CGSize textShadowOffset;
 
 #pragma mark C4Layer-backed object properties
 
@@ -180,38 +191,28 @@
  
  @warning *Note:* Instead of calling label.layer, call label.backingLayer
  */
-@property (readonly, nonatomic, weak) C4Layer *backingLayer;
+@property(nonatomic, readonly, strong) C4Layer *backingLayer;
 
-///**Specifies the height of the image. Animatable.
-// 
-// Setting this property will actually change the frame of the object.
-// */
-//@property (readwrite, nonatomic) CGFloat height;
-//
-///**Specifies the width of the image. Animatable.
-// 
-// Setting this property will actually change the frame of the object.
-// */
-//@property (readwrite, nonatomic) CGFloat width;
+/**Specifies the height of the label. Animatable.
+
+ Setting this property will actually change the frame of the object.
+ */
+@property(nonatomic) CGFloat height;
+
+/**Specifies the width of the label. Animatable.
+
+ Setting this property will actually change the frame of the object.
+ */
+@property(nonatomic) CGFloat width;
 //
 ///**Specifies the size of the image. Animatable.
-// 
+//
 // Setting this property will actually change the frame of the object.
 // */
-//@property (readwrite, nonatomic) CGSize size;
+//@property(nonatomic) CGSize size;
 
 /**The UILabel which is the subview off the receiver.
  */
-@property (readonly, strong, nonatomic) UILabel *label;
-
-#pragma mark - Default Style
-///@name Default Style
-/**Returns the appearance proxy for the object, cast as a C4Label rather than the standard (id) cast provided by UIAppearance.
- 
- You use this method to grab the appearance object that allows you to change the default style for C4Label objects.
- 
- @return The appearance proxy for the receiver, cast as a C4Label.
- */
-+(C4Label *)defaultStyle;
+@property(nonatomic, readonly, strong) UILabel *label;
 
 @end

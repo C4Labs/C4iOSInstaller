@@ -1,12 +1,23 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4ShapeView.h
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 12-02-14.
-//  Copyright (c) 2012 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
-#import "C4ShapeLayer.h"
+#import "C4Control.h"
 
 /**The C4Shape class implements a modifiable view that handles shapes. You can use this class to create almost any kind of basic shape, as well as more complicated polygons.
  
@@ -15,9 +26,9 @@
  This is the class that you should use to construct and add any shapes to C4's canvas.
  
  In C4, the main role of C4Shape is to provide access to constructing and manipulating the appearance of shapes. Almost all properties of shapes are animatable. The main goal for a C4Shape is to provide interactivity while encapsulating all the methods that act on its underlying shape layer.
-*/
+ */
 
-@interface C4Shape : C4Control <UIAppearance> {
+@interface C4Shape : C4Control {
 }
 
 #pragma mark Changing a Shape's Path
@@ -28,14 +39,14 @@
  @param rect A rectangle that defines the shape of an ellipse.
  @return The initialized C4Shape object created with an ellipse path or nil if initialization is not successful.
  */
-+(C4Shape *)ellipse:(CGRect)rect;
++ (instancetype)ellipse:(CGRect)rect;
 
 /**Creates and returns an instance of C4Shape, whose path is a rectangle.
  
  @param rect A rectangle that defines the shape.
  @return The initialized C4Shape object created with an rectangular path or nil if initialization is not successful.
  */
-+(C4Shape *)rect:(CGRect)rect;
++ (instancetype)rect:(CGRect)rect;
 
 /**Creates and returns an instance of C4Shape, whose path is a line.
  
@@ -44,24 +55,24 @@
  @param pointArray A C-Array containing 2 CGPoints like: {CGpoint,CGPoint}.
  @return The initialized C4Shape object created with a line path or nil if initialization is not successful.
  */
-+(C4Shape *)line:(CGPoint *)pointArray;
++ (instancetype)line:(CGPoint *)pointArray;
 
 /**Creates and returns an instance of C4Shape, whose path is a triangle.
-
+ 
  @param pointArray A C-Array containing 3 CGPoints like: {CGpoint,CGPoint,CGPoint}.
  @return The initialized C4Shape object created with a triangle path or nil if initialization is not successful.
  */
-+(C4Shape *)triangle:(CGPoint *)pointArray;
++ (instancetype)triangle:(CGPoint *)pointArray;
 
 /**Creates and returns an instance of C4Shape, whose path is a polygon.
  
- This method requires a secondary variable, called pointCount, because the length of the C-Array is unknown once it is passed to the method. 
+ This method requires a secondary variable, called pointCount, because the length of the C-Array is unknown once it is passed to the method.
  
  @param pointArray A C-Array containing any number of CGPoints like: {CGpoint, .. , CGPoint}.
  @param pointCount The number of points in the array.
  @return The initialized C4Shape object created with a polygon path or nil if initialization is not successful.
  */
-+(C4Shape *)polygon:(CGPoint *)pointArray pointCount:(NSInteger)pointCount;
++ (instancetype)polygon:(CGPoint *)pointArray pointCount:(NSInteger)pointCount;
 
 /**Creates and returns an instance of C4Shape, whose path is an arc.
  
@@ -72,7 +83,7 @@
  @param clockwise A Boolean value specifying whether or not the arc will draw in a clockwise direction from the start to end angle
  @return The initialized C4Shape object created with an arc path or nil if initialization is not successful.
  */
-+(C4Shape *)arcWithCenter:(CGPoint)centerPoint radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise;
++ (instancetype)arcWithCenter:(CGPoint)centerPoint radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise;
 
 /**Creates and returns an instance of C4Shape, whose path is a wedge.
  
@@ -83,7 +94,7 @@
  @param clockwise A Boolean value specifying whether or not the wedge will draw in a clockwise direction from the start to end angle
  @return The initialized C4Shape object created with a wedge path or nil if initialization is not successful.
  */
-+(C4Shape *)wedgeWithCenter:(CGPoint)centerPoint radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise;
++ (instancetype)wedgeWithCenter:(CGPoint)centerPoint radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise;
 
 /**Creates and returns an instance of C4Shape, whose path is a bezier curve.
  
@@ -91,16 +102,16 @@
  @param controlPointArray A C-Array consisting of two points, like: {CGPoint,CGPoint}, which mark the control points that distort the curve.
  @return The initialized C4Shape object created with a curve path or nil if initialization is not successful.
  */
-+(C4Shape *)curve:(CGPoint *)beginEndPointArray controlPoints:(CGPoint *)controlPointArray;
++ (instancetype)curve:(CGPoint *)beginEndPointArray controlPoints:(CGPoint *)controlPointArray;
 
 
 /**Creates and returns an instance of C4Shape, whose path is a quadratic curve
-  
+ 
  @param beginEndPointArray A C-Array consisting of two points, like: {CGPoint,CGPoint}, which mark the beginning and end of the curve.
  @param controlPoint A CGPoint used to defined the quadratic curve.
  @return The initialized C4Shape object created with a curve path or nil if initialization is not successful.
  */
-+(C4Shape *)quadCurve:(CGPoint *)beginEndPointArray controlPoint:(CGPoint)controlPoint;
++ (instancetype)quadCurve:(CGPoint *)beginEndPointArray controlPoint:(CGPoint)controlPoint;
 
 /**Creates and returns an instance of C4Shape, whose path is a combination of curves made up from a string of text.
  
@@ -108,46 +119,52 @@
  @param font The font used to generate the paths that will be drawn.
  @return The initialized C4Shape object created with a combination of paths that look like characters or nil if initialization is not successful.
  */
-+(C4Shape *)shapeFromString:(NSString *)string withFont:(C4Font *)font;
++ (instancetype)shapeFromString:(NSString *)string withFont:(C4Font *)font;
+
+/**Creates and returns an instance of C4Shape, whose configuration is specified by a template.
+ 
+ @param template The template to use.
+ */
++ (instancetype)shapeFromTemplate:(C4Template*)template;
 
 #pragma mark Changing a Shape's Path
 /// @name Changing a Shape's Path
 
 /**Changes the object's current shape to an ellipse
-
-The change will happen based on the shape's current animation options, duration and delay.
+ 
+ The change will happen based on the shape's current animation options, duration and delay.
  @param rect A rectangle that defines the shape of an ellipse.
-*/
+ */
 -(void)ellipse:(CGRect)rect;
 
 /**Changes the object's current shape to a rectangle
  
-The change will happen based on the shape's current animation options, duration and delay. 
-
+ The change will happen based on the shape's current animation options, duration and delay.
+ 
  @param rect A rectangle that defines the shape.
  */
 -(void)rect:(CGRect)rect;
 
 /**Changes the object's current shape to a line
  
-The change will happen based on the shape's current animation options, duration and delay. 
-
+ The change will happen based on the shape's current animation options, duration and delay.
+ 
  @param pointArray A C-Array containing 2 CGPoints like: {CGpoint,CGPoint}.
  */
 -(void)line:(CGPoint *)pointArray;
 
 /**Changes the object's current shape to a triangle
  
-The change will happen based on the shape's current animation options, duration and delay. 
-
+ The change will happen based on the shape's current animation options, duration and delay.
+ 
  @param pointArray A C-Array containing 3 CGPoints like: {CGpoint,CGPoint,CGPoint}.
  */
 -(void)triangle:(CGPoint *)pointArray;
 
 /**Changes the object's current shape to a polygon
  
-The change will happen based on the shape's current animation options, duration and delay. 
-
+ The change will happen based on the shape's current animation options, duration and delay.
+ 
  @param pointArray A C-Array containing any number of CGPoints like: {CGpoint, .. , CGPoint}.
  @param pointCount The number of points in the array.
  */
@@ -155,8 +172,8 @@ The change will happen based on the shape's current animation options, duration 
 
 /**Changes the object's current shape to an arc
  
-The change will happen based on the shape's current animation options, duration and delay. 
-
+ The change will happen based on the shape's current animation options, duration and delay.
+ 
  @param centerPoint The center point of the arc.
  @param radius The radius of the arc.
  @param startAngle The starting angle of the arc, in radians in the range of (0 .. 2*PI)
@@ -167,7 +184,7 @@ The change will happen based on the shape's current animation options, duration 
 
 /**Changes the object's current shape to a wedge
  
- The change will happen based on the shape's current animation options, duration and delay. 
+ The change will happen based on the shape's current animation options, duration and delay.
  
  @param centerPoint The center point of the wedge.
  @param radius The radius of the wedge.
@@ -179,7 +196,7 @@ The change will happen based on the shape's current animation options, duration 
 
 /**Changes the object's current shape to a curve
  
- The change will happen based on the shape's current animation options, duration and delay. 
+ The change will happen based on the shape's current animation options, duration and delay.
  
  @param beginEndPointArray A C-Array consisting of two points, like: {CGPoint,CGPoint}, which mark the beginning and end of the curve.
  @param controlPointArray A C-Array consisting of two points, like: {CGPoint,CGPoint}, which mark the control points that distort the curve.
@@ -188,7 +205,7 @@ The change will happen based on the shape's current animation options, duration 
 
 /**Changes the object's current shape to a quadratic curve
  
- The change will happen based on the shape's current animation options, duration and delay. 
+ The change will happen based on the shape's current animation options, duration and delay.
  
  @param beginEndPointArray A C-Array consisting of two points, like: {CGPoint,CGPoint}, which mark the beginning and end of the curve.
  @param controlPoint A CGPoint used to defined the quadratic curve.
@@ -197,8 +214,8 @@ The change will happen based on the shape's current animation options, duration 
 
 /**Changes the object's current shape to one made from the paths of a given string
  
-The change will happen based on the shape's current animation options, duration and delay. 
-
+ The change will happen based on the shape's current animation options, duration and delay.
+ 
  @param string The string to turn into a shape.
  @param font The font used to generate the paths that will be drawn.
  */
@@ -209,7 +226,7 @@ The change will happen based on the shape's current animation options, duration 
  When a polygon is created, the last point and first point are not connected. This method connects them.
  
  You cannot undo this action (i.e. there is no openShape method)
-*/
+ */
 -(void)closeShape;
 
 /**Sets the dash pattern for the shape's line.
@@ -232,7 +249,7 @@ The change will happen based on the shape's current animation options, duration 
  
  Default is C4BLUE.
  */
-@property (readwrite, strong, atomic) UIColor *fillColor UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) UIColor *fillColor;
 
 /**The color used to stroke the shape’s path. Animatable.
  
@@ -240,7 +257,7 @@ The change will happen based on the shape's current animation options, duration 
  
  Default is nil.
  */
-@property (readwrite, strong, atomic) UIColor *strokeColor UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) UIColor *strokeColor;
 
 /**The dash phase applied to the shape’s path when stroked. Animatable.
  
@@ -248,11 +265,11 @@ The change will happen based on the shape's current animation options, duration 
  
  Default is 0.
  */
-@property (readwrite, nonatomic) CGFloat lineDashPhase UI_APPEARANCE_SELECTOR;
+@property(nonatomic) CGFloat lineDashPhase;
 
 /**Specifies the line width of the shape’s path. Animatable.
  */
-@property (readwrite, nonatomic) CGFloat lineWidth UI_APPEARANCE_SELECTOR;
+@property(nonatomic) CGFloat lineWidth;
 
 /**The miter limit used when stroking the shape’s path. Animatable.
  
@@ -260,7 +277,7 @@ The change will happen based on the shape's current animation options, duration 
  
  Default is 10.0.
  */
-@property (readwrite, nonatomic) CGFloat miterLimit UI_APPEARANCE_SELECTOR;
+@property(nonatomic) CGFloat miterLimit;
 
 /**The relative location at which to stop stroking the path. Animatable.
  
@@ -271,15 +288,15 @@ The change will happen based on the shape's current animation options, duration 
  Combined with the strokeStart property, this property defines the subregion of the path to stroke. The value in this property indicates the relative point along the path at which to finish stroking while the strokeStart property defines the starting point. A value of 0.0 represents the beginning of the path while a value of 1.0 represents the end of the path. Values in between are interpreted linearly along the path length.
  
  */
-@property (readwrite, nonatomic) CGFloat strokeEnd UI_APPEARANCE_SELECTOR;
+@property(nonatomic) CGFloat strokeEnd;
 
 /**The relative location at which to begin stroking the path. Animatable.
  
-    The value of this property must be in the range 0.0 to 1.0. The default value of this property is 0.0.
+ The value of this property must be in the range 0.0 to 1.0. The default value of this property is 0.0.
  
  Combined with the strokeEnd property, this property defines the subregion of the path to stroke. The value in this property indicates the relative point along the path at which to begin stroking while the strokeEnd property defines the end point. A value of 0.0 represents the beginning of the path while a value of 1.0 represents the end of the path. Values in between are interpreted linearly along the path length.
  */
-@property (readwrite, nonatomic) CGFloat strokeStart UI_APPEARANCE_SELECTOR;
+@property(nonatomic) CGFloat strokeStart;
 
 /**The dash pattern applied to the shape’s path when stroked.
  
@@ -289,13 +306,13 @@ The change will happen based on the shape's current animation options, duration 
  
  Default is nil, a solid line.
  */
-@property (readwrite, strong, atomic) NSArray *lineDashPattern UI_APPEARANCE_SELECTOR;
+@property(nonatomic, copy) NSArray *lineDashPattern;
 
 /**The fill rule used when filling the shape’s path.
  
  The possible values are FILLNORMAL and FILLNONZERO which are equivalent to Cocoa's default winding mode values. See “Winding Rules” in Cocoa Drawing Guide for examples of the two fill rules.
-  */
-@property (readwrite, strong, atomic) NSString *fillRule UI_APPEARANCE_SELECTOR;
+ */
+@property(nonatomic, copy) NSString *fillRule;
 
 /**Specifies the line cap style for the shape’s path.
  
@@ -305,7 +322,7 @@ The change will happen based on the shape's current animation options, duration 
  
  The default is CAPBUTT.
  */
-@property (readwrite, strong, atomic) NSString *lineCap UI_APPEARANCE_SELECTOR;
+@property(nonatomic, copy) NSString *lineCap;
 
 /**Specifies the line join style for the shape’s path.
  
@@ -313,77 +330,62 @@ The change will happen based on the shape's current animation options, duration 
  
  The default is JOINMITRE.
  */
-@property (readwrite, strong, atomic) NSString *lineJoin UI_APPEARANCE_SELECTOR;
+@property(nonatomic, copy) NSString *lineJoin;
 
 /**Specifies whether or not the shape is a line.
  */
-@property (readonly, nonatomic, getter = isLine) BOOL line;
+@property(nonatomic, readonly, getter = isLine) BOOL line;
 
 /**Specifies whether or not the shape is an arc.
  */
-@property (readonly, nonatomic, getter = isArc) BOOL arc;
+@property(nonatomic, readonly, getter = isArc) BOOL arc;
 
 /**Specifies the origin point of a line. Animatable.
  */
-@property (readwrite, nonatomic) CGPoint pointA;
+@property(nonatomic) CGPoint pointA;
 
 /**Specifies the end point of a line. Animatable.
  */
-@property (readwrite, nonatomic) CGPoint pointB;
+@property(nonatomic) CGPoint pointB;
 
 /**Specifies the first control point of a curve, both bezier and quad curves. Animatable.
  */
-@property (readwrite, nonatomic) CGPoint controlPointA;
+@property(nonatomic) CGPoint controlPointA;
 
 /**Specifies the second control point (bezier curves only). Animatable.
  */
-@property (readwrite, nonatomic) CGPoint controlPointB;
-
-/**The shape's view backing layer.
- 
- C4Shapes are actually views, and have a backing layer. This layer is a C4ShapeLayer which is a subclass of CAShapelayer, allowing for the creation and drawing of bezier paths.
- 
- Accessing the shape layer is allowed, but modifying it is not. Changing properties of the shape will automatically inform and apply them to shapeLayer.
- */
-@property (readonly, atomic, strong) C4ShapeLayer *shapeLayer;
+@property(nonatomic) CGPoint controlPointB;
 
 /**Specifies whether the given shape is closed or not. This is useful for determining if polygons are open or closed.
  */
-@property (readonly, atomic, getter = isClosed) BOOL closed;
+@property(nonatomic, readonly, getter = isClosed) BOOL closed;
 
 /**Specifies whether the given shape is a wedge.
-
+ 
  This property is specifically used in the `pointA` and `pointB` methods to determine if the current object is capable of setting them. In particular, only lines, beziers and quadratic curves should be able to acces the `pointA` and `pointB` properties of the `C4Shape` class.
  */
-@property (readonly, atomic, getter = isWedge) BOOL wedge;
+@property(nonatomic, readonly, getter = isWedge) BOOL wedge;
 
 /**Specifies whether the given shape is a bezier curve.
-
+ 
  This property is specifically used in the `pointA` and `pointB` methods to determine if the current object is capable of setting them. In particular, only lines, beziers and quadratic curves should be able to acces the `pointA` and `pointB` properties of the `C4Shape` class.
-*/
-@property (readonly, atomic, getter = isBezierCurve) BOOL bezierCurve;
+ */
+@property(nonatomic, readonly, getter = isBezierCurve) BOOL bezierCurve;
 
 /**Specifies whether the given shape is a quadratic curve.
  
  This property is specifically used in the `pointA` and `pointB` methods to determine if the current object is capable of setting them. In particular, only lines, beziers and quadratic curves should be able to acces the `pointA` and `pointB` properties of the `C4Shape` class.
  */
-@property (readonly, atomic, getter = isQuadCurve) BOOL quadCurve;
+@property(nonatomic, readonly, getter = isQuadCurve) BOOL quadCurve;
 
 /**The path defining the shape to be rendered. Animatable.
  
  Paths will interpolate as a linear blend of the "on-line" points; "off-line" points may be interpolated non-linearly (e.g. to preserve continuity of the curve's derivative). If the two paths have a different number of control points or segments the results are undefined. If the path extends outside the layer bounds it will not automatically be clipped to the layer, only if the normal layer masking rules cause that.
  
  If the value in this property is non-nil, the path is created using the specified path instead of the layer’s composited alpha channel. The path defines the outline of the shape layer. It is filled using the non-zero winding rule and the current color, opacity, and blur radius.
-
+ 
  Specifying an explicit path usually improves rendering performance.
  */
-@property (readwrite, nonatomic) CGPathRef path;
+@property(nonatomic) CGPathRef path;
 
-/**Returns the appearance proxy for the object, cast as a C4Shape rather than the standard (id) cast provided by UIAppearance.
- 
- You use this method to grab the appearance object that allows you to change the default style for C4Shape objects.
- 
- @return The appearance proxy for the receiver, cast as a C4Shape.
- */
-+(C4Shape *)defaultStyle;
 @end

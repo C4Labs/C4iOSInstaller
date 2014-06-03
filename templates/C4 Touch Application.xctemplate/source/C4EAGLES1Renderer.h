@@ -1,11 +1,22 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4EAGLRenderer.h
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 12-03-08.
-//  Copyright (c) 2012 POSTFL. All rights reserved.
-//
-#import "C4EAGLLayer.h"
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
+
 #import <OpenGLES/ES1/gl.h>
 #import <OpenGLES/ES1/glext.h>
 
@@ -23,7 +34,7 @@
 #pragma mark - Setup & Render
 ///@name Setup & Render
 /**The method used for adding additional variable setup, outside of the main initialization methods.
-  */
+ */
 -(void)setup;
 
 /**The method used for rendering OpenGL animations.
@@ -33,16 +44,16 @@
 #pragma mark - Width & Height
 ///@name Width & Height
 /**The width of the layer.
-
- This property is used in the resizeFromLayer: method 
+ 
+ This property is used in the resizeFromLayer: method
  */
-@property (readonly, nonatomic) GLint width;
+@property(nonatomic, readonly) GLint width;
 
 /**The height of the layer.
  
- This property is used in the resizeFromLayer: method 
+ This property is used in the resizeFromLayer: method
  */
-@property (readonly, nonatomic) GLint height;
+@property(nonatomic, readonly) GLint height;
 
 #pragma mark - Buffers
 ///@name Buffers
@@ -52,26 +63,18 @@
  
  For more see: [Frame Buffer Object](http://www.opengl.org/wiki/Framebuffer_Object )
  */
-@property (readonly, nonatomic) GLuint frameBuffer;
+@property(nonatomic, readonly) GLuint frameBuffer;
 
 /**The render buffer.
-
+ 
  Renderbuffer Objects are OpenGL Objects that contain images. They are created and used specifically with Framebuffer Objects. They are optimized for being used as render targets, while Textures may not be.
  
  For more see: [Render Buffer Object](http://www.opengl.org/wiki/Renderbuffer_Object )
  */
-@property (readonly, nonatomic) GLuint renderBuffer;
+@property(nonatomic, readonly) GLuint renderBuffer;
 
 /** The EAGLContext into which the renderer should draw.
  */
-@property (readwrite, atomic, strong) EAGLContext *eaglContext;
-
-#pragma mark - Copying
-///@name Copying
-/**Creates a copy of the receiver.
- @param zone The zone for copying. Leave this as nil for normal results.
- @return a copy of the receiver.
- */
--(C4EAGLES1Renderer *)copyWithZone:(NSZone *)zone;
+@property(nonatomic, strong) EAGLContext *eaglContext;
 
 @end

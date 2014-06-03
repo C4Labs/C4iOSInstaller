@@ -1,17 +1,32 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Sample.m
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 12-03-12.
-//  Copyright (c) 2012 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4Sample.h"
 
-@implementation C4Sample
-@synthesize player = _player;
+@interface C4Sample ()
+@property(nonatomic, strong) AVAudioPlayer *player;
+@end
 
-+(C4Sample *)sampleNamed:(NSString *)sampleName {
+
+@implementation C4Sample
+
++ (instancetype)sampleNamed:(NSString *)sampleName {
     return [[C4Sample alloc] initWithSampleName:sampleName];
 }
 
@@ -23,7 +38,7 @@
         
         NSURL *soundFileURL = [[NSBundle mainBundle] URLForResource:filenameComponents[0]
                                                       withExtension:filenameComponents[1]];
-                                    
+        
         _player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
         self.enableRate = YES;
         self.player.delegate = self;
@@ -114,7 +129,7 @@
 }
 
 -(void)playAtTime:(CGFloat)time {
-   [self.player playAtTime:(NSTimeInterval)time];
+    [self.player playAtTime:(NSTimeInterval)time];
 }
 
 -(void)endedNormally {

@@ -1,13 +1,25 @@
+// Copyright © 2012 Travis Kirton
 //
-//  ViewController.h
-//  C4iOSDevelopment
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 11-10-06.
-//  Copyright (c) 2011 mediart. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
-@class C4Window;
+
+@class C4Control;
 
 /** The C4CanvasController class provides control over the main canvas in C4.
  
@@ -15,8 +27,7 @@
  
  @warning This class should only be used internally by the C4WorkSpace object and not subclassed or used explicitly.
  */
-@interface C4CanvasController : UIViewController <AVAudioSessionDelegate, C4Gesture, C4Notification, C4MethodDelay, C4AddSubview> {
-}
+@interface C4CanvasController : UIViewController <AVAudioSessionDelegate, C4Notification, C4MethodDelay>
 
 #pragma mark - Setup
 ///@name Setup
@@ -40,7 +51,7 @@
  
  `self.canvas.backgroundColor = [UIColor ...];`
  */
-@property (readonly, strong, nonatomic) C4Window *canvas;
+@property(nonatomic, readonly, strong) C4Control *canvas;
 
 #pragma mark C4Camera Callback
 #pragma mark - Callbacks
@@ -58,5 +69,23 @@
  `[self imageWasCaptured];`
  */
 -(void)imageWasCaptured;
+
+#pragma - mark Gesture Additions
+-(void)tapped;
+-(void)tapped:(CGPoint)location;
+-(void)panned;
+-(void)panned:(CGPoint)location translation:(CGPoint)translation velocity:(CGPoint)velocity;
+-(void)pinched;
+-(void)pinched:(CGPoint)location scale:(CGFloat)scale velocity:(CGFloat)velocity;
+-(void)rotated;
+-(void)rotated:(CGPoint)location rotation:(CGFloat)rotation velocity:(CGFloat)velocity;
+-(void)swipedLeft;
+-(void)swipedRight;
+-(void)swipedUp;
+-(void)swipedDown;
+-(void)longPressStarted;
+-(void)longPressStarted:(CGPoint)location;
+-(void)longPressEnded;
+-(void)longPressEnded:(CGPoint)location;
 
 @end

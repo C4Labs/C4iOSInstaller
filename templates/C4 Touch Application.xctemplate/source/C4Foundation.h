@@ -1,24 +1,31 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Foundation.h
-//  C4iOSDevelopment
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 11-10-07.
-//  Copyright (c) 2011 mediart. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 /** This document describes a set of basic functions that are available to use throughout the C4 framework.
- *  
+ *
  *  This methods listed in this document are used for sorting, comparing, and most importantly logging messages to the console.
  */
 
-@interface C4Foundation : NSObject {
-    NSComparator floatSortComparator;
-}
+@interface C4Foundation : NSObject
 
 #pragma mark Foundation Methods
 /// @name Foundation Methods
-
-+(C4Foundation *)sharedManager;
 
 /** Logs an error message to the console.
  
@@ -32,13 +39,9 @@ void C4Log(NSString *logString,...);
  */
 +(NSComparator)floatComparator;
 
-/** Returns a pre-defined comparator for sorting float values.
- */
--(NSComparator)floatComparator;
-
 /** Sorts two undefined objects.
  
- Takes two undefined objects (i.e. cast as id) and determines their class kinds. It then sorts the two based on the kinds of objects that they are. 
+ Takes two undefined objects (i.e. cast as id) and determines their class kinds. It then sorts the two based on the kinds of objects that they are.
  
  This method can deal with strings, floats and NSNumbers. This method defaults to sorting by float value.
  

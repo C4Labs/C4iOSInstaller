@@ -1,35 +1,43 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4ActivityMonitor.m
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by moi on 13-03-06.
-//  Copyright (c) 2013 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4ActivityIndicator.h"
 
 @implementation C4ActivityIndicator
-@synthesize color = _color;
 
-+(C4ActivityIndicator *)indicatorWithStyle:(C4ActivityIndicatorStyle)style {
++ (instancetype)indicatorWithStyle:(C4ActivityIndicatorStyle)style {
     C4ActivityIndicator *indicator = [[C4ActivityIndicator alloc] initWithActivityIndicatorStyle:style];
     return indicator;
 }
 
 -(id)initWithActivityIndicatorStyle:(C4ActivityIndicatorStyle)style {
-    self = [super init];
-    if(self != nil) {
-        _UIActivityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style];
-        self.frame = _UIActivityIndicatorView.frame;
+    UIActivityIndicatorView* aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style];
+    self = [super initWithView:aiv];
+    if (self != nil) {
+        _UIActivityIndicatorView = aiv;
         [self setupFromDefaults];
-        [self addSubview:_UIActivityIndicatorView];
     }
     return self;
 }
 
 -(void)setupFromDefaults {
     _UIActivityIndicatorView.hidesWhenStopped = YES;
-    _UIActivityIndicatorView.color = [C4ActivityIndicator defaultStyle].color;
 }
 
 -(void)startAnimating {
@@ -60,47 +68,32 @@
     return _UIActivityIndicatorView.hidesWhenStopped;
 }
 
--(void)setColor:(UIColor *)color {
-    _color = color;
-    self.UIActivityIndicatorView.color = color;
-}
-
 -(UIColor *)color {
     return _UIActivityIndicatorView.color;
 }
 
-#pragma mark Style
-+(C4ActivityIndicator *)defaultStyle {
-    return ((C4ActivityIndicator *)[C4ActivityIndicator appearance]);
+-(void)setColor:(UIColor *)color {
+    self.UIActivityIndicatorView.color = color;
 }
 
--(NSDictionary *)style {
-    //mutable local styles
-    NSMutableDictionary *localStyle = [[NSMutableDictionary alloc] initWithCapacity:0];
-    [localStyle addEntriesFromDictionary:@{@"indicator":self.UIActivityIndicatorView}];
-    
-    NSDictionary *controlStyle = [super style];
-    
-    NSMutableDictionary *localAndControlStyle = [NSMutableDictionary dictionaryWithDictionary:localStyle];
-    [localAndControlStyle addEntriesFromDictionary:controlStyle];
-    
-    localStyle = nil;
-    controlStyle = nil;
-    
-    return (NSDictionary *)localAndControlStyle;
+-(void)runMethod:(NSString *)methodName target:(id)object forEvent:(C4ControlEvents)event{
 }
 
--(void)setStyle:(NSDictionary *)newStyle {
-    self.color = nil;
-    
-    [super setStyle:newStyle];
-    
-    UIActivityIndicatorView *indicator = [newStyle objectForKey:@"indicator"];
-    if(indicator != nil) {
-        _UIActivityIndicatorView.color = indicator.color;
-        indicator = nil;
-    }
+-(void)stopRunningMethod:(NSString *)methodName target:(id)object forEvent:(C4ControlEvents)event {
 }
+
+
+#pragma mark Templates
+
++ (C4Template *)defaultTemplate {
+    static C4Template* template;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        template = [C4Template templateFromBaseTemplate:[super defaultTemplate] forClass:self];
+    });
+    return template;
+}
+
 
 #pragma mark isEqual
 
@@ -110,15 +103,4 @@
     return NO;
 }
 
--(void)runMethod:(NSString *)methodName target:(id)object forEvent:(C4ControlEvents)event{
-    methodName = methodName;
-    object = object;
-    event = event;
-}
-
--(void)stopRunningMethod:(NSString *)methodName target:(id)object forEvent:(C4ControlEvents)event {
-    methodName = methodName;
-    object = object;
-    event = event;
-}
 @end

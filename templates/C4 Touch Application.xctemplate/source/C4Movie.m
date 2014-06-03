@@ -1,44 +1,52 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4VideoPlayerView.m
-//  C4iOSDevelopment
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 11-11-19.
-//  Copyright (c) 2011 mediart. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4Movie.h"
+#import "C4UIMovieControl.h"
 
 @interface C4Movie() {
     void *rateContext, *currentItemContext, *playerItemStatusContext;
 }
-@property (readwrite, nonatomic) NSURL *movieURL;
-@property (readwrite, nonatomic, strong) C4MovieLayer *playerLayer;
-@property (readwrite, nonatomic, strong) AVPlayer *player;
-@property (readwrite, nonatomic, strong) AVPlayerItem *playerItem;
+@property(nonatomic) NSURL *movieURL;
+@property(nonatomic, strong) AVPlayerLayer *playerLayer;
+@property(nonatomic, strong) AVPlayer *player;
+@property(nonatomic, strong) AVPlayerItem *playerItem;
 @end
 
 @implementation C4Movie
-@synthesize player = _player;
-@synthesize rate = _rate;
-@synthesize width = _width;
-@synthesize height = _height;
 
-+(C4Movie *)movieNamed:(NSString *)movieName {
++ (instancetype)movieNamed:(NSString *)movieName {
     C4Movie *newMovie = [[C4Movie alloc] initWithMovieName:movieName frame:CGRectZero];
     return newMovie;
 }
 
-+(C4Movie *)movieNamed:(NSString *)movieName inFrame:(CGRect)movieFrame {
++ (instancetype)movieNamed:(NSString *)movieName inFrame:(CGRect)movieFrame {
     C4Movie *newMovie = [[C4Movie alloc] initWithMovieName:movieName frame:movieFrame];
     return newMovie;
 }
 
-+(C4Movie *)movieWithURL:(NSString *)url {
++ (instancetype)movieWithURL:(NSString *)url {
     C4Movie *newMovie = [[C4Movie alloc] initWithURL:[NSURL URLWithString:url] frame:CGRectZero];
     return newMovie;
 }
 
-+(C4Movie *)movieWithURL:(NSString *)url frame:(CGRect)movieFrame {
++ (instancetype)movieWithURL:(NSString *)url frame:(CGRect)movieFrame {
     C4Movie *newMovie = [[C4Movie alloc] initWithURL:[NSURL URLWithString:url] frame:movieFrame];
     return newMovie;
 }
@@ -61,8 +69,8 @@
     return self;
 }
 
--(id)initWithURL:(NSURL *)url frame:(CGRect)movieFrame {
-    self = [super initWithFrame:movieFrame];
+-(id)initWithURL:(NSURL *)url frame:(CGRect)frame {
+    self = [super initWithView:[[C4UIMovieControl alloc] initWithFrame:frame]];
     if(self != nil) {
         _volume = 1.0f;
         self.shouldAutoplay = NO;
@@ -70,7 +78,7 @@
         if([_movieURL scheme]) {
             AVURLAsset *asset = [AVURLAsset URLAssetWithURL:_movieURL options:nil];
             C4Assert(asset != nil, @"The asset (%@) you tried to create couldn't be initialized", _movieURL);
-
+            
             NSArray *requestedKeys = @[@"duration", @"playable"];
             for (NSString *key in requestedKeys) {
                 NSError *error = nil;
@@ -86,13 +94,13 @@
                 [self assetFailedToPrepareForPlayback:error];
                 return nil;
             }
-
+            
             [asset loadValuesAsynchronouslyForKeys:requestedKeys completionHandler: ^(void) {
                 dispatch_async( dispatch_get_main_queue(), ^(void) {
                     [self prepareToPlayAsset:asset];
                 });
             }];
-            [self completeSetupWithAsset:asset frame:movieFrame];
+            [self completeSetupWithAsset:asset frame:frame];
         }
     }
     return self;
@@ -102,7 +110,7 @@
     NSArray *assetTracks = [asset tracksWithMediaType:AVMediaTypeVideo];
     
     if(CGRectEqualToRect(movieFrame, CGRectZero)) {
-    AVAssetTrack *videoTrack = assetTracks[0];
+        AVAssetTrack *videoTrack = assetTracks[0];
         _originalMovieSize = videoTrack.naturalSize;
         _originalMovieRatio = _originalMovieSize.width / _originalMovieSize.height;
         movieFrame.size = _originalMovieSize;
@@ -111,22 +119,21 @@
     self.backgroundColor = [UIColor clearColor];
     _constrainsProportions = YES;
     self.player.actionAtItemEnd = AVPlayerActionAtItemEndPause; // currently C4Movie doesn't handle queues
+    self.rate = 1.0f;
     
-    _rate = 1.0f;
-
     [self setup];
 }
 
 - (CMTime)playerItemDuration {
-	AVPlayerItem *thePlayerItem = [_player currentItem];
-	if (thePlayerItem.status == AVPlayerItemStatusReadyToPlay) {
-		return(_playerItem.duration);
-	}
-	return(kCMTimeInvalid);
+    AVPlayerItem *thePlayerItem = [_player currentItem];
+    if (thePlayerItem.status == AVPlayerItemStatusReadyToPlay) {
+        return(_playerItem.duration);
+    }
+    return(kCMTimeInvalid);
 }
 
 - (BOOL)isPlaying {
-	return (self.player.rate != 0.0f);
+    return (self.player.rate != 0.0f);
 }
 
 -(CGFloat)rate {
@@ -134,22 +141,11 @@
 }
 
 -(void)setRate:(CGFloat)rate {
-    BOOL wasPlaying = self.isPlaying;
-    if(wasPlaying == YES) {
-        [self pause];
-    }
-    _rate = rate;
-    if(wasPlaying == YES) {
-        [self play];
-    }
+    self.player.rate = rate;
 }
 
-+ (Class)layerClass {
-	return [C4MovieLayer class];
-}
-
-- (C4MovieLayer *)playerLayer {
-	return (C4MovieLayer *)self.layer;
+- (AVPlayerLayer *)playerLayer {
+    return (AVPlayerLayer *)self.view.layer;
 }
 
 -(void)assetFailedToPrepareForPlayback:(NSError *)error {
@@ -160,14 +156,14 @@
     rateContext = &rateContext;
     currentItemContext = &currentItemContext;
     playerItemStatusContext = &playerItemStatusContext;
-	
+    
     if (self.playerItem != nil) {
         [self.playerItem removeObserver:self forKeyPath:@"status"];
         [[NSNotificationCenter defaultCenter] removeObserver:self
                                                         name:AVPlayerItemDidPlayToEndTimeNotification
                                                       object:self.playerItem];
     }
-	
+    
     self.playerItem = [AVPlayerItem playerItemWithAsset:asset];
     
     [self.playerItem addObserver:self
@@ -175,7 +171,9 @@
                          options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
                          context:playerItemStatusContext];
     
-    [self listenFor:AVPlayerItemTimeJumpedNotification andRunMethod:@"currentTimeChanged"];
+    [self listenFor:AVPlayerItemTimeJumpedNotification andRun:^(NSNotification *n) {
+        [self currentTimeChanged];
+    }];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(playerItemDidReachEnd:)
@@ -184,7 +182,7 @@
     
     if (self.player == nil) {
         [self setPlayer:[AVPlayer playerWithPlayerItem:self.playerItem]];
-		_player.actionAtItemEnd = AVPlayerActionAtItemEndNone;
+        _player.actionAtItemEnd = AVPlayerActionAtItemEndNone;
         [self.player addObserver:self
                       forKeyPath:@"currentItem"
                          options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
@@ -208,7 +206,7 @@
         [[self player] replaceCurrentItemWithPlayerItem:self.playerItem];
     }
     //explicitly set the volume here, it needs to be set after the audio mix has been created
-    self.volume = self.volume;    
+    self.volume = self.volume;
 }
 
 - (void)observeValueForKeyPath:(NSString*) path
@@ -216,9 +214,9 @@
                         change:(NSDictionary*)change
                        context:(void*)context
 {
-	/* AVPlayerItem "status" property value observer. */
-	if (context == playerItemStatusContext)
-	{
+    /* AVPlayerItem "status" property value observer. */
+    if (context == playerItemStatusContext)
+    {
         
         AVPlayerStatus status = [change[NSKeyValueChangeNewKey] integerValue];
         switch (status)
@@ -253,12 +251,12 @@
                 C4Assert(NO,@"Strange... the player's status is none of: AVPlayerStatusUnknown, AVPlayerStatusReadyToPlay, AVPlayerStatusFailed");
                 break;
         }
-	}
-	/* AVPlayer "currentItem" property observer.
+    }
+    /* AVPlayer "currentItem" property observer.
      Called when the AVPlayer replaceCurrentItemWithPlayerItem:
      replacement will/did occur. */
-	else if (context == currentItemContext)
-	{
+    else if (context == currentItemContext)
+    {
         AVPlayerItem *newPlayerItem = change[NSKeyValueChangeNewKey];
         //C4Log(@"currentItemContext");
         
@@ -273,10 +271,10 @@
              fit the video within the layer’s bounds. */
             self.playerLayer.videoGravity = AVLayerVideoGravityResize;
         }
-	}
-	else {
-		[super observeValueForKeyPath:path ofObject:object change:change context:context];
-	}
+    }
+    else {
+        [super observeValueForKeyPath:path ofObject:object change:change context:context];
+    }
     
     return;
 }
@@ -295,7 +293,7 @@
 }
 
 -(void)play {
-    self.player.rate = _rate;
+    [self.player play];
 }
 
 -(void)pause {
@@ -307,7 +305,6 @@
 }
 
 -(void)setWidth:(CGFloat)width {
-    _width = width;
     CGRect newFrame = self.frame;
     newFrame.size.width = width;
     if(_constrainsProportions) newFrame.size.height = width/self.originalMovieRatio;
@@ -319,7 +316,6 @@
 }
 
 -(void)setHeight:(CGFloat)height {
-    _height = height;
     CGRect newFrame = self.frame;
     newFrame.size.height = height;
     if(_constrainsProportions) newFrame.size.width = height * self.originalMovieRatio;
@@ -372,13 +368,16 @@
     self.player.currentItem.audioMix = self.audioMix;
 }
 
-+(C4Movie *)defaultStyle {
-    return (C4Movie *)[C4Movie appearance];
+
+#pragma mark Templates
+
++ (C4Template *)defaultTemplate {
+    static C4Template* template;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        template = [C4Template templateFromBaseTemplate:[super defaultTemplate] forClass:self];
+    });
+    return template;
 }
 
--(id)copyWithZone:(NSZone *)zone {
-    C4Movie *newMovie = [[C4Movie allocWithZone:zone] initWithURL:self.movieURL];
-    newMovie.style = self.style;
-    return newMovie;
-}
 @end

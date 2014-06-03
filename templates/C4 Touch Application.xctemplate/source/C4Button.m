@@ -1,43 +1,45 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Button.m
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by moi on 13-02-28.
-//  Copyright (c) 2013 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4Button.h"
 
 @implementation C4Button
-@synthesize tintColor = _tintColor;
 
-+(C4Button *)buttonWithType:(C4ButtonType)type {
++ (instancetype)buttonWithType:(C4ButtonType)type {
     C4Button *button = [[C4Button alloc] initWithType:type];
     return button;
 }
 
 -(id)initWithType:(C4ButtonType)type {
     UIButton *button = [UIButton buttonWithType:(UIButtonType)type];
-    self = [super initWithFrame:button.frame];
+    self = [super initWithView:button];
     if(self != nil) {
         _UIButton = button;
-        _UIButton.frame = self.bounds;
         _UIButton.layer.masksToBounds = YES;
         [self setupFromDefaults];
-        [self addSubview:_UIButton];
         [self setup];
     }
     return self;
 }
 
-#pragma mark Style 
-+(C4Button *)defaultStyle {
-    return (C4Button *)[C4Button appearance];
-}
-
 -(void)setupFromDefaults {
     self.UIButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:15.0f];
-    self.tintColor = [C4Button defaultStyle].tintColor;
     
     if(self.buttonType == ROUNDEDRECT) {
         self.frame = CGRectMake(0,0,96,27);
@@ -72,69 +74,9 @@
     [super setCenter:center];
 }
 
--(C4Button *)copyWithZone:(NSZone *)zone {
-    C4Button *button = [[C4Button allocWithZone:zone] initWithType:self.buttonType];
-    button.style = self.style;
-    return button;
-}
-
 -(void)setCornerRadius:(CGFloat)cornerRadius {
     [super setCornerRadius:cornerRadius];
     [self.UIButton.layer setCornerRadius:cornerRadius];
-}
-
--(NSDictionary *)style {
-    //mutable local styles
-    NSMutableDictionary *localStyle = [[NSMutableDictionary alloc] initWithCapacity:0];
-    [localStyle addEntriesFromDictionary:@{@"button":self.UIButton}];
-    
-    NSDictionary *controlStyle = [super style];
-    NSMutableDictionary *localAndControlStyle = [NSMutableDictionary dictionaryWithDictionary:localStyle];
-    [localAndControlStyle addEntriesFromDictionary:controlStyle];
-    
-    localStyle = nil;
-    controlStyle = nil;
-    
-    return (NSDictionary *)localAndControlStyle;
-
-}
-
--(void)setStyle:(NSDictionary *)newStyle {
-    self.tintColor = nil;
-    [super setStyle:newStyle];
-    
-    UIButton *b = [newStyle objectForKey:@"button"];
-    if(b != nil) {
-        
-        UIControlState state[4] = {UIControlStateDisabled, UIControlStateHighlighted, UIControlStateNormal, UIControlStateSelected};
-        for(int i = 0; i < 4; i++) {
-            [self.UIButton setTitle:[b titleForState:state[i]] forState:state[i]];
-            [self.UIButton setAttributedTitle:[b attributedTitleForState:state[i]] forState:state[i]];
-            [self.UIButton setTitleColor:[b titleColorForState:state[i]] forState:state[i]];
-            [self.UIButton setTitleShadowColor:[b titleShadowColorForState:state[i]] forState:state[i]];
-            [self.UIButton setImage:[b imageForState:state[i]] forState:state[i]];
-            [self.UIButton setBackgroundImage:[b backgroundImageForState:state[i]] forState:state[i]];
-        }
-                
-        self.UIButton.contentEdgeInsets = b.contentEdgeInsets;
-        self.UIButton.imageEdgeInsets = b.imageEdgeInsets;
-        self.UIButton.titleEdgeInsets = b.titleEdgeInsets;
-        
-        self.UIButton.reversesTitleShadowWhenHighlighted = b.reversesTitleShadowWhenHighlighted;
-        self.UIButton.adjustsImageWhenDisabled = b.adjustsImageWhenDisabled;
-        self.UIButton.adjustsImageWhenHighlighted = b.adjustsImageWhenHighlighted;
-        self.UIButton.showsTouchWhenHighlighted = b.showsTouchWhenHighlighted;
-        
-        self.UIButton.titleLabel.font = b.titleLabel.font;
-        
-        self.UIButton.tintColor = b.tintColor;
-
-        b = nil;
-    }
-}
-
--(C4Label *)titleLabel {
-    return nil;
 }
 
 -(C4Font *)font {
@@ -255,7 +197,6 @@
 }
 
 -(void)setTintColor:(UIColor *)tintColor {
-    _tintColor = tintColor;
     self.UIButton.tintColor = tintColor;
 }
 
@@ -296,7 +237,7 @@
     [self.UIButton removeTarget:object action:NSSelectorFromString(methodName) forControlEvents:(UIControlEvents)event];
 }
 
-#pragma mark Tracking 
+#pragma mark Tracking
 -(BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     [self postNotification:@"trackingBegan"];
     [self beginTracking];
@@ -368,8 +309,21 @@
 }
 
 -(void)setContentHorizontalAlignment:(UIControlContentHorizontalAlignment)contentHorizontalAlignment {
-    self.UIButton.contentVerticalAlignment = contentHorizontalAlignment;
+    self.UIButton.contentHorizontalAlignment = contentHorizontalAlignment;
 }
+
+
+#pragma mark Templates
+
++ (C4Template *)defaultTemplate {
+    static C4Template* template;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        template = [C4Template templateFromBaseTemplate:[super defaultTemplate] forClass:self];
+    });
+    return template;
+}
+
 
 #pragma mark isEqual
 
@@ -378,6 +332,5 @@
     else if([object isKindOfClass:[self class]]) return [self.UIButton isEqual:((C4Button *)object).UIButton];
     return NO;
 }
-
 
 @end

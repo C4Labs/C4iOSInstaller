@@ -1,10 +1,21 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Switch.h
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by moi on 13-03-05.
-//  Copyright (c) 2013 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4Control.h"
 /**You use the C4Switch class to create and manage the On/Off buttons you see, for example, in the preferences (Settings) for such services as Airplane Mode. These objects are known as switches.
@@ -20,22 +31,22 @@
 /**Creates and returns a C4Switch object.
  @return A new C4Switch.
  */
-+(C4Switch *)switch;
++ (instancetype)switch;
 
 /**Creates and returns a C4Switch object.
-
+ 
  C4Switch overrides the frame and enforces a size appropriate for the control.
  @param frame A rectangle defining the frame of the C4Switch object. The size components of this rectangle are ignored.
  @return a new C4Switch.
  */
-+(C4Switch *)switch:(CGRect)frame;
++ (instancetype)switch:(CGRect)frame;
 
 #pragma mark - Initializing the Switch Object
 ///@name Initializing the Switch Object
 /**Returns an initialized switch object.
  
  C4Switch overrides initWithFrame: and enforces a size appropriate for the control.
-
+ 
  @param frame A rectangle defining the frame of the C4Switch object. The size components of this rectangle are ignored.
  @return An initialized UISwitch object or nil if the object could not be initialized.
  */
@@ -46,13 +57,13 @@
 /**A Boolean value that determines the off/on state of the switch.
  
  This property allows you to retrieve and set (without animation) a value determining whether the C4Switch object is on or off.
-*/
-@property (readwrite, nonatomic, getter=isOn) BOOL on;
+ */
+@property(nonatomic, getter=isOn) BOOL on;
 
 /**Set the state of the switch to On or Off, optionally animating the transition.
  
  Setting the switch to either position does not result in an action message being sent.
-
+ 
  @param on YES if the switch should be turned to the On position; NO if it should be turned to the Off position. If the switch is already in the designated position, nothing happens.
  @param animated YES to animate the “flipping” of the switch; otherwise NO.
  */
@@ -62,18 +73,18 @@
 ///@name Customizing the Appearance of the Switch
 /**The color used to tint the appearance of the switch when it is turned on.
  */
-@property (readwrite, nonatomic, strong) UIColor *onTintColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) UIColor *onTintColor;
 /**The color used to tint the appearance when the switch is disabled.
  
  If you do not specify a color for the thumbTintColor property, this property is also used to tint the thumb of the switch.
  */
-@property (readwrite, nonatomic, strong) UIColor *tintColor NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) UIColor *tintColor;
 
 /**The color used to tint the appearance of the thumb.
  
  If the value of this property is nil, the tint color is derived from the value in the tintColor property.
  */
-@property (readwrite, nonatomic, strong) UIColor *thumbTintColor NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) UIColor *thumbTintColor;
 
 /**The image displayed when the switch is in the on position.
  
@@ -81,7 +92,7 @@
  
  The size of this image must be less than or equal to 77 points wide and 27 points tall. If you specify larger images, the edges may be clipped.
  */
-@property (readwrite, nonatomic, strong) C4Image *onImage NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) C4Image *onImage;
 
 /**The image displayed while the switch is in the off position.
  
@@ -89,20 +100,12 @@
  
  The size of this image must be less than or equal to 77 points wide and 27 points tall. If you specify larger images, the edges may be clipped.
  */
-@property (readwrite, nonatomic, strong) C4Image *offImage NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) C4Image *offImage;
 
 #pragma mark - Accessing The UISwitch
 ///@name Accessing The UISwitch
 /**The UISwitch object which is the primary subview of the receiver.
- */@property (readonly, nonatomic) UISwitch *UISwitch;
-
-#pragma mark - Default Style
-///@name Default Style
-/**Returns the appearance proxy for the object, cast as a C4Switch rather than the standard (id) cast provided by UIAppearance.
- 
- You use this method to grab the appearance object that allows you to change the default style for C4Switch objects.
- 
- @return The appearance proxy for the receiver, cast as a C4Switch.
  */
-+(C4Switch *)defaultStyle;
+@property(nonatomic, readonly) UISwitch *UISwitch;
+
 @end

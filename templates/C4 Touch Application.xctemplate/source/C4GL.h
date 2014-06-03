@@ -1,10 +1,21 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4GL.h
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 12-03-08.
-//  Copyright (c) 2012 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4Control.h"
 
@@ -20,7 +31,7 @@
  - You cannot specify the background color of a C4GL object, instead you should do this in your rendering object by calling glClearColor() with the specific background color you wish to use
  */
 
-@interface C4GL : C4Control {    
+@interface C4GL : C4Control {
 }
 #pragma mark - Creating C4GL Objects
 ///@name Creating C4GL Objects
@@ -32,10 +43,10 @@
  @return a new C4GL object.
  */
 
-+(C4GL *)glWithFrame:(CGRect)frame;
++ (instancetype)glWithFrame:(CGRect)frame;
 
 /**Initializes a C4GL object with a specific renderer.
-
+ 
  @param renderer A rendering object which conforms to the C4EAGLESRenderer protocol.
  */
 -(id)initWithRenderer:(id <C4EAGLESRenderer>)renderer;
@@ -58,11 +69,11 @@
  
  @warning In the current version of C4 the only kind of renderer is [C4GL1Renderer](C4GL1Renderer) which only allows you to draw with OpenGL ES 1.x function calls.
  */
-@property (readwrite, strong, nonatomic) id <C4EAGLESRenderer> renderer;
+@property(nonatomic, strong) id <C4EAGLESRenderer> renderer;
 
 /**Specifies a readonly variable used to determine if the renderer is currently animating.
  */
-@property (readonly, nonatomic, getter=isAnimating) BOOL animating;
+@property(nonatomic, readonly, getter=isAnimating) BOOL animating;
 
 /**Specifies an interval which determines how often frames are rendered.
  
@@ -73,7 +84,7 @@
  at 60 times a second. A frame interval setting of less than one results in undefined
  behavior, and is prevented from being set.
  */
-@property (nonatomic) NSInteger animationFrameInterval;
+@property(nonatomic) NSInteger animationFrameInterval;
 
 /**Specifies that drawing should happen only one time.
  
@@ -81,24 +92,6 @@
  
  Set this property to YES if you want to draw something but aren't animating its contents. If you are not animating and this property is set to NO the rendering call will be made at the specified frame rate (default 60fps) and you'll be wasting a lot of resources.
  */
-@property (atomic) BOOL drawOnce;
-
-#pragma mark - Copying
-///@name Copying
-/**Creates a copy of the receiver.
- @param zone The zone for copying. Leave this as nil for normal results.
- @return a copy of the receiver.
- */
--(C4GL *)copyWithZone:(NSZone *)zone;
-
-#pragma mark - Default Style
-///@name Default Style
-/**Returns the appearance proxy for the object, cast as a C4GL rather than the standard (id) cast provided by UIAppearance.
- 
- You use this method to grab the appearance object that allows you to change the default style for C4GL objects.
- 
- @return The appearance proxy for the receiver, cast as a C4GL.
- */
-+(C4GL *)defaultStyle;
+@property(nonatomic) BOOL drawOnce;
 
 @end

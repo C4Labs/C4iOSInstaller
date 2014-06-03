@@ -1,10 +1,21 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Math.h
-//  C4Core
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 12-02-07.
-//  Copyright (c) 2012 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4Object.h"
 
@@ -19,13 +30,10 @@
 
 @interface C4Math : C4Object
 
-#pragma mark Singleton
-+(C4Math *)sharedManager;
-
 #pragma mark Arithmetic
 /// @Arithmetic
 /** Computes the absolute value of an integer number
-
+ 
  @param value The number to be converted to its absolute value
  @return NSInteger returns the positive whole (integer), if the given number is a floating-point the method first converts it to an integer
  */
@@ -71,13 +79,13 @@
  Raises the mathematical constant e to the power of a given value [for more details](http://en.wikipedia.org/wiki/Exponential_function)
  
  @param value The value to use in the exponential function.
-
+ 
  @return CGFloat Returns the calucation of of e ^ _value_
  */
 +(CGFloat)exp:(CGFloat)value;
 
 /** Rounds a floating-point value
-  
+ 
  @param value The number to round up
  @return NSInteger returns the largest whole number no greater than _value_
  */
@@ -145,7 +153,7 @@
 +(CGFloat)minOfA:(CGFloat)a B:(CGFloat)b;
 
 /**Calculates the smaller value of three given numbers
-
+ 
  @param a A given number to compare
  @param b A given number to compare
  @param c A given number to compare
@@ -178,7 +186,7 @@
  
  Example: round:0.3 = 0.0
  Example: round:0.8 = 1.0
-
+ 
  @param value The number to round
  @return NSInteger returns the closest whole number to a given _value_
  */
@@ -192,7 +200,7 @@
  Example: square:2 = 2 * 2 = 4
  
  @param value The number to square
-
+ 
  @return CGFloat The result of _value_ multiplied by itself
  */
 +(CGFloat)square:(CGFloat)value;
@@ -212,50 +220,50 @@
 
 /**Calculates the arc cosine of a given value.
  
- @param value The number for which to calculate the arccosine 
+ @param value The number for which to calculate the arccosine
  @return CGFloat A value in the range of (0..PI)
  */
 +(CGFloat)acos:(CGFloat)value;
 
 /**Calculates the arc sine of a given value.
  
- @param value The number for which to calculate the arcsine 
+ @param value The number for which to calculate the arcsine
  @return CGFloat A value in the range of (-PI/2..+PI/2)
  */
 +(CGFloat)asin:(CGFloat)value;
 
 /**Calculates the arc tangent of a single given value.
  
- @param value The number for which to calculate the arctanent 
+ @param value The number for which to calculate the arctanent
  @return CGFloat A value in the range of (-PI/2..+PI/2)
  */
 +(CGFloat)atan:(CGFloat)value;
 
 /**Calculates the arc tangent of a two given values.
  
- @param y The y value for which to calculate the arctangent2 
- @param x The x value for which to calculate the arctangent2 
+ @param y The y value for which to calculate the arctangent2
+ @param x The x value for which to calculate the arctangent2
  @return CGFloat The value of th earc tangent of y/x, using the signs of both arguments to determine the quadrant of the return value.
  */
 +(CGFloat)atan2Y:(CGFloat)y X:(CGFloat)x;
 
 /**Calculates the cosine of a value
  
- @param value The number for which to calculate the cosine 
+ @param value The number for which to calculate the cosine
  @return CGFloat The cosine of _value_ measured in RADIANS.
  */
 +(CGFloat)cos:(CGFloat)value;
 
 /**Calculates the sine of a value
  
- @param value The number for which to calculate the sine 
+ @param value The number for which to calculate the sine
  @return CGFloat The sine of _value_ measured in RADIANS.
  */
 +(CGFloat)sin:(CGFloat)value;
 
 /**Calculates the tangent of a value
  
- @param value The number for which to calculate the tan 
+ @param value The number for which to calculate the tan
  @return CGFloat The tangent of _value_ measured in RADIANS.
  */
 +(CGFloat)tan:(CGFloat)value;
@@ -263,14 +271,14 @@
 #pragma mark Random
 /// @Random
 
-/**Calculates a random value 
+/**Calculates a random value
  
  @param value The highest possible random number to return
  @return NSInteger A random integer between 0 and _value_
  */
 +(NSInteger)randomInt:(NSInteger)value;
 
-/**Calculates a random value 
+/**Calculates a random value
  
  @param a The lowest possible random number to return
  @param b The highest possible random number to return
@@ -281,14 +289,14 @@
 #pragma mark Math Conversion Functions
 /// @Conversion
 
-/**Converts a radian value to an equivalent in degrees 
+/**Converts a radian value to an equivalent in degrees
  
  @param radianValue A number specificed in radians to be converted to degrees
  @return NSInteger A integer, corresponding to the given _radianValue_
  */
 NSInteger RadiansToDegrees(CGFloat radianValue);
 
-/**Converts a degree value to an equivalent in radians 
+/**Converts a degree value to an equivalent in radians
  
  @param degreeValue A number specificed in degrees to be converted to radians
  @return CGFloat A floating-point value, corresponding to the given _degreeValue_
@@ -309,7 +317,7 @@ NSInteger FloatToRGB(CGFloat floatValue);
  This conversion function assumes that the color coordinate space is 0 .. 1.0  which is mapped to the RGB space of 0 .. 255
  
  @param rgbValue A number specificed in RGB value (i.e. 0 to 255) to be converted to a float (i.e. 0.0f to 1.0f)
-@return NSInteger A floating limited to the range (0.0f..1.0f), corresponding to the given _rgbValue_
+ @return NSInteger A floating limited to the range (0.0f..1.0f), corresponding to the given _rgbValue_
  */
 CGFloat RGBToFloat(NSInteger rgbValue);
 

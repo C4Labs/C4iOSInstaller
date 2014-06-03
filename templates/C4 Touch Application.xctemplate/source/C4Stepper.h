@@ -1,10 +1,21 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Stepper.h
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by moi on 13-03-05.
-//  Copyright (c) 2013 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4Control.h"
 /**A stepper control provides a user interface for incrementing or decrementing a value.
@@ -16,12 +27,12 @@
 @interface C4Stepper : C4Control <C4UIElement>
 
 /**Creates and returns a new C4Stepper object.
-
+ 
  The primary subview of C4Stepper is a UIStepper.
  
  @return a new C4Stepper.
  */
-+(C4Stepper *)stepper;
++ (instancetype)stepper;
 
 #pragma mark - Configuring the Stepper
 ///@name Configuring the Stepper
@@ -32,7 +43,7 @@
  
  The default value for this property is YES.
  */
-@property(nonatomic,getter = isContinuous) BOOL continuous;
+@property(nonatomic, getter = isContinuous) BOOL continuous;
 
 /**The automatic vs. nonautomatic repeat state of the stepper.
  
@@ -56,7 +67,7 @@
  
  The default value for this property is 0.
  */
-@property(readwrite, nonatomic) CGFloat minimumValue;
+@property(nonatomic) CGFloat minimumValue;
 
 /**The highest possible numeric value for the stepper.
  
@@ -64,7 +75,7 @@
  
  The default value of this property is 5.
  */
-@property(readwrite, nonatomic) CGFloat maximumValue;
+@property(nonatomic) CGFloat maximumValue;
 
 /**The step, or increment, value for the stepper.
  
@@ -72,7 +83,7 @@
  
  The default value for this property is 1.
  */
-@property(readwrite, nonatomic) CGFloat stepValue;
+@property(nonatomic) CGFloat stepValue;
 
 #pragma mark - Accessing the Stepper’s Value
 ///@name Accessing the Stepper’s Value
@@ -82,7 +93,7 @@
  
  The default value for this property is 0. This property is clamped at its lower extreme to minimumValue and is clamped at its upper extreme to maximumValue.
  */
-@property(readwrite, nonatomic) CGFloat value;
+@property(nonatomic) CGFloat value;
 
 #pragma mark - Customizing Appearance
 ///@name Customizing Appearance
@@ -90,29 +101,29 @@
  
  The value of this property is nil by default.
  */
-@property(readwrite, nonatomic, strong) UIColor *tintColor NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) UIColor *tintColor;
 /**Returns the background image associated with the specified control state.
  
  @param state The control state in which the image is displayed (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).
  @return The background image used by the control when it is in the specified state.
  */
--(C4Image*)backgroundImageForState:(C4ControlState)state NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
+-(C4Image*)backgroundImageForState:(C4ControlState)state;
 
 /**Sets the background image for the control when it is in the specified state.
  
  For good results, image must be a stretchable image.
-
+ 
  @param image The background image to use for the specified state.
  @param state The control state in which you want to display the image (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).
  */
--(void)setBackgroundImage:(C4Image*)image forState:(C4ControlState)state NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
+-(void)setBackgroundImage:(C4Image*)image forState:(C4ControlState)state;
 
 /**Returns the image used for the decrement glyph of the control.
  
  @param state The control state in which the image is displayed (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).
  @return The image used for the decrement glyph of the control.
  */
--(C4Image *)decrementImageForState:(C4ControlState)state NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
+-(C4Image *)decrementImageForState:(C4ControlState)state;
 
 /**Sets the image to use for the decrement glyph of the control.
  
@@ -121,7 +132,7 @@
  @param image The image to use for the decrement glyph.
  @param state The control state in which you want to display the image (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).
  */
--(void)setDecrementImage:(C4Image *)image forState:(C4ControlState)state NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
+-(void)setDecrementImage:(C4Image *)image forState:(C4ControlState)state;
 
 /**Returns the divider image for the given combination of left and right states.
  
@@ -129,7 +140,7 @@
  @param rightState The state of the right side of the control (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).
  @return The image used for the specified combination of left and right states.
  */
--(C4Image*)dividerImageForLeftSegmentState:(C4ControlState)leftState rightSegmentState:(C4ControlState)rightState NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
+-(C4Image*)dividerImageForLeftSegmentState:(C4ControlState)leftState rightSegmentState:(C4ControlState)rightState;
 
 /**Sets the image to use for the given combination of left and right states.
  
@@ -137,37 +148,28 @@
  @param leftState The state of the left side of the control (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).
  @param rightState The state of the right side of the control (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).
  */
--(void)setDividerImage:(C4Image*)image forLeftSegmentState:(C4ControlState)leftState rightSegmentState:(C4ControlState)rightState NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
+-(void)setDividerImage:(C4Image*)image forLeftSegmentState:(C4ControlState)leftState rightSegmentState:(C4ControlState)rightState;
 
 /**Returns the image used for the increment glyph of the control.
  
  @param state The control state in which the image is displayed (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).
  @return The image used for the increment glyph of the control.
  */
--(C4Image *)incrementImageForState:(C4ControlState)state NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
+-(C4Image *)incrementImageForState:(C4ControlState)state;
 
 /**Sets the image to use for the increment glyph of the control
  
  The image you specify is composited on top of the control’s background to create the final control. If you do not specify a custom image, a plus (+) glyph is used.
-
+ 
  @param image The image to use for the increment glyph.
  @param state The control state (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).
  */
--(void)setIncrementImage:(C4Image *)image forState:(C4ControlState)state NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
+-(void)setIncrementImage:(C4Image *)image forState:(C4ControlState)state;
 
 #pragma mark - Accessing The UIStepper
 ///@name Accessing The UIStepper
 /**The UIStepper object which is the primary subview of the receiver.
  */
-@property (readonly, nonatomic, strong) UIStepper *UIStepper;
+@property(nonatomic, readonly, strong) UIStepper *UIStepper;
 
-#pragma mark - Default Style
-///@name Default Style
-/**Returns the appearance proxy for the object, cast as a C4Stepper rather than the standard (id) cast provided by UIAppearance.
- 
- You use this method to grab the appearance object that allows you to change the default style for C4Stepper objects.
- 
- @return The appearance proxy for the receiver, cast as a C4Stepper.
- */
-+(C4Stepper *)defaultStyle;
 @end

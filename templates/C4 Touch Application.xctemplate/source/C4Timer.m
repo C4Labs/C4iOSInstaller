@@ -1,10 +1,21 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Timer.m
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 12-06-05.
-//  Copyright (c) 2012 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4Timer.h"
 
@@ -13,37 +24,37 @@
 -(id)initWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats;
 -(id)initWithFireDate:(NSDate *)date interval:(CGFloat)seconds target:(id)target method:(NSString *)methodName userInfo:(id)userInfo repeats:(BOOL)repeats;
 
-@property (readwrite, atomic, strong) NSTimer *timer;
-@property (readwrite, nonatomic) BOOL timerCanStart;
-@property (readwrite, atomic, strong) NSMutableDictionary *propertiesDictionary;
+@property(nonatomic, strong) NSTimer *timer;
+@property(nonatomic) BOOL timerCanStart;
+@property(nonatomic, strong) NSMutableDictionary *propertiesDictionary;
 @end
 
 @implementation C4Timer
 
-+(C4Timer *)automaticTimerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats {
-    return [C4Timer automaticTimerWithInterval:seconds 
-                                        target:object 
-                                        method:methodName 
-                                      userInfo:nil 
++ (instancetype)automaticTimerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats {
+    return [C4Timer automaticTimerWithInterval:seconds
+                                        target:object
+                                        method:methodName
+                                      userInfo:nil
                                        repeats:repeats];
 }
 
-+(C4Timer *)automaticTimerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats {
++ (instancetype)automaticTimerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats {
     C4Timer *timer = [[C4Timer alloc] initScheduledTimerWithInterval:seconds
-                                                              target:object 
-                                                              method:methodName 
-                                                            userInfo:infoObject 
+                                                              target:object
+                                                              method:methodName
+                                                            userInfo:infoObject
                                                              repeats:repeats];
     return timer;
 }
 -(id)initScheduledTimerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats {
     self = [super init];
     if(self != nil) {
-        _timer = [NSTimer scheduledTimerWithTimeInterval:seconds 
-                                                      target:object 
-                                                    selector:NSSelectorFromString(methodName) 
-                                                    userInfo:infoObject
-                                                     repeats:repeats];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:seconds
+                                                  target:object
+                                                selector:NSSelectorFromString(methodName)
+                                                userInfo:infoObject
+                                                 repeats:repeats];
         
         if (self.propertiesDictionary != nil) {
             [self.propertiesDictionary removeAllObjects];
@@ -66,18 +77,18 @@
     return self;
 }
 
-+(C4Timer *)timerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats {
++ (instancetype)timerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats {
     return [C4Timer timerWithInterval:seconds
-                               target:object 
+                               target:object
                                method:methodName
-                             userInfo:nil 
+                             userInfo:nil
                               repeats:repeats];
 }
 
-+(C4Timer *)timerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats {
-    C4Timer *timer = [[C4Timer alloc] initWithInterval:seconds 
-                                                target:object 
-                                                method:methodName 
++ (instancetype)timerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats {
+    C4Timer *timer = [[C4Timer alloc] initWithInterval:seconds
+                                                target:object
+                                                method:methodName
                                               userInfo:infoObject
                                                repeats:repeats];
     return timer;
@@ -86,14 +97,14 @@
 -(id)initWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats {
     self = [super init];
     if(self != nil) {
-        if([_timer isValid]) 
+        if([_timer isValid])
             [_timer invalidate];
-
+        
         _timer = [NSTimer timerWithTimeInterval:seconds
-                                             target:object
-                                           selector:NSSelectorFromString(methodName)
-                                           userInfo:infoObject
-                                            repeats:repeats];
+                                         target:object
+                                       selector:NSSelectorFromString(methodName)
+                                       userInfo:infoObject
+                                        repeats:repeats];
         
         if (self.propertiesDictionary != nil) {
             [self.propertiesDictionary removeAllObjects];
@@ -110,13 +121,13 @@
             (self.propertiesDictionary)[@"infoObject"] = infoObject;
         }
         [self.propertiesDictionary setValue:@(repeats) forKey:@"repeats"];
-
+        
         _timerCanStart = YES;
     }
     return self;
 }
 
-+(C4Timer *)timerWithFireDate:(NSDate *)date interval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats {
++ (instancetype)timerWithFireDate:(NSDate *)date interval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats {
     C4Timer *timer = [[C4Timer alloc] initWithFireDate:date
                                               interval:seconds
                                                 target:object
@@ -125,7 +136,7 @@
                                                repeats:repeats];
     return timer;
 }
-+(C4Timer *)timerWithFireDate:(NSDate *)date interval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats {
++ (instancetype)timerWithFireDate:(NSDate *)date interval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats {
     C4Timer *timer = [[C4Timer alloc] initWithFireDate:date
                                               interval:seconds
                                                 target:object
@@ -138,21 +149,21 @@
 -(id)initWithFireDate:(NSDate *)date interval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats {
     return [self initWithFireDate:date
                          interval:seconds
-                           target:object 
-                           method:methodName 
-                         userInfo:nil 
+                           target:object
+                           method:methodName
+                         userInfo:nil
                           repeats:repeats];
 }
 -(id)initWithFireDate:(NSDate *)date interval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats {
     self = [super init];
     if(self != nil) {
         _timer = [[NSTimer  alloc] initWithFireDate:date
-                                               interval:seconds
-                                                 target:object
-                                               selector:NSSelectorFromString(methodName)
-                                               userInfo:infoObject
-                                                repeats:repeats];
-
+                                           interval:seconds
+                                             target:object
+                                           selector:NSSelectorFromString(methodName)
+                                           userInfo:infoObject
+                                            repeats:repeats];
+        
         [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
         
         if (self.propertiesDictionary != nil) {
@@ -170,7 +181,7 @@
             (self.propertiesDictionary)[@"infoObject"] = infoObject;
         }
         [self.propertiesDictionary setValue:@(repeats) forKey:@"repeats"];
-
+        
         _timerCanStart = YES;
     }
     return self;
@@ -198,11 +209,11 @@
         if (_timer.isValid) {
             [_timer invalidate];
         }
-        _timer = [NSTimer scheduledTimerWithTimeInterval:seconds 
-                                             target:target
-                                           selector:NSSelectorFromString(methodName) 
-                                           userInfo:infoObject 
-                                            repeats:repeats];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:seconds
+                                                  target:target
+                                                selector:NSSelectorFromString(methodName)
+                                                userInfo:infoObject
+                                                 repeats:repeats];
         
         _timerCanStart = NO;
     }

@@ -1,10 +1,21 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Timer.h
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 12-06-05.
-//  Copyright (c) 2012 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4Object.h"
 
@@ -23,7 +34,7 @@
  @param methodName The name of the method that will be sent to the object
  @param repeats A boolean value that specifies whether or not the timer will continuously fire
  */
-+(C4Timer *)automaticTimerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats;
++ (instancetype)automaticTimerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats;
 
 /**Creates and returns a new C4Timer object that will begin firing automatically, it will also pass an object to the method it triggers.
  
@@ -33,7 +44,7 @@
  @param infoObject The object to pass to the method being called
  @param repeats A boolean value that specifies whether or not the timer will continuously fire
  */
-+(C4Timer *)automaticTimerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats;
++ (instancetype)automaticTimerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats;
 
 /**Creates and returns a new C4Timer object that will begin firing automatically.
  
@@ -44,7 +55,7 @@
  @param methodName The name of the method that will be sent to the object
  @param repeats A boolean value that specifies whether or not the timer will continuously fire
  */
-+(C4Timer *)timerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats;
++ (instancetype)timerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats;
 
 /**Creates and returns a new C4Timer object that will begin firing automatically, it will also pass an object to the method it triggers.
  
@@ -56,7 +67,7 @@
  @param infoObject The object to pass to the method being called
  @param repeats A boolean value that specifies whether or not the timer will continuously fire
  */
-+(C4Timer *)timerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats;
++ (instancetype)timerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats;
 
 /**Creates and returns a new C4Timer object that will begin firing at a specified date.
  
@@ -66,7 +77,7 @@
  @param methodName The name of the method that will be sent to the object
  @param repeats A boolean value that specifies whether or not the timer will continuously fire
  */
-+(C4Timer *)timerWithFireDate:(NSDate *)date interval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats;
++ (instancetype)timerWithFireDate:(NSDate *)date interval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats;
 
 /**Creates and returns a new C4Timer object that will begin firing at a specified date, it will also pass an object to the method it triggers.
  
@@ -77,7 +88,7 @@
  @param infoObject The object to pass to the method being called
  @param repeats A boolean value that specifies whether or not the timer will continuously fire
  */
-+(C4Timer *)timerWithFireDate:(NSDate *)date interval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats;
++ (instancetype)timerWithFireDate:(NSDate *)date interval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats;
 
 #pragma mark - Firing a Timer
 ///@name Firing a Timer
@@ -95,7 +106,7 @@
 -(void)start;
 
 /**Calling this method will stop a timer from firing continuously.
-
+ 
  This method effectively invalidates the timer.
  */
 -(void)stop;
@@ -112,9 +123,9 @@
 
 /**Returns a Boolean value that indicates whether the receiver is currently valid.
  
- @return YES if the receiver is still capable of firing or NO if the timer has been invalidated and is no longer capable of firing. 
+ @return YES if the receiver is still capable of firing or NO if the timer has been invalidated and is no longer capable of firing.
  */
-@property (readonly, nonatomic) BOOL isValid;
+@property(nonatomic, readonly) BOOL isValid;
 
 /**Returns the date at which the receiver will fire.
  
@@ -124,18 +135,18 @@
  
  @return The date at which the receiver will fire. If the timer is no longer valid, this method returns the last date at which the timer fired.
  */
-@property (readwrite, nonatomic, weak) NSDate *fireDate;
+@property(nonatomic, strong) NSDate *fireDate;
 
 /**Returns the receiver’s time interval.
  
  The receiver’s time interval. If the receiver is a non-repeating timer, returns 0 (even if a time interval was set).
  */
-@property (readonly, nonatomic) CGFloat timeInterval;
+@property(nonatomic, readonly) CGFloat timeInterval;
 
 /**Returns the receiver's userInfo object. The userInfo is the object that will be passed to the method the timer is targeting.
  
  Do not invoke this method after the timer is invalidated. Use isValid to test whether the timer is valid.
  */
-@property (readonly, nonatomic, weak) id userInfo;
+@property(nonatomic, readonly) id userInfo;
 
 @end

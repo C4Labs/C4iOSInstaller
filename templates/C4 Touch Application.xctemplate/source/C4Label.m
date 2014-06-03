@@ -1,36 +1,44 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Label.m
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 12-02-27.
-//  Copyright (c) 2012 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
+#import "C4AnimationHelper.h"
 #import "C4Label.h"
 
 @interface C4Label()
-//@property (readwrite, atomic) BOOL shouldAutoreverse;
-@property (readonly, atomic) NSArray *localStylePropertyNames;
+@property(nonatomic, readonly) NSArray *localStylePropertyNames;
 @end
 
 @implementation C4Label
-@synthesize textShadowColor = _textShadowColor;
-@synthesize width = _width, height = _height;
-@synthesize size = _size;
 
 -(id)init {
     return [self initWithFrame:CGRectZero];
 }
 
-+(C4Label *)labelWithText:(NSString *)text {
++ (instancetype)labelWithText:(NSString *)text {
     return [[C4Label alloc] initWithText:text];
 }
 
-+(C4Label *)labelWithText:(NSString *)text font:(C4Font *)font {
++ (instancetype)labelWithText:(NSString *)text font:(C4Font *)font {
     return [[C4Label alloc] initWithText:text font:font];
 }
 
-+(C4Label *)labelWithText:(NSString *)text font:(C4Font *)font frame:(CGRect)frame {
++ (instancetype)labelWithText:(NSString *)text font:(C4Font *)font frame:(CGRect)frame {
     return [[C4Label alloc] initWithText:text font:font frame:frame];
 }
 
@@ -49,36 +57,28 @@
 -(id)initWithText:(NSString *)text font:(C4Font *)font frame:(CGRect)frame {
     self = [self initWithFrame:frame];
     if(self != nil) {
-        self.text = text; 
+        self.text = text;
         self.font = font;
     }
     return self;
 }
 
--(id)initWithUILabel:(UILabel *)aLabel {
-    self = [super initWithFrame:aLabel.frame];
+-(id)initWithUILabel:(UILabel *)label {
+    self = [super initWithView:label];
     if(self != nil) {
-        _label = [aLabel copy];
-        [self addSubview:_label];
+        _label = label;
         [self setup];
     }
     return self;
 }
 
 -(id)initWithFrame:(CGRect)frame {
-    if(CGRectEqualToRect(frame, CGRectZero)) frame = CGRectMake(0, 0, 1, 1);
-    self = [super initWithFrame:frame];
-    if(self != nil) {
-        _label = [[UILabel alloc] initWithFrame:self.bounds];
-        _label.textColor = self.textColor;
-        _label.highlightedTextColor = self.highlightedTextColor;
-        _label.backgroundColor = [UIColor clearColor];
-        _label.shadowColor = [UIColor clearColor];
-
-        [self addSubview:(UILabel *)_label];
-        [self setup];
-    }
-    return self;
+    UILabel* label = [[UILabel alloc] initWithFrame:frame];
+    label.textColor = self.textColor;
+    label.highlightedTextColor = self.highlightedTextColor;
+    label.backgroundColor = [UIColor clearColor];
+    label.shadowColor = [UIColor clearColor];
+    return [self initWithUILabel:label];
 }
 
 -(void)dealloc {
@@ -119,31 +119,11 @@
 }
 
 -(void)setTextShadowColor:(UIColor *)shadowColor {
-    if(self.animationDelay == 0.0f) self.label.shadowColor = shadowColor;
-    else [self performSelector:@selector(_setTextShadowColor:) withObject:shadowColor afterDelay:self.animationDelay];
-}
--(void)_setTextShadowColor:(UIColor *)shadowColor {
-    _textShadowColor = shadowColor;
     self.label.shadowColor = shadowColor;
 }
 
 -(void)setTextShadowOffset:(CGSize)shadowOffset {
-    if (self.animationDelay == 0.0f) [self _setTextShadowOffset:[NSValue valueWithCGSize:shadowOffset]];
-    else [self performSelector:@selector(_setTextShadowOffset:) withObject:[NSValue valueWithCGSize:shadowOffset] afterDelay:self.animationDelay];
-}
--(void)_setTextShadowOffset:(NSValue *)shadowOffset {
-    _textShadowOffset = [shadowOffset CGSizeValue];
-    self.label.shadowOffset = [shadowOffset CGSizeValue];
-}
-
--(void)setEnabled:(BOOL)enabled {
-    if(self.animationDelay == 0.0f) [self _setEnabled:@(enabled)];
-    else [self performSelector:@selector(_setEnabled:) withObject:@(enabled) afterDelay:self.animationDelay];
-}
-
--(void)_setEnabled:(NSNumber *)enabled {
-    [super setEnabled:[enabled boolValue]];//weeeeeeird bug if this isn't included
-    self.label.enabled = [enabled boolValue];
+    self.label.shadowOffset = shadowOffset;
 }
 
 -(C4Font *)font {
@@ -169,7 +149,7 @@
 -(void)setTextColor:(UIColor *)textColor {
     if(self.animationDelay == 0.0f) [self _setTextColor:textColor];
     else [self performSelector:@selector(_setTextColor:) withObject:textColor afterDelay:self.animationDelay];
-
+    
 }
 -(void)_setTextColor:(UIColor *)textColor {
     self.label.textColor = textColor;
@@ -220,7 +200,7 @@
     else [self performSelector:@selector(_setTextAlignment:) withObject:@(textAlignment) afterDelay:self.animationDelay];
 }
 -(void)_setTextAlignment:(NSNumber *)textAlignment {
-    self.label.textAlignment = (UITextAlignment)[textAlignment intValue];
+    self.label.textAlignment = (NSTextAlignment)[textAlignment intValue];
 }
 
 -(C4TextAlignment)textAlignment {
@@ -232,7 +212,7 @@
     else [self performSelector:@selector(_setLineBreakMode:) withObject:@(lineBreakMode) afterDelay:self.animationDelay];
 }
 -(void)_setLineBreakMode:(NSNumber *)lineBreakMode {
-    self.label.lineBreakMode = (UILineBreakMode)[lineBreakMode integerValue];
+    self.label.lineBreakMode = (NSLineBreakMode)[lineBreakMode integerValue];
 }
 
 -(C4LineBreakMode)lineBreakMode {
@@ -288,31 +268,21 @@
     else [self performSelector:@selector(_setBackgroundFilters:) withObject:backgroundFilters afterDelay:self.animationDelay];
 }
 -(void)_setBackgroundFilters:(NSArray *)backgroundFilters {
-    [self.backingLayer animateBackgroundFilters:backgroundFilters];
+    [self.animationHelper animateKeyPath:@"backgroundFilters" toValue:backgroundFilters];
 }
 
 -(void)setCompositingFilter:(id)compositingFilter {
-    [self.backingLayer performSelector:@selector(_setCompositingFilter:) withObject:compositingFilter afterDelay:self.animationDelay];
+    [self.animationHelper animateKeyPath:@"compositingFilter" toValue:compositingFilter];
 }
--(void)_setCompositingFilter:(id)compositingFilter {
-    [self.backingLayer animateCompositingFilter:compositingFilter];
-}
+
 
 #pragma mark C4Layer-backed object methods
--(C4Layer *)backingLayer {
-    return (C4Layer *)self.layer;
-}
-
-+(Class)layerClass {
-    return [C4Layer class];
-}
 
 -(CGFloat)width {
     return self.bounds.size.width;
 }
 
 -(void)setWidth:(CGFloat)width {
-    _width = width;
     CGRect newFrame = self.frame;
     newFrame.size.width = width;
     self.frame = newFrame;
@@ -323,7 +293,6 @@
 }
 
 -(void)setHeight:(CGFloat)height {
-    _height = height;
     CGRect newFrame = self.frame;
     newFrame.size.height = height;
     self.frame = newFrame;
@@ -334,84 +303,22 @@
 }
 
 -(void)setSize:(CGSize)size {
-    _size = size;
     CGRect newFrame = CGRectZero;
     newFrame.origin = self.origin;
     newFrame.size = size;
     self.frame = newFrame;
 }
 
--(NSDictionary *)style {
-    NSMutableDictionary *localStyle = [NSMutableDictionary dictionaryWithDictionary:
-                                       @{
-                                       @"adjustsFontSizeToFitWidth":@(self.adjustsFontSizeToFitWidth),
-                                       @"baselineAdjustment":@(self.baselineAdjustment),
-                                       @"highlighted":@(self.highlighted),
-                                       @"lineBreakMode":@(self.lineBreakMode),
-                                       @"numberOfLines":@(self.numberOfLines),
-                                       @"textAlignment":@(self.textAlignment),
-                                       @"textShadowOffset":[NSValue valueWithCGSize:self.textShadowOffset]
-                                       }];
-    if (self.font != nil) [localStyle setObject:self.font forKey:@"font"];
-    if (self.highlightedTextColor != nil) [localStyle setObject:self.highlightedTextColor forKey:@"highlightedTextColor"];
-    if (self.textColor != nil) [localStyle setObject:self.textColor forKey:@"textColor"];
-    if (self.textShadowColor != nil) [localStyle setObject:self.textShadowColor forKey:@"textShadowColor"];
-    
-    NSMutableDictionary *localAndSuperStyle = [NSMutableDictionary dictionaryWithDictionary:localStyle];
-    localStyle = nil;
-    
-    [localAndSuperStyle addEntriesFromDictionary:[super style]];
-    return (NSDictionary *)localAndSuperStyle;
+
+#pragma mark Templates
+
++ (C4Template *)defaultTemplate {
+    static C4Template* template;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        template = [C4Template templateFromBaseTemplate:[super defaultTemplate] forClass:self];
+    });
+    return template;
 }
 
--(void)setStyle:(NSDictionary *)style {
-    [super setStyle:style];
-    
-    NSArray *styleKeys = [style allKeys];
-    NSString *key;
-    
-    //Local Style Values
-    key = @"adjustsFontSizeToFitWidth";
-    if([styleKeys containsObject:key]) self.adjustsFontSizeToFitWidth = [[style objectForKey:key] boolValue];
-    
-    key = @"baselineAdjustment";
-    if([styleKeys containsObject:key]) self.baselineAdjustment = (C4BaselineAdjustment)[[style objectForKey:key] integerValue];
-    
-    key = @"font";
-    if([styleKeys containsObject:key]) self.font = [style objectForKey:key];
-    
-    key = @"highlighted";
-    if([styleKeys containsObject:key]) self.highlighted = [[style objectForKey:key] boolValue];
-    
-    key = @"highlightedTextColor";
-    if([styleKeys containsObject:key]) self.highlightedTextColor = [style objectForKey:key];
-    
-    key = @"lineBreakMode";
-    if([styleKeys containsObject:key]) self.lineBreakMode = (C4LineBreakMode)[[style objectForKey:key] integerValue];
-    
-    key = @"numberOfLines";
-    if([styleKeys containsObject:key]) self.numberOfLines = [[style objectForKey:key] integerValue];
-    
-    key = @"textAlignment";
-    if([styleKeys containsObject:key]) self.textAlignment = (C4TextAlignment)[[style objectForKey:key] integerValue];
-    
-    key = @"textColor";
-    if([styleKeys containsObject:key]) self.textColor = [style objectForKey:key];
-
-    key = @"textShadowColor";
-    if([styleKeys containsObject:key]) self.textShadowColor = [style objectForKey:key];
-
-    key = @"textShadowOffset";
-    if([styleKeys containsObject:key]) self.textShadowOffset = [[style objectForKey:key] CGSizeValue];
-}
-
-+(C4Label *)defaultStyle {
-    return (C4Label *)[C4Label appearance];
-}
-
--(C4Label *)copyWithZone:(NSZone *)zone {
-    C4Label *label = [[C4Label allocWithZone:zone] initWithText:self.text font:self.font frame:self.frame];
-    label.style = self.style;
-    return label;
-}
 @end

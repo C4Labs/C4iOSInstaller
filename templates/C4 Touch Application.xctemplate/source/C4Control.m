@@ -1,285 +1,320 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Control.m
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 12-02-23.
-//  Copyright (c) 2012 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
+#import "C4AnimationHelper.h"
 #import "C4Control.h"
 
 @interface C4Control()
-@property (readwrite, atomic) BOOL shouldAutoreverse;
-@property (readwrite, atomic, strong) NSString *longPressMethodName;
-@property (readwrite, atomic, strong) NSMutableDictionary *gestureDictionary;
-@property (readonly, atomic) NSArray *stylePropertyNames;
-@property (readwrite, atomic) CGPoint firstPositionForMove;
+@property(nonatomic, strong) UIView* view;
+
+@property(nonatomic) BOOL shouldAutoreverse;
+@property(nonatomic, strong) NSString *longPressMethodName;
+@property(nonatomic, strong) NSMutableDictionary *gestureDictionary;
+@property(nonatomic) CGPoint firstPositionForMove;
+
+@property(nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
+@property(nonatomic, copy) C4TapGestureBlock tapBlock;
+
+@property(nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
+@property(nonatomic, copy) C4PanGestureBlock panBlock;
+
+@property(nonatomic, strong) UIPinchGestureRecognizer *pinchGestureRecognizer;
+@property(nonatomic, copy) C4PinchGestureBlock pinchBlock;
+
+@property(nonatomic, strong) UIRotationGestureRecognizer *rotationGestureRecognizer;
+@property(nonatomic, copy) C4RotationGestureBlock rotationBlock;
+
+@property(nonatomic, strong) UILongPressGestureRecognizer *longPressGestureRecognizer;
+@property(nonatomic, copy) C4LongPressGestureBlock longPressStartBlock;
+@property(nonatomic, copy) C4LongPressGestureBlock longPressEndBlock;
+
+@property(nonatomic, strong) UISwipeGestureRecognizer *swipeRightGestureRecognizer;
+@property(nonatomic, copy) C4SwipeGestureBlock swipeRightBlock;
+
+@property(nonatomic, strong) UISwipeGestureRecognizer *swipeLeftGestureRecognizer;
+@property(nonatomic, copy) C4SwipeGestureBlock swipeLeftBlock;
+
+@property(nonatomic, strong) UISwipeGestureRecognizer *swipeUpGestureRecognizer;
+@property(nonatomic, copy) C4SwipeGestureBlock swipeUpBlock;
+
+@property(nonatomic, strong) UISwipeGestureRecognizer *swipeDownGestureRecognizer;
+@property(nonatomic, copy) C4SwipeGestureBlock swipeDownBlock;
+
 @end
+
 
 @implementation C4Control
 
--(id)init {
+- (id)init {
     return [self initWithFrame:CGRectZero];
 }
 
--(id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if(self != nil) {
+- (id)initWithFrame:(CGRect)frame {
+    return [self initWithView:[[UIView alloc] initWithFrame:frame]];
+}
 
-        self.longPressMethodName = @"pressedLong";
-        self.shouldAutoreverse = NO;
-
-        self.style = [C4Control defaultStyle].style;
-    }
+- (id)initWithView:(UIView*)view {
+    self = [super init];
+    if (!self)
+        return nil;
+    
+    self.view = view;
+    self.longPressMethodName = @"pressedLong";
+    self.shouldAutoreverse = NO;
+    
+    _animationHelper = [[C4AnimationHelper alloc] initWithLayer:self.view.layer];
+    
+    C4Template* template = (C4Template*)[[self class] defaultTemplate];
+    [template applyToTarget:self];
+    
     return self;
 }
 
--(void)dealloc {
+- (void)dealloc {
     [[NSRunLoop mainRunLoop] cancelPerformSelectorsWithTarget:self];
-    self.backgroundColor = nil;
-    self.longPressMethodName = nil;
-    NSEnumerator *enumerator = [self.gestureDictionary keyEnumerator];
-    id key;
-    while ((key = [enumerator nextObject])) {
-        UIGestureRecognizer *g = (self.gestureDictionary)[key];
+    
+    for (UIGestureRecognizer *g in [self.gestureDictionary allValues]) {
         [g removeTarget:self action:nil];
-        [self removeGestureRecognizer:g];
-    }
-    [self.gestureDictionary removeAllObjects];
-    self.gestureDictionary = nil;
-}
-
--(void)setup {}
-
--(void)test {}
-
-#pragma mark UIView animatable property overrides
-
--(void)setCenter:(CGPoint)center {
-    if(_animationDuration == 0.0f) super.center = center;
-    else {
-        CGPoint oldCenter = CGPointMake(self.center.x, self.center.y);
-        
-        void (^animationBlock) (void) = ^ { super.center = center; };
-        void (^completionBlock) (BOOL) = nil;
-        
-        BOOL animationShouldNotRepeat = (self.animationOptions & REPEAT) !=  REPEAT;
-        if(self.shouldAutoreverse && animationShouldNotRepeat) {
-            completionBlock = ^ (BOOL animationIsComplete) {
-                if(animationIsComplete){}
-                [self autoreverseAnimation:^ { super.center = oldCenter;}];
-            };
-        }
-        [self animateWithBlock:animationBlock completion:completionBlock];
+        [self.view removeGestureRecognizer:g];
     }
 }
 
-/*
- Had this in before, but took it out when I was fixing center position issues with labels and shapes
- There was a bug with this implementation that was sometimes switching the position base on landscape orientation
- */
-//-(CGPoint)center {
-//    CGPoint currentCenter = super.center;
-//    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-//    if(orientation == UIDeviceOrientationLandscapeLeft || orientation == UIDeviceOrientationLandscapeRight) {
-//        currentCenter.x = super.center.y;
-//        currentCenter.y = super.center.x;
-//    }
-//    return currentCenter;
-//}
 
--(CGPoint)origin {
-    return self.frame.origin;
+#pragma mark UIView animatable properties
+
+- (CGRect)frame {
+    return self.view.frame;
 }
 
--(void)setOrigin:(CGPoint)origin {
+- (void)setFrame:(CGRect)frame {
+    if (self.animationDuration == 0.0f) {
+        self.view.frame = frame;
+        return;
+    }
+    
+    CGRect oldFrame = self.view.frame;
+    void (^animationBlock)() = ^() { self.view.frame = frame; };
+    void (^reverseBlock)() = ^() { self.view.frame = oldFrame; };
+    [self animateWithBlock:animationBlock reverseBlock:reverseBlock];
+}
+
+- (void)setBounds:(CGRect)bounds {
+    if (self.animationDuration == 0.0f) {
+        self.view.bounds = bounds;
+        return;
+    }
+    
+    CGRect oldBounds = self.view.bounds;
+    void (^animationBlock)() = ^() { self.view.bounds = bounds; };
+    void (^reverseBlock)() = ^() { self.view.bounds = oldBounds; };
+    [self animateWithBlock:animationBlock reverseBlock:reverseBlock];
+}
+
+-(CGRect)bounds {
+    return self.view.bounds;
+}
+
+- (CGPoint)center {
+    return self.view.center;
+}
+
+- (void)setCenter:(CGPoint)center {
+    if (self.animationDuration == 0.0f) {
+        self.view.center = center;
+        return;
+    }
+    
+    CGPoint oldCenter = CGPointMake(self.view.center.x, self.view.center.y);
+    void (^animationBlock)() = ^() { self.view.center = center; };
+    void (^reverseBlock)() = ^() { self.view.center = oldCenter; };
+    [self animateWithBlock:animationBlock reverseBlock:reverseBlock];
+}
+
+- (CGPoint)origin {
+    return self.view.frame.origin;
+}
+
+- (void)setOrigin:(CGPoint)origin {
     CGPoint difference = origin;
-    difference.x += self.frame.size.width/2.0f;
-    difference.y += self.frame.size.height/2.0f;
+    difference.x += self.view.frame.size.width/2.0f;
+    difference.y += self.view.frame.size.height/2.0f;
     self.center = difference;
 }
 
--(void)setFrame:(CGRect)frame {
-    if(_animationDuration == 0.0f) super.frame = frame;
-    else {
-        CGRect oldFrame = self.frame;
-        
-        void (^animationBlock) (void) = ^ { super.frame = frame; };
-        void (^completionBlock) (BOOL) = nil;
-        
-        BOOL animationShouldNotRepeat = (self.animationOptions & REPEAT) !=  REPEAT;
-        if(self.shouldAutoreverse && animationShouldNotRepeat) {
-            completionBlock = ^ (BOOL animationIsComplete) {
-                if(animationIsComplete){}
-                [self autoreverseAnimation:^ { super.frame = oldFrame;}];
-            };
-        }
-        [self animateWithBlock:animationBlock completion:completionBlock];
-    }
+- (CGAffineTransform)transform {
+    return self.view.transform;
 }
 
--(void)setBounds:(CGRect)bounds {
-    if(_animationDuration == 0.0f) super.bounds = bounds;
-    else {
-        CGRect oldBounds = self.bounds;
-        
-        void (^animationBlock) (void) = ^ { super.bounds = bounds; };
-        void (^completionBlock) (BOOL) = nil;
-        
-        BOOL animationShouldNotRepeat = (self.animationOptions & REPEAT) !=  REPEAT;
-        if(self.shouldAutoreverse && animationShouldNotRepeat) {
-            completionBlock = ^ (BOOL animationIsComplete) {
-                if(animationIsComplete){}
-                [self autoreverseAnimation:^ { super.bounds = oldBounds;}];
-            };
-        }
-        
-        [self animateWithBlock:animationBlock completion:completionBlock];
+- (void)setTransform:(CGAffineTransform)transform {
+    if (self.animationDuration == 0.0f) {
+        self.view.transform = transform;
+        return;
     }
+    
+    CGAffineTransform oldTransform = self.view.transform;
+    void (^animationBlock)() = ^() { self.view.transform = transform; };
+    void (^reverseBlock)() = ^() { self.view.transform = oldTransform; };
+    [self animateWithBlock:animationBlock reverseBlock:reverseBlock];
 }
 
--(void)setTransform:(CGAffineTransform)transform {
-    if(_animationDuration == 0.0f) super.transform = transform;
-    else {
-        CGAffineTransform oldTransform = self.transform;
-        
-        void (^animationBlock) (void) = ^ { super.transform = transform; };
-        void (^completionBlock) (BOOL) = nil;
-        
-        BOOL animationShouldNotRepeat = (self.animationOptions & REPEAT) !=  REPEAT;
-        if(self.shouldAutoreverse && animationShouldNotRepeat) {
-            completionBlock = ^ (BOOL animationIsComplete) {
-                if(animationIsComplete){}
-                [self autoreverseAnimation:^ { super.transform = oldTransform;}];
-            };
-        }
-        
-        [self animateWithBlock:animationBlock completion:completionBlock];
-    }
+- (UIColor*)backgroundColor {
+    return self.view.backgroundColor;
 }
 
--(void)setAlpha:(CGFloat)alpha {
-    if(_animationDuration == 0.0f) super.alpha = alpha;
-    else {
-        CGFloat oldAlpha = self.alpha;
-        
-        void (^animationBlock) (void) = ^ { super.alpha = alpha; };
-        void (^completionBlock) (BOOL) = nil;
-        
-        BOOL animationShouldNotRepeat = (self.animationOptions & REPEAT) !=  REPEAT;
-        if(self.shouldAutoreverse && animationShouldNotRepeat) {
-            completionBlock = ^ (BOOL animationIsComplete) {
-                if(animationIsComplete){}
-                [self autoreverseAnimation:^ { super.alpha = oldAlpha;}];
-            };
-        }
-        
-        [self animateWithBlock:animationBlock completion:completionBlock];
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
+    if (self.animationDuration == 0.0f) {
+        self.view.backgroundColor = backgroundColor;
+        return;
     }
+    
+    UIColor *oldBackgroundColor = self.view.backgroundColor;
+    void (^animationBlock)() = ^() { self.view.backgroundColor = backgroundColor; };
+    void (^reverseBlock)() = ^() { self.view.backgroundColor = oldBackgroundColor; };
+    [self animateWithBlock:animationBlock reverseBlock:reverseBlock];
 }
 
--(void)setBackgroundColor:(UIColor *)backgroundColor {
-    if(_animationDuration == 0.0f) super.backgroundColor = backgroundColor;
-    else {
-        UIColor *oldBackgroundColor = self.backgroundColor;
-        
-        void (^animationBlock) (void) = ^ { super.backgroundColor = backgroundColor; };
-        void (^completionBlock) (BOOL) = nil;
-        
-        BOOL animationShouldNotRepeat = (self.animationOptions & REPEAT) !=  REPEAT;
-        if(self.shouldAutoreverse && animationShouldNotRepeat) {
-            completionBlock = ^ (BOOL animationIsComplete) {
-                if(animationIsComplete){}
-                [self autoreverseAnimation:^ { super.backgroundColor = oldBackgroundColor;}];
-            };
-        }
-        
-        [self animateWithBlock:animationBlock completion:completionBlock];
-    }
+- (CGFloat)alpha {
+    return self.view.alpha;
 }
+
+- (void)setAlpha:(CGFloat)alpha {
+    if (self.animationDuration == 0.0f) {
+        self.view.alpha = alpha;
+        return;
+    }
+    
+    CGFloat oldAlpha = self.view.alpha;
+    void (^animationBlock)() = ^() { self.view.alpha = alpha; };
+    void (^reverseBlock)() = ^() { self.view.alpha = oldAlpha; };
+    [self animateWithBlock:animationBlock reverseBlock:reverseBlock];
+}
+
+- (BOOL)isHidden {
+    return self.view.isHidden;
+}
+
+- (void)setHidden:(BOOL)hidden {
+    self.view.hidden = hidden;
+}
+
 
 #pragma mark Position, Rotation, Transform
--(CGFloat)width {
-    return self.bounds.size.width;
+
+- (CGFloat)width {
+    return self.view.bounds.size.width;
 }
 
--(CGFloat)height {
-    return self.bounds.size.height;
+- (CGFloat)height {
+    return self.view.bounds.size.height;
 }
 
--(CGFloat)zPosition {
-    return self.layer.zPosition;
+- (CGSize)size {
+    return self.view.bounds.size;
 }
 
--(CGSize)size {
-    return self.bounds.size;
+- (CGFloat)zPosition {
+    return self.view.layer.zPosition;
 }
 
--(void)setZPosition:(CGFloat)zPosition {
-    if(self.animationDuration == 0.0f) self.layer.zPosition = zPosition;
-    else [(id <C4LayerAnimation>)self.layer animateZPosition:zPosition];
+- (void)setZPosition:(CGFloat)zPosition {
+    [self.animationHelper animateKeyPath:@"zPosition" toValue:@(zPosition)];
 }
 
--(void)setRotation:(CGFloat)rotation {
-    if(self.animationDuration == 0.0f) [self _setRotation:@(rotation)];
-    else [self performSelector:@selector(_setRotation:) withObject:@(rotation) afterDelay:self.animationDelay];
+- (CGFloat)rotation {
+    return [[self.view.layer valueForKeyPath:@"transform.rotation.z"] floatValue];
 }
 
--(void)_setRotation:(NSNumber *)rotation {
-    _rotation = [rotation floatValue];
-    [(id <C4LayerAnimation>)self.layer animateRotation:_rotation];
+- (void)setRotation:(CGFloat)rotation {
+    [self.animationHelper animateKeyPath:@"transform.rotation.z" toValue:@(rotation)];
 }
 
--(void)setRotationX:(CGFloat)rotation {
-    if(self.animationDelay == 0.0f) [self _setRotationX:@(rotation)];
-    else [self performSelector:@selector(_setRotationX:) withObject:@(rotation) afterDelay:self.animationDelay];
+- (CGFloat)rotationX {
+    return [[self.view.layer valueForKeyPath:@"transform.rotation.x"] floatValue];
 }
 
--(void)_setRotationX:(NSNumber *)rotation {
-    _rotationX = [rotation floatValue];
-    [(id <C4LayerAnimation>)self.layer animateRotationX:_rotationX];
+- (void)setRotationX:(CGFloat)rotation {
+    [self.animationHelper animateKeyPath:@"transform.rotation.x" toValue:@(rotation)];
 }
 
--(void)setRotationY:(CGFloat)rotation {
-    if(self.animationDelay == 0.0f) [self _setRotationY:@(rotation)];
-    else [self performSelector:@selector(_setRotationY:) withObject:@(rotation) afterDelay:self.animationDelay];
+- (CGFloat)rotationY {
+    return [[self.view.layer valueForKeyPath:@"transform.rotation.y"] floatValue];
 }
 
--(void)_setRotationY:(NSNumber *)rotation {
-    _rotationY = [rotation floatValue];
-    [(id <C4LayerAnimation>)self.layer animateRotationY:_rotationY];
+- (void)setRotationY:(CGFloat)rotation {
+    [self.animationHelper animateKeyPath:@"transform.rotation.y" toValue:@(rotation)];
 }
 
--(void)rotationDidFinish:(CGFloat)rotation {
-    [super setTransform:CGAffineTransformMakeRotation(rotation)];
+- (CATransform3D)layerTransform {
+    return self.view.layer.sublayerTransform;
 }
 
--(void)setLayerTransform:(CATransform3D)transform {
-    _layerTransform = transform;
-    [(id <C4LayerAnimation>)self.layer animateLayerTransform:transform];
+- (void)setLayerTransform:(CATransform3D)transform {
+    [self.animationHelper animateKeyPath:@"sublayerTransform" toValue:[NSValue valueWithCATransform3D:transform]];
 }
 
--(void)setAnchorPoint:(CGPoint)anchorPoint {
-    _anchorPoint = anchorPoint;
-    CGRect oldFrame = self.frame;
-    self.layer.anchorPoint = anchorPoint;
-    super.frame = oldFrame;
+- (CGPoint)anchorPoint {
+    return self.view.layer.anchorPoint;
 }
 
--(void)setPerspectiveDistance:(CGFloat)distance {
-    _perspectiveDistance = distance;
-    [(id <C4LayerAnimation>)self.layer setPerspectiveDistance:distance];
+- (void)setAnchorPoint:(CGPoint)anchorPoint {
+    CGRect oldFrame = self.view.frame;
+    self.view.layer.anchorPoint = anchorPoint;
+    self.view.frame = oldFrame;
 }
+
+- (CGFloat)perspectiveDistance {
+    return 1. / self.view.layer.transform.m34;
+}
+
+- (void)setPerspectiveDistance:(CGFloat)distance {
+    CATransform3D t = self.view.layer.transform;
+    if (distance != 0.0f)
+        t.m34 = 1. / distance;
+    else
+        t.m34 = 0.;
+    [self setLayerTransform:t];
+}
+
 
 #pragma mark Animation methods
--(void)animateWithBlock:(void (^)(void))animationBlock {
-    [self animateWithBlock:animationBlock completion:nil];
+
+- (void)animateWithBlock:(void (^)())animationBlock {
+    [self animateWithBlock:animationBlock reverseBlock:nil];
 }
 
--(void)animateWithBlock:(void (^)(void))animationBlock completion:(void (^)(BOOL))completionBlock {
-    C4AnimationOptions autoReverseOptions = self.animationOptions;
+- (void)animateWithBlock:(void (^)())animationBlock reverseBlock:(void (^)())reverseBlock {
+    void (^completionBlock)(BOOL) = NULL;
+    
     //we insert the autoreverse options here, only if it should repeat and autoreverse
-    if(self.shouldAutoreverse && (self.animationOptions & REPEAT) == REPEAT) autoReverseOptions |= AUTOREVERSE;
+    C4AnimationOptions autoReverseOptions = self.animationOptions;
+    BOOL shouldRepeat = (self.animationOptions & REPEAT) == REPEAT;
+    if (self.shouldAutoreverse && shouldRepeat)
+        autoReverseOptions |= AUTOREVERSE;
+    
+    
+    if (self.shouldAutoreverse && !shouldRepeat && reverseBlock) {
+        completionBlock = ^(BOOL animationIsComplete) {
+            [self autoreverseAnimation:^() {
+                reverseBlock();
+            }];
+        };
+    }
     
     [UIView animateWithDuration:self.animationDuration
                           delay:(NSTimeInterval)self.animationDelay
@@ -288,11 +323,11 @@
                      completion:completionBlock];
 }
 
--(void)autoreverseAnimation:(void (^)(void))animationBlock {
+- (void)autoreverseAnimation:(void (^)(void))animationBlock {
     C4AnimationOptions autoreverseOptions = BEGINCURRENT;
-    if((self.animationOptions & LINEAR) == LINEAR) autoreverseOptions |= LINEAR;
-    else if((self.animationOptions & EASEIN) == EASEIN) autoreverseOptions |= EASEOUT;
-    else if((self.animationOptions & EASEOUT) == EASEOUT) autoreverseOptions |= EASEIN;
+    if ((self.animationOptions & LINEAR) == LINEAR) autoreverseOptions |= LINEAR;
+    else if ((self.animationOptions & EASEIN) == EASEIN) autoreverseOptions |= EASEOUT;
+    else if ((self.animationOptions & EASEOUT) == EASEOUT) autoreverseOptions |= EASEIN;
     
     [UIView animateWithDuration:self.animationDuration
                           delay:0
@@ -301,21 +336,31 @@
                      completion:nil];
 }
 
--(void)setAnimationDuration:(CGFloat)duration {
-//    if (duration <= 0.0f) duration = 0.0001f;
-    _animationDuration = duration;
-    ((id <C4LayerAnimation>)self.layer).animationDuration = duration;
+- (CGFloat)animationDuration {
+    return self.animationHelper.animationDuration;
 }
 
--(void)setAnimationOptions:(NSUInteger)animationOptions {
+- (void)setAnimationDuration:(CGFloat)duration {
+    self.animationHelper.animationDuration = duration;
+}
+
+- (CGFloat)animationDelay {
+    return self.animationHelper.animationDelay;
+}
+
+- (void)setAnimationDelay:(CGFloat)animationDelay {
+    self.animationHelper.animationDelay = animationDelay;
+}
+
+- (void)setAnimationOptions:(NSUInteger)animationOptions {
+    self.animationHelper.animationOptions = animationOptions;
+    
     /*
      important: we have to intercept the setting of AUTOREVERSE for the case of reversing 1 time
      i.e. reversing without having set REPEAT
      
      UIView animation will flicker if we don't do this...
      */
-    ((id <C4LayerAnimation>)self.layer).animationOptions = animationOptions;
-    
     if ((animationOptions & AUTOREVERSE) == AUTOREVERSE) {
         self.shouldAutoreverse = YES;
         animationOptions &= ~AUTOREVERSE;
@@ -324,335 +369,23 @@
     _animationOptions = animationOptions | BEGINCURRENT;
 }
 
-#pragma mark Move
--(void)move:(id)sender {
-    UIPanGestureRecognizer *p = (UIPanGestureRecognizer *)sender;
-    
-    NSUInteger _ani = self.animationOptions;
-    CGFloat _dur = self.animationDuration;
-    CGFloat _del = self.animationDelay;
-    self.animationDuration = 0;
-    self.animationDelay = 0;
-    self.animationOptions = DEFAULT;
-    
-    CGPoint translatedPoint = [p translationInView:self];
-
-    translatedPoint.x += self.center.x;
-    translatedPoint.y += self.center.y;
-
-    self.center = translatedPoint;
-    [p setTranslation:CGPointZero inView:self];
-    [self postNotification:@"moved"];
-    
-    self.animationDelay = _del;
-    self.animationDuration = _dur;
-    self.animationOptions = _ani;
-}
-
-#pragma mark Gesture Methods
-
--(void)addGesture:(C4GestureType)type name:(NSString *)gestureName action:(NSString *)methodName {
-    if(self.gestureDictionary == nil) self.gestureDictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
-    BOOL containsGesture = ((self.gestureDictionary)[gestureName] != nil);
-    if(containsGesture == NO) {
-        UIGestureRecognizer *recognizer;
-        switch (type) {
-            case TAP:
-                recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:NSSelectorFromString(methodName)];
-                break;
-            case PAN:
-                recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:NSSelectorFromString(methodName)];
-                break;
-            case SWIPERIGHT:
-                recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:NSSelectorFromString(methodName)];
-                ((UISwipeGestureRecognizer *)recognizer).direction = SWIPEDIRRIGHT;
-                break;
-            case SWIPELEFT:
-                recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:NSSelectorFromString(methodName)];
-                ((UISwipeGestureRecognizer *)recognizer).direction = SWIPEDIRLEFT;
-                break;
-            case SWIPEUP:
-                recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:NSSelectorFromString(methodName)];
-                ((UISwipeGestureRecognizer *)recognizer).direction = SWIPEDIRUP;
-                break;
-            case SWIPEDOWN:
-                recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:NSSelectorFromString(methodName)];
-                ((UISwipeGestureRecognizer *)recognizer).direction = SWIPEDIRDOWN;
-                break;
-            case LONGPRESS:
-                self.longPressMethodName = methodName;
-                recognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pressedLong:)];
-                break;
-            default:
-                C4Assert(NO,@"The gesture you tried to use is not one of: TAP, PINCH, SWIPERIGHT, SWIPELEFT, SWIPEUP, SWIPEDOWN, ROTATION, PAN, or LONGPRESS");
-                break;
-        }
-        recognizer.delaysTouchesBegan = YES;
-        recognizer.delaysTouchesEnded = YES;
-        [self addGestureRecognizer:recognizer];
-        (self.gestureDictionary)[gestureName] = recognizer;
-    }
-}
-
--(UIGestureRecognizer *)gestureForName:(NSString *)gestureName {
-    return (self.gestureDictionary)[gestureName];
-}
-
--(NSDictionary *)allGestures {
-    return self.gestureDictionary;
-}
-
--(void)numberOfTapsRequired:(NSInteger)tapCount forGesture:(NSString *)gestureName {
-    UIGestureRecognizer *recognizer = _gestureDictionary[gestureName];
-    
-    C4Assert([recognizer isKindOfClass:[UITapGestureRecognizer class]] ||
-             [recognizer isKindOfClass:[UILongPressGestureRecognizer class]],
-             @"The gesture type(%@) you tried to configure does not respond to the method: %@",[recognizer class],NSStringFromSelector(_cmd));
-    
-    ((UILongPressGestureRecognizer *) recognizer).numberOfTapsRequired = tapCount;
-}
-
--(void)numberOfTouchesRequired:(NSInteger)touchCount forGesture:(NSString *)gestureName {
-    UIGestureRecognizer *recognizer = _gestureDictionary[gestureName];
-    
-    C4Assert([recognizer isKindOfClass:[UITapGestureRecognizer class]] ||
-             [recognizer isKindOfClass:[UISwipeGestureRecognizer class]] ||
-             [recognizer isKindOfClass:[UILongPressGestureRecognizer class]],
-             @"The gesture type(%@) you tried to configure does not respond to the method: %@",[recognizer class],NSStringFromSelector(_cmd));
-    
-    ((UITapGestureRecognizer *) recognizer).numberOfTouchesRequired = touchCount;
-}
-
--(void)minimumPressDuration:(CGFloat)duration forGesture:(NSString *)gestureName {
-    UIGestureRecognizer *recognizer = _gestureDictionary[gestureName];
-    
-    C4Assert([recognizer isKindOfClass:[UILongPressGestureRecognizer class]],
-             @"The gesture type(%@) you tried to configure does not respond to the method %@",[recognizer class],NSStringFromSelector(_cmd));
-    
-    ((UILongPressGestureRecognizer *) recognizer).minimumPressDuration = duration;
-}
-
--(void)minimumNumberOfTouches:(NSInteger)touchCount forGesture:(NSString *)gestureName {
-    UIGestureRecognizer *recognizer = _gestureDictionary[gestureName];
-    
-    C4Assert([recognizer isKindOfClass:[UIPanGestureRecognizer class]],
-             @"The gesture type(%@) you tried to configure does not respond to the method: %@",[recognizer class],NSStringFromSelector(_cmd));
-    
-    ((UIPanGestureRecognizer *) recognizer).minimumNumberOfTouches = touchCount;
-}
-
--(void)maximumNumberOfTouches:(NSInteger)touchCount forGesture:(NSString *)gestureName {
-    UIGestureRecognizer *recognizer = _gestureDictionary[gestureName];
-    
-    C4Assert([recognizer isKindOfClass:[UIPanGestureRecognizer class]],
-             @"The gesture type(%@) you tried to configure does not respond to the method: %@",[recognizer class],NSStringFromSelector(_cmd));
-    
-    ((UIPanGestureRecognizer *) recognizer).maximumNumberOfTouches = touchCount;
-}
-
--(void)swipeDirection:(C4SwipeDirection)direction forGesture:(NSString *)gestureName {
-    UIGestureRecognizer *recognizer = _gestureDictionary[gestureName];
-    
-    C4Assert([recognizer isKindOfClass:[UISwipeGestureRecognizer class]],
-             @"The gesture type(%@) you tried to configure does not respond to the method: %@",[recognizer class],NSStringFromSelector(_cmd));
-    
-    ((UISwipeGestureRecognizer *) recognizer).direction = direction;
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//    if([[self nextResponder] isKindOfClass:[C4WorkSpace class]]) [super touchesBegan:touches withEvent:event];
-    [super touchesBegan:touches withEvent:event];
-    [self postNotification:@"touchesBegan"];
-    [self touchesBegan];
-}
-
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-//    if([[self nextResponder] isKindOfClass:[C4WorkSpace class]]) [super touchesMoved:touches withEvent:event];
-    [super touchesMoved:touches withEvent:event];
-    [self postNotification:@"touchesMoved"];
-    [self touchesMoved];
-}
-
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    if([[self nextResponder] isKindOfClass:[C4WorkSpace class]]) [super touchesEnded:touches withEvent:event];
-    [super touchesEnded:touches withEvent:event];
-    [self postNotification:@"touchesEnded"];
-    [self touchesEnded];
-}
-
--(void)touchesBegan {
-}
-
--(void)touchesEnded {
-}
-
--(void)touchesMoved {
-}
-
--(void)swipedRight:(id)sender {
-    sender = sender;
-    [self postNotification:@"swipedRight"];
-    [self swipedRight];
-}
-
--(void)swipedLeft:(id)sender {
-    sender = sender;
-    [self postNotification:@"swipedLeft"];
-    [self swipedLeft];
-}
-
--(void)swipedUp:(id)sender {
-    sender = sender;
-    [self postNotification:@"swipedUp"];
-    [self swipedUp];
-}
-
--(void)swipedDown:(id)sender {
-    sender = sender;
-    [self postNotification:@"swipedDown"];
-    [self swipedDown];
-}
-
--(void)tapped:(id)sender {
-    sender = sender;
-    [self postNotification:NSStringFromSelector(_cmd)];
-    [self tapped];
-}
-
--(void)tapped {
-}
-
-
--(void)swipedUp {
-}
-
--(void)swipedDown {
-}
-
--(void)swipedLeft {
-}
-
--(void)swipedRight {
-}
-
--(void)pressedLong {
-}
-
--(void)pressedLong:(id)sender {
-    if(((UIGestureRecognizer *)sender).state == UIGestureRecognizerStateBegan
-       && [((UIGestureRecognizer *)sender) isKindOfClass:[UILongPressGestureRecognizer class]]) {
-        [self runMethod:self.longPressMethodName withObject:sender afterDelay:0.0f];
-        [self postNotification:@"pressedLong"];
-    }
-}
-
-#pragma mark Notification Methods
--(void)listenFor:(NSString *)notification andRunMethod:(NSString *)methodName {
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:NSSelectorFromString(methodName) name:notification object:nil];
-}
-
--(void)listenFor:(NSString *)notification fromObject:(id)object andRunMethod:(NSString *)methodName {
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:NSSelectorFromString(methodName) name:notification object:object];
-}
-
--(void)listenFor:(NSString *)notification fromObjects:(NSArray *)objectArray andRunMethod:(NSString *)methodName {
-    for (id object in objectArray) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:NSSelectorFromString(methodName) name:notification object:object];
-    }
-}
-
--(void)stopListeningFor:(NSString *)methodName {
-    [self stopListeningFor:methodName object:nil];
-}
-
--(void)stopListeningFor:(NSString *)methodName object:(id)object {
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:methodName object:object];
-}
-
--(void)stopListeningFor:(NSString *)methodName objects:(NSArray *)objectArray {
-    for(id object in objectArray) {
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:methodName object:object];
-    }
-}
-
--(void)postNotification:(NSString *)notification {
-	[[NSNotificationCenter defaultCenter] postNotificationName:notification object:self];
-}
-
 #pragma mark C4AddSubview
 
--(void)addCamera:(C4Camera *)camera {
-    C4Assert([camera isKindOfClass:[C4Camera class]],
-             @"You tried to add a %@ using [canvas addShape:]", [camera class]);
-    [super addSubview:camera];
-}
-
--(void)addShape:(C4Shape *)shape {
-    C4Assert([shape isKindOfClass:[C4Shape class]],
-             @"You tried to add a %@ using [canvas addShape:]", [shape class]);
-    [super addSubview:shape];
-}
-
 -(void)addSubview:(UIView *)subview {
-    C4Assert(![[subview class] isKindOfClass:[C4Camera class]], @"You just tried to add a C4Camera using the addSubview: method, please use addCamera:");
-    C4Assert(![[subview class] isKindOfClass:[C4Shape class]], @"You just tried to add a C4Shape using the addSubview: method, please use addShape:");
-    C4Assert(![[subview class] isKindOfClass:[C4Movie class]], @"You just tried to add a C4Movie using the addSubview: method, please use addMovie:");
-    C4Assert(![[subview class] isKindOfClass:[C4Image class]], @"You just tried to add a C4Image using the addSubview: method, please use addImage:");
-    C4Assert(![[subview class] isKindOfClass:[C4GL class]], @"You just tried to add a C4GL using the addSubview: method, please use addGL:");
-    C4Assert(![[subview class] isKindOfClass:[C4Label class]], @"You just tried to add a C4Label using the addSubview: method, please use addLabel:");
-//    C4Assert(![subview conformsToProtocol:NSProtocolFromString(@"C4UIElement")], @"You just tried to add a C4UIElement using the addSubview: method, please use addUIElement:");
-    [super addSubview:subview];
+    C4Assert(![[subview class] isKindOfClass:[C4Control class]], @"You just tried to add a C4Control using the addSubview: method, please use addControl:");
+    [self.view addSubview:subview];
 }
 
--(void)addUIElement:(id<C4UIElement>)object {
-    [super addSubview:(UIView *)object];
-}
-
--(void)addLabel:(C4Label *)label {
-    C4Assert([label isKindOfClass:[C4Label class]],
-             @"You tried to add a %@ using [canvas addLabel:]", [label class]);
-    [super addSubview:label];
-}
-
--(void)addGL:(C4GL *)gl {
-    C4Assert([gl isKindOfClass:[C4GL class]],
-             @"You tried to add a %@ using [canvas addGL:]", [gl class]);
-    [super addSubview:gl];
-}
-
--(void)addImage:(C4Image *)image {
-    C4Assert([image isKindOfClass:[C4Image class]],
-             @"You tried to add a %@ using [canvas addImage:]", [image class]);
-    [super addSubview:image];
-}
-
--(void)addMovie:(C4Movie *)movie {
-    C4Assert([movie isKindOfClass:[C4Movie class]],
-             @"You tried to add a %@ using [canvas addMovie:]", [movie class]);
-    [super addSubview:movie];
+-(void)addControl:(C4Control *)control {
+    [self.view addSubview:control.view];
 }
 
 -(void)addObjects:(NSArray *)array {
     for(id obj in array) {
-        if([obj isKindOfClass:[C4Shape class]]) {
-            [self addShape:obj];
-        }
-        else if([obj isKindOfClass:[C4GL class]]) {
-            [self addGL:obj];
-        }
-        else if([obj isKindOfClass:[C4Image class]]) {
-            [self addImage:obj];
-        }
-        else if([obj isKindOfClass:[C4Movie class]]) {
-            [self addMovie:obj];
-        }
-        else if([obj isKindOfClass:[C4Camera class]]) {
-            [self addCamera:obj];
+        if([obj isKindOfClass:[C4Control class]]) {
+            [self addControl:obj];
         }
         else if([obj isKindOfClass:[UIView class]]) {
-            [self addSubview:obj];
-        }
-        else if([obj conformsToProtocol:NSProtocolFromString(@"C4UIElement")]) {
             [self addSubview:obj];
         }
         else {
@@ -663,10 +396,12 @@
 
 -(void)removeObject:(id)visualObject {
     C4Assert(self != visualObject, @"You tried to remove %@ from itself, don't be silly", visualObject);
-    if([visualObject isKindOfClass:[UIView class]] ||
-       [visualObject isKindOfClass:[C4Control class]])
+    if ([visualObject isKindOfClass:[UIView class]])
         [visualObject removeFromSuperview];
-    else C4Log(@"object (%@) you wish to remove is not a visual object", visualObject);
+    else if ([visualObject isKindOfClass:[C4Control class]])
+        [((C4Control*)visualObject).view removeFromSuperview];
+    else
+        C4Log(@"object (%@) you wish to remove is not a visual object", visualObject);
 }
 
 -(void)removeObjects:(NSArray *)array {
@@ -677,237 +412,420 @@
 
 #pragma mark Masking
 -(void)setMask:(C4Control *)maskObject {
-    self.layer.mask = maskObject.layer;
+    self.view.layer.mask = maskObject.view.layer;
 }
 
 -(void)setMasksToBounds:(BOOL)masksToBounds {
-    self.layer.masksToBounds = masksToBounds;
+    self.view.layer.masksToBounds = masksToBounds;
 }
 
 -(BOOL)masksToBounds {
-    return self.layer.masksToBounds;
+    return self.view.layer.masksToBounds;
 }
+
 
 #pragma mark Shadow
--(void)setShadowColor:(UIColor *)shadowColor {
-    if(self.animationDelay == 0) [self _setShadowColor:shadowColor];
-    else [self performSelector:@selector(_setShadowColor:) withObject:shadowColor afterDelay:self.animationDelay];
+
+- (UIColor *)shadowColor {
+    return [UIColor colorWithCGColor:self.view.layer.shadowColor];
 }
 
--(void)_setShadowColor:(UIColor *)shadowColor {
-    if(self.animationDuration == 0.0f) self.layer.shadowColor = shadowColor.CGColor;
-    else [(id <C4LayerAnimation>)self.layer animateShadowColor:shadowColor.CGColor];
+- (void)setShadowColor:(UIColor *)shadowColor {
+    [self.animationHelper animateKeyPath:@"shadowColor" toValue:(__bridge id)shadowColor.CGColor];
 }
 
--(UIColor *)shadowColor {
-    return [UIColor colorWithCGColor:self.layer.shadowColor];
+- (CGSize)shadowOffset {
+    return self.view.layer.shadowOffset;
 }
 
--(void)setShadowOffset:(CGSize)shadowOffset {
-    if(self.animationDelay == 0) [self _setShadowOffSet:[NSValue valueWithCGSize:shadowOffset]];
-    else [self performSelector:@selector(_setShadowOffSet:) withObject:[NSValue valueWithCGSize:shadowOffset] afterDelay:self.animationDelay];
+- (void)setShadowOffset:(CGSize)shadowOffset {
+    [self.animationHelper animateKeyPath:@"shadowOffset" toValue:[NSValue valueWithCGSize:shadowOffset]];
 }
 
--(void)_setShadowOffSet:(NSValue *)shadowOffset {
-    if(self.animationDuration == 0.0f) self.layer.shadowOffset = [shadowOffset CGSizeValue];
-    else [(id <C4LayerAnimation>)self.layer animateShadowOffset:[shadowOffset CGSizeValue]];
+- (CGFloat)shadowOpacity {
+    return self.view.layer.shadowOpacity;
 }
 
--(CGSize)shadowOffset {
-    return self.layer.shadowOffset;
+- (void)setShadowOpacity:(CGFloat)shadowOpacity {
+    [self.animationHelper animateKeyPath:@"shadowOpacity" toValue:@(shadowOpacity)];
 }
 
--(void)setShadowOpacity:(CGFloat)shadowOpacity {
-    if(self.animationDelay == 0) [self _setShadowOpacity:@(shadowOpacity)];
-    else [self performSelector:@selector(_setShadowOpacity:) withObject:@(shadowOpacity) afterDelay:self.animationDelay];
+- (CGPathRef)shadowPath {
+    return self.view.layer.shadowPath;
 }
 
--(void)_setShadowOpacity:(NSNumber *)shadowOpacity {
-    if(self.animationDuration == 0.0f) self.layer.shadowOpacity = [shadowOpacity floatValue];
-    else [(id <C4LayerAnimation>)self.layer animateShadowOpacity:[shadowOpacity floatValue]];
+- (void)setShadowPath:(CGPathRef)shadowPath {
+    [self.animationHelper animateKeyPath:@"shadowPath" toValue:(__bridge id)shadowPath];
 }
 
--(CGFloat)shadowOpacity {
-    return self.layer.shadowOpacity;
+- (CGFloat)shadowRadius {
+    return self.view.layer.shadowRadius;
 }
 
--(void)setShadowPath:(CGPathRef)shadowPath {
-    if(self.animationDelay == 0) [self _setShadowPath:(__bridge id)shadowPath];
-    else [self performSelector:@selector(_setShadowPath:) withObject:(__bridge id)shadowPath afterDelay:self.animationDelay];
+- (void)setShadowRadius:(CGFloat)shadowRadius {
+    [self.animationHelper animateKeyPath:@"shadowRadius" toValue:@(shadowRadius)];
 }
 
--(void)_setShadowPath:(id)shadowPath {
-    if(self.animationDuration == 0.0f) self.layer.shadowPath = (__bridge CGPathRef)shadowPath;
-    else [(id <C4LayerAnimation>)self.layer animateShadowPath:(__bridge CGPathRef)shadowPath];
-}
-
--(CGPathRef)shadowPath {
-    return self.layer.shadowPath;
-}
-
--(void)setShadowRadius:(CGFloat)shadowRadius {
-    if(self.animationDelay == 0) [self _setShadowRadius:@(shadowRadius)];
-    [self performSelector:@selector(_setShadowRadius:) withObject:@(shadowRadius) afterDelay:self.animationDelay];
-}
-
--(void)_setShadowRadius:(NSNumber *)shadowRadius {
-    if(self.animationDuration == 0.0f) self.layer.shadowRadius = [shadowRadius floatValue];
-    else [(id <C4LayerAnimation>)self.layer animateShadowRadius:[shadowRadius floatValue]];
-}
-
--(CGFloat)shadowRadius {
-    return self.layer.shadowRadius;
-}
 
 #pragma mark Border
--(void)setBorderColor:(UIColor *)borderColor {
-    if(self.animationDuration == 0.0f) self.layer.borderColor = borderColor.CGColor;
-    else [(id <C4LayerAnimation>)self.layer animateBorderColor:borderColor.CGColor];
+
+- (UIColor *)borderColor {
+    return [UIColor colorWithCGColor:self.view.layer.borderColor];
 }
 
--(UIColor *)borderColor {
-    return [UIColor colorWithCGColor:self.layer.borderColor];
+- (void)setBorderColor:(UIColor *)borderColor {
+    [self.animationHelper animateKeyPath:@"borderColor" toValue:(__bridge id)borderColor.CGColor];
 }
 
--(void)setBorderWidth:(CGFloat)borderWidth {
-    if(self.animationDuration == 0.0f) self.layer.borderWidth = borderWidth;
-    else [(id <C4LayerAnimation>)self.layer animateBorderWidth:borderWidth];
+- (CGFloat)borderWidth {
+    return self.view.layer.borderWidth;
 }
 
--(CGFloat)borderWidth {
-    return self.layer.borderWidth;
+- (void)setBorderWidth:(CGFloat)borderWidth {
+    [self.animationHelper animateKeyPath:@"borderWidth" toValue:@(borderWidth)];
 }
 
--(void)setCornerRadius:(CGFloat)cornerRadius {
-    if(self.animationDuration == 0.0f) self.layer.cornerRadius = cornerRadius;
-    else [(id <C4LayerAnimation>)self.layer animateCornerRadius:cornerRadius];
+- (CGFloat)cornerRadius {
+    return self.view.layer.cornerRadius;
 }
 
--(CGFloat)cornerRadius {
-    return self.layer.cornerRadius;
+- (void)setCornerRadius:(CGFloat)cornerRadius {
+    [self.animationHelper animateKeyPath:@"cornerRadius" toValue:@(cornerRadius)];
 }
 
-#pragma mark Basic Methods
-+(Class)layerClass {
-    return [C4Layer class];
-}
 
--(void)runMethod:(NSString *)methodName afterDelay:(CGFloat)seconds {
-    [self performSelector:NSSelectorFromString(methodName) withObject:self afterDelay:seconds];
-}
+#pragma mark Gestures
 
--(void)runMethod:(NSString *)methodName withObject:(id)object afterDelay:(CGFloat)seconds {
-    [self performSelector:NSSelectorFromString(methodName) withObject:object afterDelay:seconds];
-}
-
--(NSDictionary *)style {
-    //FIXME: Will never transfer nil for some properties
-    //(let's deal with it later rather than solve a "potential" problem)
-    NSMutableDictionary *controlStyle = [NSMutableDictionary dictionaryWithDictionary:
-                                         @{
-                                         @"alpha":@(self.alpha),
-                                         @"borderColor":self.borderColor,
-                                         @"borderWidth":@(self.borderWidth),
-                                         @"cornerRadius":@(self.cornerRadius),
-                                         @"masksToBounds":@(self.masksToBounds),
-                                         @"shadowOpacity":@(self.shadowOpacity),
-                                         @"shadowOffset":[NSValue valueWithCGSize:self.shadowOffset],
-                                         @"shadowRadius":@(self.shadowRadius)
-                                         }];
-    if (self.backgroundColor != nil) [controlStyle setObject:self.backgroundColor forKey:@"backgroundColor"];
-    if (self.shadowColor != nil) [controlStyle setObject:self.shadowColor forKey:@"shadowColor"];
-    [controlStyle setObject:self.shadowPath == nil ? [NSNull null] : (__bridge UIBezierPath *)self.shadowPath forKey:@"shadowPath"];
+- (void)onTap:(C4TapGestureBlock)block {
+    self.tapBlock = block;
     
-    return (NSDictionary *)controlStyle;
+    if (self.tapBlock && !_tapGestureRecognizer) {
+        _tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
+        [self.view addGestureRecognizer:_tapGestureRecognizer];
+    }
 }
 
--(void)setStyle:(NSDictionary *)style {
-    NSArray *styleKeys = [style allKeys];
-    NSString *key;
-    
-    //Control Style Values
-    key = @"alpha";
-    if([styleKeys containsObject:key]) self.alpha = [[style objectForKey:key] floatValue];
-    
-    key = @"backgroundColor";
-    if([styleKeys containsObject:key]) self.backgroundColor = [style objectForKey:key];
-    
-    key = @"borderColor";
-    if([styleKeys containsObject:key]) self.borderColor = [style objectForKey:key];
-    
-    key = @"borderWidth";
-    if([styleKeys containsObject:key]) self.borderWidth = [[style objectForKey:key] floatValue];
-    
-    key = @"cornerRadius";
-    if([styleKeys containsObject:key]) self.cornerRadius = [[style objectForKey:key] floatValue];
-    
-    key = @"masksToBounds";
-    if([styleKeys containsObject:key]) self.masksToBounds = [[style objectForKey:key] boolValue];
-    
-    key = @"shadowColor";
-    if([styleKeys containsObject:key]) self.shadowColor = [style objectForKey:key];
-    
-    key = @"shadowOpacity";
-    if([styleKeys containsObject:key]) self.shadowOpacity = [[style objectForKey:key] floatValue];
-    
-    key = @"shadowOffset";
-    if([styleKeys containsObject:key]) self.shadowOffset = [[style objectForKey:key] CGSizeValue];
-    
-    key = @"shadowPath";
-    if([styleKeys containsObject:key]) self.shadowPath = [style objectForKey:key] == [NSNull null] ? nil : (__bridge CGPathRef)[style objectForKey:key];
-    
-    key = @"shadowRadius";
-    if([styleKeys containsObject:key]) self.shadowRadius = [[style objectForKey:key] floatValue];
-    
-    //  FIXME: should the following be part of C4Control?
-    //    key = @"maxTrackImage";
-    //    if([styleKeys containsObject:key]) self.maxTrackImage = [style objectForKey:key];
-    //
-    //    key = @"maxTrackImageHighlighted";
-    //    if([styleKeys containsObject:key]) self.maxTrackImageHighlighted = [style objectForKey:key];
-    //
-    //    key = @"maxTrackImageDisabled";
-    //    if([styleKeys containsObject:key]) self.maxTrackImageDisabled = [style objectForKey:key];
-    //
-    //    key = @"maxTrackImageSelected";
-    //    if([styleKeys containsObject:key]) self.maxTrackImageSelected = [style objectForKey:key];
-    //
-    //    key = @"minimumTrackTintColor";
-    //    if([styleKeys containsObject:key]) self.minimumTrackTintColor = [style objectForKey:key];
-    //
-    //    key = @"maximumTrackTintColor";
-    //    if([styleKeys containsObject:key]) self.maximumTrackTintColor = [style objectForKey:key];
-    //
-    //    key = @"thumbTintColor";
-    //    if([styleKeys containsObject:key]) self.thumbTintColor = [style objectForKey:key];
-
+- (void)tapGesture:(UITapGestureRecognizer *)gr {
+    if (self.tapBlock && gr.state == UIGestureRecognizerStateRecognized)
+        self.tapBlock([gr locationInView:self.view]);
 }
 
-+(C4Control *)defaultStyle {
-    return (C4Control *)[C4Control appearance];
+- (void)onPan:(C4PanGestureBlock)block {
+    self.panBlock = block;
+    
+    if (self.panBlock && !_panGestureRecognizer) {
+        _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
+        [self.view addGestureRecognizer:_panGestureRecognizer];
+    }
 }
 
--(C4Control *)copyWithZone:(NSZone *)zone {
-    C4Control *control = [[C4Control allocWithZone:zone] initWithFrame:self.frame];
-    control.style = self.style;
-    return control;
+- (void)panGesture:(UIPanGestureRecognizer *)gr {
+    if (self.panBlock && gr.state == UIGestureRecognizerStateChanged)
+        self.panBlock([gr locationInView:self.view], [gr translationInView:self.view], [gr velocityInView:self.view]);
 }
 
--(id)nullForNilObject:(id)object {
-    if(object == nil) return [NSNull null];
-    return object;
+- (void)onPinch:(C4PinchGestureBlock)block {
+    self.pinchBlock = block;
+    
+    if (self.pinchBlock && !_pinchGestureRecognizer) {
+        _pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGesture:)];
+        [self.view addGestureRecognizer:_pinchGestureRecognizer];
+    }
 }
 
--(id)nilForNullObject:(id)object {
-    if(object == [NSNull null]) return nil;
-    return object;
+- (void)pinchGesture:(UIPinchGestureRecognizer*)gr {
+    if (self.pinchBlock && gr.state == UIGestureRecognizerStateChanged)
+        self.pinchBlock([gr locationInView:self.view], gr.scale, gr.velocity);
 }
 
--(void)renderInContext:(CGContextRef)context {
-//    CGContextSaveGState(context);
-//    CGContextConcatCTM(context, self.layer.affineTransform);
-    [self.layer renderInContext:context];
-//    CGContextRestoreGState(context);
+- (void)onRotation:(C4RotationGestureBlock)block {
+    self.rotationBlock = block;
+    
+    if (self.rotationBlock && !_rotationGestureRecognizer) {
+        _rotationGestureRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationGesture:)];
+        [self.view addGestureRecognizer:_rotationGestureRecognizer];
+    }
 }
 
+- (void)rotationGesture:(UIRotationGestureRecognizer*)gr {
+    if (self.rotationBlock && gr.state == UIGestureRecognizerStateChanged)
+        self.rotationBlock([gr locationInView:self.view], gr.rotation, gr.velocity);
+}
+
+- (void)onLongPressStart:(C4LongPressGestureBlock)block {
+    self.longPressStartBlock = block;
+    
+    if (self.longPressStartBlock && !_longPressGestureRecognizer) {
+        _longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressGesture:)];
+        _longPressGestureRecognizer.minimumPressDuration = 0.25;
+        [self.view addGestureRecognizer:_longPressGestureRecognizer];
+    }
+}
+
+- (void)onLongPressEnd:(C4LongPressGestureBlock)block {
+    self.longPressEndBlock = block;
+    
+    if (self.longPressEndBlock && !_longPressGestureRecognizer) {
+        _longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressGesture:)];
+        [self.view addGestureRecognizer:_longPressGestureRecognizer];
+    }
+}
+
+- (void)longPressGesture:(UILongPressGestureRecognizer *)gr {
+    if (self.longPressStartBlock && gr.state == UIGestureRecognizerStateBegan)
+        self.longPressStartBlock([gr locationInView:self.view]);
+    else if (self.longPressEndBlock && gr.state == UIGestureRecognizerStateEnded)
+        self.longPressEndBlock([gr locationInView:self.view]);
+}
+
+- (void)onSwipeRight:(C4SwipeGestureBlock)block {
+    self.swipeRightBlock = block;
+    
+    if (self.swipeRightBlock && !_swipeRightGestureRecognizer) {
+        _swipeRightGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
+        _swipeRightGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+        [self.view addGestureRecognizer:_swipeRightGestureRecognizer];
+    }
+}
+
+- (void)onSwipeLeft:(C4SwipeGestureBlock)block {
+    self.swipeLeftBlock = block;
+    
+    if (self.swipeLeftBlock && !_swipeLeftGestureRecognizer) {
+        _swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
+        _swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+        [self.view addGestureRecognizer:_swipeLeftGestureRecognizer];
+    }
+}
+
+- (void)onSwipeUp:(C4SwipeGestureBlock)block {
+    self.swipeUpBlock = block;
+    
+    if (self.swipeUpBlock && !_swipeUpGestureRecognizer) {
+        _swipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
+        _swipeUpGestureRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
+        [self.view addGestureRecognizer:_swipeUpGestureRecognizer];
+    }
+}
+
+- (void)onSwipeDown:(C4SwipeGestureBlock)block {
+    self.swipeDownBlock = block;
+    
+    if (self.swipeDownBlock && !_swipeDownGestureRecognizer) {
+        _swipeDownGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
+        _swipeDownGestureRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+        [self.view addGestureRecognizer:_swipeDownGestureRecognizer];
+    }
+}
+
+- (void)swipeGesture:(UISwipeGestureRecognizer *)gr {
+    if (self.swipeRightBlock && gr == _swipeRightGestureRecognizer && gr.state == UIGestureRecognizerStateRecognized)
+        self.swipeRightBlock([gr locationInView:self.view]);
+    else if (self.swipeLeftBlock && gr == _swipeLeftGestureRecognizer && gr.state == UIGestureRecognizerStateRecognized)
+        self.swipeLeftBlock([gr locationInView:self.view]);
+    else if (self.swipeUpBlock && gr == _swipeUpGestureRecognizer && gr.state == UIGestureRecognizerStateRecognized)
+        self.swipeUpBlock([gr locationInView:self.view]);
+    else if (self.swipeDownBlock && gr == _swipeDownGestureRecognizer && gr.state == UIGestureRecognizerStateRecognized)
+        self.swipeDownBlock([gr locationInView:self.view]);
+}
+
+#pragma mark Gesture Additions
+- (void)tapped {
+    
+}
+
+- (void)tapped:(CGPoint)location {
+    [self postNotification:@"tapped"];
+    [self tapped];
+}
+
+- (void)pinched {
+    
+}
+
+- (void)pinched:(CGPoint)location scale:(CGFloat)scale velocity:(CGFloat)velocity {
+    [self postNotification:@"pinched"];
+    [self pinched];
+}
+
+- (void)panned {
+    
+}
+
+- (void)panned:(CGPoint)location translation:(CGPoint)translation velocity:(CGPoint)velocity {
+    [self panned];
+}
+
+- (void)rotated {
+    
+}
+
+-(void)rotated:(CGPoint)location rotation:(CGFloat)rotation velocity:(CGFloat)velocity {
+    [self postNotification:@"rotated"];
+    [self rotated];
+}
+
+- (void)swipedLeft {
+    
+}
+
+- (void)swipedLeft:(CGPoint)location {
+    [self postNotification:@"swipedLeft"];
+    [self swipedLeft];
+}
+
+- (void)swipedRight {
+    
+}
+
+- (void)swipedRight:(CGPoint)location {
+    [self postNotification:@"swipedRight"];
+    [self swipedRight];
+}
+
+- (void)swipedUp {
+    
+}
+
+- (void)swipedUp:(CGPoint)location {
+    [self postNotification:@"swipedUp"];
+    [self swipedUp];
+}
+
+- (void)swipedDown {
+    
+}
+
+- (void)swipedDown:(CGPoint)location {
+    [self postNotification:@"swipedDown"];
+    [self swipedDown];
+}
+
+- (void)longPressEnded {
+    
+}
+
+-(void)longPressEnded:(CGPoint)location {
+    [self postNotification:@"longPressEnded"];
+    [self longPressEnded];
+}
+
+- (void)longPressStarted {
+    
+}
+
+-(void)longPressStarted:(CGPoint)location {
+    [self postNotification:@"longPressStarted"];
+    [self longPressStarted];
+}
+
+-(void)move:(CGPoint)location {
+    NSUInteger _ani = self.animationOptions;
+    CGFloat _dur = self.animationDuration;
+    CGFloat _del = self.animationDelay;
+    self.animationDuration = 0;
+    self.animationDelay = 0;
+    self.animationOptions = DEFAULT;
+    
+    CGPoint displacementFromCenter = CGPointMake(location.x - self.width/2 , location.y - self.height / 2);
+    self.center = CGPointMake(self.center.x + displacementFromCenter.x, self.center.y + displacementFromCenter.y);
+
+    [self postNotification:@"moved"];
+    
+    self.animationDelay = _del;
+    self.animationDuration = _dur;
+    self.animationOptions = _ani;
+}
+
+#pragma mark Templates
+
++ (C4Template *)defaultTemplate {
+    static C4Template* template;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        template = [C4Template templateForClass:self];
+    });
+    return template;
+}
+
++ (instancetype)defaultTemplateProxy {
+    return [[self defaultTemplate] proxy];
+}
+
++ (C4Template *)template {
+    return [C4Template templateForClass:self];
+}
+
+- (void)applyTemplate:(C4Template*)template {
+    [template applyToTarget:self];
+}
+
+#pragma mark - Rendering
+
+- (void)renderInContext:(CGContextRef)context {
+    [self.view.layer renderInContext:context];
+}
+
+#pragma mark - Notifications
+- (void)listenFor:(NSString *)notification andRun:(NotificationBlock)block {
+    [self listenFor:notification fromObject:nil andRun:block];
+}
+
+- (void)listenFor:(NSString *)notification fromObject:(id)object andRun:(NotificationBlock)block {
+    [[NSNotificationCenter defaultCenter] addObserverForName:notification object:self queue:nil usingBlock:block];
+}
+
+- (void)listenFor:(NSString *)notification fromObjects:(NSArray *)objectArray andRun:(NotificationBlock)block {
+    for (id object in objectArray) {
+        [[NSNotificationCenter defaultCenter] addObserverForName:notification object:object queue:nil usingBlock:block];
+    }
+}
+
+- (void)stopListeningFor:(NSString *)methodName {
+    [self stopListeningFor:methodName object:nil];
+}
+
+- (void)stopListeningFor:(NSString *)methodName object:(id)object {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:methodName object:object];
+}
+
+- (void)stopListeningFor:(NSString *)methodName objects:(NSArray *)objectArray {
+    for(id object in objectArray) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:methodName object:object];
+    }
+}
+
+- (void)postNotification:(NSString *)notification {
+    [[NSNotificationCenter defaultCenter] postNotificationName:notification object:self];
+}
+
+#pragma mark - MethodDelay
+
+-(void)run:(void (^)())block afterDelay:(CGFloat)seconds {
+    NSDictionary *d = @{@"block": block};
+    [self performSelector:@selector(executeBlockUsingDictionary:) withObject:d afterDelay:seconds];
+}
+
+-(void)executeBlockUsingDictionary:(NSDictionary *)d {
+    void (^block)(void) = d[@"block"];
+    block();
+    d = nil;
+}
+
+#pragma mark Other Additions
+#pragma mark - Remove from superview
+
+-(void)removeFromSuperview {
+    [self.view removeFromSuperview];
+}
+
+#pragma mark - new
+-(BOOL)userInteractionEnabled {
+    return self.view.userInteractionEnabled;
+}
+
+-(void)setUserInteractionEnabled:(BOOL)userInteractionEnabled {
+    self.view.userInteractionEnabled = userInteractionEnabled;
+}
+    
 @end

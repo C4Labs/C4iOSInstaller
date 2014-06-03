@@ -1,10 +1,21 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4GL1Renderer.m
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 12-03-08.
-//  Copyright (c) 2012 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4GL1Renderer.h"
 
@@ -71,7 +82,7 @@ const GLubyte colors[] = {
 }
 
 -(void)render {
-
+    
     GLfloat currentVerts[48];
     for(int i = 0; i < 48; i++){
 //        currentVerts[i] = vertices[i];
@@ -84,9 +95,9 @@ const GLubyte colors[] = {
         currentColors[i] = colors[j];
         if(j == 96) j = 0;
     }
-
+    
     [EAGLContext setCurrentContext:self.eaglContext];
-
+    
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     //reigns in the drawing area because the layer will clip to its viewport
@@ -112,10 +123,6 @@ const GLubyte colors[] = {
     glFinish();
     startPoint+=4;
     if(startPoint >= 96) startPoint = 0;
-}
-
--(C4GL1Renderer *)copyWithZone:(NSZone *)zone {
-    return [[C4GL1Renderer allocWithZone:zone] init];
 }
 
 @end

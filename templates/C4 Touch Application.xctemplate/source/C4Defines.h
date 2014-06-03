@@ -1,10 +1,21 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Defines.h
-//  C4iOSDevelopment
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 11-10-12.
-//  Copyright (c) 2011 mediart. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
 
@@ -13,12 +24,12 @@
 
 #if !defined(_C4AssertBody)
 #define C4Assert(condition, desc, ...) \
-do {			\
-if (!(condition)) {	\
+do {                    \
+if (!(condition)) {     \
 [[C4AssertionHandler currentHandler] handleFailureInMethod:_cmd \
 object:self file:[NSString stringWithUTF8String:__FILE__] \
 lineNumber:__LINE__ description:(desc), ##__VA_ARGS__]; \
-}			\
+}                       \
 } while(0)
 #endif
 
@@ -58,7 +69,7 @@ typedef enum C4AnimationOptions : NSUInteger {
 //    UIViewAnimationOptionOverrideInheritedCurve    = 1 <<  6,
 //    UIViewAnimationOptionAllowAnimatedContent      = 1 <<  7,
 //    UIViewAnimationOptionShowHideTransitionViews   = 1 <<  8,
-//    
+//
 //    UIViewAnimationOptionCurveEaseInOut            = 0 << 16,
 //    UIViewAnimationOptionCurveEaseIn               = 1 << 16,
 //    UIViewAnimationOptionCurveEaseOut              = 2 << 16,
@@ -67,7 +78,7 @@ typedef enum C4AnimationOptions : NSUInteger {
     EASEIN               = UIViewAnimationOptionCurveEaseIn,
     EASEOUT              = UIViewAnimationOptionCurveEaseOut,
     LINEAR               = UIViewAnimationOptionCurveLinear,
-//    
+//
 //    UIViewAnimationOptionTransitionNone            = 0 << 20,
 //    UIViewAnimationOptionTransitionFlipFromLeft    = 1 << 20,
 //    UIViewAnimationOptionTransitionFlipFromRight   = 2 << 20,
@@ -120,8 +131,8 @@ typedef enum C4TextAlignment : NSUInteger {
 } C4TextAlignment;
 
 typedef enum C4BaselineAdjustment : NSUInteger {
-    ALIGNBASELINES = UIBaselineAdjustmentAlignBaselines, 
-    ALIGNBASELINECENTERS = UIBaselineAdjustmentAlignCenters, 
+    ALIGNBASELINES = UIBaselineAdjustmentAlignBaselines,
+    ALIGNBASELINECENTERS = UIBaselineAdjustmentAlignCenters,
     ALIGNBASELINENONE = UIBaselineAdjustmentNone
 } C4BaselineAdjustment;
 
@@ -240,5 +251,31 @@ C4_EXTERN NSString *const C4CameraQuality1280x720;  //720p quality (1280x720 pix
 C4_EXTERN NSString *const C4CameraQuality1920x1080; //1080p quality (1920x1080 pixel) video output
 C4_EXTERN NSString *const C4CameraQualityiFrame960x540;   //iFrame H.264 video at about 30 Mbits/sec with AAC audio
 C4_EXTERN NSString *const C4CameraQualityiFrame1280x720;  //iFrame H.264 video at about 40 Mbits/sec with AAC audio
+
+/**This function returns an NSNull object if the current object is nil, otherwise it returns the given object as-is.
+ 
+ Use this method to check a given object is equal to nil. If so, this method returns an NSNull object.
+ 
+ This method is used for reading out NSNull values from the style dictionaries that are passed as properties.
+ 
+ @param object An object to test if its value is nil
+ @return NSNull or the object being passed.
+ */
+static inline id nullForNilObject(id object) {
+    return object == nil ? [NSNull null] : object;
+}
+
+/**This function returns nil if the current object is NSNull, otherwise it returns the given object as-is.
+ 
+ Use this method to check a given object is equal to NSNull. If so, this method returns nil.
+ 
+ This method is used when creating style dictionaries that cannot take nil as object values.
+ 
+ @param object An object to test if its value is NSNull
+ @return nil or the object being passed.
+ */
+static inline id nilForNullObject(id object) {
+    return object == [NSNull null] ? nil : object;
+}
 
 #endif

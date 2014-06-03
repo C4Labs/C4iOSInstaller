@@ -1,33 +1,38 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Stepper.m
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by moi on 13-03-05.
-//  Copyright (c) 2013 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4Stepper.h"
 
 @implementation C4Stepper
-@synthesize tintColor = _tintColor;
 
-+(C4Stepper *)stepper {
++ (instancetype)stepper {
     C4Stepper *stepper = [[C4Stepper alloc] initWithFrame:CGRectZero];
     return stepper;
 }
 
 -(id)initWithFrame:(CGRect)frame {
-    CGPoint origin = frame.origin;
-    origin.x = floorf(origin.x);
-    origin.y = floorf(origin.y);
-    frame.origin = origin;
-    self = [super initWithFrame:frame];
+    UIStepper* stepper = [[UIStepper alloc] initWithFrame:frame];
+    stepper.maximumValue = 5;
+    self = [super initWithView:stepper];
     if(self != nil) {
-        _UIStepper.layer.masksToBounds = YES;
-        _UIStepper = [[UIStepper alloc] init];
+        _UIStepper = stepper;
         self.maximumValue = 5;
-        self.frame = (CGRect){self.origin,_UIStepper.frame.size};
-        [self addSubview:_UIStepper];
     }
     return self;
 }
@@ -102,7 +107,6 @@
     [self.UIStepper setTintColor:tintColor];
 }
 
-//FIXME: these UI_APPEARANCE_SELECTORS might be confusing because they refer to an object, but I don't want to have objects for all of them...
 -(void)setBackgroundImage:(C4Image*)image forState:(C4ControlState)state {
     [self.UIStepper setBackgroundImage:image.UIImage forState:(UIControlState)state];
 }
@@ -150,15 +154,16 @@
     return NO;
 }
 
-#pragma mark Style
-+(C4Stepper *)defaultStyle {
-    return (C4Stepper *)[C4Stepper appearance];
-}
 
--(C4Stepper *)copyWithZone:(NSZone *)zone {
-    C4Stepper *s = [[C4Stepper allocWithZone:zone] initWithFrame:self.frame];
-    s.style = self.style;
-    return s;
+#pragma mark Templates
+
++ (C4Template *)defaultTemplate {
+    static C4Template* template;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        template = [C4Template templateFromBaseTemplate:[super defaultTemplate] forClass:self];
+    });
+    return template;
 }
 
 @end

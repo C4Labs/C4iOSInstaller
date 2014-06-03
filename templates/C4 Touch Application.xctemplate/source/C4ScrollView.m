@@ -1,31 +1,45 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4ScrollView.m
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by moi on 13-03-07.
-//  Copyright (c) 2013 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4ScrollView.h"
 
 @implementation C4ScrollView
-@synthesize contentOffset = _contentOffset;
 
-+(C4ScrollView *)scrollView:(CGRect)rect {
++ (instancetype)scrollView:(CGRect)rect {
     return [[C4ScrollView alloc] initWithFrame:rect];
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
+- (id)initWithFrame:(CGRect)frame {
+    UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:frame];
+    scrollView.delegate = self;
+    scrollView.backgroundColor = [UIColor clearColor];
+    
+    self = [super initWithView:scrollView];
     if (self) {
-        _UIScrollview = [[UIScrollView alloc] initWithFrame:self.bounds];
-        _UIScrollview.delegate = self;
-        _UIScrollview.backgroundColor = [UIColor clearColor];
-        [super addSubview:_UIScrollview];
+        _UIScrollview = scrollView;
         [_UIScrollview addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     }
     return self;
+}
+
+-(void)dealloc {
+    [self.UIScrollview removeObserver:self forKeyPath:@"contentOffset"];
 }
 
 -(id <UIScrollViewDelegate>)delegate {
@@ -89,7 +103,6 @@
 }
 
 -(void)setContentOffset:(CGPoint)contentOffset {
-    _contentOffset = contentOffset;
     _UIScrollview.contentOffset = contentOffset;
 }
 
@@ -208,7 +221,7 @@
     _UIScrollview.zoomScale = zoomScale;
 }
 
--(void)setZoomScale:(float)scale animated:(BOOL)animated {
+-(void)setZoomScale:(CGFloat)scale animated:(BOOL)animated {
     [_UIScrollview setZoomScale:scale animated:animated];
 }
 
@@ -252,144 +265,26 @@
     return [_UIScrollview touchesShouldCancelInContentView:view];
 }
 
-//FIXME: the following is troublesome... looking ahead, i guess if anyone wants to use this method they'll be sufficiently able to code it with a regular UIScrollview
-
-// override points for subclasses to control delivery of touch events to subviews of the scroll view
-// called before touches are delivered to a subview of the scroll view. if it returns NO the touches will not be delivered to the subview
-// default returns YES
-- (BOOL)touchesShouldBegin:(NSSet *)touches withEvent:(UIEvent *)event inContentView:(UIView *)view {
-    touches = touches;
-    event = event;
-    view = view;
-    return NO;
-}
-
 #pragma mark ObserverMethods
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    change = change;
-    context = context;
-    if([keyPath isEqualToString:@"contentOffset"]) {
-        if((UIScrollView *)object == _UIScrollview) {
-            [self willChangeValueForKey:@"contentOffset"];
-            _contentOffset = _UIScrollview.contentOffset;
-            [self didChangeValueForKey:@"contentOffset"];
-        }
+    if([keyPath isEqualToString:@"contentOffset"] && (UIScrollView *)object == _UIScrollview) {
+        [self willChangeValueForKey:@"contentOffset"];
+        [self didChangeValueForKey:@"contentOffset"];
     }
 }
 
-#pragma mark Optional Delegate Methods
-//Uncomment any of the following to use them in reaction to things that are going on in the scrollview
+#pragma mark Templates
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//
-//}
-//
-//- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
-//    
-//}
-//
-//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-//    
-//}
-//
-//- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-//    
-//}
-//
-//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-//    
-//}
-//
-//- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-//    
-//}
-//
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-//
-//}
-//
-//- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-//    
-//}
-//
-//- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-//    
-//}
-//
-//- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view {
-//    
-//}
-//
-//- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale {
-//    
-//}
-//
-//- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
-//    
-//}
-//
-//- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
-//    
-//}
-
-#pragma mark C4AddSubview
--(void)addCamera:(C4Camera *)camera {
-    C4Assert([camera isKindOfClass:[C4Camera class]],
-             @"You tried to add a %@ using [canvas addShape:]", [camera class]);
-    [_UIScrollview addSubview:camera];
++ (C4Template *)defaultTemplate {
+    static C4Template* template;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        template = [C4Template templateFromBaseTemplate:[super defaultTemplate] forClass:self];
+    });
+    return template;
 }
 
--(void)addShape:(C4Shape *)shape {
-    C4Assert([shape isKindOfClass:[C4Shape class]],
-             @"You tried to add a %@ using [canvas addShape:]", [shape class]);
-    [_UIScrollview addSubview:shape];
-}
-
--(void)addSubview:(UIView *)subview {
-    C4Assert(![[subview class] isKindOfClass:[C4Camera class]], @"You just tried to add a C4Camera using the addSubview: method, please use addCamera:");
-    C4Assert(![[subview class] isKindOfClass:[C4Shape class]], @"You just tried to add a C4Shape using the addSubview: method, please use addShape:");
-    C4Assert(![[subview class] isKindOfClass:[C4Movie class]], @"You just tried to add a C4Movie using the addSubview: method, please use addMovie:");
-    C4Assert(![[subview class] isKindOfClass:[C4Image class]], @"You just tried to add a C4Image using the addSubview: method, please use addImage:");
-    C4Assert(![[subview class] isKindOfClass:[C4GL class]], @"You just tried to add a C4GL using the addSubview: method, please use addGL:");
-    C4Assert(![[subview class] isKindOfClass:[C4Label class]], @"You just tried to add a C4Label using the addSubview: method, please use addLabel:");
-    [_UIScrollview addSubview:subview];
-}
-
--(void)addLabel:(C4Label *)label {
-    C4Assert([label isKindOfClass:[C4Label class]],
-             @"You tried to add a %@ using [canvas addLabel:]", [label class]);
-    [_UIScrollview addSubview:label];
-}
-
--(void)addGL:(C4GL *)gl {
-    C4Assert([gl isKindOfClass:[C4GL class]],
-             @"You tried to add a %@ using [canvas addGL:]", [gl class]);
-    [_UIScrollview addSubview:gl];
-}
-
--(void)addImage:(C4Image *)image {
-    C4Assert([image isKindOfClass:[C4Image class]],
-             @"You tried to add a %@ using [canvas addImage:]", [image class]);
-    [_UIScrollview addSubview:image];
-}
-
--(void)addMovie:(C4Movie *)movie {
-    C4Assert([movie isKindOfClass:[C4Movie class]],
-             @"You tried to add a %@ using [canvas addMovie:]", [movie class]);
-    [_UIScrollview addSubview:movie];
-}
-
-+(C4ScrollView *)defaultStyle {
-    return (C4ScrollView *)[C4ScrollView appearance];
-}
-
-//FIXME: NEED TO ADD STYLE COPYING METHODS TO C4SCROLLVIEW.M
--(id)copyWithZone:(NSZone *)zone {
-    C4ScrollView *newScrollView = [[C4ScrollView allocWithZone:zone] initWithFrame:self.frame];
-    newScrollView.style = self.style;
-    return newScrollView;
-}
 @end

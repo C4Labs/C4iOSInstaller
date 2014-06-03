@@ -1,15 +1,25 @@
+// Copyright © 2012 Travis Kirton
 //
-//  C4Font.m
-//  C4iOS
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
 //
-//  Created by Travis Kirton on 12-02-27.
-//  Copyright (c) 2012 POSTFL. All rights reserved.
-//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
 
 #import "C4Font.h"
 
 @implementation C4Font
-@synthesize UIFont = _UIFont, CTFont = _CTFont, CGFont = _CGFont, familyName = _familyName, fontName = _fontName, pointSize = _pointSize, ascender = _ascender, descender = _descender, capHeight = _capHeight, xHeight = _xHeight, lineHeight = _lineHeight;
 
 -(id)init {
     self = [super init];
@@ -29,16 +39,8 @@
     return self;
 }
 
-+ (C4Font *)fontWithName:(NSString *)fontName size:(CGFloat)fontSize {
++ (instancetype)fontWithName:(NSString *)fontName size:(CGFloat)fontSize {
     return [[C4Font alloc] initWithName:fontName size:fontSize];
-}
-
--(void)dealloc {
-    _UIFont = nil;
-    _CTFont = nil;
-    _CGFont = nil;
-    _familyName = nil;
-    _fontName = nil;
 }
 
 // Returns an array of font family names for all installed fonts
@@ -51,14 +53,14 @@
 }
 
 // Some convenience methods to create system fonts
-+ (C4Font *)systemFontOfSize:(CGFloat)fontSize {
++ (instancetype)systemFontOfSize:(CGFloat)fontSize {
     return [[C4Font alloc] initWithName:SYSTEMFONTNAME size:fontSize];
 }
 
-+ (C4Font *)boldSystemFontOfSize:(CGFloat)fontSize {
++ (instancetype)boldSystemFontOfSize:(CGFloat)fontSize {
     return [[C4Font alloc] initWithName:BOLDSYSTEMFONTNAME size:fontSize];
 }
-+ (C4Font *)italicSystemFontOfSize:(CGFloat)fontSize {
++ (instancetype)italicSystemFontOfSize:(CGFloat)fontSize {
     return [[C4Font alloc] initWithName:ITALICSYSTEMFONTNAME size:fontSize];
 }
 
@@ -115,10 +117,6 @@
 
 -(CTFontRef)CTFont {
     return CTFontCreateWithName((__bridge CFStringRef)self.fontName, self.pointSize, nil);
-}
-
--(C4Font *)copyWithZone:(NSZone *)zone {
-    return [[C4Font allocWithZone:zone] initWithName:self.fontName size:self.pointSize];
 }
 
 @end
