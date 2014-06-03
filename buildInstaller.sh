@@ -19,7 +19,14 @@ productbuild --synthesize --package $TEMPLATES_PKG --package $DOCSET_PKG distrib
 sh updateDistributionXML.sh
 
 #builds the distribution package
-productbuild --distribution distribution.xml --resources ./resources C4Installer_$VERSION.pkg
+productbuild --distribution distribution.xml --resources ./resources unsigned.pkg
+
+#signs the package
+productsign --sign "Developer ID Installer: Travis Stuart Kirton (75C7KVJZ99)" unsigned.pkg signed.pkg
+
+#renames the package
+mv signed.pkg C4Installer_$VERSION.pkg
 
 rm -Rf $TEMPLATES_PKG
 rm -Rf $DOCSET_PKG
+rm -Rf unsigned.pkg
