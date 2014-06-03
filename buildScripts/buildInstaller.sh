@@ -21,3 +21,6 @@ sh updateDistributionXML.sh
 
 #builds the distribution package
 productbuild --distribution distribution.xml --resources ./resources --package-path $TEMPLATES_PKG --package-path $DOCSET_PKG C4Installer_$VERSION.pkg
+
+rm -Rf $TEMPLATES_PKG
+rm -Rf $DOCSET_PKG
