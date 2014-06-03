@@ -1,7 +1,6 @@
 #  buildInstaller.sh
 #
-#  Created by Travis Kirton on 12-05-25.
-#  Copyright (c) 2012 POSTFL. All rights reserved.
+#  Created by Travis Kirton on 14-06-02.
 
 # sets the version for the current installer
 VERSION="0_01"
