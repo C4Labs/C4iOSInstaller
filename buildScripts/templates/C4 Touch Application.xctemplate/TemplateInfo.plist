@@ -1,0 +1,1181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.objectiveCApplication</string>
+		<string>com.apple.dt.unit.iPhoneBase</string>
+		<string>com.apple.dt.unit.prefixable</string>
+	</array>
+	<key>Components</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>com.apple.dt.unit.cocoaTouchApplicationUnitTestBundle</string>
+			<key>Name</key>
+			<string>___PACKAGENAME___Tests</string>
+		</dict>
+	</array>
+	<key>Definitions</key>
+	<dict>
+		<key>*:implementation:didReceiveMemoryWarning</key>
+		<dict>
+			<key>Beginning</key>
+			<string>- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.</string>
+			<key>End</key>
+			<string>}
+</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+		<key>*:implementation:viewDidLoad</key>
+		<dict>
+			<key>Beginning</key>
+			<string>- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.</string>
+			<key>End</key>
+			<string>}
+</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+		<key>*:viewControllerInterface</key>
+		<dict>
+			<key>Beginning</key>
+			<string>//
+//  ___FILENAME___
+//  ___PACKAGENAME___
+//
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//___COPYRIGHT___
+//
+
+#import &lt;UIKit/UIKit.h&gt;
+
+@interface ___FILEBASENAME___ : UIViewController
+</string>
+			<key>End</key>
+			<string>@end</string>
+		</dict>
+		<key>___PACKAGENAME___-Info.plist:iPhone</key>
+		<string>&lt;key&gt;CFBundleDisplayName&lt;/key&gt;
+&lt;string&gt;${PRODUCT_NAME}&lt;/string&gt;
+&lt;key&gt;CFBundleVersion&lt;/key&gt;
+&lt;string&gt;1.0&lt;/string&gt;
+&lt;key&gt;CFBundleShortVersionString&lt;/key&gt;
+&lt;string&gt;1.0&lt;/string&gt;
+&lt;key&gt;LSRequiresIPhoneOS&lt;/key&gt;
+&lt;true/&gt;
+&lt;key&gt;UIRequiredDeviceCapabilities&lt;/key&gt;
+&lt;array&gt;
+	&lt;string&gt;armv7&lt;/string&gt;
+&lt;/array&gt;</string>
+		<key>___PACKAGENAME___-Info.plist:statusBarTintForNavBar</key>
+		<string>&lt;key&gt;UIStatusBarTintParameters&lt;/key&gt;
+&lt;dict&gt;
+    &lt;key&gt;UINavigationBar&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;Style&lt;/key&gt;
+        &lt;string&gt;UIBarStyleDefault&lt;/string&gt;
+        &lt;key&gt;Translucent&lt;/key&gt;
+        &lt;false/&gt;
+    &lt;/dict&gt;
+&lt;/dict&gt;
+</string>
+		<key>___PACKAGENAME___-Prefix.pch:Availability:iPhoneAvailability:*</key>
+		<string>#import &lt;Availability.h&gt;
+
+#ifndef __IPHONE____*____0
+#warning &quot;This project uses features only available in iOS SDK ___*___.0 and later.&quot;
+#endif
+</string>
+		<key>___PACKAGENAME___-Prefix.pch:Imports</key>
+		<string>
+#import &lt;UIKit/UIKit.h&gt;
+#import &lt;Foundation/Foundation.h&gt;
+#import &lt;CoreText/CoreText.h&gt;
+#import &lt;Foundation/Foundation.h&gt;
+#import &lt;QuartzCore/QuartzCore.h&gt;
+#import &lt;AVFoundation/AVFoundation.h&gt;
+#import &lt;math.h&gt;
+
+#import &quot;C4AssertionHandler.h&quot;
+
+//protocols
+#import &quot;C4Defines.h&quot;
+#import &quot;C4UIElement.h&quot;
+#import &quot;C4AddSubview.h&quot;
+#import &quot;C4Notification.h&quot;
+#import &quot;C4Gesture.h&quot;
+#import &quot;C4LayerAnimation.h&quot;
+#import &quot;C4MethodDelay.h&quot;
+
+//classes
+#import &quot;C4Object.h&quot;
+#import &quot;C4Math.h&quot;
+#import &quot;C4Font.h&quot;
+#import &quot;C4Foundation.h&quot;
+#import &quot;C4Vector.h&quot;
+#import &quot;C4Timer.h&quot;
+#import &quot;C4Layer.h&quot;
+#import &quot;C4Control.h&quot;
+#import &quot;C4Image.h&quot;
+#import &quot;C4ShapeLayer.h&quot;
+#import &quot;C4Shape.h&quot;
+#import &quot;C4Label.h&quot;
+#import &quot;C4EAGLESRenderer.h&quot;
+#import &quot;C4GL1Renderer.h&quot;
+#import &quot;C4EAGLLayer.h&quot;
+#import &quot;C4GL.h&quot;
+#import &quot;C4MovieLayer.h&quot;
+#import &quot;C4Movie.h&quot;
+#import &quot;C4Sample.h&quot;
+#import &quot;C4EAGLES1Renderer.h&quot;
+#import &quot;C4View.h&quot;
+
+#import &quot;C4ActivityIndicator.h&quot;
+#import &quot;C4Button.h&quot;
+#import &quot;C4Slider.h&quot;
+#import &quot;C4Stepper.h&quot;
+#import &quot;C4Switch.h&quot;
+#import &quot;C4ScrollView.h&quot;
+
+#import &quot;C4ViewController.h&quot;
+#import &quot;C4Camera.h&quot;
+#import &quot;C4CanvasController.h&quot;
+#import &quot;C4WorkSpace.h&quot;
+#import &quot;C4Window.h&quot;
+
+#import &quot;C4AppDelegate.h&quot;
+</string>
+		<key>___PACKAGENAME___.entitlements</key>
+		<dict>
+			<key>Beginning</key>
+			<string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+            </string>
+			<key>End</key>
+			<string>&lt;/dict&gt;
+&lt;/plist&gt;
+            </string>
+			<key>Group</key>
+			<string>Supporting Files</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+		<key>___PACKAGENAME___.entitlements:dataProtectionClass</key>
+		<string>&lt;key&gt;DataProtectionClass&lt;/key&gt;
+&lt;string&gt;NSFileProtectionComplete&lt;/string&gt;
+        </string>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.h:ivars</key>
+		<dict>
+			<key>Beginning</key>
+			<string>@interface ___VARIABLE_classPrefix:identifier___AppDelegate : UIResponder &lt;UIApplicationDelegate&gt;
+</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.h:methods:window</key>
+		<string>@property (strong, nonatomic) UIWindow *window;
+</string>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m</key>
+		<dict>
+			<key>End</key>
+			<string>@end</string>
+		</dict>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m:applicationDidBecomeActive</key>
+		<dict>
+			<key>Beginning</key>
+			<string>- (void)applicationDidBecomeActive:(UIApplication *)application
+{</string>
+			<key>End</key>
+			<string>}
+</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m:applicationDidBecomeActive:comments</key>
+		<string>// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+</string>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m:applicationDidEnterBackground</key>
+		<dict>
+			<key>Beginning</key>
+			<string>- (void)applicationDidEnterBackground:(UIApplication *)application
+{</string>
+			<key>End</key>
+			<string>}
+</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m:applicationDidEnterBackground:comments</key>
+		<string>// Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+// If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+</string>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m:applicationLifecycle</key>
+		<string>- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    // Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+     // If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+     // Called as part of transition from the background to the inactive state: here you can undo many of the changes made on entering the background.
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+}
+</string>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m:applicationWillEnterForeground</key>
+		<dict>
+			<key>Beginning</key>
+			<string>- (void)applicationWillEnterForeground:(UIApplication *)application
+{</string>
+			<key>End</key>
+			<string>}
+</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m:applicationWillEnterForeground:comments</key>
+		<string>// Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+</string>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m:applicationWillResignActive</key>
+		<dict>
+			<key>Beginning</key>
+			<string>- (void)applicationWillResignActive:(UIApplication *)application
+{</string>
+			<key>End</key>
+			<string>}
+</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m:applicationWillResignActive:comments</key>
+		<string>// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+// Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+</string>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m:applicationWillTerminate</key>
+		<dict>
+			<key>Beginning</key>
+			<string>- (void)applicationWillTerminate:(UIApplication *)application
+{</string>
+			<key>End</key>
+			<string>}
+</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m:applicationWillTerminate:comments</key>
+		<string>// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+</string>
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m:implementation</key>
+		<string>@implementation ___VARIABLE_classPrefix:identifier___AppDelegate
+</string>
+		<key>main.m:main</key>
+		<dict>
+			<key>Beginning</key>
+			<string>int main(int argc, char * argv[])
+{</string>
+			<key>End</key>
+			<string>}</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+		<key>main.m:main:UIApplicationMain</key>
+		<string>@autoreleasepool {
+    return UIApplicationMain(argc, argv, nil, NSStringFromClass([C4AppDelegate class]));
+}
+</string>
+		<key>Headers/C4ActivityIndicator.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4ActivityIndicator.h</string>
+		</dict>
+		<key>Headers/C4AddSubview.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4AddSubview.h</string>
+		</dict>
+		<key>Headers/C4AppDelegate.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Supporting Files</string>
+			<key>Path</key>
+			<string>source/C4AppDelegate.h</string>
+		</dict>
+		<key>Headers/C4AssertionHandler.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4AssertionHandler.h</string>
+		</dict>
+		<key>Headers/C4Button.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Button.h</string>
+		</dict>
+		<key>Headers/C4Camera.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Camera.h</string>
+		</dict>
+		<key>Headers/C4CameraController.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4CameraController.h</string>
+		</dict>
+		<key>Headers/C4CameraLayer.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4CameraLayer.h</string>
+		</dict>
+		<key>Headers/C4CanvasController.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4CanvasController.h</string>
+		</dict>
+		<key>Headers/C4Control.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Control.h</string>
+		</dict>
+		<key>Headers/C4Defines.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Defines.h</string>
+		</dict>
+		<key>Headers/C4EAGLES1Renderer.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4EAGLES1Renderer.h</string>
+		</dict>
+		<key>Headers/C4EAGLESRenderer.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4EAGLESRenderer.h</string>
+		</dict>
+		<key>Headers/C4EAGLLayer.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4EAGLLayer.h</string>
+		</dict>
+		<key>Headers/C4Font.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Font.h</string>
+		</dict>
+		<key>Headers/C4Foundation.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Foundation.h</string>
+		</dict>
+		<key>Headers/C4Gesture.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Gesture.h</string>
+		</dict>
+		<key>Headers/C4GL.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4GL.h</string>
+		</dict>
+		<key>Headers/C4GL1Renderer.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4GL1Renderer.h</string>
+		</dict>
+		<key>Headers/C4Image.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Image.h</string>
+		</dict>
+		<key>Headers/C4ImageView.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4ImageView.h</string>
+		</dict>
+		<key>Headers/C4Label.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Label.h</string>
+		</dict>
+		<key>Headers/C4Layer.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Layer.h</string>
+		</dict>
+		<key>Headers/C4LayerAnimation.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4LayerAnimation.h</string>
+		</dict>
+		<key>Headers/C4Math.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Math.h</string>
+		</dict>
+		<key>Headers/C4MethodDelay.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4MethodDelay.h</string>
+		</dict>
+		<key>Headers/C4Movie.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Movie.h</string>
+		</dict>
+		<key>Headers/C4MovieLayer.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4MovieLayer.h</string>
+		</dict>
+		<key>Headers/C4Notification.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Notification.h</string>
+		</dict>
+		<key>Headers/C4Object.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Object.h</string>
+		</dict>
+		<key>Headers/C4Sample.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Sample.h</string>
+		</dict>
+		<key>Headers/C4ScrollView.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4ScrollView.h</string>
+		</dict>
+		<key>Headers/C4Shape.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Shape.h</string>
+		</dict>
+		<key>Headers/C4ShapeLayer.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4ShapeLayer.h</string>
+		</dict>
+		<key>Headers/C4Slider.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Slider.h</string>
+		</dict>
+		<key>Headers/C4Stepper.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Stepper.h</string>
+		</dict>
+		<key>Headers/C4Switch.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Switch.h</string>
+		</dict>
+		<key>Headers/C4Timer.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Timer.h</string>
+		</dict>
+		<key>Headers/C4UIElement.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4UIElement.h</string>
+		</dict>
+		<key>Headers/C4Vector.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Vector.h</string>
+		</dict>
+		<key>Headers/C4View.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4View.h</string>
+		</dict>
+		<key>Headers/C4ViewController.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4ViewController.h</string>
+		</dict>
+		<key>Headers/C4Window.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/C4Window.h</string>
+		</dict>
+		<key>Headers/UIColor+CIColorFix.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Framework</string>
+			<key>Path</key>
+			<string>source/UIColor+CIColorFix.h</string>
+		</dict>
+		<key>implementation/C4AppDelegate.m</key>
+		<dict>
+			<key>Group</key>
+			<string>Supporting Files</string>
+			<key>Path</key>
+			<string>source/C4AppDelegate.m</string>
+		</dict>
+		<key>Media.xcassets</key>
+		<dict>
+			<key>Group</key>
+			<string>Media</string>
+			<key>Path</key>
+			<string>Media.xcassets</string>
+		</dict>
+		<key>Media/C4Loop.aif</key>
+		<dict>
+			<key>Group</key>
+			<string>Media</string>
+			<key>Path</key>
+			<string>media/C4Loop.aif</string>
+		</dict>
+		<key>Media/inception.mov</key>
+		<dict>
+			<key>Group</key>
+			<string>Media</string>
+			<key>Path</key>
+			<string>media/inception.mov</string>
+		</dict>
+	</dict>
+	<key>Identifier</key>
+	<string>com.apple.dt.unit.C4TouchApplication</string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Nodes</key>
+	<array>
+		<string>main.m:main:UIApplicationMain</string>
+		<string>___PACKAGENAME___-Info.plist:iPhone</string>
+		<string>___PACKAGENAME___-Info.plist:NSMainNibFile</string>
+		<string>___PACKAGENAME___-Prefix.pch:Availability:iPhoneAvailability</string>
+		<string>___PACKAGENAME___-Prefix.pch:Imports</string>
+		<string>Images.xcassets</string>
+		<string>Media.xcassets</string>
+		<string>Headers/C4ActivityIndicator.h</string>
+		<string>Headers/C4AddSubview.h</string>
+		<string>Headers/C4AppDelegate.h</string>
+		<string>Headers/C4AssertionHandler.h</string>
+		<string>Headers/C4Button.h</string>
+		<string>Headers/C4Camera.h</string>
+		<string>Headers/C4CameraController.h</string>
+		<string>Headers/C4CameraLayer.h</string>
+		<string>Headers/C4CanvasController.h</string>
+		<string>Headers/C4Control.h</string>
+		<string>Headers/C4Defines.h</string>
+		<string>Headers/C4EAGLES1Renderer.h</string>
+		<string>Headers/C4EAGLESRenderer.h</string>
+		<string>Headers/C4EAGLLayer.h</string>
+		<string>Headers/C4Font.h</string>
+		<string>Headers/C4Foundation.h</string>
+		<string>Headers/C4Gesture.h</string>
+		<string>Headers/C4GL.h</string>
+		<string>Headers/C4GL1Renderer.h</string>
+		<string>Headers/C4Image.h</string>
+		<string>Headers/C4ImageView.h</string>
+		<string>Headers/C4Label.h</string>
+		<string>Headers/C4Layer.h</string>
+		<string>Headers/C4LayerAnimation.h</string>
+		<string>Headers/C4Math.h</string>
+		<string>Headers/C4MethodDelay.h</string>
+		<string>Headers/C4Movie.h</string>
+		<string>Headers/C4MovieLayer.h</string>
+		<string>Headers/C4Notification.h</string>
+		<string>Headers/C4Object.h</string>
+		<string>Headers/C4Sample.h</string>
+		<string>Headers/C4ScrollView.h</string>
+		<string>Headers/C4Shape.h</string>
+		<string>Headers/C4ShapeLayer.h</string>
+		<string>Headers/C4Slider.h</string>
+		<string>Headers/C4Stepper.h</string>
+		<string>Headers/C4Switch.h</string>
+		<string>Headers/C4Timer.h</string>
+		<string>Headers/C4UIElement.h</string>
+		<string>Headers/C4Vector.h</string>
+		<string>Headers/C4View.h</string>
+		<string>Headers/C4ViewController.h</string>
+		<string>Headers/C4Window.h</string>
+		<string>Headers/UIColor+CIColorFix.h</string>
+		<string>implementation/C4AppDelegate.m</string>
+		<string>Media/C4Loop.aif</string>
+		<string>Media/inception.mov</string>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Default</key>
+			<string>Universal</string>
+			<key>Description</key>
+			<string>Which device family to create a project for</string>
+			<key>Identifier</key>
+			<string>universalDeviceFamily</string>
+			<key>Name</key>
+			<string>Devices</string>
+			<key>SortOrder</key>
+			<integer>1</integer>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Units</key>
+			<dict>
+				<key>Universal</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>Images.xcassets</key>
+						<dict>
+							<key>Group</key>
+							<string>Media</string>
+							<key>Path</key>
+							<string>Images-Universal.xcassets</string>
+						</dict>
+					</dict>
+					<key>Nodes</key>
+					<array>
+						<string>___PACKAGENAME___-Info.plist:UISupportedInterfaceOrientations~iPhone</string>
+						<string>___PACKAGENAME___-Info.plist:UISupportedInterfaceOrientations~iPad</string>
+					</array>
+					<key>Project</key>
+					<dict>
+						<key>SharedSettings</key>
+						<dict>
+							<key>TARGETED_DEVICE_FAMILY</key>
+							<string>1,2</string>
+						</dict>
+					</dict>
+				</dict>
+				<key>iPad</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>Images.xcassets</key>
+						<dict>
+							<key>Group</key>
+							<string>Media</string>
+							<key>Path</key>
+							<string>Images-iPad.xcassets</string>
+						</dict>
+					</dict>
+					<key>Nodes</key>
+					<array>
+						<string>___PACKAGENAME___-Info.plist:UISupportedInterfaceOrientations~iPad</string>
+					</array>
+					<key>Project</key>
+					<dict>
+						<key>SharedSettings</key>
+						<dict>
+							<key>TARGETED_DEVICE_FAMILY</key>
+							<string>2</string>
+						</dict>
+					</dict>
+				</dict>
+				<key>iPhone</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>Images.xcassets</key>
+						<dict>
+							<key>Group</key>
+							<string>Media</string>
+							<key>Path</key>
+							<string>Images-iPhone.xcassets</string>
+						</dict>
+					</dict>
+					<key>Nodes</key>
+					<array>
+						<string>___PACKAGENAME___-Info.plist:UISupportedInterfaceOrientations~iPhone</string>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Default</key>
+			<string>Library (Faster builds)</string>
+			<key>Description</key>
+			<string>Include a precomiled lib (faster builds), or raw source files (slower builds)</string>
+			<key>Identifier</key>
+			<string>includedFilesOption</string>
+			<key>Name</key>
+			<string>Source Code</string>
+			<key>SortOrder</key>
+			<integer>1</integer>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Units</key>
+			<dict>
+				<key>Library (Faster builds)</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>libC4.a</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/libC4.a</string>
+						</dict>
+					</dict>
+					<key>Nodes</key>
+					<array>
+						<string>libC4.a</string>
+					</array>
+				</dict>
+				<key>Raw Files (Slower builds)</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>implementation/C4ActivityIndicator.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4ActivityIndicator.m</string>
+						</dict>
+						<key>implementation/C4AssertionHandler.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4AssertionHandler.m</string>
+						</dict>
+						<key>implementation/C4Button.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Button.m</string>
+						</dict>
+						<key>implementation/C4Camera.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Camera.m</string>
+						</dict>
+						<key>implementation/C4CameraController.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4CameraController.m</string>
+						</dict>
+						<key>implementation/C4CameraLayer.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4CameraLayer.m</string>
+						</dict>
+						<key>implementation/C4CanvasController.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4CanvasController.m</string>
+						</dict>
+						<key>implementation/C4Control.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Control.m</string>
+						</dict>
+						<key>implementation/C4Defines.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Defines.m</string>
+						</dict>
+						<key>implementation/C4EAGLES1Renderer.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4EAGLES1Renderer.m</string>
+						</dict>
+						<key>implementation/C4EAGLESRenderer.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4EAGLESRenderer.m</string>
+						</dict>
+						<key>implementation/C4EAGLLayer.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4EAGLLayer.m</string>
+						</dict>
+						<key>implementation/C4Font.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Font.m</string>
+						</dict>
+						<key>implementation/C4Foundation.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Foundation.m</string>
+						</dict>
+						<key>implementation/C4GL.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4GL.m</string>
+						</dict>
+						<key>implementation/C4GL1Renderer.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4GL1Renderer.m</string>
+						</dict>
+						<key>implementation/C4Image.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Image.m</string>
+						</dict>
+						<key>implementation/C4ImageView.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4ImageView.m</string>
+						</dict>
+						<key>implementation/C4Label.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Label.m</string>
+						</dict>
+						<key>implementation/C4Layer.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Layer.m</string>
+						</dict>
+						<key>implementation/C4LayerAnimation.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4LayerAnimation.m</string>
+						</dict>
+						<key>implementation/C4Math.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Math.m</string>
+						</dict>
+						<key>implementation/C4Movie.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Movie.m</string>
+						</dict>
+						<key>implementation/C4MovieLayer.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4MovieLayer.m</string>
+						</dict>
+						<key>implementation/C4Object.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Object.m</string>
+						</dict>
+						<key>implementation/C4Sample.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Sample.m</string>
+						</dict>
+						<key>implementation/C4ScrollView.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4ScrollView.m</string>
+						</dict>
+						<key>implementation/C4Shape.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Shape.m</string>
+						</dict>
+						<key>implementation/C4ShapeLayer.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4ShapeLayer.m</string>
+						</dict>
+						<key>implementation/C4Slider.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Slider.m</string>
+						</dict>
+						<key>implementation/C4Stepper.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Stepper.m</string>
+						</dict>
+						<key>implementation/C4Switch.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Switch.m</string>
+						</dict>
+						<key>implementation/C4Timer.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Timer.m</string>
+						</dict>
+						<key>implementation/C4UIElement.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4UIElement.m</string>
+						</dict>
+						<key>implementation/C4Vector.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Vector.m</string>
+						</dict>
+						<key>implementation/C4View.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4View.m</string>
+						</dict>
+						<key>implementation/C4ViewController.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4ViewController.m</string>
+						</dict>
+						<key>implementation/C4Window.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/C4Window.m</string>
+						</dict>
+						<key>implementation/UIColor+CIColorFix.m</key>
+						<dict>
+							<key>Group</key>
+							<string>Framework</string>
+							<key>Path</key>
+							<string>source/UIColor+CIColorFix.m</string>
+						</dict>
+					</dict>
+					<key>Nodes</key>
+					<array>
+						<string>implementation/C4ActivityIndicator.m</string>
+						<string>implementation/C4AssertionHandler.m</string>
+						<string>implementation/C4Button.m</string>
+						<string>implementation/C4Camera.m</string>
+						<string>implementation/C4CameraController.m</string>
+						<string>implementation/C4CameraLayer.m</string>
+						<string>implementation/C4CanvasController.m</string>
+						<string>implementation/C4Control.m</string>
+						<string>implementation/C4Defines.m</string>
+						<string>implementation/C4EAGLES1Renderer.m</string>
+						<string>implementation/C4EAGLESRenderer.m</string>
+						<string>implementation/C4EAGLLayer.m</string>
+						<string>implementation/C4Font.m</string>
+						<string>implementation/C4Foundation.m</string>
+						<string>implementation/C4GL.m</string>
+						<string>implementation/C4GL1Renderer.m</string>
+						<string>implementation/C4Image.m</string>
+						<string>implementation/C4ImageView.m</string>
+						<string>implementation/C4Label.m</string>
+						<string>implementation/C4Layer.m</string>
+						<string>implementation/C4Math.m</string>
+						<string>implementation/C4Movie.m</string>
+						<string>implementation/C4MovieLayer.m</string>
+						<string>implementation/C4Object.m</string>
+						<string>implementation/C4Sample.m</string>
+						<string>implementation/C4ScrollView.m</string>
+						<string>implementation/C4Shape.m</string>
+						<string>implementation/C4ShapeLayer.m</string>
+						<string>implementation/C4Slider.m</string>
+						<string>implementation/C4Stepper.m</string>
+						<string>implementation/C4Switch.m</string>
+						<string>implementation/C4Timer.m</string>
+						<string>implementation/C4UIElement.m</string>
+						<string>implementation/C4Vector.m</string>
+						<string>implementation/C4View.m</string>
+						<string>implementation/C4ViewController.m</string>
+						<string>implementation/C4Window.m</string>
+						<string>implementation/UIColor+CIColorFix.m</string>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+	<key>Project</key>
+	<dict>
+		<key>SharedSettings</key>
+		<dict>
+			<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+			<string>iPhone Developer</string>
+		</dict>
+	</dict>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>Frameworks</key>
+			<array>
+				<string>Accelerate</string>
+				<string>AVFoundation</string>
+				<string>CoreFoundation</string>
+				<string>CoreGraphics</string>
+				<string>CoreImage</string>
+				<string>CoreMedia</string>
+				<string>CoreText</string>
+				<string>Foundation</string>
+				<string>OpenGLES</string>
+				<string>QuartzCore</string>
+				<string>UIKit</string>
+			</array>
+			<key>SharedSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,2273 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>C4Math Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">C4 </a></h1>
+				<a id="developerHome" href="../index.html">C4iOS</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">C4Math Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/abs:">&nbsp;&nbsp;&nbsp;&nbsp;+ abs:</option>
+	
+	<option value="//api/name/absf:">&nbsp;&nbsp;&nbsp;&nbsp;+ absf:</option>
+	
+	<option value="//api/name/acos:">&nbsp;&nbsp;&nbsp;&nbsp;+ acos:</option>
+	
+	<option value="//api/name/asin:">&nbsp;&nbsp;&nbsp;&nbsp;+ asin:</option>
+	
+	<option value="//api/name/atan2Y:X:">&nbsp;&nbsp;&nbsp;&nbsp;+ atan2Y:X:</option>
+	
+	<option value="//api/name/atan:">&nbsp;&nbsp;&nbsp;&nbsp;+ atan:</option>
+	
+	<option value="//api/name/ceil:">&nbsp;&nbsp;&nbsp;&nbsp;+ ceil:</option>
+	
+	<option value="//api/name/constrain:min:max:">&nbsp;&nbsp;&nbsp;&nbsp;+ constrain:min:max:</option>
+	
+	<option value="//api/name/constrainf:min:max:">&nbsp;&nbsp;&nbsp;&nbsp;+ constrainf:min:max:</option>
+	
+	<option value="//api/name/cos:">&nbsp;&nbsp;&nbsp;&nbsp;+ cos:</option>
+	
+	<option value="//api/name/exp:">&nbsp;&nbsp;&nbsp;&nbsp;+ exp:</option>
+	
+	<option value="//api/name/floor:">&nbsp;&nbsp;&nbsp;&nbsp;+ floor:</option>
+	
+	<option value="//api/name/lerpBetweenA:B:byAmount:">&nbsp;&nbsp;&nbsp;&nbsp;+ lerpBetweenA:B:byAmount:</option>
+	
+	<option value="//api/name/log:">&nbsp;&nbsp;&nbsp;&nbsp;+ log:</option>
+	
+	<option value="//api/name/map:fromMin:max:toMin:max:">&nbsp;&nbsp;&nbsp;&nbsp;+ map:fromMin:max:toMin:max:</option>
+	
+	<option value="//api/name/maxOfA:B:">&nbsp;&nbsp;&nbsp;&nbsp;+ maxOfA:B:</option>
+	
+	<option value="//api/name/maxOfA:B:C:">&nbsp;&nbsp;&nbsp;&nbsp;+ maxOfA:B:C:</option>
+	
+	<option value="//api/name/minOfA:B:">&nbsp;&nbsp;&nbsp;&nbsp;+ minOfA:B:</option>
+	
+	<option value="//api/name/minOfA:B:C:">&nbsp;&nbsp;&nbsp;&nbsp;+ minOfA:B:C:</option>
+	
+	<option value="//api/name/norm:fromMin:toMax:">&nbsp;&nbsp;&nbsp;&nbsp;+ norm:fromMin:toMax:</option>
+	
+	<option value="//api/name/pow:raisedTo:">&nbsp;&nbsp;&nbsp;&nbsp;+ pow:raisedTo:</option>
+	
+	<option value="//api/name/randomInt:">&nbsp;&nbsp;&nbsp;&nbsp;+ randomInt:</option>
+	
+	<option value="//api/name/randomIntBetweenA:andB:">&nbsp;&nbsp;&nbsp;&nbsp;+ randomIntBetweenA:andB:</option>
+	
+	<option value="//api/name/round:">&nbsp;&nbsp;&nbsp;&nbsp;+ round:</option>
+	
+	<option value="//api/name/sin:">&nbsp;&nbsp;&nbsp;&nbsp;+ sin:</option>
+	
+	<option value="//api/name/sqrt:">&nbsp;&nbsp;&nbsp;&nbsp;+ sqrt:</option>
+	
+	<option value="//api/name/square:">&nbsp;&nbsp;&nbsp;&nbsp;+ square:</option>
+	
+	<option value="//api/name/tan:">&nbsp;&nbsp;&nbsp;&nbsp;+ tan:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/abs:">abs:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/absf:">absf:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/acos:">acos:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asin:">asin:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/atan2Y:X:">atan2Y:X:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/atan:">atan:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ceil:">ceil:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/constrain:min:max:">constrain:min:max:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/constrainf:min:max:">constrainf:min:max:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cos:">cos:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/exp:">exp:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floor:">floor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lerpBetweenA:B:byAmount:">lerpBetweenA:B:byAmount:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/log:">log:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/map:fromMin:max:toMin:max:">map:fromMin:max:toMin:max:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/maxOfA:B:">maxOfA:B:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/maxOfA:B:C:">maxOfA:B:C:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/minOfA:B:">minOfA:B:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/minOfA:B:C:">minOfA:B:C:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/norm:fromMin:toMax:">norm:fromMin:toMax:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pow:raisedTo:">pow:raisedTo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/randomInt:">randomInt:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/randomIntBetweenA:andB:">randomIntBetweenA:andB:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/round:">round:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sin:">sin:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sqrt:">sqrt:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/square:">square:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tan:">tan:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="C4Math Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">C4Math Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/C4Object.html">C4Object</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">C4Math.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This document describes the mathematic methods and functions available in the C4 Framework.</p>
+
+<p>The C4Math class is a singleton, and does not need to be initialized.</p>
+
+<p>Many of the methods in the C4Math are wrappers for other simple function calls, such as the <a href="#//api/name/abs:">abs:</a> and <a href="#//api/name/absf:">absf:</a> methods which only return the values calculated by abs() and absf()&hellip; Other methods wrap more complicated calculations.</p>
+
+<p>The reason for simply wrapping functions within a method is to be consistent with other method calls, and to create a cleaner API.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/abs:">+&nbsp;abs:</a></code>
+		<span class="tooltip"><p>Computes the absolute value of an integer number</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/absf:">+&nbsp;absf:</a></code>
+		<span class="tooltip"><p>Computes the absolute value of a floating-point number</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/ceil:">+&nbsp;ceil:</a></code>
+		<span class="tooltip"><p>Rounds a floating-point value</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/constrain:min:max:">+&nbsp;constrain:min:max:</a></code>
+		<span class="tooltip"><p>Constrains a number to a given range of integer values</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/constrainf:min:max:">+&nbsp;constrainf:min:max:</a></code>
+		<span class="tooltip"><p>Constrains a number to a given range of floating-point values</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/exp:">+&nbsp;exp:</a></code>
+		<span class="tooltip"><p>The natural exponential function</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/floor:">+&nbsp;floor:</a></code>
+		<span class="tooltip"><p>Rounds a floating-point value</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lerpBetweenA:B:byAmount:">+&nbsp;lerpBetweenA:B:byAmount:</a></code>
+		<span class="tooltip"><p>Calculates the linear interpolation of a value between two numbers</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/log:">+&nbsp;log:</a></code>
+		<span class="tooltip"><p>Calculates the natural logarithm of a given value</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/map:fromMin:max:toMin:max:">+&nbsp;map:fromMin:max:toMin:max:</a></code>
+		<span class="tooltip"><p>Takes a value within a given range of numbers, and converts it to a relative value between another set of numbers.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/maxOfA:B:">+&nbsp;maxOfA:B:</a></code>
+		<span class="tooltip"><p>Calculates the larger value of two given numbers</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/maxOfA:B:C:">+&nbsp;maxOfA:B:C:</a></code>
+		<span class="tooltip"><p>Calculates the larger of three given numbers</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/minOfA:B:">+&nbsp;minOfA:B:</a></code>
+		<span class="tooltip"><p>Calculates the smaller value of two given numbers</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/minOfA:B:C:">+&nbsp;minOfA:B:C:</a></code>
+		<span class="tooltip"><p>Calculates the smaller value of three given numbers</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/norm:fromMin:toMax:">+&nbsp;norm:fromMin:toMax:</a></code>
+		<span class="tooltip"><p>Unused</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pow:raisedTo:">+&nbsp;pow:raisedTo:</a></code>
+		<span class="tooltip"><p>Calculates the value of a number raised to a given degree</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/round:">+&nbsp;round:</a></code>
+		<span class="tooltip"><p>Rounds a floating-point value</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/square:">+&nbsp;square:</a></code>
+		<span class="tooltip"><p>Squares a given value</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sqrt:">+&nbsp;sqrt:</a></code>
+		<span class="tooltip"><p>Calculates the square root of a given value</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/acos:">+&nbsp;acos:</a></code>
+		<span class="tooltip"><p>Calculates the arc cosine of a given value.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asin:">+&nbsp;asin:</a></code>
+		<span class="tooltip"><p>Calculates the arc sine of a given value.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/atan:">+&nbsp;atan:</a></code>
+		<span class="tooltip"><p>Calculates the arc tangent of a single given value.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/atan2Y:X:">+&nbsp;atan2Y:X:</a></code>
+		<span class="tooltip"><p>Calculates the arc tangent of a two given values.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cos:">+&nbsp;cos:</a></code>
+		<span class="tooltip"><p>Calculates the cosine of a value</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sin:">+&nbsp;sin:</a></code>
+		<span class="tooltip"><p>Calculates the sine of a value</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tan:">+&nbsp;tan:</a></code>
+		<span class="tooltip"><p>Calculates the tangent of a value</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/randomInt:">+&nbsp;randomInt:</a></code>
+		<span class="tooltip"><p>Calculates a random value</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/randomIntBetweenA:andB:">+&nbsp;randomIntBetweenA:andB:</a></code>
+		<span class="tooltip"><p>Calculates a random value</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/abs:" title="abs:"></a>
+	<h3 class="subsubtitle method-title">abs:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Computes the absolute value of an integer number</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSInteger)abs:(NSInteger)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number to be converted to its absolute value</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NSInteger returns the positive whole (integer), if the given number is a floating-point the method first converts it to an integer</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Computes the absolute value of an integer number</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/absf:" title="absf:"></a>
+	<h3 class="subsubtitle method-title">absf:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Computes the absolute value of a floating-point number</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)absf:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The float number to be converted to its absolute value</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NSInteger returns the positive floating-point value of a given number</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Computes the absolute value of a floating-point number</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/acos:" title="acos:"></a>
+	<h3 class="subsubtitle method-title">acos:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the arc cosine of a given value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)acos:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number for which to calculate the arccosine</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat A value in the range of (0..PI)</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the arc cosine of a given value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asin:" title="asin:"></a>
+	<h3 class="subsubtitle method-title">asin:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the arc sine of a given value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)asin:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number for which to calculate the arcsine</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat A value in the range of (-PI/2..+PI/2)</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the arc sine of a given value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/atan2Y:X:" title="atan2Y:X:"></a>
+	<h3 class="subsubtitle method-title">atan2Y:X:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the arc tangent of a two given values.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)atan2Y:(CGFloat)<em>y</em> X:(CGFloat)<em>x</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>y</em></dt>
+			<dd><p>The y value for which to calculate the arctangent2</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>x</em></dt>
+			<dd><p>The x value for which to calculate the arctangent2</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat The value of th earc tangent of y/x, using the signs of both arguments to determine the quadrant of the return value.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the arc tangent of a two given values.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/atan:" title="atan:"></a>
+	<h3 class="subsubtitle method-title">atan:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the arc tangent of a single given value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)atan:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number for which to calculate the arctanent</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat A value in the range of (-PI/2..+PI/2)</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the arc tangent of a single given value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/ceil:" title="ceil:"></a>
+	<h3 class="subsubtitle method-title">ceil:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Rounds a floating-point value</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSInteger)ceil:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number for which to calculate ceil:</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NSInteger returns the smallest whole number no less than <em>value</em></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Rounds a floating-point value</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/constrain:min:max:" title="constrain:min:max:"></a>
+	<h3 class="subsubtitle method-title">constrain:min:max:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Constrains a number to a given range of integer values</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSInteger)constrain:(NSInteger)<em>value</em> min:(NSInteger)<em>min</em> max:(NSInteger)<em>max</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number to constrain</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>min</em></dt>
+			<dd><p>The smallest possible number in the range</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>max</em></dt>
+			<dd><p>The largest possible number in the range</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NSInteger Either <em>min</em> or <em>max</em> if the given number lies outside the range (e.g. if <em>value</em> is less than <em>min</em> this method returns <em>min</em>), otherwise this method returns <em>value</em> (unchanged)</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Constrains a number to a given range of integer values</p>
+
+<p>This method makes sure a number falls within a given range of values, and converts it if it lies outside that range</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/constrainf:min:max:" title="constrainf:min:max:"></a>
+	<h3 class="subsubtitle method-title">constrainf:min:max:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Constrains a number to a given range of floating-point values</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)constrainf:(CGFloat)<em>value</em> min:(CGFloat)<em>min</em> max:(CGFloat)<em>max</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number to constrain</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>min</em></dt>
+			<dd><p>The smallest possible number in the range</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>max</em></dt>
+			<dd><p>The largest possible number in the range</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat Either <em>min</em> or <em>max</em> if the given number lies outside the range (e.g. if <em>value</em> is less than <em>min</em> this method returns <em>min</em>), otherwise this method returns <em>value</em> (unchanged)</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Constrains a number to a given range of floating-point values</p>
+
+<p>This method makes sure a number falls within a given range of values, and converts it if it lies outside that range</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cos:" title="cos:"></a>
+	<h3 class="subsubtitle method-title">cos:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the cosine of a value</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)cos:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number for which to calculate the cosine</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat The cosine of <em>value</em> measured in RADIANS.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the cosine of a value</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/exp:" title="exp:"></a>
+	<h3 class="subsubtitle method-title">exp:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The natural exponential function</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)exp:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The value to use in the exponential function.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat Returns the calucation of of e ^ <em>value</em></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The natural exponential function</p>
+
+<p>Raises the mathematical constant e to the power of a given value <a href="http://en.wikipedia.org/wiki/Exponential_function">for more details</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/floor:" title="floor:"></a>
+	<h3 class="subsubtitle method-title">floor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Rounds a floating-point value</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSInteger)floor:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number to round up</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NSInteger returns the largest whole number no greater than <em>value</em></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Rounds a floating-point value</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/lerpBetweenA:B:byAmount:" title="lerpBetweenA:B:byAmount:"></a>
+	<h3 class="subsubtitle method-title">lerpBetweenA:B:byAmount:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the linear interpolation of a value between two numbers</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)lerpBetweenA:(CGFloat)<em>a</em> B:(CGFloat)<em>b</em> byAmount:(CGFloat)<em>amount</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>a</em></dt>
+			<dd><p>the first value</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>b</em></dt>
+			<dd><p>the second value</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>amount</em></dt>
+			<dd><p>floating-point value (should be between 0.0 and 1.0) as a measure of relative distance between the two points</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat the floating point value of a number between <em>a</em> and <em>b</em> which is <em>amount</em> point between those two numbers</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the linear interpolation of a value between two numbers</p>
+
+<p>Example: lerpBetweenA:0.0 B:1.0 byAmount:0.8 should return 0.8
+Example: lerpBetweenA:1.0 B:2.0 byAmount:0.8 should return 1.8
+Example: lerpBetweenA:0.0 B:2.0 byAmount:0.8 should return 1.6</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/log:" title="log:"></a>
+	<h3 class="subsubtitle method-title">log:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the natural logarithm of a given value</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)log:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number to which to apply the logarithm equation</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat The natural logartihm of a given floating-point value</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the natural logarithm of a given value</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/map:fromMin:max:toMin:max:" title="map:fromMin:max:toMin:max:"></a>
+	<h3 class="subsubtitle method-title">map:fromMin:max:toMin:max:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Takes a value within a given range of numbers, and converts it to a relative value between another set of numbers.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)map:(CGFloat)<em>value</em> fromMin:(CGFloat)<em>min1</em> max:(CGFloat)<em>max1</em> toMin:(CGFloat)<em>min2</em> max:(CGFloat)<em>max2</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number to map (should be between <em>min1</em> and <em>max1</em>)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>min1</em></dt>
+			<dd><p>The smallest number in the original range</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>max1</em></dt>
+			<dd><p>The largest number in the original range</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>min2</em></dt>
+			<dd><p>The smallest number in the new range</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>max2</em></dt>
+			<dd><p>The largest number in the new range</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat Either <em>min</em> or <em>max</em> if the given number lies outside the range (e.g. if <em>value</em> is less than <em>min</em> this method returns <em>min</em>), otherwise this method returns <em>value</em> (unchanged)</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Takes a value within a given range of numbers, and converts it to a relative value between another set of numbers.</p>
+
+<p>This method takes a <em>value</em> which is within the range of <em>min1</em> and <em>max1</em> and maps it to a new relative value which is between <em>min2</em> and <em>max2</em></p>
+
+<p>Example: map:25 fromMin:0 max:100 toMin:0 max:200 returns 50
+Example: map:50 fromMin:0 max:100 toMin:0 max:200 returns 100</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/maxOfA:B:" title="maxOfA:B:"></a>
+	<h3 class="subsubtitle method-title">maxOfA:B:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the larger value of two given numbers</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)maxOfA:(CGFloat)<em>a</em> B:(CGFloat)<em>b</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>a</em></dt>
+			<dd><p>A given number to compare</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>b</em></dt>
+			<dd><p>A given number to compare</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFlaot the larger value of <em>a</em> and <em>b</em></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the larger value of two given numbers</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/maxOfA:B:C:" title="maxOfA:B:C:"></a>
+	<h3 class="subsubtitle method-title">maxOfA:B:C:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the larger of three given numbers</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)maxOfA:(CGFloat)<em>a</em> B:(CGFloat)<em>b</em> C:(CGFloat)<em>c</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>a</em></dt>
+			<dd><p>A given number to compare</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>b</em></dt>
+			<dd><p>A given number to compare</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>c</em></dt>
+			<dd><p>A given number to compare</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFlaot the larger of <em>a</em>, <em>b</em> and <em>c</em></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the larger of three given numbers</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/minOfA:B:" title="minOfA:B:"></a>
+	<h3 class="subsubtitle method-title">minOfA:B:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the smaller value of two given numbers</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)minOfA:(CGFloat)<em>a</em> B:(CGFloat)<em>b</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>a</em></dt>
+			<dd><p>A given number to compare</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>b</em></dt>
+			<dd><p>A given number to compare</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFlaot the smaller value of <em>a</em> and <em>b</em></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the smaller value of two given numbers</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/minOfA:B:C:" title="minOfA:B:C:"></a>
+	<h3 class="subsubtitle method-title">minOfA:B:C:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the smaller value of three given numbers</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)minOfA:(CGFloat)<em>a</em> B:(CGFloat)<em>b</em> C:(CGFloat)<em>c</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>a</em></dt>
+			<dd><p>A given number to compare</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>b</em></dt>
+			<dd><p>A given number to compare</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>c</em></dt>
+			<dd><p>A given number to compare</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFlaot the smaller value of <em>a</em>, <em>b</em> and <em>c</em></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the smaller value of three given numbers</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/norm:fromMin:toMax:" title="norm:fromMin:toMax:"></a>
+	<h3 class="subsubtitle method-title">norm:fromMin:toMax:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unused</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)norm:(CGFloat)<em>value</em> fromMin:(CGFloat)<em>min</em> toMax:(CGFloat)<em>max</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>-</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>min</em></dt>
+			<dd><p>-</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>max</em></dt>
+			<dd><p>-</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat returns 0</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Unused</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pow:raisedTo:" title="pow:raisedTo:"></a>
+	<h3 class="subsubtitle method-title">pow:raisedTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the value of a number raised to a given degree</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)pow:(CGFloat)<em>value</em> raisedTo:(CGFloat)<em>degree</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Any real floating-point value</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>degree</em></dt>
+			<dd><p>Any real floating-point value</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat The calculation of <em>value</em> ^ _degree</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the value of a number raised to a given degree</p>
+
+<p>Example: pow:3 raisedTo:2 = 3 * 3 = 9
+Example: pow:2 raisedTo:3 = 2 * 2 * 2 = 8</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/randomInt:" title="randomInt:"></a>
+	<h3 class="subsubtitle method-title">randomInt:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates a random value</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSInteger)randomInt:(NSInteger)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The highest possible random number to return</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NSInteger A random integer between 0 and <em>value</em></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates a random value</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/randomIntBetweenA:andB:" title="randomIntBetweenA:andB:"></a>
+	<h3 class="subsubtitle method-title">randomIntBetweenA:andB:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates a random value</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSInteger)randomIntBetweenA:(NSInteger)<em>a</em> andB:(NSInteger)<em>b</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>a</em></dt>
+			<dd><p>The lowest possible random number to return</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>b</em></dt>
+			<dd><p>The highest possible random number to return</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NSInteger A random integer between <em>a</em> and <em>b</em></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates a random value</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/round:" title="round:"></a>
+	<h3 class="subsubtitle method-title">round:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Rounds a floating-point value</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)round:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number to round</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NSInteger returns the closest whole number to a given <em>value</em></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Rounds a floating-point value</p>
+
+<p>Example: round:0.3 = 0.0
+Example: round:0.8 = 1.0</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sin:" title="sin:"></a>
+	<h3 class="subsubtitle method-title">sin:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the sine of a value</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)sin:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number for which to calculate the sine</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat The sine of <em>value</em> measured in RADIANS.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the sine of a value</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sqrt:" title="sqrt:"></a>
+	<h3 class="subsubtitle method-title">sqrt:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the square root of a given value</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)sqrt:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number to which to apply the square root</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat The square root of <em>value</em></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the square root of a given value</p>
+
+<p>Example: sqrt:9 = 3
+Example: square:4 = 2</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/square:" title="square:"></a>
+	<h3 class="subsubtitle method-title">square:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Squares a given value</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)square:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number to square</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat The result of <em>value</em> multiplied by itself</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Squares a given value</p>
+
+<p>Raises a given value to the power of 2</p>
+
+<p>Example: square:3 = 3 * 3 = 4
+Example: square:2 = 2 * 2 = 4</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tan:" title="tan:"></a>
+	<h3 class="subsubtitle method-title">tan:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the tangent of a value</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)tan:(CGFloat)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The number for which to calculate the tan</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CGFloat The tangent of <em>value</em> measured in RADIANS.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calculates the tangent of a value</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Math.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 C4iOS. All rights reserved. (Last updated: 2013-05-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

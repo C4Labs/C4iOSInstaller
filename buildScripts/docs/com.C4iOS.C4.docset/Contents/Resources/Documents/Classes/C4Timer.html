@@ -1,0 +1,1252 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>C4Timer Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">C4 </a></h1>
+				<a id="developerHome" href="../index.html">C4iOS</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">C4Timer Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/fireDate">&nbsp;&nbsp;&nbsp;&nbsp;fireDate</option>
+	
+	<option value="//api/name/isValid">&nbsp;&nbsp;&nbsp;&nbsp;isValid</option>
+	
+	<option value="//api/name/timeInterval">&nbsp;&nbsp;&nbsp;&nbsp;timeInterval</option>
+	
+	<option value="//api/name/userInfo">&nbsp;&nbsp;&nbsp;&nbsp;userInfo</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/automaticTimerWithInterval:target:method:repeats:">&nbsp;&nbsp;&nbsp;&nbsp;+ automaticTimerWithInterval:target:method:repeats:</option>
+	
+	<option value="//api/name/automaticTimerWithInterval:target:method:userInfo:repeats:">&nbsp;&nbsp;&nbsp;&nbsp;+ automaticTimerWithInterval:target:method:userInfo:repeats:</option>
+	
+	<option value="//api/name/timerWithFireDate:interval:target:method:repeats:">&nbsp;&nbsp;&nbsp;&nbsp;+ timerWithFireDate:interval:target:method:repeats:</option>
+	
+	<option value="//api/name/timerWithFireDate:interval:target:method:userInfo:repeats:">&nbsp;&nbsp;&nbsp;&nbsp;+ timerWithFireDate:interval:target:method:userInfo:repeats:</option>
+	
+	<option value="//api/name/timerWithInterval:target:method:repeats:">&nbsp;&nbsp;&nbsp;&nbsp;+ timerWithInterval:target:method:repeats:</option>
+	
+	<option value="//api/name/timerWithInterval:target:method:userInfo:repeats:">&nbsp;&nbsp;&nbsp;&nbsp;+ timerWithInterval:target:method:userInfo:repeats:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/fire">&nbsp;&nbsp;&nbsp;&nbsp;- fire</option>
+	
+	<option value="//api/name/invalidate">&nbsp;&nbsp;&nbsp;&nbsp;- invalidate</option>
+	
+	<option value="//api/name/start">&nbsp;&nbsp;&nbsp;&nbsp;- start</option>
+	
+	<option value="//api/name/stop">&nbsp;&nbsp;&nbsp;&nbsp;- stop</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating a Timer">Creating a Timer</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Firing a Timer">Firing a Timer</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Starting &amp; Stopping a Timer">Starting &amp; Stopping a Timer</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Information About a Timer">Information About a Timer</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fireDate">fireDate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isValid">isValid</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timeInterval">timeInterval</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userInfo">userInfo</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/automaticTimerWithInterval:target:method:repeats:">automaticTimerWithInterval:target:method:repeats:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/automaticTimerWithInterval:target:method:userInfo:repeats:">automaticTimerWithInterval:target:method:userInfo:repeats:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timerWithFireDate:interval:target:method:repeats:">timerWithFireDate:interval:target:method:repeats:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timerWithFireDate:interval:target:method:userInfo:repeats:">timerWithFireDate:interval:target:method:userInfo:repeats:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timerWithInterval:target:method:repeats:">timerWithInterval:target:method:repeats:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timerWithInterval:target:method:userInfo:repeats:">timerWithInterval:target:method:userInfo:repeats:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fire">fire</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/invalidate">invalidate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/start">start</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stop">stop</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="C4Timer Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">C4Timer Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/C4Object.html">C4Object</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">C4Timer.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This document describes the C4Timer, a subclass of <a href="../Classes/C4Object.html">C4Object</a> which contains an NSTimer.</p>
+
+<p>This class acts as a wrapper for NSTimer, providing extra functionality of starting, stoping and firing the timer. It also provides easy access to the timer&rsquo;s interval and its <a href="#//api/name/userInfo">userInfo</a> object.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Creating a Timer" name="task_Creating a Timer"></a>
+						<h3 class="subsubtitle task-title">Creating a Timer</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/automaticTimerWithInterval:target:method:repeats:">+&nbsp;automaticTimerWithInterval:target:method:repeats:</a></code>
+		<span class="tooltip"><p>Creates and returns a new C4Timer object that will begin firing automatically.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/automaticTimerWithInterval:target:method:userInfo:repeats:">+&nbsp;automaticTimerWithInterval:target:method:userInfo:repeats:</a></code>
+		<span class="tooltip"><p>Creates and returns a new C4Timer object that will begin firing automatically, it will also pass an object to the method it triggers.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/timerWithInterval:target:method:repeats:">+&nbsp;timerWithInterval:target:method:repeats:</a></code>
+		<span class="tooltip"><p>Creates and returns a new C4Timer object that will begin firing automatically.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/timerWithInterval:target:method:userInfo:repeats:">+&nbsp;timerWithInterval:target:method:userInfo:repeats:</a></code>
+		<span class="tooltip"><p>Creates and returns a new C4Timer object that will begin firing automatically, it will also pass an object to the method it triggers.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/timerWithFireDate:interval:target:method:repeats:">+&nbsp;timerWithFireDate:interval:target:method:repeats:</a></code>
+		<span class="tooltip"><p>Creates and returns a new C4Timer object that will begin firing at a specified date.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/timerWithFireDate:interval:target:method:userInfo:repeats:">+&nbsp;timerWithFireDate:interval:target:method:userInfo:repeats:</a></code>
+		<span class="tooltip"><p>Creates and returns a new C4Timer object that will begin firing at a specified date, it will also pass an object to the method it triggers.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Firing a Timer" name="task_Firing a Timer"></a>
+						<h3 class="subsubtitle task-title">Firing a Timer</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fire">&ndash;&nbsp;fire</a></code>
+		<span class="tooltip"><p>Causes the receiver’s message to be sent to its target.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Starting &amp; Stopping a Timer" name="task_Starting &amp; Stopping a Timer"></a>
+						<h3 class="subsubtitle task-title">Starting &amp; Stopping a Timer</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/start">&ndash;&nbsp;start</a></code>
+		<span class="tooltip"><p>Calling this method will start the timer firing, if it is supposed to repeat it will continue to <a href="#//api/name/fire">fire</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stop">&ndash;&nbsp;stop</a></code>
+		<span class="tooltip"><p>Calling this method will stop a timer from firing continuously.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/invalidate">&ndash;&nbsp;invalidate</a></code>
+		<span class="tooltip"><p>Stops the receiver from ever firing again and requests its removal from its run loop.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Information About a Timer" name="task_Information About a Timer"></a>
+						<h3 class="subsubtitle task-title">Information About a Timer</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isValid">&nbsp;&nbsp;isValid</a></code>
+		<span class="tooltip"><p>Returns a Boolean value that indicates whether the receiver is currently valid.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fireDate">&nbsp;&nbsp;fireDate</a></code>
+		<span class="tooltip"><p>Returns the date at which the receiver will <a href="#//api/name/fire">fire</a>.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/timeInterval">&nbsp;&nbsp;timeInterval</a></code>
+		<span class="tooltip"><p>Returns the receiver’s time interval.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userInfo">&nbsp;&nbsp;userInfo</a></code>
+		<span class="tooltip"><p>Returns the receiver&rsquo;s userInfo object. The userInfo is the object that will be passed to the method the timer is targeting.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/fireDate" title="fireDate"></a>
+	<h3 class="subsubtitle method-title">fireDate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the date at which the receiver will <a href="#//api/name/fire">fire</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic, weak) NSDate *fireDate</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The date at which the receiver will <a href="#//api/name/fire">fire</a>. If the timer is no longer valid, this method returns the last date at which the timer fired.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the date at which the receiver will <a href="#//api/name/fire">fire</a>.</p>
+
+<p>You can use this property to adjust the firing time of a repeating timer. Although resetting a timer’s next firing time is a relatively expensive operation, it may be more efficient in some situations. For example, you could use it in situations where you want to repeat an action multiple times in the future, but at irregular time intervals. Adjusting the firing time of a single timer would likely incur less expense than creating multiple timer objects, scheduling each one on a run loop, and then destroying them.</p>
+
+<p>You can pass this property a new NSDate object. If the new date is in the past, this method sets the <a href="#//api/name/fire">fire</a> time to the current time.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isValid" title="isValid"></a>
+	<h3 class="subsubtitle method-title">isValid</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates whether the receiver is currently valid.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) BOOL isValid</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the receiver is still capable of firing or NO if the timer has been invalidated and is no longer capable of firing.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a Boolean value that indicates whether the receiver is currently valid.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/timeInterval" title="timeInterval"></a>
+	<h3 class="subsubtitle method-title">timeInterval</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the receiver’s time interval.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) CGFloat timeInterval</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the receiver’s time interval.</p>
+
+<p>The receiver’s time interval. If the receiver is a non-repeating timer, returns 0 (even if a time interval was set).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userInfo" title="userInfo"></a>
+	<h3 class="subsubtitle method-title">userInfo</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the receiver&rsquo;s userInfo object. The userInfo is the object that will be passed to the method the timer is targeting.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic, weak) id userInfo</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the receiver&rsquo;s userInfo object. The userInfo is the object that will be passed to the method the timer is targeting.</p>
+
+<p>Do not invoke this method after the timer is invalidated. Use <a href="#//api/name/isValid">isValid</a> to test whether the timer is valid.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/automaticTimerWithInterval:target:method:repeats:" title="automaticTimerWithInterval:target:method:repeats:"></a>
+	<h3 class="subsubtitle method-title">automaticTimerWithInterval:target:method:repeats:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a new C4Timer object that will begin firing automatically.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (C4Timer *)automaticTimerWithInterval:(CGFloat)<em>seconds</em> target:(id)<em>object</em> method:(NSString *)<em>methodName</em> repeats:(BOOL)<em>repeats</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>seconds</em></dt>
+			<dd><p>The time interval for the timer</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>object</em></dt>
+			<dd><p>The object to which the timer will send a message</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>methodName</em></dt>
+			<dd><p>The name of the method that will be sent to the object</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>repeats</em></dt>
+			<dd><p>A boolean value that specifies whether or not the timer will continuously <a href="#//api/name/fire">fire</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns a new C4Timer object that will begin firing automatically.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/automaticTimerWithInterval:target:method:userInfo:repeats:" title="automaticTimerWithInterval:target:method:userInfo:repeats:"></a>
+	<h3 class="subsubtitle method-title">automaticTimerWithInterval:target:method:userInfo:repeats:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a new C4Timer object that will begin firing automatically, it will also pass an object to the method it triggers.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (C4Timer *)automaticTimerWithInterval:(CGFloat)<em>seconds</em> target:(id)<em>object</em> method:(NSString *)<em>methodName</em> userInfo:(id)<em>infoObject</em> repeats:(BOOL)<em>repeats</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>seconds</em></dt>
+			<dd><p>The time interval for the timer</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>object</em></dt>
+			<dd><p>The object to which the timer will send a message</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>methodName</em></dt>
+			<dd><p>The name of the method that will be sent to the object</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>infoObject</em></dt>
+			<dd><p>The object to pass to the method being called</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>repeats</em></dt>
+			<dd><p>A boolean value that specifies whether or not the timer will continuously <a href="#//api/name/fire">fire</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns a new C4Timer object that will begin firing automatically, it will also pass an object to the method it triggers.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/timerWithFireDate:interval:target:method:repeats:" title="timerWithFireDate:interval:target:method:repeats:"></a>
+	<h3 class="subsubtitle method-title">timerWithFireDate:interval:target:method:repeats:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a new C4Timer object that will begin firing at a specified date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (C4Timer *)timerWithFireDate:(NSDate *)<em>date</em> interval:(CGFloat)<em>seconds</em> target:(id)<em>object</em> method:(NSString *)<em>methodName</em> repeats:(BOOL)<em>repeats</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date</em></dt>
+			<dd><p>An NSDate object stating when the timer will begin firing</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>seconds</em></dt>
+			<dd><p>The time interval for the timer</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>object</em></dt>
+			<dd><p>The object to which the timer will send a message</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>methodName</em></dt>
+			<dd><p>The name of the method that will be sent to the object</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>repeats</em></dt>
+			<dd><p>A boolean value that specifies whether or not the timer will continuously <a href="#//api/name/fire">fire</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns a new C4Timer object that will begin firing at a specified date.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/timerWithFireDate:interval:target:method:userInfo:repeats:" title="timerWithFireDate:interval:target:method:userInfo:repeats:"></a>
+	<h3 class="subsubtitle method-title">timerWithFireDate:interval:target:method:userInfo:repeats:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a new C4Timer object that will begin firing at a specified date, it will also pass an object to the method it triggers.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (C4Timer *)timerWithFireDate:(NSDate *)<em>date</em> interval:(CGFloat)<em>seconds</em> target:(id)<em>object</em> method:(NSString *)<em>methodName</em> userInfo:(id)<em>infoObject</em> repeats:(BOOL)<em>repeats</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date</em></dt>
+			<dd><p>An NSDate object stating when the timer will begin firing</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>seconds</em></dt>
+			<dd><p>The time interval for the timer</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>object</em></dt>
+			<dd><p>The object to which the timer will send a message</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>methodName</em></dt>
+			<dd><p>The name of the method that will be sent to the object</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>infoObject</em></dt>
+			<dd><p>The object to pass to the method being called</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>repeats</em></dt>
+			<dd><p>A boolean value that specifies whether or not the timer will continuously <a href="#//api/name/fire">fire</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns a new C4Timer object that will begin firing at a specified date, it will also pass an object to the method it triggers.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/timerWithInterval:target:method:repeats:" title="timerWithInterval:target:method:repeats:"></a>
+	<h3 class="subsubtitle method-title">timerWithInterval:target:method:repeats:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a new C4Timer object that will begin firing automatically.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (C4Timer *)timerWithInterval:(CGFloat)<em>seconds</em> target:(id)<em>object</em> method:(NSString *)<em>methodName</em> repeats:(BOOL)<em>repeats</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>seconds</em></dt>
+			<dd><p>The time interval for the timer</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>object</em></dt>
+			<dd><p>The object to which the timer will send a message</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>methodName</em></dt>
+			<dd><p>The name of the method that will be sent to the object</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>repeats</em></dt>
+			<dd><p>A boolean value that specifies whether or not the timer will continuously <a href="#//api/name/fire">fire</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns a new C4Timer object that will begin firing automatically.</p>
+
+<p>You will need to explicitly <a href="#//api/name/start">start</a> this timer.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/timerWithInterval:target:method:userInfo:repeats:" title="timerWithInterval:target:method:userInfo:repeats:"></a>
+	<h3 class="subsubtitle method-title">timerWithInterval:target:method:userInfo:repeats:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a new C4Timer object that will begin firing automatically, it will also pass an object to the method it triggers.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (C4Timer *)timerWithInterval:(CGFloat)<em>seconds</em> target:(id)<em>object</em> method:(NSString *)<em>methodName</em> userInfo:(id)<em>infoObject</em> repeats:(BOOL)<em>repeats</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>seconds</em></dt>
+			<dd><p>The time interval for the timer</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>object</em></dt>
+			<dd><p>The object to which the timer will send a message</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>methodName</em></dt>
+			<dd><p>The name of the method that will be sent to the object</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>infoObject</em></dt>
+			<dd><p>The object to pass to the method being called</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>repeats</em></dt>
+			<dd><p>A boolean value that specifies whether or not the timer will continuously <a href="#//api/name/fire">fire</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns a new C4Timer object that will begin firing automatically, it will also pass an object to the method it triggers.</p>
+
+<p>You will need to explicitly <a href="#//api/name/start">start</a> this timer.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/fire" title="fire"></a>
+	<h3 class="subsubtitle method-title">fire</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Causes the receiver’s message to be sent to its target.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)fire</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Causes the receiver’s message to be sent to its target.</p>
+
+<p>You can use this method to fire a repeating timer without interrupting its regular firing schedule. If the timer is non-repeating, it is automatically invalidated after firing, even if its scheduled fire date has not arrived.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/invalidate" title="invalidate"></a>
+	<h3 class="subsubtitle method-title">invalidate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops the receiver from ever firing again and requests its removal from its run loop.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)invalidate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Stops the receiver from ever firing again and requests its removal from its run loop.</p>
+
+<p>This method is the only way to remove a timer from an NSRunLoop object. The NSRunLoop object removes and releases the timer, either just before the invalidate method returns or at some later point.</p>
+
+<p>If it was configured with target and user info objects, the receiver releases its references to those objects as well.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/start" title="start"></a>
+	<h3 class="subsubtitle method-title">start</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calling this method will start the timer firing, if it is supposed to repeat it will continue to <a href="#//api/name/fire">fire</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)start</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calling this method will start the timer firing, if it is supposed to repeat it will continue to <a href="#//api/name/fire">fire</a>.</p>
+
+<p>This method creates a new instance of an NSTimer, based on the stored properties in the reciever, and starts firing immediately.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stop" title="stop"></a>
+	<h3 class="subsubtitle method-title">stop</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calling this method will stop a timer from firing continuously.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stop</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calling this method will stop a timer from firing continuously.</p>
+
+<p>This method effectively invalidates the timer.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Timer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 C4iOS. All rights reserved. (Last updated: 2013-05-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

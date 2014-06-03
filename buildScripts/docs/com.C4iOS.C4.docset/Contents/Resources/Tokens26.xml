@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/C4ShapeLayer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/C4ShapeLayer</TokenIdentifier>
+			<Abstract type="html">This document describes the C4ShapeLayer, a subclass of CAShapeLayer which conforms to the C4LayerAnimation protocol.</Abstract>
+			<DeclaredIn>C4ShapeLayer.h</DeclaredIn>
+			
+			<NodeRef refid="26"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4ShapeLayer/animatePath:</TokenIdentifier>
+			<Abstract type="html">Changes the current path to a new path.</Abstract>
+			<DeclaredIn>C4ShapeLayer.h</DeclaredIn>			
+			
+			<Declaration>- (void)animatePath:(CGPathRef)path</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>path</Name>
+					<Abstract type="html">The new path to which this shape will change.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/animatePath:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4ShapeLayer/animateFillColor:</TokenIdentifier>
+			<Abstract type="html">Changes the fillColor to a new color.</Abstract>
+			<DeclaredIn>C4ShapeLayer.h</DeclaredIn>			
+			
+			<Declaration>- (void)animateFillColor:(CGColorRef)fillColor</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>fillColor</Name>
+					<Abstract type="html">The new color to which this shape will change its fillColor.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/animateFillColor:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4ShapeLayer/animateLineWidth:</TokenIdentifier>
+			<Abstract type="html">Changes the lineWidth to a new thickness.</Abstract>
+			<DeclaredIn>C4ShapeLayer.h</DeclaredIn>			
+			
+			<Declaration>- (void)animateLineWidth:(CGFloat)lineWidth</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>lineWidth</Name>
+					<Abstract type="html">The new value to which this shape will change its lineWidth.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/animateLineWidth:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4ShapeLayer/animateMiterLimit:</TokenIdentifier>
+			<Abstract type="html">Changes the miterLimit to a new value.</Abstract>
+			<DeclaredIn>C4ShapeLayer.h</DeclaredIn>			
+			
+			<Declaration>- (void)animateMiterLimit:(CGFloat)miterLimit</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>miterLimit</Name>
+					<Abstract type="html">The new value to which this shape will change its miterLimit.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/animateMiterLimit:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4ShapeLayer/animateStrokeColor:</TokenIdentifier>
+			<Abstract type="html">Changes the strokeColor to a new color.</Abstract>
+			<DeclaredIn>C4ShapeLayer.h</DeclaredIn>			
+			
+			<Declaration>- (void)animateStrokeColor:(CGColorRef)strokeColor</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>strokeColor</Name>
+					<Abstract type="html">The new color to which this shape will change its strokeColor.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/animateStrokeColor:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4ShapeLayer/animateStrokeEnd:</TokenIdentifier>
+			<Abstract type="html">Changes the strokeEnd to a new position.</Abstract>
+			<DeclaredIn>C4ShapeLayer.h</DeclaredIn>			
+			
+			<Declaration>- (void)animateStrokeEnd:(CGFloat)strokeEnd</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>strokeEnd</Name>
+					<Abstract type="html">The new value to which this shape will change its strokeEnd.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/animateStrokeEnd:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4ShapeLayer/animateStrokeStart:</TokenIdentifier>
+			<Abstract type="html">Changes the strokeStart to a new position.</Abstract>
+			<DeclaredIn>C4ShapeLayer.h</DeclaredIn>			
+			
+			<Declaration>- (void)animateStrokeStart:(CGFloat)strokeStart</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>strokeStart</Name>
+					<Abstract type="html">The new value to which this shape will change its strokeStart.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/animateStrokeStart:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4ShapeLayer/animateLineDashPhase:</TokenIdentifier>
+			<Abstract type="html">The dash phase applied to the shape’s path when stroked. Animatable.</Abstract>
+			<DeclaredIn>C4ShapeLayer.h</DeclaredIn>			
+			
+			<Declaration>- (void)animateLineDashPhase:(CGFloat)lineDashPhase</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>lineDashPhase</Name>
+					<Abstract type="html">The new value to which the lineDashPhase will change.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/animateLineDashPhase:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4ShapeLayer/setPerspectiveDistance:</TokenIdentifier>
+			<Abstract type="html">Specifies the perspective distance for x and y axis rotations.</Abstract>
+			<DeclaredIn>C4ShapeLayer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat perspectiveDistance</Declaration>
+			
+			
+			<Anchor>//api/name/perspectiveDistance</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4ShapeLayer/perspectiveDistance</TokenIdentifier>
+			<Abstract type="html">Specifies the perspective distance for x and y axis rotations.</Abstract>
+			<DeclaredIn>C4ShapeLayer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat perspectiveDistance</Declaration>
+			
+			
+			<Anchor>//api/name/perspectiveDistance</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4ShapeLayer/perspectiveDistance</TokenIdentifier>
+			<Abstract type="html">Specifies the perspective distance for x and y axis rotations.</Abstract>
+			<DeclaredIn>C4ShapeLayer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat perspectiveDistance</Declaration>
+			
+			
+			<Anchor>//api/name/perspectiveDistance</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+	</File>
+</Tokens>

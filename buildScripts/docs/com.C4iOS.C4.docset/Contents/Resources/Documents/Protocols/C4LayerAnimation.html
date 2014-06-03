@@ -1,0 +1,1840 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>C4LayerAnimation Protocol Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">C4 </a></h1>
+				<a id="developerHome" href="../index.html">C4iOS</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">C4LayerAnimation Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/allowsInteraction">&nbsp;&nbsp;&nbsp;&nbsp;allowsInteraction</option>
+	
+	<option value="//api/name/animationDuration">&nbsp;&nbsp;&nbsp;&nbsp;animationDuration</option>
+	
+	<option value="//api/name/animationOptions">&nbsp;&nbsp;&nbsp;&nbsp;animationOptions</option>
+	
+	<option value="//api/name/currentAnimationEasing">&nbsp;&nbsp;&nbsp;&nbsp;currentAnimationEasing</option>
+	
+	<option value="//api/name/perspectiveDistance">&nbsp;&nbsp;&nbsp;&nbsp;perspectiveDistance</option>
+	
+	<option value="//api/name/repeatCount">&nbsp;&nbsp;&nbsp;&nbsp;repeatCount</option>
+	
+	<option value="//api/name/repeats">&nbsp;&nbsp;&nbsp;&nbsp;repeats</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/animateBackgroundColor:">&nbsp;&nbsp;&nbsp;&nbsp;- animateBackgroundColor:</option>
+	
+	<option value="//api/name/animateBackgroundFilters:">&nbsp;&nbsp;&nbsp;&nbsp;- animateBackgroundFilters:</option>
+	
+	<option value="//api/name/animateBorderColor:">&nbsp;&nbsp;&nbsp;&nbsp;- animateBorderColor:</option>
+	
+	<option value="//api/name/animateBorderWidth:">&nbsp;&nbsp;&nbsp;&nbsp;- animateBorderWidth:</option>
+	
+	<option value="//api/name/animateCompositingFilter:">&nbsp;&nbsp;&nbsp;&nbsp;- animateCompositingFilter:</option>
+	
+	<option value="//api/name/animateContents:">&nbsp;&nbsp;&nbsp;&nbsp;- animateContents:</option>
+	
+	<option value="//api/name/animateCornerRadius:">&nbsp;&nbsp;&nbsp;&nbsp;- animateCornerRadius:</option>
+	
+	<option value="//api/name/animateLayerTransform:">&nbsp;&nbsp;&nbsp;&nbsp;- animateLayerTransform:</option>
+	
+	<option value="//api/name/animateRotation:">&nbsp;&nbsp;&nbsp;&nbsp;- animateRotation:</option>
+	
+	<option value="//api/name/animateRotationX:">&nbsp;&nbsp;&nbsp;&nbsp;- animateRotationX:</option>
+	
+	<option value="//api/name/animateRotationY:">&nbsp;&nbsp;&nbsp;&nbsp;- animateRotationY:</option>
+	
+	<option value="//api/name/animateShadowColor:">&nbsp;&nbsp;&nbsp;&nbsp;- animateShadowColor:</option>
+	
+	<option value="//api/name/animateShadowOffset:">&nbsp;&nbsp;&nbsp;&nbsp;- animateShadowOffset:</option>
+	
+	<option value="//api/name/animateShadowOpacity:">&nbsp;&nbsp;&nbsp;&nbsp;- animateShadowOpacity:</option>
+	
+	<option value="//api/name/animateShadowPath:">&nbsp;&nbsp;&nbsp;&nbsp;- animateShadowPath:</option>
+	
+	<option value="//api/name/animateShadowRadius:">&nbsp;&nbsp;&nbsp;&nbsp;- animateShadowRadius:</option>
+	
+	<option value="//api/name/animateZPosition:">&nbsp;&nbsp;&nbsp;&nbsp;- animateZPosition:</option>
+	
+	<option value="//api/name/setupBasicAnimationWithKeyPath:">&nbsp;&nbsp;&nbsp;&nbsp;- setupBasicAnimationWithKeyPath:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Animation Methods">Animation Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties">Properties</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allowsInteraction">allowsInteraction</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animationDuration">animationDuration</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animationOptions">animationOptions</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentAnimationEasing">currentAnimationEasing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/perspectiveDistance">perspectiveDistance</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/repeatCount">repeatCount</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/repeats">repeats</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateBackgroundColor:">animateBackgroundColor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateBackgroundFilters:">animateBackgroundFilters:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateBorderColor:">animateBorderColor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateBorderWidth:">animateBorderWidth:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateCompositingFilter:">animateCompositingFilter:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateContents:">animateContents:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateCornerRadius:">animateCornerRadius:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateLayerTransform:">animateLayerTransform:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateRotation:">animateRotation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateRotationX:">animateRotationX:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateRotationY:">animateRotationY:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateShadowColor:">animateShadowColor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateShadowOffset:">animateShadowOffset:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateShadowOpacity:">animateShadowOpacity:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateShadowPath:">animateShadowPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateShadowRadius:">animateShadowRadius:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animateZPosition:">animateZPosition:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setupBasicAnimationWithKeyPath:">setupBasicAnimationWithKeyPath:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="C4LayerAnimation Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">C4LayerAnimation Protocol Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">C4LayerAnimation.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>C4LayerAnimation protocol groups methods and properties that are fundamental to basic interaction with all <a href="../Classes/C4Layer.html">C4Layer</a> objects. Any <a href="../Classes/C4Layer.html">C4Layer</a> object, such as <a href="../Classes/C4ShapeLayer.html">C4ShapeLayer</a> or C4TextLayer, will conform to this protocol.</p>
+
+<p>If an object conforms to this protocol, it can be considered as an animatable object.</p>
+
+<p>The C4 Framework is built with the idea that all visible objects should be animatable to as much a degree as the Core Animation frameworks allow.</p><div class="warning"><p><strong>Warning:</strong> <em>Note:</em> For the current version of C4 you should NEVER have to deal with any kind of <a href="../Classes/C4Layer.html">C4Layer</a> because any instance of this kind of layer will be instantiated as the backing layer of a specific view. You should interact only with the layer&rsquo;s superview. For instance, work with <a href="../Classes/C4Shape.html">C4Shape</a> objects and NOT <a href="../Classes/C4ShapeLayer.html">C4ShapeLayer</a> objects (<a href="../Classes/C4Shape.html">C4Shape</a> is backed by <a href="../Classes/C4ShapeLayer.html">C4ShapeLayer</a>).</p></div>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Animation Methods" name="task_Animation Methods"></a>
+						<h3 class="subsubtitle task-title">Animation Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateShadowColor:">&ndash;&nbsp;animateShadowColor:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s shadowColor from it&rsquo;s current color to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateShadowOpacity:">&ndash;&nbsp;animateShadowOpacity:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s shadowOpacity from it&rsquo;s current opacity to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateShadowRadius:">&ndash;&nbsp;animateShadowRadius:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s shadowRadius from it&rsquo;s current radius to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateShadowOffset:">&ndash;&nbsp;animateShadowOffset:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s shadowOffset from it&rsquo;s current offset size to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateShadowPath:">&ndash;&nbsp;animateShadowPath:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s shadowPath from it&rsquo;s current path to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateBackgroundFilters:">&ndash;&nbsp;animateBackgroundFilters:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s backgroundFilters from it&rsquo;s current set of background filters to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateContents:">&ndash;&nbsp;animateContents:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s contents.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateCompositingFilter:">&ndash;&nbsp;animateCompositingFilter:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s compositingFilters from it&rsquo;s current set of compositing filters to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateBackgroundColor:">&ndash;&nbsp;animateBackgroundColor:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s background color from it&rsquo;s current color to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateBorderColor:">&ndash;&nbsp;animateBorderColor:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s border color from it&rsquo;s current color to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateBorderWidth:">&ndash;&nbsp;animateBorderWidth:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s border width from it&rsquo;s current width to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateCornerRadius:">&ndash;&nbsp;animateCornerRadius:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s corner radius from it&rsquo;s current width to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateZPosition:">&ndash;&nbsp;animateZPosition:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s z-position from it&rsquo;s current width to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateRotation:">&ndash;&nbsp;animateRotation:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s rotation angle (z-axis) from it&rsquo;s current width to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateRotationX:">&ndash;&nbsp;animateRotationX:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s rotation angle (x-axis) from it&rsquo;s current width to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateRotationY:">&ndash;&nbsp;animateRotationY:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s rotation angle (y-axis) from it&rsquo;s current width to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animateLayerTransform:">&ndash;&nbsp;animateLayerTransform:</a></code>
+		<span class="tooltip"><p>Animates the layer&rsquo;s sublayer transform from it&rsquo;s current value to a new one.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setupBasicAnimationWithKeyPath:">&ndash;&nbsp;setupBasicAnimationWithKeyPath:</a></code>
+		<span class="tooltip"><p>Convenience method for creating a CABasicAnimation.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li>
+						</ul>
+						
+						
+						<a title="Properties" name="task_Properties"></a>
+						<h3 class="subsubtitle task-title">Properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animationDuration">&nbsp;&nbsp;animationDuration</a></code>
+		<span class="tooltip"><p>The duration of the layer&rsquo;s animations.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animationOptions">&nbsp;&nbsp;animationOptions</a></code>
+		<span class="tooltip"><p>The options for which the layer should use in its animations.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/repeatCount">&nbsp;&nbsp;repeatCount</a></code>
+		<span class="tooltip"><p>The number of times an animation auto<a href="#//api/name/repeats">repeats</a>.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentAnimationEasing">&nbsp;&nbsp;currentAnimationEasing</a></code>
+		<span class="tooltip"><p>Type of easing that an animation will use.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allowsInteraction">&nbsp;&nbsp;allowsInteraction</a></code>
+		<span class="tooltip"><p>The interaction state.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/repeats">&nbsp;&nbsp;repeats</a></code>
+		<span class="tooltip"><p>The repeat state.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/perspectiveDistance">&nbsp;&nbsp;perspectiveDistance</a></code>
+		<span class="tooltip"><p>Specifies the perspective distance for x and y axis rotations.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/allowsInteraction" title="allowsInteraction"></a>
+	<h3 class="subsubtitle method-title">allowsInteraction</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The interaction state.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) BOOL allowsInteraction</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BOOL YES if the layer allows interaction, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The interaction state.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animationDuration" title="animationDuration"></a>
+	<h3 class="subsubtitle method-title">animationDuration</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The duration of the layer&rsquo;s animations.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) CGFloat animationDuration</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The duration of the layer&rsquo;s animations.</p>
+
+<p>All animations that occur will use this value as their duration.</p>
+
+<p>For immediate animations set this property to 0.0f;</p>
+
+<p>Defaults to 0.0f;</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animationOptions" title="animationOptions"></a>
+	<h3 class="subsubtitle method-title">animationOptions</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The options for which the layer should use in its animations.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) NSUInteger animationOptions</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The options for which the layer should use in its animations.</p>
+
+<p>The available animation options are a limited subset of UIViewAnimationOptions and include:
+- ALLOWSINTERACTION
+- BEGINCURRENT (default)
+- REPEAT
+- AUTOREVERSE
+- EASEINOUT
+- EASEIN
+- EASEOUT
+- LINEAR</p>
+
+<p>This value can have a variety of options attached to it by using integer bitmasks. For example, to set an animation which will auto reverse and repeat:
+layer.animationOptions = AUTOREVERSE | REPEAT;</p><div class="warning"><p><strong>Warning:</strong> <em>Note:</em> All animation options should be set at the same time using the | operator. Animation options should never be set in the following way:
+layer.animationOptions = AUTOREVERSE;
+layer.animationOptions = REPEAT;</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentAnimationEasing" title="currentAnimationEasing"></a>
+	<h3 class="subsubtitle method-title">currentAnimationEasing</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Type of easing that an animation will use.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly, atomic, strong) NSString *currentAnimationEasing</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Type of easing that an animation will use.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/perspectiveDistance" title="perspectiveDistance"></a>
+	<h3 class="subsubtitle method-title">perspectiveDistance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specifies the perspective distance for x and y axis rotations.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) CGFloat perspectiveDistance</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Specifies the perspective distance for x and y axis rotations.</p>
+
+<p>Technically, this will set the perspective transform component of the receiver&rsquo;s transform to 1/value (i.e. the new value that is set). It will perform the following action:</p>
+
+<p><code>CATransform3D t = self.transform;
+if(perspectiveDistance != 0.0f) t.m34 = 1/self.perspectiveDistance;
+else t.m34 = 0.0f;
+self.transform = t;</code></p>
+
+<p>Defaults to 0.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/repeatCount" title="repeatCount"></a>
+	<h3 class="subsubtitle method-title">repeatCount</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The number of times an animation auto<a href="#//api/name/repeats">repeats</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) CGFloat repeatCount</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The number of times an animation auto<a href="#//api/name/repeats">repeats</a>.</p><div class="warning"><p><strong>Warning:</strong> <em>Note:</em> This parameter is currently unused.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/repeats" title="repeats"></a>
+	<h3 class="subsubtitle method-title">repeats</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The repeat state.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) BOOL repeats</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BOOL YES if the layer&rsquo;s animations will repeat, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The repeat state.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/animateBackgroundColor:" title="animateBackgroundColor:"></a>
+	<h3 class="subsubtitle method-title">animateBackgroundColor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s background color from it&rsquo;s current color to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateBackgroundColor:(CGColorRef)<em>backgroundColor</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>backgroundColor</em></dt>
+			<dd><p>A CGColorRef to which the background color will animate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s background color from it&rsquo;s current color to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateBackgroundFilters:" title="animateBackgroundFilters:"></a>
+	<h3 class="subsubtitle method-title">animateBackgroundFilters:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s backgroundFilters from it&rsquo;s current set of background filters to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateBackgroundFilters:(NSArray *)<em>backgroundFilters</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>backgroundFilters</em></dt>
+			<dd><p>The set of filters to which will be animated</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s backgroundFilters from it&rsquo;s current set of background filters to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateBorderColor:" title="animateBorderColor:"></a>
+	<h3 class="subsubtitle method-title">animateBorderColor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s border color from it&rsquo;s current color to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateBorderColor:(CGColorRef)<em>borderColor</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>borderColor</em></dt>
+			<dd><p>A CGColorRef to which the border color will animate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s border color from it&rsquo;s current color to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateBorderWidth:" title="animateBorderWidth:"></a>
+	<h3 class="subsubtitle method-title">animateBorderWidth:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s border width from it&rsquo;s current width to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateBorderWidth:(CGFloat)<em>borderWidth</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>borderWidth</em></dt>
+			<dd><p>A CGFloat to which the border width will animate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s border width from it&rsquo;s current width to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateCompositingFilter:" title="animateCompositingFilter:"></a>
+	<h3 class="subsubtitle method-title">animateCompositingFilter:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s compositingFilters from it&rsquo;s current set of compositing filters to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateCompositingFilter:(id)<em>compositingFilter</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>compositingFilter</em></dt>
+			<dd><p>The set of compositing filters to which will be animated</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s compositingFilters from it&rsquo;s current set of compositing filters to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateContents:" title="animateContents:"></a>
+	<h3 class="subsubtitle method-title">animateContents:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s contents.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateContents:(CGImageRef)<em>image</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>image</em></dt>
+			<dd><p>The new image to set as the layer&rsquo;s contents</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s contents.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateCornerRadius:" title="animateCornerRadius:"></a>
+	<h3 class="subsubtitle method-title">animateCornerRadius:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s corner radius from it&rsquo;s current width to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateCornerRadius:(CGFloat)<em>cornerRadius</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cornerRadius</em></dt>
+			<dd><p>A CGFloat to which the corner radius width will animate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s corner radius from it&rsquo;s current width to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateLayerTransform:" title="animateLayerTransform:"></a>
+	<h3 class="subsubtitle method-title">animateLayerTransform:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s sublayer transform from it&rsquo;s current value to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateLayerTransform:(CATransform3D)<em>layerTransform</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>layerTransform</em></dt>
+			<dd><p>A CATransform3D structure to which the sublayer transform will animate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s sublayer transform from it&rsquo;s current value to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateRotation:" title="animateRotation:"></a>
+	<h3 class="subsubtitle method-title">animateRotation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s rotation angle (z-axis) from it&rsquo;s current width to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateRotation:(CGFloat)<em>rotationAngle</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rotationAngle</em></dt>
+			<dd><p>A CGFloat to which the z-axis rotation angle will animate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s rotation angle (z-axis) from it&rsquo;s current width to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateRotationX:" title="animateRotationX:"></a>
+	<h3 class="subsubtitle method-title">animateRotationX:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s rotation angle (x-axis) from it&rsquo;s current width to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateRotationX:(CGFloat)<em>rotationAngle</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rotationAngle</em></dt>
+			<dd><p>A CGFloat to which the x-axis rotation angle will animate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s rotation angle (x-axis) from it&rsquo;s current width to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateRotationY:" title="animateRotationY:"></a>
+	<h3 class="subsubtitle method-title">animateRotationY:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s rotation angle (y-axis) from it&rsquo;s current width to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateRotationY:(CGFloat)<em>rotationAngle</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rotationAngle</em></dt>
+			<dd><p>A CGFloat to which the y-axis rotation angle will animate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s rotation angle (y-axis) from it&rsquo;s current width to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateShadowColor:" title="animateShadowColor:"></a>
+	<h3 class="subsubtitle method-title">animateShadowColor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s shadowColor from it&rsquo;s current color to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateShadowColor:(CGColorRef)<em>shadowColor</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>shadowColor</em></dt>
+			<dd><p>The color to which will be animated</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s shadowColor from it&rsquo;s current color to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateShadowOffset:" title="animateShadowOffset:"></a>
+	<h3 class="subsubtitle method-title">animateShadowOffset:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s shadowOffset from it&rsquo;s current offset size to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateShadowOffset:(CGSize)<em>shadowOffset</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>shadowOffset</em></dt>
+			<dd><p>The offset size to which will be animated</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s shadowOffset from it&rsquo;s current offset size to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateShadowOpacity:" title="animateShadowOpacity:"></a>
+	<h3 class="subsubtitle method-title">animateShadowOpacity:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s shadowOpacity from it&rsquo;s current opacity to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateShadowOpacity:(CGFloat)<em>shadowOpacity</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>shadowOpacity</em></dt>
+			<dd><p>The opacity to which will be animated</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s shadowOpacity from it&rsquo;s current opacity to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateShadowPath:" title="animateShadowPath:"></a>
+	<h3 class="subsubtitle method-title">animateShadowPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s shadowPath from it&rsquo;s current path to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateShadowPath:(CGPathRef)<em>shadowPath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>shadowPath</em></dt>
+			<dd><p>The path to which will be animated</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s shadowPath from it&rsquo;s current path to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateShadowRadius:" title="animateShadowRadius:"></a>
+	<h3 class="subsubtitle method-title">animateShadowRadius:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s shadowRadius from it&rsquo;s current radius to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateShadowRadius:(CGFloat)<em>shadowRadius</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>shadowRadius</em></dt>
+			<dd><p>The radius to which will be animated</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s shadowRadius from it&rsquo;s current radius to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/animateZPosition:" title="animateZPosition:"></a>
+	<h3 class="subsubtitle method-title">animateZPosition:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the layer&rsquo;s z-position from it&rsquo;s current width to a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)animateZPosition:(CGFloat)<em>zPosition</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zPosition</em></dt>
+			<dd><p>A CGFloat to which the z-position will animate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the layer&rsquo;s z-position from it&rsquo;s current width to a new one.</p>
+
+<p>Creates a CABasicAnimation contained within a CATransaction. This method also handles setting a completion block if the animation needs it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setupBasicAnimationWithKeyPath:" title="setupBasicAnimationWithKeyPath:"></a>
+	<h3 class="subsubtitle method-title">setupBasicAnimationWithKeyPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convenience method for creating a CABasicAnimation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (CABasicAnimation *)setupBasicAnimationWithKeyPath:(NSString *)<em>keyPath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>keyPath</em></dt>
+			<dd><p>A string representation of an animatable property (e.g. @&ldquo;path&rdquo;, @&ldquo;fillColor&rdquo;, etc..)</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convenience method for creating a CABasicAnimation.</p><div class="warning"><p><strong>Warning:</strong> <em>Note:</em> You should never call this method directly, it is included in this protocol because all layers need to have the corresponding method for setting up their animations.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4LayerAnimation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 C4iOS. All rights reserved. (Last updated: 2013-05-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

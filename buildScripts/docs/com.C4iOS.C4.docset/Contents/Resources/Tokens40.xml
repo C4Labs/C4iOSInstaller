@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/C4MethodDelay.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/C4MethodDelay</TokenIdentifier>
+			<Abstract type="html">The C4MethodDelay protocol defines two methods that can be used to trigger other methods after a specified amount of time.</Abstract>
+			<DeclaredIn>C4MethodDelay.h</DeclaredIn>
+			
+			<NodeRef refid="40"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4MethodDelay/runMethod:afterDelay:</TokenIdentifier>
+			<Abstract type="html">Sends a specified message to the receiver after a specified amount of time.</Abstract>
+			<DeclaredIn>C4MethodDelay.h</DeclaredIn>			
+			
+			<Declaration>- (void)runMethod:(NSString *)methodName afterDelay:(CGFloat)seconds</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">The name of the method to run</Abstract>
+				</Parameter><Parameter>
+					<Name>seconds</Name>
+					<Abstract type="html">The amount of time to wait, in seconds, before running the specified method</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/runMethod:afterDelay:</Anchor>
+            <NodeRef refid="40"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4MethodDelay/runMethod:withObject:afterDelay:</TokenIdentifier>
+			<Abstract type="html">Sends a message to the receiver with an object as the argument after a specific amount of time.
+   
+This method wraps -(void)performSelector:(SEL)aSelector withObject:(id)object from the NSObject Protocol Reference</Abstract>
+			<DeclaredIn>C4MethodDelay.h</DeclaredIn>			
+			
+			<Declaration>- (void)runMethod:(NSString *)methodName withObject:(id)object afterDelay:(CGFloat)seconds</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">The name of the method to run</Abstract>
+				</Parameter><Parameter>
+					<Name>object</Name>
+					<Abstract type="html">An object that is the sole argument of the message.</Abstract>
+				</Parameter><Parameter>
+					<Name>seconds</Name>
+					<Abstract type="html">The amount of time to wait, in seconds, before running the specified method</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/runMethod:withObject:afterDelay:</Anchor>
+            <NodeRef refid="40"/>
+		</Token>
+		
+	</File>
+</Tokens>

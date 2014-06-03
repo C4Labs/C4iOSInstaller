@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/C4Vector.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/C4Vector</TokenIdentifier>
+			<Abstract type="html">The C4Vector class is a basic system used for coordinate values and direction vectors.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>
+			
+			<NodeRef refid="31"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Vector/distanceBetweenA:andB:</TokenIdentifier>
+			<Abstract type="html">Calculates the distance between two coordinates.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>+ (CGFloat)distanceBetweenA:(CGPoint)pointA andB:(CGPoint)pointB</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pointA</Name>
+					<Abstract type="html">The first point</Abstract>
+				</Parameter><Parameter>
+					<Name>pointB</Name>
+					<Abstract type="html">The second point</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A distance value, measured in points, between pointA and pointB</Abstract></ReturnValue>
+			<Anchor>//api/name/distanceBetweenA:andB:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Vector/angleBetweenA:andB:</TokenIdentifier>
+			<Abstract type="html">Calculates the angle between two coordinates</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>+ (CGFloat)angleBetweenA:(CGPoint)pointA andB:(CGPoint)pointB</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pointA</Name>
+					<Abstract type="html">The first point</Abstract>
+				</Parameter><Parameter>
+					<Name>pointB</Name>
+					<Abstract type="html">The second point</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An angle value, measured in radians, between pointA and pointB</Abstract></ReturnValue>
+			<Anchor>//api/name/angleBetweenA:andB:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Vector/vectorWithX:Y:Z:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new C4Vector object.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Vector *)vectorWithX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>x</Name>
+					<Abstract type="html">The x coordinate of the vector</Abstract>
+				</Parameter><Parameter>
+					<Name>y</Name>
+					<Abstract type="html">The y coordinate of the vector</Abstract>
+				</Parameter><Parameter>
+					<Name>z</Name>
+					<Abstract type="html">The z coordinate of the vector</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new C4Vector object</Abstract></ReturnValue>
+			<Anchor>//api/name/vectorWithX:Y:Z:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/initWithX:Y:Z:</TokenIdentifier>
+			<Abstract type="html">Initializes a new C4Vector object.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>x</Name>
+					<Abstract type="html">The x coordinate of the vector</Abstract>
+				</Parameter><Parameter>
+					<Name>y</Name>
+					<Abstract type="html">The y coordinate of the vector</Abstract>
+				</Parameter><Parameter>
+					<Name>z</Name>
+					<Abstract type="html">The z coordinate of the vector</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithX:Y:Z:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/setX:Y:Z:</TokenIdentifier>
+			<Abstract type="html">Sets all three coordinate values of a vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (void)setX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>x</Name>
+					<Abstract type="html">The x coordinate of the vector</Abstract>
+				</Parameter><Parameter>
+					<Name>y</Name>
+					<Abstract type="html">The y coordinate of the vector</Abstract>
+				</Parameter><Parameter>
+					<Name>z</Name>
+					<Abstract type="html">The z coordinate of the vector</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setX:Y:Z:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/add:</TokenIdentifier>
+			<Abstract type="html">Adds the value of a specified vector to the receiver.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (void)add:(C4Vector *)aVec</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>aVec</Name>
+					<Abstract type="html">The vector whose coordinate values will be added to the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/add:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/addScalar:</TokenIdentifier>
+			<Abstract type="html">Adds a scalar value to the coordinates of the receiver.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (void)addScalar:(float)scalar</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>scalar</Name>
+					<Abstract type="html">The value to which will be added to the coordinates of the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addScalar:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/divide:</TokenIdentifier>
+			<Abstract type="html">Divides the value of the receiver&apos;s coordinates by those of the specified vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (void)divide:(C4Vector *)aVec</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>aVec</Name>
+					<Abstract type="html">The vector whose coordinate values will be used to divide from those of the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/divide:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/divideScalar:</TokenIdentifier>
+			<Abstract type="html">Divides the values of the coordinates of the receiver by a scalar.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (void)divideScalar:(float)scalar</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>scalar</Name>
+					<Abstract type="html">The value that will be used to divide from those of the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/divideScalar:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/multiply:</TokenIdentifier>
+			<Abstract type="html">Multiplies the value of the receiver&apos;s coordinates by those of the specified vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (void)multiply:(C4Vector *)aVec</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>aVec</Name>
+					<Abstract type="html">The vector whose coordinate values will be used to multiply those of the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/multiply:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/multiplyScalar:</TokenIdentifier>
+			<Abstract type="html">Multiplies the values of the coordinates of the receiver by a scalar.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (void)multiplyScalar:(float)scalar</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>scalar</Name>
+					<Abstract type="html">The value that will be used to multiply those of the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/multiplyScalar:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/subtract:</TokenIdentifier>
+			<Abstract type="html">Subtracts the value of a specified vector&apos;s coordinates from those of the receiver.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (void)subtract:(C4Vector *)aVec</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>aVec</Name>
+					<Abstract type="html">The vector whose coordinate values will be subtracted from those of the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/subtract:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/subtractScalar:</TokenIdentifier>
+			<Abstract type="html">Subtracts a scalar value from the coordinates of the receiver.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (void)subtractScalar:(float)scalar</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>scalar</Name>
+					<Abstract type="html">The scalar value that will be subtracted from the coordinates of the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/subtractScalar:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/distance:</TokenIdentifier>
+			<Abstract type="html">Calculates the distance between the receiver and a specified vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (CGFloat)distance:(C4Vector *)aVec</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>aVec</Name>
+					<Abstract type="html">the vector to which the distance will be calculated from the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A distance value, measured in points, between the receiver and aVec</Abstract></ReturnValue>
+			<Anchor>//api/name/distance:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/dot:</TokenIdentifier>
+			<Abstract type="html">Calculates the dot product of the reciever with a specified vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (CGFloat)dot:(C4Vector *)aVec</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>aVec</Name>
+					<Abstract type="html">the vector that will be used to calculate the dot product of the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A float value which is the dot product of the receiver and aVec</Abstract></ReturnValue>
+			<Anchor>//api/name/dot:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/angleBetween:</TokenIdentifier>
+			<Abstract type="html">Calculates the angle between the receiver and a specified coordinate</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (CGFloat)angleBetween:(C4Vector *)aVec</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>aVec</Name>
+					<Abstract type="html">The point against which the receiver&apos;s angle will be calculated</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An angle value, measured in radians, between pointA and pointB</Abstract></ReturnValue>
+			<Anchor>//api/name/angleBetween:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/cross:</TokenIdentifier>
+			<Abstract type="html">Calculates the cross product of the reciever with a specified vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (void)cross:(C4Vector *)aVec</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>aVec</Name>
+					<Abstract type="html">the vector that will be used to calculate the cross product of the receiver</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A float value which is the cross product of the receiver and aVec</Abstract></ReturnValue>
+			<Anchor>//api/name/cross:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/normalize</TokenIdentifier>
+			<Abstract type="html">Normalizes the receiver&apos;s coordinates</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (void)normalize</Declaration>
+			
+			
+			<Anchor>//api/name/normalize</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/limit:</TokenIdentifier>
+			<Abstract type="html">Limits the receiver&apos;s coordinates.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (void)limit:(CGFloat)max</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>max</Name>
+					<Abstract type="html">The maximum value possible for each coordinate.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/limit:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/headingBasedOn:</TokenIdentifier>
+			<Abstract type="html">Calculates the heading of a vector based on a 2-dimensional coordinate.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>- (CGFloat)headingBasedOn:(CGPoint)p</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>p</Name>
+					<Abstract type="html">The point used to determine the receiver&apos;s heading.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A float value representing the heading of the receiver.</Abstract></ReturnValue>
+			<Anchor>//api/name/headingBasedOn:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/setVec:</TokenIdentifier>
+			<Abstract type="html">An array of variables representing the coordinates of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) float *vec</Declaration>
+			
+			
+			<Anchor>//api/name/vec</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/vec</TokenIdentifier>
+			<Abstract type="html">An array of variables representing the coordinates of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) float *vec</Declaration>
+			
+			
+			<Anchor>//api/name/vec</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Vector/vec</TokenIdentifier>
+			<Abstract type="html">An array of variables representing the coordinates of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) float *vec</Declaration>
+			
+			
+			<Anchor>//api/name/vec</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/setX:</TokenIdentifier>
+			<Abstract type="html">The x-coordinate of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat x</Declaration>
+			
+			
+			<Anchor>//api/name/x</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/x</TokenIdentifier>
+			<Abstract type="html">The x-coordinate of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat x</Declaration>
+			
+			
+			<Anchor>//api/name/x</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Vector/x</TokenIdentifier>
+			<Abstract type="html">The x-coordinate of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat x</Declaration>
+			
+			
+			<Anchor>//api/name/x</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/setY:</TokenIdentifier>
+			<Abstract type="html">The y-coordinate of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat y</Declaration>
+			
+			
+			<Anchor>//api/name/y</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/y</TokenIdentifier>
+			<Abstract type="html">The y-coordinate of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat y</Declaration>
+			
+			
+			<Anchor>//api/name/y</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Vector/y</TokenIdentifier>
+			<Abstract type="html">The y-coordinate of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat y</Declaration>
+			
+			
+			<Anchor>//api/name/y</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/setZ:</TokenIdentifier>
+			<Abstract type="html">The z-coordinate of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat z</Declaration>
+			
+			
+			<Anchor>//api/name/z</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/z</TokenIdentifier>
+			<Abstract type="html">The z-coordinate of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat z</Declaration>
+			
+			
+			<Anchor>//api/name/z</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Vector/z</TokenIdentifier>
+			<Abstract type="html">The z-coordinate of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat z</Declaration>
+			
+			
+			<Anchor>//api/name/z</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/setMagnitude:</TokenIdentifier>
+			<Abstract type="html">The magnitude of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat magnitude</Declaration>
+			
+			
+			<Anchor>//api/name/magnitude</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/magnitude</TokenIdentifier>
+			<Abstract type="html">The magnitude of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat magnitude</Declaration>
+			
+			
+			<Anchor>//api/name/magnitude</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Vector/magnitude</TokenIdentifier>
+			<Abstract type="html">The magnitude of the vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat magnitude</Declaration>
+			
+			
+			<Anchor>//api/name/magnitude</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/setHeading:</TokenIdentifier>
+			<Abstract type="html">Returns the heading of a vector based on {0,0}.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat heading</Declaration>
+			
+			
+			<Anchor>//api/name/heading</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/heading</TokenIdentifier>
+			<Abstract type="html">Returns the heading of a vector based on {0,0}.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat heading</Declaration>
+			
+			
+			<Anchor>//api/name/heading</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Vector/heading</TokenIdentifier>
+			<Abstract type="html">Returns the heading of a vector based on {0,0}.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat heading</Declaration>
+			
+			
+			<Anchor>//api/name/heading</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/setDisplacedHeading:</TokenIdentifier>
+			<Abstract type="html">Returns the displaced heading of a vector based on {0,0}.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat displacedHeading</Declaration>
+			
+			
+			<Anchor>//api/name/displacedHeading</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/displacedHeading</TokenIdentifier>
+			<Abstract type="html">Returns the displaced heading of a vector based on {0,0}.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat displacedHeading</Declaration>
+			
+			
+			<Anchor>//api/name/displacedHeading</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Vector/displacedHeading</TokenIdentifier>
+			<Abstract type="html">Returns the displaced heading of a vector based on {0,0}.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat displacedHeading</Declaration>
+			
+			
+			<Anchor>//api/name/displacedHeading</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/setCGPoint:</TokenIdentifier>
+			<Abstract type="html">Returns the 2-dimensional coordinate of a vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic)  CGPoint</Declaration>
+			
+			
+			<Anchor>//api/name/CGPoint</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Vector/CGPoint</TokenIdentifier>
+			<Abstract type="html">Returns the 2-dimensional coordinate of a vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic)  CGPoint</Declaration>
+			
+			
+			<Anchor>//api/name/CGPoint</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Vector/CGPoint</TokenIdentifier>
+			<Abstract type="html">Returns the 2-dimensional coordinate of a vector.</Abstract>
+			<DeclaredIn>C4Vector.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic)  CGPoint</Declaration>
+			
+			
+			<Anchor>//api/name/CGPoint</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+	</File>
+</Tokens>

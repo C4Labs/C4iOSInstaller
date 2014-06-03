@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/C4CameraLayer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/C4CameraLayer</TokenIdentifier>
+			<Abstract type="html">This document describes the C4CameraLayer class.</Abstract>
+			<DeclaredIn>C4CameraLayer.h</DeclaredIn>
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+	</File>
+</Tokens>

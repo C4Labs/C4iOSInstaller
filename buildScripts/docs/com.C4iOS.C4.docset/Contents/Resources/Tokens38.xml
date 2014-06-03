@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/C4Gesture.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/C4Gesture</TokenIdentifier>
+			<Abstract type="html">C4Gesture protocol groups methods that are fundamental to basic interaction with all C4 objects which have a visible, on-screen presence.</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>
+			
+			<NodeRef refid="38"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/addGesture:name:action:</TokenIdentifier>
+			<Abstract type="html">Adds a gesture to an object.</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)addGesture:(C4GestureType)type name:(NSString *)gestureName action:(NSString *)methodName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">defines the type of gesture that will be added, should be one of C4GestureType (e.g. TAP, PINCH, SWIPERIGHT, SWIPELEFT, SWIPEUP, SWIPEDOWN, ROTATION, PAN, LONGPRESS).</Abstract>
+				</Parameter><Parameter>
+					<Name>gestureName</Name>
+					<Abstract type="html">a string (can be anything) which identifies the current gesture, so that it can be accessed later on.</Abstract>
+				</Parameter><Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">a string which represents the name of a method defined in the object&apos;s class or any of its superclasses, this parameter should be written as a string (e.g. @&quot;test&quot;, @&quot;changePosition:&quot;)</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addGesture:name:action:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/numberOfTapsRequired:forGesture:</TokenIdentifier>
+			<Abstract type="html">Specifies the number of taps required for a given gesture.</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)numberOfTapsRequired:(NSInteger)tapCount forGesture:(NSString *)gestureName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tapCount</Name>
+					<Abstract type="html">the desired number of required taps</Abstract>
+				</Parameter><Parameter>
+					<Name>gestureName</Name>
+					<Abstract type="html">a string identifying the gesture upon which this method should act. The value of gestureName should correspond to the name of a gesture already added using the addGesture:name:action: method</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/numberOfTapsRequired:forGesture:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/numberOfTouchesRequired:forGesture:</TokenIdentifier>
+			<Abstract type="html">Specifies the number of touches required for a given gesture.</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)numberOfTouchesRequired:(NSInteger)touchCount forGesture:(NSString *)gestureName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>touchCount</Name>
+					<Abstract type="html">the desired number of required touches</Abstract>
+				</Parameter><Parameter>
+					<Name>gestureName</Name>
+					<Abstract type="html">a string identifying the gesture upon which this method should act. The value of gestureName should correspond to the name of a gesture already added using the addGesture:name:action: method</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/numberOfTouchesRequired:forGesture:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/minimumNumberOfTouches:forGesture:</TokenIdentifier>
+			<Abstract type="html">Specifies the minimum number of touches required for a given gesture.</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)minimumNumberOfTouches:(NSInteger)touchCount forGesture:(NSString *)gestureName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>touchCount</Name>
+					<Abstract type="html">the desired minimum number of touches</Abstract>
+				</Parameter><Parameter>
+					<Name>gestureName</Name>
+					<Abstract type="html">a string identifying the gesture upon which this method should act. The value of gestureName should correspond to the name of a gesture already added using the addGesture:name:action: method</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/minimumNumberOfTouches:forGesture:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/maximumNumberOfTouches:forGesture:</TokenIdentifier>
+			<Abstract type="html">Specifies the maximum number of touches required for a given gesture.</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)maximumNumberOfTouches:(NSInteger)touchCount forGesture:(NSString *)gestureName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>touchCount</Name>
+					<Abstract type="html">the desired maximum number of touches</Abstract>
+				</Parameter><Parameter>
+					<Name>gestureName</Name>
+					<Abstract type="html">a string identifying the gesture upon which this method should act. The value of gestureName should correspond to the name of a gesture already added using the addGesture:name:action: method</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/maximumNumberOfTouches:forGesture:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/swipeDirection:forGesture:</TokenIdentifier>
+			<Abstract type="html">Specifies the direction for a given swipe gesture.</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)swipeDirection:(C4SwipeDirection)direction forGesture:(NSString *)gestureName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>direction</Name>
+					<Abstract type="html">the desired direction for the swipe gesture</Abstract>
+				</Parameter><Parameter>
+					<Name>gestureName</Name>
+					<Abstract type="html">a string identifying the gesture upon which this method should act. The value of gestureName should correspond to the name of a gesture already added using the addGesture:name:action: method</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/swipeDirection:forGesture:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/minimumPressDuration:forGesture:</TokenIdentifier>
+			<Abstract type="html">Specifies the direction for a given swipe gesture.</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)minimumPressDuration:(CGFloat)duration forGesture:(NSString *)gestureName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">the desired number of seconds (defaults to 0.5)</Abstract>
+				</Parameter><Parameter>
+					<Name>gestureName</Name>
+					<Abstract type="html">a string identifying the gesture upon which this method should act. The value of gestureName should correspond to the name of a gesture already added using the addGesture:name:action: method</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/minimumPressDuration:forGesture:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/touchesBegan</TokenIdentifier>
+			<Abstract type="html">Method which is called each time an object is touched</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)touchesBegan</Declaration>
+			
+			
+			<Anchor>//api/name/touchesBegan</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/touchesEnded</TokenIdentifier>
+			<Abstract type="html">Method which is called each time an object is finished being touched</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)touchesEnded</Declaration>
+			
+			
+			<Anchor>//api/name/touchesEnded</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/touchesMoved</TokenIdentifier>
+			<Abstract type="html">Method which is called each time touches associated with an object are moved</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)touchesMoved</Declaration>
+			
+			
+			<Anchor>//api/name/touchesMoved</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/pressedLong</TokenIdentifier>
+			<Abstract type="html">Default method which is called each time an object receives a long press</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)pressedLong</Declaration>
+			
+			
+			<Anchor>//api/name/pressedLong</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/pressedLong:</TokenIdentifier>
+			<Abstract type="html">Method which is called each time an object receives a long press</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)pressedLong:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">the object that is sending the pressedLong: message.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/pressedLong:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/swipedRight</TokenIdentifier>
+			<Abstract type="html">Method which is called each time an object receives a swipe from left to right</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)swipedRight</Declaration>
+			
+			
+			<Anchor>//api/name/swipedRight</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/swipedRight:</TokenIdentifier>
+			<Abstract type="html">Method which is called each time an object receives a swipe from left to right</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)swipedRight:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">a UIGestureRecognizer object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/swipedRight:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/swipedLeft</TokenIdentifier>
+			<Abstract type="html">Method which is called each time an object receives a swipe from right to left</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)swipedLeft</Declaration>
+			
+			
+			<Anchor>//api/name/swipedLeft</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/swipedLeft:</TokenIdentifier>
+			<Abstract type="html">Default method which is called each time an object receives a swipe from right to left</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)swipedLeft:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">a UIGestureRecognizer object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/swipedLeft:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/swipedUp</TokenIdentifier>
+			<Abstract type="html">Method which is called each time an object receives a swipe from down to up</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)swipedUp</Declaration>
+			
+			
+			<Anchor>//api/name/swipedUp</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/swipedUp:</TokenIdentifier>
+			<Abstract type="html">Method which is called each time an object receives a swipe from down to up</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)swipedUp:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">a UIGestureRecognizer object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/swipedUp:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/swipedDown</TokenIdentifier>
+			<Abstract type="html">Method which is called each time an object receives a swipe from up to down</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)swipedDown</Declaration>
+			
+			
+			<Anchor>//api/name/swipedDown</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/swipedDown:</TokenIdentifier>
+			<Abstract type="html">Method which is called each time an object receives a swipe from up to down</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)swipedDown:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">a UIGestureRecognizer object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/swipedDown:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/move:</TokenIdentifier>
+			<Abstract type="html">A default method which can be called when using a PAN gesture, if the object is to follow a moving touch</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)move:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">a UIGestureRecognizer object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/move:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/tapped</TokenIdentifier>
+			<Abstract type="html">The basic method that gets called when a tap gesture gets recognized.</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)tapped</Declaration>
+			
+			
+			<Anchor>//api/name/tapped</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/tapped:</TokenIdentifier>
+			<Abstract type="html">Default method which is called each time an object receives a tap gesture.</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (void)tapped:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">a UIGestureRecognizer object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/tapped:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/gestureForName:</TokenIdentifier>
+			<Abstract type="html">Returns the UIGesture associated with a specified gesture name for the receiver.</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (UIGestureRecognizer *)gestureForName:(NSString *)gestureName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>gestureName</Name>
+					<Abstract type="html">the name of the gesture to retrieve.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/gestureForName:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4Gesture/allGestures</TokenIdentifier>
+			<Abstract type="html">Returns a dictionary of all the gestures associated with the receiver.</Abstract>
+			<DeclaredIn>C4Gesture.h</DeclaredIn>			
+			
+			<Declaration>- (NSDictionary *)allGestures</Declaration>
+			
+			
+			<Anchor>//api/name/allGestures</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+	</File>
+</Tokens>

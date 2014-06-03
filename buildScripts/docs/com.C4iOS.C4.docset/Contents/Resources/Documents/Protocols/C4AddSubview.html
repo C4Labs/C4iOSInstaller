@@ -1,0 +1,913 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>C4AddSubview Protocol Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">C4 </a></h1>
+				<a id="developerHome" href="../index.html">C4iOS</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">C4AddSubview Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/addCamera:">&nbsp;&nbsp;&nbsp;&nbsp;- addCamera:</option>
+	
+	<option value="//api/name/addGL:">&nbsp;&nbsp;&nbsp;&nbsp;- addGL:</option>
+	
+	<option value="//api/name/addImage:">&nbsp;&nbsp;&nbsp;&nbsp;- addImage:</option>
+	
+	<option value="//api/name/addLabel:">&nbsp;&nbsp;&nbsp;&nbsp;- addLabel:</option>
+	
+	<option value="//api/name/addMovie:">&nbsp;&nbsp;&nbsp;&nbsp;- addMovie:</option>
+	
+	<option value="//api/name/addObjects:">&nbsp;&nbsp;&nbsp;&nbsp;- addObjects:</option>
+	
+	<option value="//api/name/addShape:">&nbsp;&nbsp;&nbsp;&nbsp;- addShape:</option>
+	
+	<option value="//api/name/addUIElement:">&nbsp;&nbsp;&nbsp;&nbsp;- addUIElement:</option>
+	
+	<option value="//api/name/removeObject:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObject:</option>
+	
+	<option value="//api/name/removeObjects:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObjects:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addCamera:">addCamera:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGL:">addGL:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addImage:">addImage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addLabel:">addLabel:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addMovie:">addMovie:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addObjects:">addObjects:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addShape:">addShape:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addUIElement:">addUIElement:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObject:">removeObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObjects:">removeObjects:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="C4AddSubview Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">C4AddSubview Protocol Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">C4AddSubview.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The C4AddSubview protocol defines a set of methods for adding objects to the canvas and to one another.</p>
+
+<p>All visual objects in C4 conform to this protocol, its purpose is to make sure that the proper method is used for adding a given object to the canvas or to another object.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addCamera:">&ndash;&nbsp;addCamera:</a></code>
+		<span class="tooltip"><p>Adds a <a href="../Classes/C4Camera.html">C4Camera</a> to the view.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addGL:">&ndash;&nbsp;addGL:</a></code>
+		<span class="tooltip"><p>Adds a <a href="../Classes/C4GL.html">C4GL</a> to the view.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addImage:">&ndash;&nbsp;addImage:</a></code>
+		<span class="tooltip"><p>Adds a <a href="../Classes/C4Image.html">C4Image</a> to the view.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addLabel:">&ndash;&nbsp;addLabel:</a></code>
+		<span class="tooltip"><p>Adds a <a href="../Classes/C4Label.html">C4Label</a> to the view.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addMovie:">&ndash;&nbsp;addMovie:</a></code>
+		<span class="tooltip"><p>Adds a <a href="../Classes/C4Movie.html">C4Movie</a> to the view.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addObjects:">&ndash;&nbsp;addObjects:</a></code>
+		<span class="tooltip"><p>A method for adding multiple objects to the canvas at one time.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addShape:">&ndash;&nbsp;addShape:</a></code>
+		<span class="tooltip"><p>Adds a <a href="../Classes/C4Shape.html">C4Shape</a> to the view.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addUIElement:">&ndash;&nbsp;addUIElement:</a></code>
+		<span class="tooltip"><p>Adds a <a href="../Protocols/C4UIElement.html">C4UIElement</a> to the view.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeObject:">&ndash;&nbsp;removeObject:</a></code>
+		<span class="tooltip"><p>A method to remove another object from its view.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeObjects:">&ndash;&nbsp;removeObjects:</a></code>
+		<span class="tooltip"><p>A method to remove an array of objects from their view.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addCamera:" title="addCamera:"></a>
+	<h3 class="subsubtitle method-title">addCamera:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a <a href="../Classes/C4Camera.html">C4Camera</a> to the view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addCamera:(C4Camera *)<em>camera</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>camera</em></dt>
+			<dd><p>A <a href="../Classes/C4Camera.html">C4Camera</a> object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds a <a href="../Classes/C4Camera.html">C4Camera</a> to the view.</p>
+
+<p>Takes a <a href="../Classes/C4Camera.html">C4Camera</a> object and adds it to the view hierarchy.</p>
+
+<p>Use this method instead of addSubview: when adding C4Objects, because if there are special conditions for adding cameras this method will handle those.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4AddSubview.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addGL:" title="addGL:"></a>
+	<h3 class="subsubtitle method-title">addGL:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a <a href="../Classes/C4GL.html">C4GL</a> to the view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addGL:(C4GL *)<em>gl</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>gl</em></dt>
+			<dd><p>A <a href="../Classes/C4GL.html">C4GL</a> object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds a <a href="../Classes/C4GL.html">C4GL</a> to the view.</p>
+
+<p>Takes a <a href="../Classes/C4GL.html">C4GL</a> object and adds it to the view hierarchy.</p>
+
+<p>Use this method instead of addSubview: when adding <a href="../Classes/C4GL.html">C4GL</a> objects, because if there are special conditions for adding shapes this method will handle those.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4AddSubview.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addImage:" title="addImage:"></a>
+	<h3 class="subsubtitle method-title">addImage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a <a href="../Classes/C4Image.html">C4Image</a> to the view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addImage:(C4Image *)<em>image</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>image</em></dt>
+			<dd><p>A <a href="../Classes/C4Image.html">C4Image</a> object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds a <a href="../Classes/C4Image.html">C4Image</a> to the view.</p>
+
+<p>Takes a <a href="../Classes/C4Image.html">C4Image</a> object and adds it to the view hierarchy.</p>
+
+<p>Use this method instead of addSubview: when adding <a href="../Classes/C4Image.html">C4Image</a> objects, because if there are special conditions for adding shapes this method will handle those.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4AddSubview.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addLabel:" title="addLabel:"></a>
+	<h3 class="subsubtitle method-title">addLabel:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a <a href="../Classes/C4Label.html">C4Label</a> to the view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addLabel:(C4Label *)<em>label</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>label</em></dt>
+			<dd><p>A <a href="../Classes/C4Label.html">C4Label</a> object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds a <a href="../Classes/C4Label.html">C4Label</a> to the view.</p>
+
+<p>Takes a <a href="../Classes/C4Label.html">C4Label</a> object and adds it to the view hierarchy.</p>
+
+<p>Use this method instead of addSubview: when adding C4Labels, because if there are special conditions for adding shapes this method will handle those.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4AddSubview.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addMovie:" title="addMovie:"></a>
+	<h3 class="subsubtitle method-title">addMovie:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a <a href="../Classes/C4Movie.html">C4Movie</a> to the view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addMovie:(C4Movie *)<em>movie</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>movie</em></dt>
+			<dd><p>A <a href="../Classes/C4Movie.html">C4Movie</a> object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds a <a href="../Classes/C4Movie.html">C4Movie</a> to the view.</p>
+
+<p>Takes a <a href="../Classes/C4Movie.html">C4Movie</a> object and adds it to the view hierarchy.</p>
+
+<p>Use this method instead of addSubview: when adding <a href="../Classes/C4Movie.html">C4Movie</a> objects, because if there are special conditions for adding shapes this method will handle those.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4AddSubview.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addObjects:" title="addObjects:"></a>
+	<h3 class="subsubtitle method-title">addObjects:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A method for adding multiple objects to the canvas at one time.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addObjects:(NSArray *)<em>array</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>array</em></dt>
+			<dd><p>The array of visual objects to remove from their parent view.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A method for adding multiple objects to the canvas at one time.</p>
+
+<p>This will run the appropriate add method for all C4 objects, and will run the default addSubview for any other objects.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4AddSubview.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addShape:" title="addShape:"></a>
+	<h3 class="subsubtitle method-title">addShape:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a <a href="../Classes/C4Shape.html">C4Shape</a> to the view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addShape:(C4Shape *)<em>shape</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>shape</em></dt>
+			<dd><p>A <a href="../Classes/C4Shape.html">C4Shape</a> object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds a <a href="../Classes/C4Shape.html">C4Shape</a> to the view.</p>
+
+<p>Takes a <a href="../Classes/C4Shape.html">C4Shape</a> object and adds it to the view hierarchy.</p>
+
+<p>Use this method instead of addSubview: when adding C4Shapes, because if there are special conditions for adding shapes this method will handle those.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4AddSubview.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addUIElement:" title="addUIElement:"></a>
+	<h3 class="subsubtitle method-title">addUIElement:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a <a href="../Protocols/C4UIElement.html">C4UIElement</a> to the view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addUIElement:(id&lt;C4UIElement&gt;)<em>object</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>object</em></dt>
+			<dd><p>an object that conforms to the <a href="../Protocols/C4UIElement.html">C4UIElement</a> protocol.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds a <a href="../Protocols/C4UIElement.html">C4UIElement</a> to the view.</p>
+
+<p>Takes a <a href="../Protocols/C4UIElement.html">C4UIElement</a> object and adds it to the view hierarchy.</p>
+
+<p>Use this method instead of addSubview: when adding C4UIElements, because if there are special conditions for adding shapes this method will handle those.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4AddSubview.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeObject:" title="removeObject:"></a>
+	<h3 class="subsubtitle method-title">removeObject:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A method to remove another object from its view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeObject:(id)<em>visualObject</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>visualObject</em></dt>
+			<dd><p>the visible object to remove from its parent view</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A method to remove another object from its view.</p>
+
+<p>For the object in question, use this method to remove any visible object that was previously added to it as a subview.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4AddSubview.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeObjects:" title="removeObjects:"></a>
+	<h3 class="subsubtitle method-title">removeObjects:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A method to remove an array of objects from their view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeObjects:(NSArray *)<em>array</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>array</em></dt>
+			<dd><p>The array of visual objects to remove from their parent view</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A method to remove an array of objects from their view.</p>
+
+<p>This will run the <a href="#//api/name/removeObject:">removeObject:</a> method on each object in an array.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4AddSubview.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 C4iOS. All rights reserved. (Last updated: 2013-05-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

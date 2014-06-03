@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/C4Layer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/C4Layer</TokenIdentifier>
+			<Abstract type="html">This document describes the basic C4Layer, a subclass of CALayer which conforms to the C4LayerAnimation protocol.</Abstract>
+			<DeclaredIn>C4Layer.h</DeclaredIn>
+			
+			<NodeRef refid="18"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Layer/setPerspectiveDistance:</TokenIdentifier>
+			<Abstract type="html">Specifies the perspective distance for x and y axis rotations.</Abstract>
+			<DeclaredIn>C4Layer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat perspectiveDistance</Declaration>
+			
+			
+			<Anchor>//api/name/perspectiveDistance</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Layer/perspectiveDistance</TokenIdentifier>
+			<Abstract type="html">Specifies the perspective distance for x and y axis rotations.</Abstract>
+			<DeclaredIn>C4Layer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat perspectiveDistance</Declaration>
+			
+			
+			<Anchor>//api/name/perspectiveDistance</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Layer/perspectiveDistance</TokenIdentifier>
+			<Abstract type="html">Specifies the perspective distance for x and y axis rotations.</Abstract>
+			<DeclaredIn>C4Layer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat perspectiveDistance</Declaration>
+			
+			
+			<Anchor>//api/name/perspectiveDistance</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Layer/setRotationAngle:</TokenIdentifier>
+			<Abstract type="html">The rotation angle for the receiver&apos;s Z-axis.</Abstract>
+			<DeclaredIn>C4Layer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationAngle</Declaration>
+			
+			
+			<Anchor>//api/name/rotationAngle</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Layer/rotationAngle</TokenIdentifier>
+			<Abstract type="html">The rotation angle for the receiver&apos;s Z-axis.</Abstract>
+			<DeclaredIn>C4Layer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationAngle</Declaration>
+			
+			
+			<Anchor>//api/name/rotationAngle</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Layer/rotationAngle</TokenIdentifier>
+			<Abstract type="html">The rotation angle for the receiver&apos;s Z-axis.</Abstract>
+			<DeclaredIn>C4Layer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationAngle</Declaration>
+			
+			
+			<Anchor>//api/name/rotationAngle</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Layer/setRotationAngleX:</TokenIdentifier>
+			<Abstract type="html">The rotation angle for the receiver&apos;s X-axis</Abstract>
+			<DeclaredIn>C4Layer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationAngleX</Declaration>
+			
+			
+			<Anchor>//api/name/rotationAngleX</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Layer/rotationAngleX</TokenIdentifier>
+			<Abstract type="html">The rotation angle for the receiver&apos;s X-axis</Abstract>
+			<DeclaredIn>C4Layer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationAngleX</Declaration>
+			
+			
+			<Anchor>//api/name/rotationAngleX</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Layer/rotationAngleX</TokenIdentifier>
+			<Abstract type="html">The rotation angle for the receiver&apos;s X-axis</Abstract>
+			<DeclaredIn>C4Layer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationAngleX</Declaration>
+			
+			
+			<Anchor>//api/name/rotationAngleX</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Layer/setRotationAngleY:</TokenIdentifier>
+			<Abstract type="html">The rotation angle for the receiver&apos;s Y-axis</Abstract>
+			<DeclaredIn>C4Layer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationAngleY</Declaration>
+			
+			
+			<Anchor>//api/name/rotationAngleY</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Layer/rotationAngleY</TokenIdentifier>
+			<Abstract type="html">The rotation angle for the receiver&apos;s Y-axis</Abstract>
+			<DeclaredIn>C4Layer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationAngleY</Declaration>
+			
+			
+			<Anchor>//api/name/rotationAngleY</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Layer/rotationAngleY</TokenIdentifier>
+			<Abstract type="html">The rotation angle for the receiver&apos;s Y-axis</Abstract>
+			<DeclaredIn>C4Layer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationAngleY</Declaration>
+			
+			
+			<Anchor>//api/name/rotationAngleY</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+	</File>
+</Tokens>

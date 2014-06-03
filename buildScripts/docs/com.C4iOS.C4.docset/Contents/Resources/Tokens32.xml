@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/C4View.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/C4View</TokenIdentifier>
+			<Abstract type="html">The C4View is a subclass of UIView, which defines a rectangular area on the screen and the interfaces for managing the content in that area. At runtime, a view object handles the rendering of any content in its area and also handles any interactions with that content. The C4View class itself provides basic behavior for filling its rectangular area with a background color.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>
+			
+			<NodeRef refid="32"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setup</TokenIdentifier>
+			<Abstract type="html">A method to call instead of overriding any of the standard initializers.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>- (void)setup</Declaration>
+			
+			
+			<Anchor>//api/name/setup</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/test</TokenIdentifier>
+			<Abstract type="html">A method to call when you want to test simple things.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>- (void)test</Declaration>
+			
+			
+			<Anchor>//api/name/test</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/removeObject:</TokenIdentifier>
+			<Abstract type="html">A method to remove another object from its view.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeObject:(id)visualObject</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>visualObject</Name>
+					<Abstract type="html">the visible object to remove from its parent view</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeObject:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/removeObjects:</TokenIdentifier>
+			<Abstract type="html">A method to remove an array of objects from their view.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeObjects:(NSArray *)array</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>array</Name>
+					<Abstract type="html">the array of visible objects to remove from their parent view</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeObjects:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/rotationDidFinish:</TokenIdentifier>
+			<Abstract type="html">A convenience method used for handling the rotation of a visual object&apos;s view after its zrotation has changed.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>- (void)rotationDidFinish:(CGFloat)rotation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rotation</Name>
+					<Abstract type="html">the value (in radians) to rotate the receiver</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/rotationDidFinish:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setOrigin:</TokenIdentifier>
+			<Abstract type="html">The origin point of the view.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) CGPoint origin</Declaration>
+			
+			
+			<Anchor>//api/name/origin</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/origin</TokenIdentifier>
+			<Abstract type="html">The origin point of the view.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) CGPoint origin</Declaration>
+			
+			
+			<Anchor>//api/name/origin</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/origin</TokenIdentifier>
+			<Abstract type="html">The origin point of the view.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) CGPoint origin</Declaration>
+			
+			
+			<Anchor>//api/name/origin</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setAnimationDuration:</TokenIdentifier>
+			<Abstract type="html">The duration of the view&apos;s animations, measured in seconds.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) CGFloat animationDuration</Declaration>
+			
+			
+			<Anchor>//api/name/animationDuration</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/animationDuration</TokenIdentifier>
+			<Abstract type="html">The duration of the view&apos;s animations, measured in seconds.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) CGFloat animationDuration</Declaration>
+			
+			
+			<Anchor>//api/name/animationDuration</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/animationDuration</TokenIdentifier>
+			<Abstract type="html">The duration of the view&apos;s animations, measured in seconds.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) CGFloat animationDuration</Declaration>
+			
+			
+			<Anchor>//api/name/animationDuration</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setAnimationDelay:</TokenIdentifier>
+			<Abstract type="html">The time to wait before the view&apos;s animations begin, measured in seconds.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (atomic) CGFloat animationDelay</Declaration>
+			
+			
+			<Anchor>//api/name/animationDelay</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/animationDelay</TokenIdentifier>
+			<Abstract type="html">The time to wait before the view&apos;s animations begin, measured in seconds.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (atomic) CGFloat animationDelay</Declaration>
+			
+			
+			<Anchor>//api/name/animationDelay</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/animationDelay</TokenIdentifier>
+			<Abstract type="html">The time to wait before the view&apos;s animations begin, measured in seconds.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (atomic) CGFloat animationDelay</Declaration>
+			
+			
+			<Anchor>//api/name/animationDelay</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setAnimationOptions:</TokenIdentifier>
+			<Abstract type="html">The options for which the view should use in its animations.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) NSUInteger animationOptions</Declaration>
+			
+			
+			<Anchor>//api/name/animationOptions</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/animationOptions</TokenIdentifier>
+			<Abstract type="html">The options for which the view should use in its animations.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) NSUInteger animationOptions</Declaration>
+			
+			
+			<Anchor>//api/name/animationOptions</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/animationOptions</TokenIdentifier>
+			<Abstract type="html">The options for which the view should use in its animations.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) NSUInteger animationOptions</Declaration>
+			
+			
+			<Anchor>//api/name/animationOptions</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setRepeatCount:</TokenIdentifier>
+			<Abstract type="html">The number of times an animation autorepeats.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) CGFloat repeatCount</Declaration>
+			
+			
+			<Anchor>//api/name/repeatCount</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/repeatCount</TokenIdentifier>
+			<Abstract type="html">The number of times an animation autorepeats.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) CGFloat repeatCount</Declaration>
+			
+			
+			<Anchor>//api/name/repeatCount</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/repeatCount</TokenIdentifier>
+			<Abstract type="html">The number of times an animation autorepeats.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) CGFloat repeatCount</Declaration>
+			
+			
+			<Anchor>//api/name/repeatCount</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setShadowRadius:</TokenIdentifier>
+			<Abstract type="html">Specifies the blur radius used to render the receiver’s shadow.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat shadowRadius</Declaration>
+			
+			
+			<Anchor>//api/name/shadowRadius</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/shadowRadius</TokenIdentifier>
+			<Abstract type="html">Specifies the blur radius used to render the receiver’s shadow.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat shadowRadius</Declaration>
+			
+			
+			<Anchor>//api/name/shadowRadius</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/shadowRadius</TokenIdentifier>
+			<Abstract type="html">Specifies the blur radius used to render the receiver’s shadow.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat shadowRadius</Declaration>
+			
+			
+			<Anchor>//api/name/shadowRadius</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setShadowOpacity:</TokenIdentifier>
+			<Abstract type="html">Specifies the opacity of the receiver’s shadow. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat shadowOpacity</Declaration>
+			
+			
+			<Anchor>//api/name/shadowOpacity</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/shadowOpacity</TokenIdentifier>
+			<Abstract type="html">Specifies the opacity of the receiver’s shadow. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat shadowOpacity</Declaration>
+			
+			
+			<Anchor>//api/name/shadowOpacity</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/shadowOpacity</TokenIdentifier>
+			<Abstract type="html">Specifies the opacity of the receiver’s shadow. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat shadowOpacity</Declaration>
+			
+			
+			<Anchor>//api/name/shadowOpacity</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setShadowColor:</TokenIdentifier>
+			<Abstract type="html">The shadow color of the text.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) UIColor *shadowColor</Declaration>
+			
+			
+			<Anchor>//api/name/shadowColor</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/shadowColor</TokenIdentifier>
+			<Abstract type="html">The shadow color of the text.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) UIColor *shadowColor</Declaration>
+			
+			
+			<Anchor>//api/name/shadowColor</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/shadowColor</TokenIdentifier>
+			<Abstract type="html">The shadow color of the text.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) UIColor *shadowColor</Declaration>
+			
+			
+			<Anchor>//api/name/shadowColor</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setShadowOffset:</TokenIdentifier>
+			<Abstract type="html">The shadow offset (measured in points) for the text.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGSize shadowOffset</Declaration>
+			
+			
+			<Anchor>//api/name/shadowOffset</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/shadowOffset</TokenIdentifier>
+			<Abstract type="html">The shadow offset (measured in points) for the text.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGSize shadowOffset</Declaration>
+			
+			
+			<Anchor>//api/name/shadowOffset</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/shadowOffset</TokenIdentifier>
+			<Abstract type="html">The shadow offset (measured in points) for the text.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGSize shadowOffset</Declaration>
+			
+			
+			<Anchor>//api/name/shadowOffset</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setShadowPath:</TokenIdentifier>
+			<Abstract type="html">Defines the shape of the shadow. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGPathRef shadowPath</Declaration>
+			
+			
+			<Anchor>//api/name/shadowPath</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/shadowPath</TokenIdentifier>
+			<Abstract type="html">Defines the shape of the shadow. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGPathRef shadowPath</Declaration>
+			
+			
+			<Anchor>//api/name/shadowPath</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/shadowPath</TokenIdentifier>
+			<Abstract type="html">Defines the shape of the shadow. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGPathRef shadowPath</Declaration>
+			
+			
+			<Anchor>//api/name/shadowPath</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setMasksToBounds:</TokenIdentifier>
+			<Abstract type="html">Determines if the sublayers are clipped to the receiver’s bounds. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) BOOL masksToBounds</Declaration>
+			
+			
+			<Anchor>//api/name/masksToBounds</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/masksToBounds</TokenIdentifier>
+			<Abstract type="html">Determines if the sublayers are clipped to the receiver’s bounds. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) BOOL masksToBounds</Declaration>
+			
+			
+			<Anchor>//api/name/masksToBounds</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/masksToBounds</TokenIdentifier>
+			<Abstract type="html">Determines if the sublayers are clipped to the receiver’s bounds. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) BOOL masksToBounds</Declaration>
+			
+			
+			<Anchor>//api/name/masksToBounds</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setLayerTransform:</TokenIdentifier>
+			<Abstract type="html">Specifies a transform applied to each sublayer when rendering. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CATransform3D layerTransform</Declaration>
+			
+			
+			<Anchor>//api/name/layerTransform</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/layerTransform</TokenIdentifier>
+			<Abstract type="html">Specifies a transform applied to each sublayer when rendering. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CATransform3D layerTransform</Declaration>
+			
+			
+			<Anchor>//api/name/layerTransform</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/layerTransform</TokenIdentifier>
+			<Abstract type="html">Specifies a transform applied to each sublayer when rendering. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CATransform3D layerTransform</Declaration>
+			
+			
+			<Anchor>//api/name/layerTransform</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setMask:</TokenIdentifier>
+			<Abstract type="html">An optional layer whose alpha channel is used as a mask to select between the layer&apos;s background and the result of compositing the layer&apos;s contents with its filtered background.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic, assign) C4Control *mask</Declaration>
+			
+			
+			<Anchor>//api/name/mask</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/mask</TokenIdentifier>
+			<Abstract type="html">An optional layer whose alpha channel is used as a mask to select between the layer&apos;s background and the result of compositing the layer&apos;s contents with its filtered background.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic, assign) C4Control *mask</Declaration>
+			
+			
+			<Anchor>//api/name/mask</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/mask</TokenIdentifier>
+			<Abstract type="html">An optional layer whose alpha channel is used as a mask to select between the layer&apos;s background and the result of compositing the layer&apos;s contents with its filtered background.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic, assign) C4Control *mask</Declaration>
+			
+			
+			<Anchor>//api/name/mask</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setWidth:</TokenIdentifier>
+			<Abstract type="html">The width of the receiver&apos;s frame.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat width</Declaration>
+			
+			
+			<Anchor>//api/name/width</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/width</TokenIdentifier>
+			<Abstract type="html">The width of the receiver&apos;s frame.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat width</Declaration>
+			
+			
+			<Anchor>//api/name/width</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/width</TokenIdentifier>
+			<Abstract type="html">The width of the receiver&apos;s frame.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat width</Declaration>
+			
+			
+			<Anchor>//api/name/width</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setHeight:</TokenIdentifier>
+			<Abstract type="html">The height of the receiver&apos;s frame.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat height</Declaration>
+			
+			
+			<Anchor>//api/name/height</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/height</TokenIdentifier>
+			<Abstract type="html">The height of the receiver&apos;s frame.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat height</Declaration>
+			
+			
+			<Anchor>//api/name/height</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/height</TokenIdentifier>
+			<Abstract type="html">The height of the receiver&apos;s frame.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat height</Declaration>
+			
+			
+			<Anchor>//api/name/height</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setBorderWidth:</TokenIdentifier>
+			<Abstract type="html">Specifies the width of the receiver’s border. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat borderWidth</Declaration>
+			
+			
+			<Anchor>//api/name/borderWidth</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/borderWidth</TokenIdentifier>
+			<Abstract type="html">Specifies the width of the receiver’s border. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat borderWidth</Declaration>
+			
+			
+			<Anchor>//api/name/borderWidth</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/borderWidth</TokenIdentifier>
+			<Abstract type="html">Specifies the width of the receiver’s border. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat borderWidth</Declaration>
+			
+			
+			<Anchor>//api/name/borderWidth</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setCornerRadius:</TokenIdentifier>
+			<Abstract type="html">Specifies a radius used to draw the rounded corners of the receiver’s background. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat cornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/cornerRadius</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/cornerRadius</TokenIdentifier>
+			<Abstract type="html">Specifies a radius used to draw the rounded corners of the receiver’s background. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat cornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/cornerRadius</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/cornerRadius</TokenIdentifier>
+			<Abstract type="html">Specifies a radius used to draw the rounded corners of the receiver’s background. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat cornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/cornerRadius</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setZPosition:</TokenIdentifier>
+			<Abstract type="html">Specifies the receiver’s position on the z axis. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat zPosition</Declaration>
+			
+			
+			<Anchor>//api/name/zPosition</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/zPosition</TokenIdentifier>
+			<Abstract type="html">Specifies the receiver’s position on the z axis. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat zPosition</Declaration>
+			
+			
+			<Anchor>//api/name/zPosition</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/zPosition</TokenIdentifier>
+			<Abstract type="html">Specifies the receiver’s position on the z axis. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat zPosition</Declaration>
+			
+			
+			<Anchor>//api/name/zPosition</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setRotation:</TokenIdentifier>
+			<Abstract type="html">Specifies the receiver&apos;s z-axis rotation value. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotation</Declaration>
+			
+			
+			<Anchor>//api/name/rotation</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/rotation</TokenIdentifier>
+			<Abstract type="html">Specifies the receiver&apos;s z-axis rotation value. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotation</Declaration>
+			
+			
+			<Anchor>//api/name/rotation</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/rotation</TokenIdentifier>
+			<Abstract type="html">Specifies the receiver&apos;s z-axis rotation value. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotation</Declaration>
+			
+			
+			<Anchor>//api/name/rotation</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setRotationX:</TokenIdentifier>
+			<Abstract type="html">Specifies the receiver&apos;s x-axis rotation value. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationX</Declaration>
+			
+			
+			<Anchor>//api/name/rotationX</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/rotationX</TokenIdentifier>
+			<Abstract type="html">Specifies the receiver&apos;s x-axis rotation value. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationX</Declaration>
+			
+			
+			<Anchor>//api/name/rotationX</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/rotationX</TokenIdentifier>
+			<Abstract type="html">Specifies the receiver&apos;s x-axis rotation value. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationX</Declaration>
+			
+			
+			<Anchor>//api/name/rotationX</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setRotationY:</TokenIdentifier>
+			<Abstract type="html">Specifies the receiver&apos;s y-axis rotation value. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationY</Declaration>
+			
+			
+			<Anchor>//api/name/rotationY</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/rotationY</TokenIdentifier>
+			<Abstract type="html">Specifies the receiver&apos;s y-axis rotation value. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationY</Declaration>
+			
+			
+			<Anchor>//api/name/rotationY</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/rotationY</TokenIdentifier>
+			<Abstract type="html">Specifies the receiver&apos;s y-axis rotation value. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat rotationY</Declaration>
+			
+			
+			<Anchor>//api/name/rotationY</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setPerspectiveDistance:</TokenIdentifier>
+			<Abstract type="html">Specifies the perspective distance for x and y axis rotations.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat perspectiveDistance</Declaration>
+			
+			
+			<Anchor>//api/name/perspectiveDistance</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/perspectiveDistance</TokenIdentifier>
+			<Abstract type="html">Specifies the perspective distance for x and y axis rotations.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat perspectiveDistance</Declaration>
+			
+			
+			<Anchor>//api/name/perspectiveDistance</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/perspectiveDistance</TokenIdentifier>
+			<Abstract type="html">Specifies the perspective distance for x and y axis rotations.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat perspectiveDistance</Declaration>
+			
+			
+			<Anchor>//api/name/perspectiveDistance</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setAnchorPoint:</TokenIdentifier>
+			<Abstract type="html">Defines the anchor point of the layer&apos;s bounds rectangle. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGPoint anchorPoint</Declaration>
+			
+			
+			<Anchor>//api/name/anchorPoint</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/anchorPoint</TokenIdentifier>
+			<Abstract type="html">Defines the anchor point of the layer&apos;s bounds rectangle. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGPoint anchorPoint</Declaration>
+			
+			
+			<Anchor>//api/name/anchorPoint</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/anchorPoint</TokenIdentifier>
+			<Abstract type="html">Defines the anchor point of the layer&apos;s bounds rectangle. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGPoint anchorPoint</Declaration>
+			
+			
+			<Anchor>//api/name/anchorPoint</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/setBorderColor:</TokenIdentifier>
+			<Abstract type="html">The color of the receiver’s border. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic, weak) UIColor *borderColor</Declaration>
+			
+			
+			<Anchor>//api/name/borderColor</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/borderColor</TokenIdentifier>
+			<Abstract type="html">The color of the receiver’s border. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic, weak) UIColor *borderColor</Declaration>
+			
+			
+			<Anchor>//api/name/borderColor</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4View/borderColor</TokenIdentifier>
+			<Abstract type="html">The color of the receiver’s border. Animatable.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic, weak) UIColor *borderColor</Declaration>
+			
+			
+			<Anchor>//api/name/borderColor</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4View/renderInContext:</TokenIdentifier>
+			<Abstract type="html">Renders the receiver and its sublayers into the specified context.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>- (void)renderInContext:(CGContextRef)context</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>context</Name>
+					<Abstract type="html">The graphics context to use to render the layer.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/renderInContext:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4View/defaultStyle</TokenIdentifier>
+			<Abstract type="html">Returns the appearance proxy for the object, cast as a C4View rather than the standard (id) cast provided by UIAppearance.</Abstract>
+			<DeclaredIn>C4View.h</DeclaredIn>			
+			
+			<Declaration>+ (C4View *)defaultStyle</Declaration>
+			
+			<ReturnValue><Abstract type="html">The appearance proxy for the receiver, cast as a C4View.</Abstract></ReturnValue>
+			<Anchor>//api/name/defaultStyle</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+	</File>
+</Tokens>

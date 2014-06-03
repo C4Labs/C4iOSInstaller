@@ -1,0 +1,772 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>C4Notification Protocol Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">C4 </a></h1>
+				<a id="developerHome" href="../index.html">C4iOS</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">C4Notification Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/listenFor:andRunMethod:">&nbsp;&nbsp;&nbsp;&nbsp;- listenFor:andRunMethod:</option>
+	
+	<option value="//api/name/listenFor:fromObject:andRunMethod:">&nbsp;&nbsp;&nbsp;&nbsp;- listenFor:fromObject:andRunMethod:</option>
+	
+	<option value="//api/name/listenFor:fromObjects:andRunMethod:">&nbsp;&nbsp;&nbsp;&nbsp;- listenFor:fromObjects:andRunMethod:</option>
+	
+	<option value="//api/name/postNotification:">&nbsp;&nbsp;&nbsp;&nbsp;- postNotification:</option>
+	
+	<option value="//api/name/stopListeningFor:">&nbsp;&nbsp;&nbsp;&nbsp;- stopListeningFor:</option>
+	
+	<option value="//api/name/stopListeningFor:object:">&nbsp;&nbsp;&nbsp;&nbsp;- stopListeningFor:object:</option>
+	
+	<option value="//api/name/stopListeningFor:objects:">&nbsp;&nbsp;&nbsp;&nbsp;- stopListeningFor:objects:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Notification Methods">Notification Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Broadcast Methods">Broadcast Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/listenFor:andRunMethod:">listenFor:andRunMethod:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/listenFor:fromObject:andRunMethod:">listenFor:fromObject:andRunMethod:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/listenFor:fromObjects:andRunMethod:">listenFor:fromObjects:andRunMethod:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/postNotification:">postNotification:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopListeningFor:">stopListeningFor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopListeningFor:object:">stopListeningFor:object:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopListeningFor:objects:">stopListeningFor:objects:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="C4Notification Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">C4Notification Protocol Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">C4Notification.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>C4Notification protocol groups methods that are fundamental to basic ability for all C4 objects, visible or otherwise, to post, listen and stop listening for notifications.</p>
+
+<p>If an object conforms to this protocol, it has the ability to create and listen for messages which pass through the NSNotification center.</p>
+
+<p>The C4 Framework is built with the idea that all objects of any kind should be able to broadcast and respond to notifications, and to communicate with one another directly if necessary. All C4 objects conform to the methods defined below.</p><div class="warning"><p><strong>Warning:</strong> <em>Note:</em> It is assumed that the object which includes this protocol is a subclass of NSObject.</p></div>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Notification Methods" name="task_Notification Methods"></a>
+						<h3 class="subsubtitle task-title">Notification Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/listenFor:andRunMethod:">&ndash;&nbsp;listenFor:andRunMethod:</a></code>
+		<span class="tooltip"><p>Sets up a given object to listen for a given notification, and run a specific method.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/listenFor:fromObject:andRunMethod:">&ndash;&nbsp;listenFor:fromObject:andRunMethod:</a></code>
+		<span class="tooltip"><p>Sets up a given object to listen for a given notification <em>from a specific object</em>, and runs a specific method.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/listenFor:fromObjects:andRunMethod:">&ndash;&nbsp;listenFor:fromObjects:andRunMethod:</a></code>
+		<span class="tooltip"><p>Sets up a given object to listen for a given notification <em>from an array of objects</em>, and runs a specific method.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopListeningFor:">&ndash;&nbsp;stopListeningFor:</a></code>
+		<span class="tooltip"><p>Stops an object from listening for a given notification.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopListeningFor:object:">&ndash;&nbsp;stopListeningFor:object:</a></code>
+		<span class="tooltip"><p>Stops an object from listening for a given notification which originates from a specific object.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopListeningFor:objects:">&ndash;&nbsp;stopListeningFor:objects:</a></code>
+		<span class="tooltip"><p>Stops an object from listening for a given notification which originates from a set of specific objects.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li>
+						</ul>
+						
+						
+						<a title="Broadcast Methods" name="task_Broadcast Methods"></a>
+						<h3 class="subsubtitle task-title">Broadcast Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/postNotification:">&ndash;&nbsp;postNotification:</a></code>
+		<span class="tooltip"><p>Creates a notification with a given string and posts it to the default notification center.</p>
+
+<p>This method calls the postNotification:object: method of the default notification center passing a itself as the object.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/listenFor:andRunMethod:" title="listenFor:andRunMethod:"></a>
+	<h3 class="subsubtitle method-title">listenFor:andRunMethod:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets up a given object to listen for a given notification, and run a specific method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)listenFor:(NSString *)<em>notification</em> andRunMethod:(NSString *)<em>methodName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notification</em></dt>
+			<dd><p>the name of a notification for which the object should listen</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>methodName</em></dt>
+			<dd><p>a string which represents the name of a method defined in the object&rsquo;s class or any of its superclasses, this parameter should be written as a string (e.g. @&ldquo;test&rdquo;, @&ldquo;changePosition:&rdquo;)</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets up a given object to listen for a given notification, and run a specific method.</p>
+
+<p>This method is a basic wrapper for setting up an observer which listens for a specific notification.</p>
+
+<p>This method calls the addObserver:selector:name:object method of the default NotificationCenter, passing <em>nil</em> for the object.</p><div class="warning"><p><strong>Warning:</strong> <em>Note:</em> To listen for messages coming from a specific object, use listenFor:fromObject:andRunMethod</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Notification.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/listenFor:fromObject:andRunMethod:" title="listenFor:fromObject:andRunMethod:"></a>
+	<h3 class="subsubtitle method-title">listenFor:fromObject:andRunMethod:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets up a given object to listen for a given notification <em>from a specific object</em>, and runs a specific method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)listenFor:(NSString *)<em>notification</em> fromObject:(id)<em>object</em> andRunMethod:(NSString *)<em>methodName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notification</em></dt>
+			<dd><p>the name of a notification for which the object should listen</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>object</em></dt>
+			<dd><p>a specific object to listen to</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>methodName</em></dt>
+			<dd><p>a string which represents the name of a method defined in the object&rsquo;s class or any of its superclasses, this parameter should be written as a string (e.g. @&ldquo;test&rdquo;, @&ldquo;changePosition:&rdquo;)</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets up a given object to listen for a given notification <em>from a specific object</em>, and runs a specific method.</p>
+
+<p>This method is a basic wrapper for setting up an observer which listens for a specific notification from a specified object.</p>
+
+<p>This method calls the addObserver:selector:name:object method of the default NotificationCenter.</p><div class="warning"><p><strong>Warning:</strong> <em>Note:</em> To listen for messages coming from a specific object, use listenFor:fromObject:andRunMethod</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Notification.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/listenFor:fromObjects:andRunMethod:" title="listenFor:fromObjects:andRunMethod:"></a>
+	<h3 class="subsubtitle method-title">listenFor:fromObjects:andRunMethod:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets up a given object to listen for a given notification <em>from an array of objects</em>, and runs a specific method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)listenFor:(NSString *)<em>notification</em> fromObjects:(NSArray *)<em>objectArray</em> andRunMethod:(NSString *)<em>methodName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notification</em></dt>
+			<dd><p>the name of a notification for which the object should listen</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>objectArray</em></dt>
+			<dd><p>a set of object to listen to</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>methodName</em></dt>
+			<dd><p>a string which represents the name of a method defined in the object&rsquo;s class or any of its superclasses, this parameter should be written as a string (e.g. @&ldquo;test&rdquo;, @&ldquo;changePosition:&rdquo;)</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets up a given object to listen for a given notification <em>from an array of objects</em>, and runs a specific method.</p>
+
+<p>This method is a basic wrapper for setting up an observer which listens for a specific notification from a specified set of objects.</p>
+
+<p>This method calls the addObserver:selector:name:object method of the default NotificationCenter for all the objects in the array.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Notification.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/postNotification:" title="postNotification:"></a>
+	<h3 class="subsubtitle method-title">postNotification:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a notification with a given string and posts it to the default notification center.</p>
+
+<p>This method calls the postNotification:object: method of the default notification center passing a itself as the object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)postNotification:(NSString *)<em>notification</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notification</em></dt>
+			<dd><p>the name of a notification to be broadcast</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a notification with a given string and posts it to the default notification center.</p>
+
+<p>This method calls the postNotification:object: method of the default notification center passing a itself as the object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Notification.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopListeningFor:" title="stopListeningFor:"></a>
+	<h3 class="subsubtitle method-title">stopListeningFor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops an object from listening for a given notification.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopListeningFor:(NSString *)<em>notification</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notification</em></dt>
+			<dd><p>the name of a notification for which the object should stop listening</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Stops an object from listening for a given notification.</p>
+
+<p>This method is a basic wrapper for removing an observer from the notification center.</p>
+
+<p>This method calls the removeObserver:name:object: method of the default notification center, passing nil for the object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Notification.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopListeningFor:object:" title="stopListeningFor:object:"></a>
+	<h3 class="subsubtitle method-title">stopListeningFor:object:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops an object from listening for a given notification which originates from a specific object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopListeningFor:(NSString *)<em>notification</em> object:(id)<em>object</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notification</em></dt>
+			<dd><p>the name of a notification for which the object should stop listening</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>object</em></dt>
+			<dd><p>the object for which to stop listening</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Stops an object from listening for a given notification which originates from a specific object.</p>
+
+<p>This method is a basic wrapper for removing an observer from the notification center.</p>
+
+<p>This method calls the removeObserver:name:object: method of the default notification center passing a specific object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Notification.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopListeningFor:objects:" title="stopListeningFor:objects:"></a>
+	<h3 class="subsubtitle method-title">stopListeningFor:objects:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops an object from listening for a given notification which originates from a set of specific objects.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopListeningFor:(NSString *)<em>notification</em> objects:(NSArray *)<em>objectArray</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notification</em></dt>
+			<dd><p>the name of a notification for which the object should stop listening</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>objectArray</em></dt>
+			<dd><p>the set of objects for which to stop listening</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Stops an object from listening for a given notification which originates from a set of specific objects.</p>
+
+<p>This method is a basic wrapper for removing an observer from the notification center.</p>
+
+<p>This method calls the removeObserver:name:object: method of the default notification center passing all of the specific objects in the given array.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">C4Notification.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 C4iOS. All rights reserved. (Last updated: 2013-05-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

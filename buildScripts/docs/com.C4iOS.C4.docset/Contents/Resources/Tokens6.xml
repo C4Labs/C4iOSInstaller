@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/C4CameraController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/C4CameraController</TokenIdentifier>
+			<Abstract type="html">The C4CameraController class provides control over the image, view and preview layer for a C4Camera object.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/initCapture</TokenIdentifier>
+			<Abstract type="html">Initializes a C4Camera object, making it ready to capture images.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>- (void)initCapture</Declaration>
+			
+			
+			<Anchor>//api/name/initCapture</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/initCapture:</TokenIdentifier>
+			<Abstract type="html">Initializes camera capture for a given camera position.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>- (void)initCapture:(C4CameraPosition)position</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>position</Name>
+					<Abstract type="html">The position of the camera to use upon initialization.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initCapture:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/setInitialized:</TokenIdentifier>
+			<Abstract type="html">Specifies whether or not the receiver has already been initialized.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic, getter=isInitialized) BOOL initialized</Declaration>
+			
+			
+			<Anchor>//api/name/initialized</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/isInitialized</TokenIdentifier>
+			<Abstract type="html">Specifies whether or not the receiver has already been initialized.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic, getter=isInitialized) BOOL initialized</Declaration>
+			
+			
+			<Anchor>//api/name/initialized</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4CameraController/initialized</TokenIdentifier>
+			<Abstract type="html">Specifies whether or not the receiver has already been initialized.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic, getter=isInitialized) BOOL initialized</Declaration>
+			
+			
+			<Anchor>//api/name/initialized</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/captureImage</TokenIdentifier>
+			<Abstract type="html">Captures an image.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>- (void)captureImage</Declaration>
+			
+			
+			<Anchor>//api/name/captureImage</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/setCapturedImage:</TokenIdentifier>
+			<Abstract type="html">The receiver’s most recently captured image. (read-only)</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, strong, nonatomic) C4Image *capturedImage</Declaration>
+			
+			
+			<Anchor>//api/name/capturedImage</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/capturedImage</TokenIdentifier>
+			<Abstract type="html">The receiver’s most recently captured image. (read-only)</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, strong, nonatomic) C4Image *capturedImage</Declaration>
+			
+			
+			<Anchor>//api/name/capturedImage</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4CameraController/capturedImage</TokenIdentifier>
+			<Abstract type="html">The receiver’s most recently captured image. (read-only)</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, strong, nonatomic) C4Image *capturedImage</Declaration>
+			
+			
+			<Anchor>//api/name/capturedImage</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/setView:</TokenIdentifier>
+			<Abstract type="html">The receiver’s view.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) C4View *view</Declaration>
+			
+			
+			<Anchor>//api/name/view</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/view</TokenIdentifier>
+			<Abstract type="html">The receiver’s view.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) C4View *view</Declaration>
+			
+			
+			<Anchor>//api/name/view</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4CameraController/view</TokenIdentifier>
+			<Abstract type="html">The receiver’s view.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) C4View *view</Declaration>
+			
+			
+			<Anchor>//api/name/view</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/setPreviewLayer:</TokenIdentifier>
+			<Abstract type="html">The receiver’s view&apos;s backing layer.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) C4CameraLayer *previewLayer</Declaration>
+			
+			
+			<Anchor>//api/name/previewLayer</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/previewLayer</TokenIdentifier>
+			<Abstract type="html">The receiver’s view&apos;s backing layer.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) C4CameraLayer *previewLayer</Declaration>
+			
+			
+			<Anchor>//api/name/previewLayer</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4CameraController/previewLayer</TokenIdentifier>
+			<Abstract type="html">The receiver’s view&apos;s backing layer.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) C4CameraLayer *previewLayer</Declaration>
+			
+			
+			<Anchor>//api/name/previewLayer</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/setCameraPosition:</TokenIdentifier>
+			<Abstract type="html">Specifies and returns the current position of the receiver.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) C4CameraPosition cameraPosition</Declaration>
+			
+			
+			<Anchor>//api/name/cameraPosition</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/cameraPosition</TokenIdentifier>
+			<Abstract type="html">Specifies and returns the current position of the receiver.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) C4CameraPosition cameraPosition</Declaration>
+			
+			
+			<Anchor>//api/name/cameraPosition</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4CameraController/cameraPosition</TokenIdentifier>
+			<Abstract type="html">Specifies and returns the current position of the receiver.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) C4CameraPosition cameraPosition</Declaration>
+			
+			
+			<Anchor>//api/name/cameraPosition</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/switchCameraPosition:</TokenIdentifier>
+			<Abstract type="html">Switches the camera&apos;s position to the front or back.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>- (void)switchCameraPosition:(C4CameraPosition)position</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>position</Name>
+					<Abstract type="html">A position (CAMERAFRONT or CAMERABACK) to which the camera should switch.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/switchCameraPosition:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/setCaptureQuality:</TokenIdentifier>
+			<Abstract type="html">Specifies the current capture quality of the receiver. The following list of qualities is available:</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) NSString *captureQuality</Declaration>
+			
+			
+			<Anchor>//api/name/captureQuality</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/captureQuality</TokenIdentifier>
+			<Abstract type="html">Specifies the current capture quality of the receiver. The following list of qualities is available:</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) NSString *captureQuality</Declaration>
+			
+			
+			<Anchor>//api/name/captureQuality</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4CameraController/captureQuality</TokenIdentifier>
+			<Abstract type="html">Specifies the current capture quality of the receiver. The following list of qualities is available:</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) NSString *captureQuality</Declaration>
+			
+			
+			<Anchor>//api/name/captureQuality</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/setCaptureSession:</TokenIdentifier>
+			<Abstract type="html">An AVCaptureSession object used to coordinate the flow of data from AV input devices to outputs.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, atomic) AVCaptureSession *captureSession</Declaration>
+			
+			
+			<Anchor>//api/name/captureSession</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CameraController/captureSession</TokenIdentifier>
+			<Abstract type="html">An AVCaptureSession object used to coordinate the flow of data from AV input devices to outputs.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, atomic) AVCaptureSession *captureSession</Declaration>
+			
+			
+			<Anchor>//api/name/captureSession</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4CameraController/captureSession</TokenIdentifier>
+			<Abstract type="html">An AVCaptureSession object used to coordinate the flow of data from AV input devices to outputs.</Abstract>
+			<DeclaredIn>C4CameraController.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, atomic) AVCaptureSession *captureSession</Declaration>
+			
+			
+			<Anchor>//api/name/captureSession</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+	</File>
+</Tokens>

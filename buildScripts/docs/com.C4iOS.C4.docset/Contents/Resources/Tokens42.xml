@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/C4UIElement.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/C4UIElement</TokenIdentifier>
+			<Abstract type="html">C4UIElement protocol groups methods that are fundamental to basic interaction user interface objects in C4.</Abstract>
+			<DeclaredIn>C4UIElement.h</DeclaredIn>
+			
+			<NodeRef refid="42"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4UIElement/runMethod:target:forEvent:</TokenIdentifier>
+			<Abstract type="html">Attaches a method to a specific control event for the receiver.</Abstract>
+			<DeclaredIn>C4UIElement.h</DeclaredIn>			
+			
+			<Declaration>- (void)runMethod:(NSString *)methodName target:(id)object forEvent:(C4ControlEvents)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">A string-version of a selector (i.e. the name of a method) identifying an action message. It cannot be NULL.</Abstract>
+				</Parameter><Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The target object—that is, the object from which the method is run. If this is nil, the responder chain is searched for an object willing to respond to the action message.</Abstract>
+				</Parameter><Parameter>
+					<Name>event</Name>
+					<Abstract type="html">A bitmask specifying the control events for which the action message is sent. See “Control Events” for bitmask constants.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/runMethod:target:forEvent:</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/C4UIElement/stopRunningMethod:target:forEvent:</TokenIdentifier>
+			<Abstract type="html">Removes a target and action for a particular event (or events) from an internal dispatch table.</Abstract>
+			<DeclaredIn>C4UIElement.h</DeclaredIn>			
+			
+			<Declaration>- (void)stopRunningMethod:(NSString *)methodName target:(id)object forEvent:(C4ControlEvents)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">A string-version of a selector (i.e. the name of a method) identifying an action message. It cannot be NULL.</Abstract>
+				</Parameter><Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The target object—that is, the object from which the method is run. Pass nil to remove all targets paired with action and the specified control events.</Abstract>
+				</Parameter><Parameter>
+					<Name>event</Name>
+					<Abstract type="html">A bitmask specifying the control events for which the action message is sent. See “Control Events” for bitmask constants.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/stopRunningMethod:target:forEvent:</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+	</File>
+</Tokens>

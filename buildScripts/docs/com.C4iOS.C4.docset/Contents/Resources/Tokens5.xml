@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/C4Camera.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/C4Camera</TokenIdentifier>
+			<Abstract type="html">The C4Camera class provides easy access to a devices cameras.</Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Camera/cameraWithFrame:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a camera object in the specified frame.
+  </Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Camera *)cameraWithFrame:(CGRect)frame</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">The frame into which the camera image will be scaled, or cropped depending on the dimensions of the frame.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A C4Camera object of the specified size;</Abstract></ReturnValue>
+			<Anchor>//api/name/cameraWithFrame:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Camera/initCapture</TokenIdentifier>
+			<Abstract type="html">Initializes a C4Camera object, making it ready to capture images.</Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>			
+			
+			<Declaration>- (void)initCapture</Declaration>
+			
+			
+			<Anchor>//api/name/initCapture</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Camera/captureImage</TokenIdentifier>
+			<Abstract type="html">Captures an image.</Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>			
+			
+			<Declaration>- (void)captureImage</Declaration>
+			
+			
+			<Anchor>//api/name/captureImage</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Camera/setCapturedImage:</TokenIdentifier>
+			<Abstract type="html">The receiver’s most recently captured image. (read-only)</Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, strong, nonatomic) C4Image *capturedImage</Declaration>
+			
+			
+			<Anchor>//api/name/capturedImage</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Camera/capturedImage</TokenIdentifier>
+			<Abstract type="html">The receiver’s most recently captured image. (read-only)</Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, strong, nonatomic) C4Image *capturedImage</Declaration>
+			
+			
+			<Anchor>//api/name/capturedImage</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Camera/capturedImage</TokenIdentifier>
+			<Abstract type="html">The receiver’s most recently captured image. (read-only)</Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, strong, nonatomic) C4Image *capturedImage</Declaration>
+			
+			
+			<Anchor>//api/name/capturedImage</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Camera/setCameraPosition:</TokenIdentifier>
+			<Abstract type="html">Specifies the current position of the receiver&apos;s camera.</Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) C4CameraPosition cameraPosition</Declaration>
+			
+			
+			<Anchor>//api/name/cameraPosition</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Camera/cameraPosition</TokenIdentifier>
+			<Abstract type="html">Specifies the current position of the receiver&apos;s camera.</Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) C4CameraPosition cameraPosition</Declaration>
+			
+			
+			<Anchor>//api/name/cameraPosition</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Camera/cameraPosition</TokenIdentifier>
+			<Abstract type="html">Specifies the current position of the receiver&apos;s camera.</Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) C4CameraPosition cameraPosition</Declaration>
+			
+			
+			<Anchor>//api/name/cameraPosition</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Camera/setCaptureQuality:</TokenIdentifier>
+			<Abstract type="html">Specifies the current capture quality of the camera. The following list of qualities is available:</Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) NSString *captureQuality</Declaration>
+			
+			
+			<Anchor>//api/name/captureQuality</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Camera/captureQuality</TokenIdentifier>
+			<Abstract type="html">Specifies the current capture quality of the camera. The following list of qualities is available:</Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) NSString *captureQuality</Declaration>
+			
+			
+			<Anchor>//api/name/captureQuality</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Camera/captureQuality</TokenIdentifier>
+			<Abstract type="html">Specifies the current capture quality of the camera. The following list of qualities is available:</Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) NSString *captureQuality</Declaration>
+			
+			
+			<Anchor>//api/name/captureQuality</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Camera/defaultStyle</TokenIdentifier>
+			<Abstract type="html">Returns the appearance proxy for the object, cast as a C4Camera rather than the standard (id) cast provided by UIAppearance.</Abstract>
+			<DeclaredIn>C4Camera.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Camera *)defaultStyle</Declaration>
+			
+			<ReturnValue><Abstract type="html">The appearance proxy for the receiver, cast as a C4Camera.</Abstract></ReturnValue>
+			<Anchor>//api/name/defaultStyle</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+	</File>
+</Tokens>

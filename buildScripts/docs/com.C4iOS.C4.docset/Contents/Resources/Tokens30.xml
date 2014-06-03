@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/C4Timer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/C4Timer</TokenIdentifier>
+			<Abstract type="html">This document describes the C4Timer, a subclass of C4Object which contains an NSTimer.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>
+			
+			<NodeRef refid="30"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Timer/automaticTimerWithInterval:target:method:repeats:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new C4Timer object that will begin firing automatically.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Timer *)automaticTimerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>seconds</Name>
+					<Abstract type="html">The time interval for the timer</Abstract>
+				</Parameter><Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object to which the timer will send a message</Abstract>
+				</Parameter><Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">The name of the method that will be sent to the object</Abstract>
+				</Parameter><Parameter>
+					<Name>repeats</Name>
+					<Abstract type="html">A boolean value that specifies whether or not the timer will continuously fire</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/automaticTimerWithInterval:target:method:repeats:</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Timer/automaticTimerWithInterval:target:method:userInfo:repeats:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new C4Timer object that will begin firing automatically, it will also pass an object to the method it triggers.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Timer *)automaticTimerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>seconds</Name>
+					<Abstract type="html">The time interval for the timer</Abstract>
+				</Parameter><Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object to which the timer will send a message</Abstract>
+				</Parameter><Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">The name of the method that will be sent to the object</Abstract>
+				</Parameter><Parameter>
+					<Name>infoObject</Name>
+					<Abstract type="html">The object to pass to the method being called</Abstract>
+				</Parameter><Parameter>
+					<Name>repeats</Name>
+					<Abstract type="html">A boolean value that specifies whether or not the timer will continuously fire</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/automaticTimerWithInterval:target:method:userInfo:repeats:</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Timer/timerWithInterval:target:method:repeats:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new C4Timer object that will begin firing automatically.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Timer *)timerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>seconds</Name>
+					<Abstract type="html">The time interval for the timer</Abstract>
+				</Parameter><Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object to which the timer will send a message</Abstract>
+				</Parameter><Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">The name of the method that will be sent to the object</Abstract>
+				</Parameter><Parameter>
+					<Name>repeats</Name>
+					<Abstract type="html">A boolean value that specifies whether or not the timer will continuously fire</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/timerWithInterval:target:method:repeats:</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Timer/timerWithInterval:target:method:userInfo:repeats:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new C4Timer object that will begin firing automatically, it will also pass an object to the method it triggers.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Timer *)timerWithInterval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>seconds</Name>
+					<Abstract type="html">The time interval for the timer</Abstract>
+				</Parameter><Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object to which the timer will send a message</Abstract>
+				</Parameter><Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">The name of the method that will be sent to the object</Abstract>
+				</Parameter><Parameter>
+					<Name>infoObject</Name>
+					<Abstract type="html">The object to pass to the method being called</Abstract>
+				</Parameter><Parameter>
+					<Name>repeats</Name>
+					<Abstract type="html">A boolean value that specifies whether or not the timer will continuously fire</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/timerWithInterval:target:method:userInfo:repeats:</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Timer/timerWithFireDate:interval:target:method:repeats:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new C4Timer object that will begin firing at a specified date.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Timer *)timerWithFireDate:(NSDate *)date interval:(CGFloat)seconds target:(id)object method:(NSString *)methodName repeats:(BOOL)repeats</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>date</Name>
+					<Abstract type="html">An NSDate object stating when the timer will begin firing</Abstract>
+				</Parameter><Parameter>
+					<Name>seconds</Name>
+					<Abstract type="html">The time interval for the timer</Abstract>
+				</Parameter><Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object to which the timer will send a message</Abstract>
+				</Parameter><Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">The name of the method that will be sent to the object</Abstract>
+				</Parameter><Parameter>
+					<Name>repeats</Name>
+					<Abstract type="html">A boolean value that specifies whether or not the timer will continuously fire</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/timerWithFireDate:interval:target:method:repeats:</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Timer/timerWithFireDate:interval:target:method:userInfo:repeats:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new C4Timer object that will begin firing at a specified date, it will also pass an object to the method it triggers.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Timer *)timerWithFireDate:(NSDate *)date interval:(CGFloat)seconds target:(id)object method:(NSString *)methodName userInfo:(id)infoObject repeats:(BOOL)repeats</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>date</Name>
+					<Abstract type="html">An NSDate object stating when the timer will begin firing</Abstract>
+				</Parameter><Parameter>
+					<Name>seconds</Name>
+					<Abstract type="html">The time interval for the timer</Abstract>
+				</Parameter><Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object to which the timer will send a message</Abstract>
+				</Parameter><Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">The name of the method that will be sent to the object</Abstract>
+				</Parameter><Parameter>
+					<Name>infoObject</Name>
+					<Abstract type="html">The object to pass to the method being called</Abstract>
+				</Parameter><Parameter>
+					<Name>repeats</Name>
+					<Abstract type="html">A boolean value that specifies whether or not the timer will continuously fire</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/timerWithFireDate:interval:target:method:userInfo:repeats:</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Timer/fire</TokenIdentifier>
+			<Abstract type="html">Causes the receiver’s message to be sent to its target.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>- (void)fire</Declaration>
+			
+			
+			<Anchor>//api/name/fire</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Timer/start</TokenIdentifier>
+			<Abstract type="html">Calling this method will start the timer firing, if it is supposed to repeat it will continue to fire.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>- (void)start</Declaration>
+			
+			
+			<Anchor>//api/name/start</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Timer/stop</TokenIdentifier>
+			<Abstract type="html">Calling this method will stop a timer from firing continuously.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>- (void)stop</Declaration>
+			
+			
+			<Anchor>//api/name/stop</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Timer/invalidate</TokenIdentifier>
+			<Abstract type="html">Stops the receiver from ever firing again and requests its removal from its run loop.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>- (void)invalidate</Declaration>
+			
+			
+			<Anchor>//api/name/invalidate</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Timer/setIsValid:</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates whether the receiver is currently valid.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) BOOL isValid</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver is still capable of firing or NO if the timer has been invalidated and is no longer capable of firing.</Abstract></ReturnValue>
+			<Anchor>//api/name/isValid</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Timer/isValid</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates whether the receiver is currently valid.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) BOOL isValid</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver is still capable of firing or NO if the timer has been invalidated and is no longer capable of firing.</Abstract></ReturnValue>
+			<Anchor>//api/name/isValid</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Timer/isValid</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates whether the receiver is currently valid.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) BOOL isValid</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver is still capable of firing or NO if the timer has been invalidated and is no longer capable of firing.</Abstract></ReturnValue>
+			<Anchor>//api/name/isValid</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Timer/setFireDate:</TokenIdentifier>
+			<Abstract type="html">Returns the date at which the receiver will fire.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic, weak) NSDate *fireDate</Declaration>
+			
+			<ReturnValue><Abstract type="html">The date at which the receiver will fire. If the timer is no longer valid, this method returns the last date at which the timer fired.</Abstract></ReturnValue>
+			<Anchor>//api/name/fireDate</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Timer/fireDate</TokenIdentifier>
+			<Abstract type="html">Returns the date at which the receiver will fire.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic, weak) NSDate *fireDate</Declaration>
+			
+			<ReturnValue><Abstract type="html">The date at which the receiver will fire. If the timer is no longer valid, this method returns the last date at which the timer fired.</Abstract></ReturnValue>
+			<Anchor>//api/name/fireDate</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Timer/fireDate</TokenIdentifier>
+			<Abstract type="html">Returns the date at which the receiver will fire.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic, weak) NSDate *fireDate</Declaration>
+			
+			<ReturnValue><Abstract type="html">The date at which the receiver will fire. If the timer is no longer valid, this method returns the last date at which the timer fired.</Abstract></ReturnValue>
+			<Anchor>//api/name/fireDate</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Timer/setTimeInterval:</TokenIdentifier>
+			<Abstract type="html">Returns the receiver’s time interval.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat timeInterval</Declaration>
+			
+			
+			<Anchor>//api/name/timeInterval</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Timer/timeInterval</TokenIdentifier>
+			<Abstract type="html">Returns the receiver’s time interval.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat timeInterval</Declaration>
+			
+			
+			<Anchor>//api/name/timeInterval</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Timer/timeInterval</TokenIdentifier>
+			<Abstract type="html">Returns the receiver’s time interval.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic) CGFloat timeInterval</Declaration>
+			
+			
+			<Anchor>//api/name/timeInterval</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Timer/setUserInfo:</TokenIdentifier>
+			<Abstract type="html">Returns the receiver&apos;s userInfo object. The userInfo is the object that will be passed to the method the timer is targeting.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic, weak) id userInfo</Declaration>
+			
+			
+			<Anchor>//api/name/userInfo</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Timer/userInfo</TokenIdentifier>
+			<Abstract type="html">Returns the receiver&apos;s userInfo object. The userInfo is the object that will be passed to the method the timer is targeting.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic, weak) id userInfo</Declaration>
+			
+			
+			<Anchor>//api/name/userInfo</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Timer/userInfo</TokenIdentifier>
+			<Abstract type="html">Returns the receiver&apos;s userInfo object. The userInfo is the object that will be passed to the method the timer is targeting.</Abstract>
+			<DeclaredIn>C4Timer.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic, weak) id userInfo</Declaration>
+			
+			
+			<Anchor>//api/name/userInfo</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+	</File>
+</Tokens>

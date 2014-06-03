@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/C4Stepper.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/C4Stepper</TokenIdentifier>
+			<Abstract type="html">A stepper control provides a user interface for incrementing or decrementing a value.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>
+			
+			<NodeRef refid="28"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Stepper/stepper</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new C4Stepper object.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Stepper *)stepper</Declaration>
+			
+			<ReturnValue><Abstract type="html">a new C4Stepper.</Abstract></ReturnValue>
+			<Anchor>//api/name/stepper</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/setContinuous:</TokenIdentifier>
+			<Abstract type="html">The continuous vs. noncontinuous state of the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, getter=isContinuous) BOOL continuous</Declaration>
+			
+			
+			<Anchor>//api/name/continuous</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/isContinuous</TokenIdentifier>
+			<Abstract type="html">The continuous vs. noncontinuous state of the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, getter=isContinuous) BOOL continuous</Declaration>
+			
+			
+			<Anchor>//api/name/continuous</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Stepper/continuous</TokenIdentifier>
+			<Abstract type="html">The continuous vs. noncontinuous state of the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, getter=isContinuous) BOOL continuous</Declaration>
+			
+			
+			<Anchor>//api/name/continuous</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/setAutorepeat:</TokenIdentifier>
+			<Abstract type="html">The automatic vs. nonautomatic repeat state of the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL autorepeat</Declaration>
+			
+			
+			<Anchor>//api/name/autorepeat</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/autorepeat</TokenIdentifier>
+			<Abstract type="html">The automatic vs. nonautomatic repeat state of the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL autorepeat</Declaration>
+			
+			
+			<Anchor>//api/name/autorepeat</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Stepper/autorepeat</TokenIdentifier>
+			<Abstract type="html">The automatic vs. nonautomatic repeat state of the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL autorepeat</Declaration>
+			
+			
+			<Anchor>//api/name/autorepeat</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/setWraps:</TokenIdentifier>
+			<Abstract type="html">The wrap vs. no-wrap state of the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL wraps</Declaration>
+			
+			
+			<Anchor>//api/name/wraps</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/wraps</TokenIdentifier>
+			<Abstract type="html">The wrap vs. no-wrap state of the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL wraps</Declaration>
+			
+			
+			<Anchor>//api/name/wraps</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Stepper/wraps</TokenIdentifier>
+			<Abstract type="html">The wrap vs. no-wrap state of the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL wraps</Declaration>
+			
+			
+			<Anchor>//api/name/wraps</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/setMinimumValue:</TokenIdentifier>
+			<Abstract type="html">The lowest possible numeric value for the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat minimumValue</Declaration>
+			
+			
+			<Anchor>//api/name/minimumValue</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/minimumValue</TokenIdentifier>
+			<Abstract type="html">The lowest possible numeric value for the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat minimumValue</Declaration>
+			
+			
+			<Anchor>//api/name/minimumValue</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Stepper/minimumValue</TokenIdentifier>
+			<Abstract type="html">The lowest possible numeric value for the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat minimumValue</Declaration>
+			
+			
+			<Anchor>//api/name/minimumValue</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/setMaximumValue:</TokenIdentifier>
+			<Abstract type="html">The highest possible numeric value for the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat maximumValue</Declaration>
+			
+			
+			<Anchor>//api/name/maximumValue</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/maximumValue</TokenIdentifier>
+			<Abstract type="html">The highest possible numeric value for the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat maximumValue</Declaration>
+			
+			
+			<Anchor>//api/name/maximumValue</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Stepper/maximumValue</TokenIdentifier>
+			<Abstract type="html">The highest possible numeric value for the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat maximumValue</Declaration>
+			
+			
+			<Anchor>//api/name/maximumValue</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/setStepValue:</TokenIdentifier>
+			<Abstract type="html">The step, or increment, value for the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat stepValue</Declaration>
+			
+			
+			<Anchor>//api/name/stepValue</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/stepValue</TokenIdentifier>
+			<Abstract type="html">The step, or increment, value for the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat stepValue</Declaration>
+			
+			
+			<Anchor>//api/name/stepValue</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Stepper/stepValue</TokenIdentifier>
+			<Abstract type="html">The step, or increment, value for the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat stepValue</Declaration>
+			
+			
+			<Anchor>//api/name/stepValue</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/setValue:</TokenIdentifier>
+			<Abstract type="html">The numeric value of the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/value</TokenIdentifier>
+			<Abstract type="html">The numeric value of the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Stepper/value</TokenIdentifier>
+			<Abstract type="html">The numeric value of the stepper.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/set_0:</TokenIdentifier>
+			<Abstract type="html">The tint color for the stepper control.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic, strong) UIColor *NS_AVAILABLE_IOS ( 6 _0</Declaration>
+			
+			
+			<Anchor>//api/name/_0</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/_0</TokenIdentifier>
+			<Abstract type="html">The tint color for the stepper control.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic, strong) UIColor *NS_AVAILABLE_IOS ( 6 _0</Declaration>
+			
+			
+			<Anchor>//api/name/_0</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Stepper/_0</TokenIdentifier>
+			<Abstract type="html">The tint color for the stepper control.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic, strong) UIColor *NS_AVAILABLE_IOS ( 6 _0</Declaration>
+			
+			
+			<Anchor>//api/name/_0</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/backgroundImageForState:</TokenIdentifier>
+			<Abstract type="html">Returns the background image associated with the specified control state.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>- (C4Image *)backgroundImageForState:(C4ControlState)state</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>state</Name>
+					<Abstract type="html">The control state in which the image is displayed (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The background image used by the control when it is in the specified state.</Abstract></ReturnValue>
+			<Anchor>//api/name/backgroundImageForState:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/setBackgroundImage:forState:</TokenIdentifier>
+			<Abstract type="html">Sets the background image for the control when it is in the specified state.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>- (void)setBackgroundImage:(C4Image *)image forState:(C4ControlState)state</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The background image to use for the specified state.</Abstract>
+				</Parameter><Parameter>
+					<Name>state</Name>
+					<Abstract type="html">The control state in which you want to display the image (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setBackgroundImage:forState:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/decrementImageForState:</TokenIdentifier>
+			<Abstract type="html">Returns the image used for the decrement glyph of the control.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>- (C4Image *)decrementImageForState:(C4ControlState)state</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>state</Name>
+					<Abstract type="html">The control state in which the image is displayed (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The image used for the decrement glyph of the control.</Abstract></ReturnValue>
+			<Anchor>//api/name/decrementImageForState:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/setDecrementImage:forState:</TokenIdentifier>
+			<Abstract type="html">Sets the image to use for the decrement glyph of the control.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>- (void)setDecrementImage:(C4Image *)image forState:(C4ControlState)state</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The image to use for the decrement glyph.</Abstract>
+				</Parameter><Parameter>
+					<Name>state</Name>
+					<Abstract type="html">The control state in which you want to display the image (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDecrementImage:forState:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/dividerImageForLeftSegmentState:rightSegmentState:</TokenIdentifier>
+			<Abstract type="html">Returns the divider image for the given combination of left and right states.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>- (C4Image *)dividerImageForLeftSegmentState:(C4ControlState)leftState rightSegmentState:(C4ControlState)rightState</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>leftState</Name>
+					<Abstract type="html">The state of the left side of the control (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).</Abstract>
+				</Parameter><Parameter>
+					<Name>rightState</Name>
+					<Abstract type="html">The state of the right side of the control (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The image used for the specified combination of left and right states.</Abstract></ReturnValue>
+			<Anchor>//api/name/dividerImageForLeftSegmentState:rightSegmentState:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/setDividerImage:forLeftSegmentState:rightSegmentState:</TokenIdentifier>
+			<Abstract type="html">Sets the image to use for the given combination of left and right states.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>- (void)setDividerImage:(C4Image *)image forLeftSegmentState:(C4ControlState)leftState rightSegmentState:(C4ControlState)rightState</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The divider image to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>leftState</Name>
+					<Abstract type="html">The state of the left side of the control (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).</Abstract>
+				</Parameter><Parameter>
+					<Name>rightState</Name>
+					<Abstract type="html">The state of the right side of the control (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDividerImage:forLeftSegmentState:rightSegmentState:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/incrementImageForState:</TokenIdentifier>
+			<Abstract type="html">Returns the image used for the increment glyph of the control.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>- (C4Image *)incrementImageForState:(C4ControlState)state</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>state</Name>
+					<Abstract type="html">The control state in which the image is displayed (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The image used for the increment glyph of the control.</Abstract></ReturnValue>
+			<Anchor>//api/name/incrementImageForState:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/setIncrementImage:forState:</TokenIdentifier>
+			<Abstract type="html">Sets the image to use for the increment glyph of the control</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>- (void)setIncrementImage:(C4Image *)image forState:(C4ControlState)state</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The image to use for the increment glyph.</Abstract>
+				</Parameter><Parameter>
+					<Name>state</Name>
+					<Abstract type="html">The control state (one of: DISABLED, NORMAL, HIGHLIGHTED, SELECTED).</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setIncrementImage:forState:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/setUIStepper:</TokenIdentifier>
+			<Abstract type="html">The UIStepper object which is the primary subview of the receiver.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic, strong) *UIStepper</Declaration>
+			
+			
+			<Anchor>//api/name/UIStepper</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Stepper/UIStepper</TokenIdentifier>
+			<Abstract type="html">The UIStepper object which is the primary subview of the receiver.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic, strong) *UIStepper</Declaration>
+			
+			
+			<Anchor>//api/name/UIStepper</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Stepper/UIStepper</TokenIdentifier>
+			<Abstract type="html">The UIStepper object which is the primary subview of the receiver.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic, strong) *UIStepper</Declaration>
+			
+			
+			<Anchor>//api/name/UIStepper</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Stepper/defaultStyle</TokenIdentifier>
+			<Abstract type="html">Returns the appearance proxy for the object, cast as a C4Stepper rather than the standard (id) cast provided by UIAppearance.</Abstract>
+			<DeclaredIn>C4Stepper.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Stepper *)defaultStyle</Declaration>
+			
+			<ReturnValue><Abstract type="html">The appearance proxy for the receiver, cast as a C4Stepper.</Abstract></ReturnValue>
+			<Anchor>//api/name/defaultStyle</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+	</File>
+</Tokens>

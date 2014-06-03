@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/C4Label.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/C4Label</TokenIdentifier>
+			<Abstract type="html">The C4Label class implements a read-only text view. You can use this class to draw one or multiple lines of static text, such as those you might use to identify other parts of your user interface. The base C4Label class provides control over the appearance of your text, including whether it uses a shadow or draws with a highlight. If needed, you can customize the appearance of your text further by subclassing.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>
+			
+			<NodeRef refid="17"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Label/labelWithText:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new label with the specified text, using the default font.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Label *)labelWithText:(NSString *)text</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>text</Name>
+					<Abstract type="html">An NSString that will make up the text for the label.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new C4Label.</Abstract></ReturnValue>
+			<Anchor>//api/name/labelWithText:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Label/labelWithText:font:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new label with the specified text, using the specified font.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Label *)labelWithText:(NSString *)text font:(C4Font *)font</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>text</Name>
+					<Abstract type="html">An NSString that will make up the text for the label.</Abstract>
+				</Parameter><Parameter>
+					<Name>font</Name>
+					<Abstract type="html">A C4Font that will be used to render the label&apos;s text.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new C4Label.</Abstract></ReturnValue>
+			<Anchor>//api/name/labelWithText:font:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Label/labelWithText:font:frame:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new label with the specified text, using the specified font.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Label *)labelWithText:(NSString *)text font:(C4Font *)font frame:(CGRect)frame</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>text</Name>
+					<Abstract type="html">An NSString that will make up the text for the label.</Abstract>
+				</Parameter><Parameter>
+					<Name>font</Name>
+					<Abstract type="html">A C4Font that will be used to render the label&apos;s text.</Abstract>
+				</Parameter><Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">A CGRect that will make up the size of the view for the label.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new C4Label.</Abstract></ReturnValue>
+			<Anchor>//api/name/labelWithText:font:frame:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/initWithText:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a new label with the specified text, using the default font.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithText:(NSString *)text</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>text</Name>
+					<Abstract type="html">An NSString that will make up the text for the label.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new C4Label.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithText:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/initWithText:font:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a new label with the specified text, using the specified font.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithText:(NSString *)text font:(C4Font *)font</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>text</Name>
+					<Abstract type="html">An NSString that will make up the text for the label.</Abstract>
+				</Parameter><Parameter>
+					<Name>font</Name>
+					<Abstract type="html">A C4Font that will be used to render the label&apos;s text.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new C4Label.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithText:font:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/initWithText:font:frame:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a new label with the specified text, using the specified font.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithText:(NSString *)text font:(C4Font *)font frame:(CGRect)frame</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>text</Name>
+					<Abstract type="html">An NSString that will make up the text for the label.</Abstract>
+				</Parameter><Parameter>
+					<Name>font</Name>
+					<Abstract type="html">A C4Font that will be used to render the label&apos;s text.</Abstract>
+				</Parameter><Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">A CGRect that will make up the size of the view for the label.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new C4Label.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithText:font:frame:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/sizeToFit</TokenIdentifier>
+			<Abstract type="html">Resizes the label&apos;s view so that it just fits its text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>- (void)sizeToFit</Declaration>
+			
+			
+			<Anchor>//api/name/sizeToFit</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setText:</TokenIdentifier>
+			<Abstract type="html">The text displayed by the label.
+  </Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) NSString *text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/text</TokenIdentifier>
+			<Abstract type="html">The text displayed by the label.
+  </Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) NSString *text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/text</TokenIdentifier>
+			<Abstract type="html">The text displayed by the label.
+  </Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) NSString *text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setFont:</TokenIdentifier>
+			<Abstract type="html">The font for the label.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) C4Font *font</Declaration>
+			
+			
+			<Anchor>//api/name/font</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/font</TokenIdentifier>
+			<Abstract type="html">The font for the label.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) C4Font *font</Declaration>
+			
+			
+			<Anchor>//api/name/font</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/font</TokenIdentifier>
+			<Abstract type="html">The font for the label.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) C4Font *font</Declaration>
+			
+			
+			<Anchor>//api/name/font</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setAdjustsFontSizeToFitWidth:</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether the font size should be reduced in order to fit the title string into the label’s bounding rectangle.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) BOOL adjustsFontSizeToFitWidth</Declaration>
+			
+			
+			<Anchor>//api/name/adjustsFontSizeToFitWidth</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/adjustsFontSizeToFitWidth</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether the font size should be reduced in order to fit the title string into the label’s bounding rectangle.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) BOOL adjustsFontSizeToFitWidth</Declaration>
+			
+			
+			<Anchor>//api/name/adjustsFontSizeToFitWidth</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/adjustsFontSizeToFitWidth</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether the font size should be reduced in order to fit the title string into the label’s bounding rectangle.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) BOOL adjustsFontSizeToFitWidth</Declaration>
+			
+			
+			<Anchor>//api/name/adjustsFontSizeToFitWidth</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setBaselineAdjustment:</TokenIdentifier>
+			<Abstract type="html">Controls how text baselines are adjusted when text needs to shrink to fit in the label.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) C4BaselineAdjustment baselineAdjustment</Declaration>
+			
+			
+			<Anchor>//api/name/baselineAdjustment</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/baselineAdjustment</TokenIdentifier>
+			<Abstract type="html">Controls how text baselines are adjusted when text needs to shrink to fit in the label.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) C4BaselineAdjustment baselineAdjustment</Declaration>
+			
+			
+			<Anchor>//api/name/baselineAdjustment</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/baselineAdjustment</TokenIdentifier>
+			<Abstract type="html">Controls how text baselines are adjusted when text needs to shrink to fit in the label.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) C4BaselineAdjustment baselineAdjustment</Declaration>
+			
+			
+			<Anchor>//api/name/baselineAdjustment</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setHighlighted:</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether the receiver should be drawn with a highlight.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, getter=isHighlighted) BOOL highlighted</Declaration>
+			
+			
+			<Anchor>//api/name/highlighted</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/isHighlighted</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether the receiver should be drawn with a highlight.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, getter=isHighlighted) BOOL highlighted</Declaration>
+			
+			
+			<Anchor>//api/name/highlighted</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/highlighted</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether the receiver should be drawn with a highlight.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, getter=isHighlighted) BOOL highlighted</Declaration>
+			
+			
+			<Anchor>//api/name/highlighted</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setTextColor:</TokenIdentifier>
+			<Abstract type="html">The color of the text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) UIColor *textColor</Declaration>
+			
+			
+			<Anchor>//api/name/textColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/textColor</TokenIdentifier>
+			<Abstract type="html">The color of the text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) UIColor *textColor</Declaration>
+			
+			
+			<Anchor>//api/name/textColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/textColor</TokenIdentifier>
+			<Abstract type="html">The color of the text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) UIColor *textColor</Declaration>
+			
+			
+			<Anchor>//api/name/textColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setTextAlignment:</TokenIdentifier>
+			<Abstract type="html">The technique to use for aligning the text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) C4TextAlignment textAlignment</Declaration>
+			
+			
+			<Anchor>//api/name/textAlignment</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/textAlignment</TokenIdentifier>
+			<Abstract type="html">The technique to use for aligning the text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) C4TextAlignment textAlignment</Declaration>
+			
+			
+			<Anchor>//api/name/textAlignment</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/textAlignment</TokenIdentifier>
+			<Abstract type="html">The technique to use for aligning the text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) C4TextAlignment textAlignment</Declaration>
+			
+			
+			<Anchor>//api/name/textAlignment</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setLineBreakMode:</TokenIdentifier>
+			<Abstract type="html">The technique to use for wrapping and truncating the label’s text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) C4LineBreakMode lineBreakMode</Declaration>
+			
+			
+			<Anchor>//api/name/lineBreakMode</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/lineBreakMode</TokenIdentifier>
+			<Abstract type="html">The technique to use for wrapping and truncating the label’s text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) C4LineBreakMode lineBreakMode</Declaration>
+			
+			
+			<Anchor>//api/name/lineBreakMode</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/lineBreakMode</TokenIdentifier>
+			<Abstract type="html">The technique to use for wrapping and truncating the label’s text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) C4LineBreakMode lineBreakMode</Declaration>
+			
+			
+			<Anchor>//api/name/lineBreakMode</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setMinimumFontSize:</TokenIdentifier>
+			<Abstract type="html">The size of the smallest permissible font with which to draw the label’s text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat minimumFontSize</Declaration>
+			
+			
+			<Anchor>//api/name/minimumFontSize</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/minimumFontSize</TokenIdentifier>
+			<Abstract type="html">The size of the smallest permissible font with which to draw the label’s text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat minimumFontSize</Declaration>
+			
+			
+			<Anchor>//api/name/minimumFontSize</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/minimumFontSize</TokenIdentifier>
+			<Abstract type="html">The size of the smallest permissible font with which to draw the label’s text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGFloat minimumFontSize</Declaration>
+			
+			
+			<Anchor>//api/name/minimumFontSize</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setNumberOfLines:</TokenIdentifier>
+			<Abstract type="html">The maximum number of lines to use for rendering text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) NSUInteger numberOfLines</Declaration>
+			
+			
+			<Anchor>//api/name/numberOfLines</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/numberOfLines</TokenIdentifier>
+			<Abstract type="html">The maximum number of lines to use for rendering text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) NSUInteger numberOfLines</Declaration>
+			
+			
+			<Anchor>//api/name/numberOfLines</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/numberOfLines</TokenIdentifier>
+			<Abstract type="html">The maximum number of lines to use for rendering text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) NSUInteger numberOfLines</Declaration>
+			
+			
+			<Anchor>//api/name/numberOfLines</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setHighlightedTextColor:</TokenIdentifier>
+			<Abstract type="html">The highlight color applied to the label’s text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) UIColor *highlightedTextColor</Declaration>
+			
+			
+			<Anchor>//api/name/highlightedTextColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/highlightedTextColor</TokenIdentifier>
+			<Abstract type="html">The highlight color applied to the label’s text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) UIColor *highlightedTextColor</Declaration>
+			
+			
+			<Anchor>//api/name/highlightedTextColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/highlightedTextColor</TokenIdentifier>
+			<Abstract type="html">The highlight color applied to the label’s text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) UIColor *highlightedTextColor</Declaration>
+			
+			
+			<Anchor>//api/name/highlightedTextColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setTextShadowColor:</TokenIdentifier>
+			<Abstract type="html">The shadow color of the text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) UIColor *textShadowColor</Declaration>
+			
+			
+			<Anchor>//api/name/textShadowColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/textShadowColor</TokenIdentifier>
+			<Abstract type="html">The shadow color of the text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) UIColor *textShadowColor</Declaration>
+			
+			
+			<Anchor>//api/name/textShadowColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/textShadowColor</TokenIdentifier>
+			<Abstract type="html">The shadow color of the text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, strong, nonatomic) UIColor *textShadowColor</Declaration>
+			
+			
+			<Anchor>//api/name/textShadowColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setTextShadowOffset:</TokenIdentifier>
+			<Abstract type="html">The shadow offset (measured in points) for the text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGSize textShadowOffset</Declaration>
+			
+			
+			<Anchor>//api/name/textShadowOffset</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/textShadowOffset</TokenIdentifier>
+			<Abstract type="html">The shadow offset (measured in points) for the text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGSize textShadowOffset</Declaration>
+			
+			
+			<Anchor>//api/name/textShadowOffset</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/textShadowOffset</TokenIdentifier>
+			<Abstract type="html">The shadow offset (measured in points) for the text.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite, nonatomic) CGSize textShadowOffset</Declaration>
+			
+			
+			<Anchor>//api/name/textShadowOffset</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setBackingLayer:</TokenIdentifier>
+			<Abstract type="html">The backing layer of the C4Label object.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic, weak) C4Layer *backingLayer</Declaration>
+			
+			
+			<Anchor>//api/name/backingLayer</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/backingLayer</TokenIdentifier>
+			<Abstract type="html">The backing layer of the C4Label object.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic, weak) C4Layer *backingLayer</Declaration>
+			
+			
+			<Anchor>//api/name/backingLayer</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/backingLayer</TokenIdentifier>
+			<Abstract type="html">The backing layer of the C4Label object.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, nonatomic, weak) C4Layer *backingLayer</Declaration>
+			
+			
+			<Anchor>//api/name/backingLayer</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/setLabel:</TokenIdentifier>
+			<Abstract type="html">The UILabel which is the subview off the receiver.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, strong, nonatomic) UILabel *label</Declaration>
+			
+			
+			<Anchor>//api/name/label</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4Label/label</TokenIdentifier>
+			<Abstract type="html">The UILabel which is the subview off the receiver.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, strong, nonatomic) UILabel *label</Declaration>
+			
+			
+			<Anchor>//api/name/label</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4Label/label</TokenIdentifier>
+			<Abstract type="html">The UILabel which is the subview off the receiver.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, strong, nonatomic) UILabel *label</Declaration>
+			
+			
+			<Anchor>//api/name/label</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/C4Label/defaultStyle</TokenIdentifier>
+			<Abstract type="html">Returns the appearance proxy for the object, cast as a C4Label rather than the standard (id) cast provided by UIAppearance.</Abstract>
+			<DeclaredIn>C4Label.h</DeclaredIn>			
+			
+			<Declaration>+ (C4Label *)defaultStyle</Declaration>
+			
+			<ReturnValue><Abstract type="html">The appearance proxy for the receiver, cast as a C4Label.</Abstract></ReturnValue>
+			<Anchor>//api/name/defaultStyle</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+	</File>
+</Tokens>

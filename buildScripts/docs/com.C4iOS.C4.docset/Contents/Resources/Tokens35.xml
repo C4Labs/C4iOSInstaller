@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/C4WorkSpace.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/C4WorkSpace</TokenIdentifier>
+			<Abstract type="html">The C4WorkSpace class is a subclass of C4CanvasController.</Abstract>
+			<DeclaredIn>C4WorkSpace.h</DeclaredIn>
+			
+			<NodeRef refid="35"/>
+		</Token>
+		
+		
+	</File>
+</Tokens>

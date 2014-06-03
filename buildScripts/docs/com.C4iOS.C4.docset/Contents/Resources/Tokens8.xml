@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/C4CanvasController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/C4CanvasController</TokenIdentifier>
+			<Abstract type="html">The C4CanvasController class provides control over the main canvas in C4.</Abstract>
+			<DeclaredIn>C4CanvasController.h</DeclaredIn>
+			
+			<NodeRef refid="8"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CanvasController/setup</TokenIdentifier>
+			<Abstract type="html">The setup method for the canvas.</Abstract>
+			<DeclaredIn>C4CanvasController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setup</Declaration>
+			
+			
+			<Anchor>//api/name/setup</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CanvasController/setCanvas:</TokenIdentifier>
+			<Abstract type="html">The application&apos;s main canvas.</Abstract>
+			<DeclaredIn>C4CanvasController.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, strong, nonatomic) C4Window *canvas</Declaration>
+			
+			
+			<Anchor>//api/name/canvas</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CanvasController/canvas</TokenIdentifier>
+			<Abstract type="html">The application&apos;s main canvas.</Abstract>
+			<DeclaredIn>C4CanvasController.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, strong, nonatomic) C4Window *canvas</Declaration>
+			
+			
+			<Anchor>//api/name/canvas</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/C4CanvasController/canvas</TokenIdentifier>
+			<Abstract type="html">The application&apos;s main canvas.</Abstract>
+			<DeclaredIn>C4CanvasController.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly, strong, nonatomic) C4Window *canvas</Declaration>
+			
+			
+			<Anchor>//api/name/canvas</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/C4CanvasController/imageWasCaptured</TokenIdentifier>
+			<Abstract type="html">A callback method for the current C4Camera object.</Abstract>
+			<DeclaredIn>C4CanvasController.h</DeclaredIn>			
+			
+			<Declaration>- (void)imageWasCaptured</Declaration>
+			
+			
+			<Anchor>//api/name/imageWasCaptured</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+	</File>
+</Tokens>
