@@ -3,14 +3,14 @@
 #  Created by Travis Kirton on 14-06-02.
 
 # sets the version for the current installer
-VERSION="0_01"
+VERSION="0_02"
 
 # builds the component packages, passing the current version
 sh buildPackageComponents.sh $VERSION 
 
 # defines the names of the component packages, this matches their names defined in the buildPackageComponents.sh script
-TEMPLATES_PKG="INSTALL_TEMPLATES_$VERSION.pkg"
-DOCSET_PKG="INSTALL_DOCSET_$VERSION.pkg"
+TEMPLATES_PKG="INSTALL_TEMPLATES_0_02.pkg"
+DOCSET_PKG="INSTALL_DOCSET_0_01.pkg"
 
 #builds the distribution xml
 productbuild --synthesize --package $TEMPLATES_PKG --package $DOCSET_PKG distribution.xml

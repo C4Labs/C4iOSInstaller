@@ -13,11 +13,11 @@
   <choice id="com.c4ios.installer.templates" visible="false">
     <pkg-ref id="com.c4ios.installer.templates"/>
   </choice>
-  <pkg-ref id="com.c4ios.installer.templates" version="0_01" onConclusion="none">INSTALL_TEMPLATES_0_01.pkg</pkg-ref>
+  <pkg-ref id="com.c4ios.installer.templates" version="0_02" onConclusion="none">INSTALL_TEMPLATES_0_02.pkg</pkg-ref>
   <choice id="com.c4ios.installer.docset" visible="false">
     <pkg-ref id="com.c4ios.installer.docset"/>
   </choice>
-  <pkg-ref id="com.c4ios.installer.docset" version="0_01" onConclusion="none">INSTALL_DOCSET_0_01.pkg</pkg-ref>
+  <pkg-ref id="com.c4ios.installer.docset" version="0_02" onConclusion="none">INSTALL_DOCSET_0_01.pkg</pkg-ref>
   <title>C4 Xcode Templates</title>
   <background file="C4InstallerBackground.png" mime-type="image/png"/>
   <welcome file="welcome.rtf" mime-type="text/rtf"/>
