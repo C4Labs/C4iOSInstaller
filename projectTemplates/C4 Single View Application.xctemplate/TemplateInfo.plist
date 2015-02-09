@@ -4,58 +4,16 @@
 <dict>
 	<key>Ancestors</key>
 	<array>
-		<string>com.apple.dt.unit.C4StoryboardApplication</string>
+		<string>com.c4.storyboardApplication</string>
 	</array>
 	<key>Concrete</key>
 	<true/>
-	<key>Definitions</key>
-	<dict>
-		<key>___VARIABLE_classPrefix:identifier___ViewController.m:private</key>
-		<string>@interface ___VARIABLE_classPrefix:identifier___ViewController ()
-
-@end
-</string>
-<key>C4WorkSpace.h:basicInterface</key>
-		<string>//
-//  C4WorkSpace.h
-//  ___PROJECTNAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//
-
-#import "C4CanvasController.h"
-
-@interface C4WorkSpace : C4CanvasController
-@end</string>
-<key>C4WorkSpace.m:basicImplementation</key>
-		<string>//
-//  C4WorkSpace.m
-//  ___PROJECTNAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//
-
-#import "C4Workspace.h"
-
-@implementation C4WorkSpace
-
--(void)setup {
-    //work your magic here
-}
-
-@end</string>
-	</dict>
 	<key>Description</key>
-	<string>This template provides a starting point for a new C4iOS application. It provides a workspace to manage the view, and a storyboard or nib file that contains the view.</string>
+	<string>This template provides a starting point for an C4iOS app (ObjC lang). It provides a workspace to manage the canvas, and a storyboard or nib file that contains the canvas.</string>
 	<key>Identifier</key>
-	<string>com.apple.dt.unit.C4SingleViewApplication</string>
+	<string>com.c4.singleViewApplication</string>
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
-	<key>Nodes</key>
-	<array>
-		<string>C4WorkSpace.h:basicInterface</string>
-		<string>C4WorkSpace.m:basicImplementation</string>
-	</array>
 	<key>Options</key>
 	<array>
 		<dict>
@@ -67,19 +25,12 @@
 				<dict>
 					<key>Definitions</key>
 					<dict>
-						<key>Base.lproj/Main_iPad.storyboard</key>
+						<key>Base.lproj/Main.storyboard</key>
 						<dict>
-							<key>Group</key>
-							<string>Storyboards</string>
 							<key>Path</key>
-							<string>Main_iPad.storyboard</string>
-						</dict>
-						<key>Base.lproj/Main_iPhone.storyboard</key>
-						<dict>
-							<key>Group</key>
-							<string>Storyboards</string>
-							<key>Path</key>
-							<string>Main_iPhone.storyboard</string>
+							<string>Main_Universal.storyboard</string>
+							<key>SortOrder</key>
+							<integer>99</integer>
 						</dict>
 					</dict>
 				</dict>
@@ -89,10 +40,10 @@
 					<dict>
 						<key>Base.lproj/Main.storyboard</key>
 						<dict>
-							<key>Group</key>
-							<string>Storyboards</string>
 							<key>Path</key>
 							<string>Main_iPad.storyboard</string>
+							<key>SortOrder</key>
+							<integer>99</integer>
 						</dict>
 					</dict>
 				</dict>
@@ -102,13 +53,97 @@
 					<dict>
 						<key>Base.lproj/Main.storyboard</key>
 						<dict>
-							<key>Group</key>
-							<string>Storyboards</string>
 							<key>Path</key>
 							<string>Main_iPhone.storyboard</string>
+							<key>SortOrder</key>
+							<integer>99</integer>
 						</dict>
 					</dict>
 				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
+				<key>Objective-C</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>C4WorkSpace.h:basicInterface</key>
+						<string>// Copyright © 2012 Travis Kirton
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
+
+#import "C4CanvasController.h"
+
+@interface C4WorkSpace : C4CanvasController
+@end</string>
+<key>C4WorkSpace.m:basicImplementation</key>
+<string>// Copyright © 2012 Travis Kirton
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions: The above copyright
+// notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
+
+#import "C4Workspace.h"
+
+@implementation C4WorkSpace
+
+-(void)setup {
+    //work your magic here
+}
+
+@end</string>
+					</dict>
+					<key>Nodes</key>
+					<array>
+						<string>C4WorkSpace.h:basicInterface</string>
+						<string>C4WorkSpace.m:basicImplementation</string>
+					</array>
+				</dict>
+				<!-- <key>Swift</key>
+				<dict>
+					<key>Nodes</key>
+					<array>
+						<string>ViewController.swift:comments</string>
+						<string>ViewController.swift:imports:importCocoa</string>
+						<string>ViewController.swift:implementation(___FILEBASENAME___: UIViewController)</string>
+						<string>ViewController.swift:implementation:methods:viewDidLoad(override func viewDidLoad(\))</string>
+						<string>ViewController.swift:implementation:methods:viewDidLoad:super</string>
+						<string>ViewController.swift:implementation:methods:didReceiveMemoryWarning(override func didReceiveMemoryWarning(\))</string>
+						<string>ViewController.swift:implementation:methods:didReceiveMemoryWarning:super</string>
+					</array>
+				</dict> -->
 			</dict>
 		</dict>
 	</array>

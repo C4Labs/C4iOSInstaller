@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="mCf-2A-cLQ">
+                    <rect key="frame" x="112" y="32" width="256" height="256"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="256" id="ZRB-o0-daA"/>
+                        <constraint firstAttribute="height" constant="256" id="lNd-9n-btk"/>
+                    </constraints>
+                    <variation key="heightClass=compact">
+                        <mask key="constraints">
+                            <include reference="ZRB-o0-daA"/>
+                            <include reference="lNd-9n-btk"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular">
+                        <mask key="constraints">
+                            <include reference="ZRB-o0-daA"/>
+                            <include reference="lNd-9n-btk"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="ZRB-o0-daA"/>
+                            <include reference="lNd-9n-btk"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="ZRB-o0-daA"/>
+                            <include reference="lNd-9n-btk"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="ZRB-o0-daA"/>
+                            <include reference="lNd-9n-btk"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="ZRB-o0-daA"/>
+                            <include reference="lNd-9n-btk"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="ZRB-o0-daA"/>
+                            <include reference="lNd-9n-btk"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="ZRB-o0-daA"/>
+                            <include reference="lNd-9n-btk"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="___PACKAGENAME___" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
+                    <rect key="frame" x="49.5" y="320" width="381" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="5GV-ej-DHC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=compact"/>
+                    <variation key="heightClass=regular" misplaced="YES">
+                        <rect key="frame" x="20" y="321" width="441" height="43"/>
+                    </variation>
+                    <variation key="widthClass=compact"/>
+                    <variation key="widthClass=regular" misplaced="YES">
+                        <rect key="frame" x="20" y="321" width="441" height="43"/>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="20" y="321" width="441" height="43"/>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                        <rect key="frame" x="20" y="321" width="441" height="43"/>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="20" y="321" width="441" height="43"/>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                        <rect key="frame" x="20" y="321" width="441" height="43"/>
+                    </variation>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="mCf-2A-cLQ" secondAttribute="centerX" id="0ik-Bf-bgG"/>
+                <constraint firstItem="mCf-2A-cLQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="32" id="Lbv-aY-izS"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="320" id="Y4U-e6-Gox"/>
+                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="bdc-gJ-8DF"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="548" y="455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LaunchScreenImage" width="16" height="16"/>
+    </resources>
+</document>

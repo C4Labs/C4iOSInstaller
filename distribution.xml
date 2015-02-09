@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <installer-gui-script minSpecVersion="1">
   <pkg-ref id="com.c4ios.installer.templates"/>
+  <pkg-ref id="com.c4ios.installer.iosbase"/>
+  <pkg-ref id="com.c4ios.installer.appbase"/>
   <pkg-ref id="com.c4ios.installer.docset"/>
   <options customize="never" require-scripts="false"/>
   <choices-outline>
     <line choice="default">
       <line choice="com.c4ios.installer.templates"/>
+      <line choice="com.c4ios.installer.iosbase"/>
+      <line choice="com.c4ios.installer.appbase"/>
       <line choice="com.c4ios.installer.docset"/>
     </line>
   </choices-outline>
@@ -14,6 +18,14 @@
     <pkg-ref id="com.c4ios.installer.templates"/>
   </choice>
   <pkg-ref id="com.c4ios.installer.templates" version="0_02" onConclusion="none">INSTALL_TEMPLATES_0_02.pkg</pkg-ref>
+  <choice id="com.c4ios.installer.iosbase" visible="false">
+    <pkg-ref id="com.c4ios.installer.iosbase"/>
+  </choice>
+  <pkg-ref id="com.c4ios.installer.iosbase" version="0_02" onConclusion="none">INSTALL_IOS_BASE_0_01.pkg</pkg-ref>
+  <choice id="com.c4ios.installer.appbase" visible="false">
+    <pkg-ref id="com.c4ios.installer.appbase"/>
+  </choice>
+  <pkg-ref id="com.c4ios.installer.appbase" version="0_02" onConclusion="none">INSTALL_APP_BASE_0_01.pkg</pkg-ref>
   <choice id="com.c4ios.installer.docset" visible="false">
     <pkg-ref id="com.c4ios.installer.docset"/>
   </choice>

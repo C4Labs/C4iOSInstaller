@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Definitions</key>
+	<dict>
+		<key>*:imports:importCocoa</key>
+		<string>#import &lt;UIKit/UIKit.h&gt;</string>
+		<key>*:imports:importCocoaForUmbrellaHeader</key>
+		<string>#import &lt;UIKit/UIKit.h&gt;</string>
+		<key>Info.plist:UISupportedInterfaceOrientations~iPad</key>
+		<string>&lt;key&gt;UISupportedInterfaceOrientations~ipad&lt;/key&gt;
+&lt;array&gt;
+	&lt;string&gt;UIInterfaceOrientationPortrait&lt;/string&gt;
+	&lt;string&gt;UIInterfaceOrientationPortraitUpsideDown&lt;/string&gt;
+	&lt;string&gt;UIInterfaceOrientationLandscapeLeft&lt;/string&gt;
+	&lt;string&gt;UIInterfaceOrientationLandscapeRight&lt;/string&gt;
+&lt;/array&gt;</string>
+		<key>Info.plist:UISupportedInterfaceOrientations~iPhone</key>
+		<string>&lt;key&gt;UISupportedInterfaceOrientations&lt;/key&gt;
+&lt;array&gt;
+     &lt;string&gt;UIInterfaceOrientationPortrait&lt;/string&gt;
+     &lt;string&gt;UIInterfaceOrientationLandscapeLeft&lt;/string&gt;
+     &lt;string&gt;UIInterfaceOrientationLandscapeRight&lt;/string&gt;
+&lt;/array&gt;</string>
+		<key>Prefix.pch:objC:importCocoa</key>
+		<string>#import &lt;UIKit/UIKit.h&gt;</string>
+	</dict>
+	<key>Identifier</key>
+	<string>com.c4.iosBase</string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
+				<key>Objective-C</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>*:implementation:didReceiveMemoryWarning</key>
+						<dict>
+							<key>Beginning</key>
+							<string>- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.</string>
+							<key>End</key>
+							<string>}
+</string>
+							<key>Indent</key>
+							<integer>1</integer>
+						</dict>
+						<key>*:implementation:viewDidLoad</key>
+						<dict>
+							<key>Beginning</key>
+							<string>- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.</string>
+							<key>End</key>
+							<string>}
+</string>
+							<key>Indent</key>
+							<integer>1</integer>
+						</dict>
+					</dict>
+				</dict>
+				<!-- <key>Swift</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>*:implementation:didReceiveMemoryWarning</key>
+						<dict>
+							<key>Beginning</key>
+							<string>override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.</string>
+							<key>End</key>
+							<string>}
+</string>
+							<key>Indent</key>
+							<integer>1</integer>
+						</dict>
+						<key>*:implementation:viewDidLoad</key>
+						<dict>
+							<key>Beginning</key>
+							<string>override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.</string>
+							<key>End</key>
+							<string>}
+</string>
+							<key>Indent</key>
+							<integer>1</integer>
+						</dict>
+						<key>*:imports:importCocoa</key>
+						<string>import UIKit</string>
+					</dict>
+				</dict> -->
+			</dict>
+		</dict>
+	</array>
+	<key>Platforms</key>
+	<array>
+		<string>com.apple.platform.iphoneos</string>
+	</array>
+	<key>Project</key>
+	<dict>
+		<key>Configurations</key>
+		<dict>
+			<key>Debug</key>
+			<dict/>
+			<key>Release</key>
+			<dict>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+		</dict>
+		<key>SDK</key>
+		<string>iphoneos</string>
+		<key>SharedSettings</key>
+		<dict>
+			<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+			<string>latest_iphoneos</string>
+			<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+			<string>YES</string>
+	        <key>GCC_PREFIX_HEADER</key>
+	        <string>___PACKAGENAME___/___PACKAGENAME___-Prefix.pch</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
