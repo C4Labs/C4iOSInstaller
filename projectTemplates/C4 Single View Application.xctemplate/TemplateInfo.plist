@@ -9,7 +9,7 @@
 	<key>Concrete</key>
 	<true/>
 	<key>Description</key>
-	<string>This template provides a starting point for an C4iOS app (ObjC lang). It provides a workspace to manage the canvas, and a storyboard or nib file that contains the canvas.</string>
+	<string>This Xcode 6 template provides a starting point for an C4iOS app (ObjC lang). It provides a workspace to manage the canvas, and a storyboard or nib file that contains the canvas.</string>
 	<key>Identifier</key>
 	<string>com.c4.singleViewApplication</string>
 	<key>Kind</key>
