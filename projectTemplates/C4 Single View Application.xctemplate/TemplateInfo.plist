@@ -5,57 +5,21 @@
 	<key>Ancestors</key>
 	<array>
 		<string>com.apple.dt.unit.C4StoryboardApplication</string>
+		<string>com.apple.dt.unit.coreDataCocoaTouchApplication</string>
 	</array>
 	<key>Concrete</key>
 	<true/>
-	<key>Definitions</key>
-	<dict>
-		<key>___VARIABLE_classPrefix:identifier___ViewController.m:private</key>
-		<string>@interface ___VARIABLE_classPrefix:identifier___ViewController ()
-
-@end
-</string>
-<key>C4WorkSpace.h:basicInterface</key>
-		<string>//
-//  C4WorkSpace.h
-//  ___PROJECTNAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//
-
-#import "C4CanvasController.h"
-
-@interface C4WorkSpace : C4CanvasController
-@end</string>
-<key>C4WorkSpace.m:basicImplementation</key>
-		<string>//
-//  C4WorkSpace.m
-//  ___PROJECTNAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//
-
-#import "C4Workspace.h"
-
-@implementation C4WorkSpace
-
--(void)setup {
-    //work your magic here
-}
-
-@end</string>
-	</dict>
 	<key>Description</key>
-	<string>This template provides a starting point for a new C4iOS application. It provides a workspace to manage the view, and a storyboard or nib file that contains the view.</string>
+	<string>This template provides a starting point for an application that uses a single view. It provides a view controller to manage the view, and a storyboard or nib file that contains the view.</string>
 	<key>Identifier</key>
 	<string>com.apple.dt.unit.C4SingleViewApplication</string>
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
-	<key>Nodes</key>
-	<array>
-		<string>C4WorkSpace.h:basicInterface</string>
-		<string>C4WorkSpace.m:basicImplementation</string>
-	</array>
+	<key>Definitions</key>
+	<dict>
+		<key>*:implementation:methods:setup:body</key>
+		<string>//Work your magic here.</string>
+	</dict>
 	<key>Options</key>
 	<array>
 		<dict>
@@ -67,19 +31,12 @@
 				<dict>
 					<key>Definitions</key>
 					<dict>
-						<key>Base.lproj/Main_iPad.storyboard</key>
+						<key>Base.lproj/Main.storyboard</key>
 						<dict>
-							<key>Group</key>
-							<string>Storyboards</string>
 							<key>Path</key>
-							<string>Main_iPad.storyboard</string>
-						</dict>
-						<key>Base.lproj/Main_iPhone.storyboard</key>
-						<dict>
-							<key>Group</key>
-							<string>Storyboards</string>
-							<key>Path</key>
-							<string>Main_iPhone.storyboard</string>
+							<string>Main_Universal.storyboard</string>
+							<key>SortOrder</key>
+							<integer>99</integer>
 						</dict>
 					</dict>
 				</dict>
@@ -89,10 +46,10 @@
 					<dict>
 						<key>Base.lproj/Main.storyboard</key>
 						<dict>
-							<key>Group</key>
-							<string>Storyboards</string>
 							<key>Path</key>
 							<string>Main_iPad.storyboard</string>
+							<key>SortOrder</key>
+							<integer>99</integer>
 						</dict>
 					</dict>
 				</dict>
@@ -102,12 +59,30 @@
 					<dict>
 						<key>Base.lproj/Main.storyboard</key>
 						<dict>
-							<key>Group</key>
-							<string>Storyboards</string>
 							<key>Path</key>
 							<string>Main_iPhone.storyboard</string>
+							<key>SortOrder</key>
+							<integer>99</integer>
 						</dict>
 					</dict>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
+				<key>Swift</key>
+				<dict>
+					<key>Nodes</key>
+					<array>
+						<string>WorkSpace.swift:comments</string>
+						<string>WorkSpace.swift:imports:importCocoa</string>
+						<string>WorkSpace.swift:implementation(___FILEBASENAME___: C4CanvasController)</string>
+						<string>WorkSpace.swift:implementation:methods:setup(override func setup(\))</string>
+						<string>WorkSpace.swift:implementation:methods:setup:body</string>
+					</array>
 				</dict>
 			</dict>
 		</dict>

@@ -3,7 +3,7 @@ xml ed -s /installer-gui-script -t elem -n title -v "C4 Xcode Templates" distrib
 mv distribution1.xml distribution.xml
 
 #adds: <background file="background.png" />
-xml ed -s /installer-gui-script -t elem -n background -i /installer-gui-script/background -t attr -n file -v C4InstallerBackground.png distribution.xml > distribution1.xml
+xml ed -s /installer-gui-script -t elem -n background -i /installer-gui-script/background -t attr -n file -v C4InstallerBackground@2x.tif distribution.xml > distribution1.xml
 mv distribution1.xml distribution.xml
 
 #modifies: <background file="background.png" mime-type="image/png"/>
