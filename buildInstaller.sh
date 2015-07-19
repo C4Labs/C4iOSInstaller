@@ -10,10 +10,11 @@ sh buildPackageComponents.sh $VERSION
 
 # defines the names of the component packages, this matches their names defined in the buildPackageComponents.sh script
 TEMPLATES_PKG="INSTALL_TEMPLATES_1_0_0.pkg"
-LANGUAGECHOICE_PKG="INSTALL_LANGUAGECHOICE_1_0_0.pkg"
+BASE_PKG="INSTALL_BASE_1_0_0.pkg"
+IOS_PKG="INSTALL_IOS_1_0_0.pkg"
 
 #builds the distribution xml
-productbuild --synthesize --package $TEMPLATES_PKG --package $LANGUAGECHOICE_PKG distribution.xml
+productbuild --synthesize --package $TEMPLATES_PKG --package $BASE_PKG --package $IOS_PKG distribution.xml
 
 #modifies the distribution LANGUAGECHOICE_PKG
 sh updateDistributionXML.sh
@@ -28,5 +29,6 @@ productsign --sign "Developer ID Installer: Travis Stuart Kirton (75C7KVJZ99)" u
 mv signed.pkg C4Installer_$VERSION.pkg
 
 rm -Rf $TEMPLATES_PKG
-rm -Rf $LANGUAGECHOICE_PKG
+rm -Rf $BASE_PKG
+rm -Rf $IOS_PKG
 rm -Rf unsigned.pkg
