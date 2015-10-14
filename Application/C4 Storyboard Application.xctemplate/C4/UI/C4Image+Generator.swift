@@ -21,23 +21,29 @@ import QuartzCore
 import UIKit
 
 extension C4Image {
+    ///  Applies a generator to the receiver's contents.
+    ///
+    ///  - parameter generator: a C4Generator
     public func generate(generator: C4Generator) {
-        let crop = CIFilter(name: "CICrop")
+        let crop = CIFilter(name: "CICrop")!
         crop.setDefaults()
         crop.setValue(CIVector(CGRect:CGRect(self.bounds)), forKey: "inputRectangle")
-        var generatorFilter = generator.createCoreImageFilter()
+        let generatorFilter = generator.createCoreImageFilter()
         crop.setValue(generatorFilter.outputImage, forKey: "inputImage")
-        var outputImage = crop.outputImage
-        
-        var scale = CGAffineTransformMakeScale(1, -1)
-        var translate = CGAffineTransformTranslate(scale, 0, outputImage.extent().size.height)
-        outputImage = outputImage.imageByApplyingTransform(translate)
-        self.output = outputImage
-        
-        let img = UIImage(CIImage: output)
-        let orig = self.origin
-        self.view = UIImageView(image: img)
-        self.origin = orig
-        _originalSize = C4Size(view.frame.size)
+
+        if var outputImage = crop.outputImage {
+            let scale = CGAffineTransformMakeScale(1, -1)
+            let translate = CGAffineTransformTranslate(scale, 0, outputImage.extent.size.height)
+            outputImage = outputImage.imageByApplyingTransform(translate)
+            self.output = outputImage
+            
+            let img = UIImage(CIImage: output)
+            let orig = self.origin
+            self.view = UIImageView(image: img)
+            self.origin = orig
+            _originalSize = C4Size(view.frame.size)
+        } else {
+            print("Failed to generate outputImage: \(__FUNCTION__)")
+        }
     }
 }

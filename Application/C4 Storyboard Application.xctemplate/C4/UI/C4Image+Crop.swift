@@ -21,6 +21,9 @@ import QuartzCore
 import UIKit
 
 extension C4Image {
+    ///  Crops the receiver's contents to the specified frame within the receiver's coordinate space.
+    ///
+    ///  - parameter rect: a C4Rect
     public func crop(rect: C4Rect) {
         let intersection = CGRectIntersection(CGRect(rect),CGRect(self.bounds))
         if(CGRectIsNull(intersection)) { return }
@@ -32,13 +35,17 @@ extension C4Image {
             intersection.size.width,
             intersection.size.height)
 
-        let crop = CIFilter(name: "CICrop")
+        let crop = CIFilter(name: "CICrop")!
         crop.setDefaults()
         crop.setValue(CIVector(CGRect: inputRectangle), forKey: "inputRectangle")
         crop.setValue(ciimage, forKey: "inputImage")
-        
-        self.output = crop.outputImage
-        self.imageView.image = UIImage(CIImage: output)
-        self.frame = C4Rect(intersection)
+
+        if let outputImage = crop.outputImage {
+            self.output = outputImage
+            self.imageView.image = UIImage(CIImage: output)
+            self.frame = C4Rect(intersection)
+        } else {
+            print("Failed ot generate outputImage: \(__FUNCTION__)")
+        }
     }
 }

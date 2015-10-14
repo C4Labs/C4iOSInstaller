@@ -21,33 +21,36 @@ import QuartzCore
 import UIKit
 import Foundation
 
+/// C4TextShape defines a concrete subclass of C4Shape that draws a bezier curve whose shape looks like text.
 public class C4TextShape : C4Shape {
-    private var text: String = "" {
+    /// The text used to define the shape's path. Defaults to "C4".
+    public var text: String = "C4" {
         didSet {
             updatePath()
         }
     }
-    private var font: C4Font {
+    /// The font used to define the shape's path. Defaults to AvenirNext-DemiBold, 80pt.
+    public var font = C4Font(name: "AvenirNext-DemiBold", size:80){
         didSet {
             updatePath()
         }
     }
-    
+
+    ///  Initializes a basic C4 text shape.
     public override init() {
-        font = C4Font(name: "AvenirNext-DemiBold", size:80)
     }
     
-    /**
-    Initializes a new C4TextShape from a specifed string and a font
-
-        let f = C4Font(name:"Avenir Next", size: 120)
-        let t = C4TextShape(text:"C4", font: f)
-        t.center = canvas.center
-        canvas.add(t)
-
-    :param: text The string to be rendered as a shape
-    :param: font The font used to define the shape of the text
-    */
+    /// Initializes a new C4TextShape from a specifed string and a font
+    ///
+    /// ````
+    /// let f = C4Font(name:"Avenir Next", size: 120)
+    /// let t = C4TextShape(text:"C4", font: f)
+    /// t.center = canvas.center
+    /// canvas.add(t)
+    /// ````
+    ///
+    /// - parameter text: The string to be rendered as a shape
+    /// - parameter font: The font used to define the shape of the text
     convenience public init(text: String, font: C4Font) {
         self.init()
         self.text = text
@@ -57,7 +60,16 @@ public class C4TextShape : C4Shape {
         updatePath()
         self.origin = C4Point()
     }
-
+    
+    /// Initializes a new C4TextShape from a specifed string, using C4's default font.
+    ///
+    /// ````
+    /// let t = C4TextShape(text:"C4")
+    /// t.center = canvas.center
+    /// canvas.add(t)
+    /// ````
+    ///
+    /// - parameter text: text The string to be rendered as a shape
     convenience public init(text: String) {
         self.init()
         self.text = text
@@ -66,13 +78,13 @@ public class C4TextShape : C4Shape {
         updatePath()
         self.origin = C4Point()
     }
-
+    
     override func updatePath() {
         path = C4TextShape.createTextPath(text: text, font: font)
         adjustToFitPath()
     }
-
-    internal class func createTextPath(#text: String, font: C4Font) -> C4Path? {
+    
+    internal class func createTextPath(text text: String, font: C4Font) -> C4Path? {
         let ctfont = font.CTFont as CTFont?
         if ctfont == nil {
             return nil
@@ -80,19 +92,19 @@ public class C4TextShape : C4Shape {
         
         var unichars = [UniChar](text.utf16)
         var glyphs = [CGGlyph](count: unichars.count, repeatedValue: 0)
-        if !CTFontGetGlyphsForCharacters(ctfont, &unichars, &glyphs, unichars.count) {
+        if !CTFontGetGlyphsForCharacters(ctfont!, &unichars, &glyphs, unichars.count) {
             // Failed to encode characters into glyphs
             return nil
         }
-
+        
         var advances = [CGSize](count: glyphs.count, repeatedValue: CGSizeZero)
-        CTFontGetAdvancesForGlyphs(ctfont, .OrientationDefault, &glyphs, &advances, glyphs.count)
+        CTFontGetAdvancesForGlyphs(ctfont!, .Default, &glyphs, &advances, glyphs.count)
         
         let textPath = CGPathCreateMutable()
         var invert = CGAffineTransformMakeScale(1, -1)
         var origin = CGPointZero
         for i in 0..<glyphs.count {
-            let glyphPath = CTFontCreatePathForGlyph(ctfont, glyphs[i], &invert)
+            let glyphPath = CTFontCreatePathForGlyph(ctfont!, glyphs[i], &invert)
             var translation = CGAffineTransformMakeTranslation(origin.x, origin.y)
             CGPathAddPath(textPath, &translation, glyphPath)
             

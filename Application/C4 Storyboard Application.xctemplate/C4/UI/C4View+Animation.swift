@@ -20,9 +20,7 @@
 import QuartzCore
 import UIKit
 
-/**
-Extension to C4View that handles animating of basic properties.
-*/
+/// Extension to C4View that handles animating of basic properties.
 public extension C4View {
     internal func animateKeyPath(keyPath: String, toValue: AnyObject) {
         let anim = CABasicAnimation()
@@ -35,38 +33,32 @@ public extension C4View {
         view.layer.setValue(toValue, forKeyPath: keyPath)
     }
     
-    /**
-    Class level function that executes an animation using a specified block of code.
-    
-    :param: duration The length of time in seconds for the animation to execute.
-    :param: animations A block of code with specified animations to execute.
-    */
-    public class func animate(#duration: Double, animations: Void -> Void) {
+    /// Class level function that executes an animation using a specified block of code.
+    ///
+    /// - parameter duration: The length of time in seconds for the animation to execute.
+    /// - parameter animations: A block of code with specified animations to execute.
+    public class func animate(duration duration: Double, animations: Void -> Void) {
         UIView.animateWithDuration(duration, animations: animations)
     }
     
-    /**
-    Class level function that executes an animation using a specified block of code.
-    
-    :param: duration The length of time in seconds for the animation to execute.
-    :param: delay The length of time in seconds to wait before executing the specified block of code.
-    :param: animations A block of code with specified animations to execute.
-    :param: completion A block of code to execute when the animation completes.
-    */
-    public class func animate(#duration: Double, delay: Double, animations: () -> Void, completion: (Bool -> Void)?) {
+    /// Class level function that executes an animation using a specified block of code.
+    ///
+    /// - parameter duration: The length of time in seconds for the animation to execute.
+    /// - parameter delay: The length of time in seconds to wait before executing the specified block of code.
+    /// - parameter animations: A block of code with specified animations to execute.
+    /// - parameter completion: A block of code to execute when the animation completes.
+    public class func animate(duration duration: Double, delay: Double, animations: () -> Void, completion: (Bool -> Void)?) {
         UIView.animateWithDuration(duration, animations: animations, completion: completion)
     }
     
-    /**
-    Class level function that executes an animation using a specified block of code.
-    
-    :param: duration The length of time in seconds for the animation to execute.
-    :param: delay The length of time in seconds to wait before executing the specified block of code.
-    :param: options Options for animating views using block objects, see: UIViewAnimationOptions.
-    :param: animations A block of code with specified animations to execute.
-    :param: completion A block of code to execute when the animation completes.
-    */
-    public class func animate(#duration: Double, delay: Double, options: UIViewAnimationOptions, animations: () -> Void, completion: (Bool -> Void)?) {
+    /// Class level function that executes an animation using a specified block of code.
+    ///
+    /// - parameter duration: The length of time in seconds for the animation to execute.
+    /// - parameter delay: The length of time in seconds to wait before executing the specified block of code.
+    /// - parameter options: Options for animating views using block objects, see: UIViewAnimationOptions.
+    /// - parameter animations: A block of code with specified animations to execute.
+    /// - parameter completion: A block of code to execute when the animation completes.
+    public class func animate(duration duration: Double, delay: Double, options: UIViewAnimationOptions, animations: () -> Void, completion: (Bool -> Void)?) {
         UIView.animateWithDuration(duration, delay: delay, options: options, animations: animations, completion: completion)
     }
 }

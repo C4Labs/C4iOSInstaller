@@ -24,7 +24,6 @@
 		<string>C4EventSource.swift</string>
 		<string>C4Foundation.swift</string>
 		<string>C4Math.swift</string>
-		<string>C4MediaObject.swift</string>
 		<string>C4Path.swift</string>
 		<string>C4Point.swift</string>
 		<string>C4Rect.swift</string>
@@ -32,7 +31,6 @@
 		<string>C4Transform.swift</string>
 		<string>C4Vector.swift</string>
 		<string>C4Animation.swift</string>
-		<string>C4Animator.swift</string>
 		<string>C4Arc.swift</string>
 		<string>C4AudioPlayer.swift</string>
 		<string>C4CanvasController.swift</string>
@@ -42,10 +40,12 @@
 		<string>C4Filter.swift</string>
 		<string>C4Font.swift</string>
 		<string>C4Generator.swift</string>
+		<string>C4Gradient.swift</string>
+		<string>C4GradientLayer.swift</string>
+		<string>C4Image.swift</string>
 		<string>C4Image+Crop.swift</string>
 		<string>C4Image+Filter.swift</string>
 		<string>C4Image+Generator.swift</string>
-		<string>C4Image.swift</string>
 		<string>C4Line.swift</string>
 		<string>C4Movie.swift</string>
 		<string>C4Polygon.swift</string>
@@ -55,13 +55,16 @@
 		<string>C4Shape+Creation.swift</string>
 		<string>C4Shape.swift</string>
 		<string>C4ShapeLayer.swift</string>
+		<string>C4StoredAnimation.swift</string>
 		<string>C4Star.swift</string>
 		<string>C4TextShape.swift</string>
+		<string>C4Timer.swift</string>
 		<string>C4Triangle.swift</string>
+		<string>C4View.swift</string>
 		<string>C4View+Animation.swift</string>
 		<string>C4View+Border.swift</string>
+		<string>C4View+KeyValues.swift</string>
 		<string>C4View+Shadow.swift</string>
-		<string>C4View.swift</string>
 		<string>C4ViewAnimation.swift</string>
 		<string>C4Wedge.swift</string>
 		<string>Filters</string>
@@ -115,16 +118,6 @@
 						<dict>
 							<key>Path</key>
 							<string>./C4/Core/C4Math.swift</string>
-							<key>Group</key>
-							<array>
-								<string>C4</string>
-								<string>Core</string>
-							</array>
-						</dict>
-						<key>C4MediaObject.swift</key>
-						<dict>
-							<key>Path</key>
-							<string>./C4/Core/C4MediaObject.swift</string>
 							<key>Group</key>
 							<array>
 								<string>C4</string>
@@ -195,16 +188,6 @@
 						<dict>
 							<key>Path</key>
 							<string>./C4/UI/C4Animation.swift</string>
-							<key>Group</key>
-							<array>
-								<string>C4</string>
-								<string>UI</string>
-							</array>
-						</dict>
-						<key>C4Animator.swift</key>
-						<dict>
-							<key>Path</key>
-							<string>./C4/UI/C4Animator.swift</string>
 							<key>Group</key>
 							<array>
 								<string>C4</string>
@@ -295,6 +278,26 @@
 						<dict>
 							<key>Path</key>
 							<string>./C4/UI/C4Generator.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>C4Gradient.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/C4Gradient.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>C4GradientLayer.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/C4GradientLayer.swift</string>
 							<key>Group</key>
 							<array>
 								<string>C4</string>
@@ -411,6 +414,16 @@
 								<string>UI</string>
 							</array>
 						</dict>
+						<key>C4StoredAnimation.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/C4StoredAnimation.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+							</array>
+						</dict>
 						<key>C4Shape.swift</key>
 						<dict>
 							<key>Path</key>
@@ -451,6 +464,16 @@
 								<string>UI</string>
 							</array>
 						</dict>
+						<key>C4Timer.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/C4Timer.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+							</array>
+						</dict>
 						<key>C4Triangle.swift</key>
 						<dict>
 							<key>Path</key>
@@ -475,6 +498,16 @@
 						<dict>
 							<key>Path</key>
 							<string>./C4/UI/C4View+Border.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>C4View+KeyValues.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/C4View+KeyValues.swift</string>
 							<key>Group</key>
 							<array>
 								<string>C4</string>

@@ -19,14 +19,9 @@
 
 import QuartzCore
 
-/// Extension for CAShapeLayer that allows overriding the actions for specific properties.
-public class C4ShapeLayer: CAShapeLayer {
+/// The C4GradientLayer class draws a color gradient over its background color, filling the shape of the layer (including rounded corners)
+public class C4GradientLayer: CAGradientLayer {
     /// A boolean value that, when true, prevents the animation of a shape's properties.
-    ///
-    /// ````
-    /// C4ShapeLayer.disableActions = true
-    /// circle.fillColor = red
-    /// C4ShapeLayer.disableActions = false
     ///
     /// This value can be set globally, after which changes to any shape's properties will be immediate.
     public static var disableActions = true
@@ -41,62 +36,13 @@ public class C4ShapeLayer: CAShapeLayer {
             return nil
         }
         
-        if key == "lineWidth" {
+        if key == "colors" {
             let animation = CABasicAnimation(keyPath: key)
             animation.configureOptions()
-            animation.fromValue = self.lineWidth
-            return animation;
-        }
-        else if key == "strokeEnd" {
-            let animation = CABasicAnimation(keyPath: key)
-            animation.configureOptions()
-            animation.fromValue = self.strokeEnd
-            return animation;
-        }
-        else if key == "strokeStart" {
-            let animation = CABasicAnimation(keyPath: key)
-            animation.configureOptions()
-            animation.fromValue = self.strokeStart
-            return animation;
-        }
-        else if key == "strokeColor" {
-            let animation = CABasicAnimation(keyPath: key)
-            animation.configureOptions()
-            animation.fromValue = self.strokeColor
-            return animation;
-        }
-        else if key == "path" {
-            let animation = CABasicAnimation(keyPath: key)
-            animation.configureOptions()
-            animation.fromValue = self.path
-            return animation;
-        }
-        else if key == "fillColor" {
-            let animation = CABasicAnimation(keyPath: key)
-            animation.configureOptions()
-            animation.fromValue = self.fillColor
-            return animation;
-        } else if key == "lineDashPhase" {
-            let animation = CABasicAnimation(keyPath: key)
-            animation.configureOptions()
-            animation.fromValue = self.lineDashPhase
+            animation.fromValue = self.colors
             return animation;
         }
         
         return super.actionForKey(key)
-    }
-}
-
-extension CABasicAnimation {
-    ///  Configures basic options for a CABasicAnimation.
-    ///
-    ///  The options set in this method are favorable for the inner workings of C4's animation behaviours.
-    public func configureOptions() {
-        if let animation = C4ViewAnimation.currentAnimation {
-            self.autoreverses = animation.autoreverses
-            self.repeatCount = Float(animation.repeatCount)
-        }
-        self.fillMode = kCAFillModeBoth
-        self.removedOnCompletion = false
     }
 }
