@@ -3,15 +3,15 @@
 #  Created by Travis Kirton on 14-06-02.
 
 # sets the version for the current installer
-VERSION="1_0_0"
+VERSION="1_0_2"
 
 # builds the component packages, passing the current version
 sh buildPackageComponents.sh $VERSION 
 
 # defines the names of the component packages, this matches their names defined in the buildPackageComponents.sh script
-TEMPLATES_PKG="INSTALL_TEMPLATES_1_0_0.pkg"
-BASE_PKG="INSTALL_BASE_1_0_0.pkg"
-IOS_PKG="INSTALL_IOS_1_0_0.pkg"
+TEMPLATES_PKG="INSTALL_TEMPLATES_1_0_2.pkg"
+BASE_PKG="INSTALL_BASE_1_0_2.pkg"
+IOS_PKG="INSTALL_IOS_1_0_2.pkg"
 
 #builds the distribution xml
 productbuild --synthesize --package $TEMPLATES_PKG --package $BASE_PKG --package $IOS_PKG distribution.xml
