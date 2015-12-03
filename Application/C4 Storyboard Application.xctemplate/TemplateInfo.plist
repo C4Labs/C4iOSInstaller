@@ -70,6 +70,9 @@
 		<string>Filters</string>
 		<string>UIGestureRecognizer+Closure.swift</string>
 		<string>UIViewController+C4View.swift</string>
+		<string>C4Loop.aif</string>
+		<string>halo.mp4</string>
+		<string>haloGray.mp4</string>
 	</array>
 	<key>Options</key>
 	<array>
@@ -582,6 +585,33 @@
 							<array>
 								<string>C4</string>
 								<string>UI</string>
+							</array>
+						</dict>
+						<key>C4Loop.aif</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4Loop.aif</string>
+							<key>Group</key>
+							<array>
+								<string>Media</string>
+							</array>
+						</dict>
+						<key>halo.mp4</key>
+						<dict>
+							<key>Path</key>
+							<string>./halo.mp4</string>
+							<key>Group</key>
+							<array>
+								<string>Media</string>
+							</array>
+						</dict>
+						<key>haloGray.mp4</key>
+						<dict>
+							<key>Path</key>
+							<string>./haloGray.mp4</string>
+							<key>Group</key>
+							<array>
+								<string>Media</string>
 							</array>
 						</dict>
 					</dict>
