@@ -67,9 +67,21 @@
 		<string>C4View+Shadow.swift</string>
 		<string>C4ViewAnimation.swift</string>
 		<string>C4Wedge.swift</string>
-		<string>Filters</string>
+		<string>C4Bloom.swift</string>
+		<string>C4Checkerboard.swift</string>
+		<string>C4ColorBurn.swift</string>
+		<string>C4DotScreen.swift</string>
+		<string>C4GaussianBlur.swift</string>
+		<string>C4HueAdjust.swift</string>
+		<string>C4LinearGradient.swift</string>
+		<string>C4Sepia.swift</string>
+		<string>C4Sharpen.swift</string>
+		<string>C4Twirl.swift</string>
 		<string>UIGestureRecognizer+Closure.swift</string>
 		<string>UIViewController+C4View.swift</string>
+		<string>halo.mp4</string>
+		<string>haloGray.mp4</string>
+		<string>loop.aif</string>
 	</array>
 	<key>Options</key>
 	<array>
@@ -554,14 +566,114 @@
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>Filters</key>
+						<key>C4Bloom.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/Filters</string>
+							<string>./C4/UI/Filters/C4Bloom.swift</string>
 							<key>Group</key>
 							<array>
 								<string>C4</string>
 								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>C4Checkerboard.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/C4Checkerboard.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>C4ColorBurn.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/C4ColorBurn.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>C4DotScreen.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/C4DotScreen.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>C4GaussianBlur.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/C4GaussianBlur.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>C4HueAdjust.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/C4HueAdjust.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>C4LinearGradient.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/C4LinearGradient.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>C4Sepia.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/C4Sepia.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>C4Sharpen.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/C4Sharpen.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>C4Twirl.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/C4Twirl.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
 							</array>
 						</dict>
 						<key>UIGestureRecognizer+Closure.swift</key>
@@ -582,6 +694,33 @@
 							<array>
 								<string>C4</string>
 								<string>UI</string>
+							</array>
+						</dict>
+						<key>halo.mp4</key>
+						<dict>
+							<key>Path</key>
+							<string>./Media/halo.mp4</string>
+							<key>Group</key>
+							<array>
+								<string>Media</string>
+							</array>
+						</dict>
+						<key>haloGray.mp4</key>
+						<dict>
+							<key>Path</key>
+							<string>./Media/haloGray.mp4</string>
+							<key>Group</key>
+							<array>
+								<string>Media</string>
+							</array>
+						</dict>
+						<key>loop.aif</key>
+						<dict>
+							<key>Path</key>
+							<string>./Media/loop.aif</string>
+							<key>Group</key>
+							<array>
+								<string>Media</string>
 							</array>
 						</dict>
 					</dict>
