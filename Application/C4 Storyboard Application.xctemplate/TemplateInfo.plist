@@ -82,6 +82,12 @@
 		<string>halo.mp4</string>
 		<string>haloGray.mp4</string>
 		<string>loop.aif</string>
+		<string>C4ImageLayer.swift</string>
+		<string>C4Layer.swift</string>
+		<string>C4View+Render.swift</string>
+		<string>Pixel.swift</string>
+		<string>UIImage+Color.swift</string>
+		<string>UIIMage+AddRemove.swift</string>
 	</array>
 	<key>Options</key>
 	<array>
@@ -723,6 +729,66 @@
 								<string>Media</string>
 							</array>
 						</dict>
+						<key>C4ImageLayer.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/C4ImageLayer.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>C4Layer.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/C4Layer.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>C4View+Render.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/C4View+Render.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>Pixel.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Pixel.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>UIImage+Color.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/UIImage+Color.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>UIIMage+AddRemove.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/UIIMage+AddRemove.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+							</array>
+						</dict>
 					</dict>
 					<key>Targets</key>
 					<array>
@@ -737,3 +803,4 @@
 	</array>
 </dict>
 </plist>
+

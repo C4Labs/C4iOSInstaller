@@ -20,8 +20,39 @@
 import Foundation
 import UIKit
 
+///A structure representing the characteristics of spring motion.
+public struct Spring {
+    /// The mass of the object attached to the end of the spring. Must be greater than 0. Defaults to one.
+    public var mass: Double
+    /// The spring stiffness coefficient. Must be greater than 0. Defaults to 100.
+    public var stiffness: Double
+    /// The damping coefficient. Must be greater than or equal to 0. Defaults to 10.
+    public var damping: Double
+    /// The initial velocity of the object attached to the spring.
+    /// Defaults to zero, which represents an unmoving object.
+    /// Negative values represent the object moving away from the spring attachment point,
+    /// positive values represent the object moving towards the spring attachment point.
+    public var initialVelocity: Double
+
+    /// Initializes a new Spring structure
+    /// - parameter mass: The mass for the object
+    /// - parameter stiffness: The stiffness of the spring
+    /// - parameter damping: The damping coefficient used to calculate the motion of the object
+    /// - parameter initialVelocity: The initial velocity for the object
+    public init(mass: Double = 1.0, stiffness: Double = 100.0, damping: Double = 10.0, initialVelocity: Double = 1.0) {
+        self.mass = mass
+        self.stiffness = stiffness
+        self.damping = damping
+        self.initialVelocity = initialVelocity
+    }
+}
+
 /// C4ViewAnimation is a concrete subclass of C4Animation whose execution blocks affect properties of view-based objects.
-public class C4ViewAnimation : C4Animation {
+public class C4ViewAnimation: C4Animation {
+    /// An optional Spring structure.
+    /// If this value is non-nil, property animations will default to CASpringAnimation if they are able.
+    public var spring: Spring?
+
     /// The amount of time to way before executing the animation.
     public var delay: NSTimeInterval = 0
 
@@ -40,7 +71,7 @@ public class C4ViewAnimation : C4Animation {
     }
 
     /// Initializes a new C4ViewAnimation.
-    /// 
+    ///
     /// ````
     /// let v = C4View(frame: C4Rect(0,0,100,100))
     /// canvas.add(v)
@@ -59,60 +90,95 @@ public class C4ViewAnimation : C4Animation {
         self.duration = duration
     }
 
-    /// Initiates the changes specified in the receivers `animations` block.
-    public func animate() {
-        let disable = C4ShapeLayer.disableActions
-        C4ShapeLayer.disableActions = false
-        var timing: CAMediaTimingFunction
-        var options : UIViewAnimationOptions = [UIViewAnimationOptions.BeginFromCurrentState]
-        
+    /// This timingFunction represents one segment of a function that defines the pacing of an animation as a timing curve. The function maps an input time normalized to the range [0,1] to an output time also in the range [0,1].
+    /// Options are `Linear`, `EaseOut`, `EaseIn`, `EaseInOut`
+    public var timingFunction: CAMediaTimingFunction {
+        switch curve {
+        case .Linear:
+            return CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        case .EaseOut:
+            return CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        case .EaseIn:
+            return CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        case .EaseInOut:
+            return CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        }
+    }
+
+    ///Options for animating views using block objects.
+    public var options: UIViewAnimationOptions {
+        var options: UIViewAnimationOptions = [UIViewAnimationOptions.BeginFromCurrentState]
         switch curve {
         case .Linear:
             options = [options, UIViewAnimationOptions.CurveLinear]
-            timing = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         case .EaseOut:
             options = [options, UIViewAnimationOptions.CurveEaseOut]
-            timing = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         case .EaseIn:
             options = [options, UIViewAnimationOptions.CurveEaseIn]
-            timing = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
         case .EaseInOut:
             options = [options, UIViewAnimationOptions.CurveEaseInOut]
-            timing = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         }
-        
+
         if autoreverses == true {
             options.unionInPlace(.Autoreverse)
         } else {
             options.subtractInPlace(.Autoreverse)
         }
 
-        if repeatCount > 0  {
+        if repeatCount > 0 {
             options.unionInPlace(.Repeat)
         } else {
             options.subtractInPlace(.Repeat)
         }
-        
-        UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
-            C4ViewAnimation.stack.append(self)
-            UIView.setAnimationRepeatCount(Float(self.repeatCount))
-            CATransaction.begin()
-            CATransaction.setAnimationDuration(self.duration)
-            CATransaction.setAnimationTimingFunction(timing)
-            CATransaction.setCompletionBlock() {
-                self.postCompletedEvent()
+        return options
+    }
+
+    /// Initiates the changes specified in the receivers `animations` block.
+    public override func animate() {
+        let disable = C4ShapeLayer.disableActions
+        C4ShapeLayer.disableActions = false
+
+        C4.delay(delay) {
+            if let spring = self.spring {
+                self.animateWithSpring(spring)
+            } else {
+                self.animateNormal()
             }
-            self.animations()
-            CATransaction.commit()
-            C4ViewAnimation.stack.removeLast()
-        }, completion:nil)
+        }
+
         C4ShapeLayer.disableActions = disable
+    }
+
+    private func animateWithSpring(spring: Spring) {
+        UIView.animateWithDuration(self.duration, delay: 0, usingSpringWithDamping: CGFloat(spring.damping), initialSpringVelocity: CGFloat(spring.initialVelocity), options: self.options, animations: self.animationBlock, completion:nil)
+    }
+
+    private func animateNormal() {
+        UIView.animateWithDuration(self.duration, delay: 0, options: self.options, animations: self.animationBlock, completion:nil)
+    }
+
+    private func animationBlock() {
+        C4ViewAnimation.stack.append(self)
+        UIView.setAnimationRepeatCount(Float(self.repeatCount))
+        self.doInTransaction(self.animations)
+        C4ViewAnimation.stack.removeLast()
+    }
+
+    private func doInTransaction(action: () -> Void) {
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(duration)
+        CATransaction.setAnimationTimingFunction(timingFunction)
+        CATransaction.setCompletionBlock() {
+            self.postCompletedEvent()
+        }
+        action()
+        CATransaction.commit()
     }
 }
 
 /// A sequence of animations that run one after the other. This class ignores the duration property.
 public class C4ViewAnimationSequence: C4Animation {
-    private var animations: [C4ViewAnimation]
+    private var animations: [C4Animation]
     private var currentAnimationIndex: Int = -1
     private var currentObserver: AnyObject?
 
@@ -132,35 +198,40 @@ public class C4ViewAnimationSequence: C4Animation {
     ///     seq.animate()
     /// }
     /// ````
-    public init(animations: [C4ViewAnimation]) {
+    /// - parameter animations: An array of C4Animations
+    public init(animations: [C4Animation]) {
         self.animations = animations
     }
 
     ///  Calling this method will tell the receiver to begin animating.
-    public func animate() {
+    public override func animate() {
         if currentAnimationIndex != -1 {
             // Animation is already running
             return
         }
-        
         startNext()
     }
-    
+
     private func startNext() {
         if let observer: AnyObject = currentObserver {
             let currentAnimation = animations[currentAnimationIndex]
             currentAnimation.removeCompletionObserver(observer)
             currentObserver = nil
         }
-        
+
         currentAnimationIndex += 1
+        if currentAnimationIndex >= animations.count && self.repeats {
+            // Start from the beginning if sequence repeats
+            currentAnimationIndex = 0
+        }
+
         if currentAnimationIndex >= animations.count {
             // Reached the end
             currentAnimationIndex = -1
             postCompletedEvent()
             return
         }
-        
+
         let animation = animations[currentAnimationIndex]
         currentObserver = animation.addCompletionObserver({
             self.startNext()
@@ -172,12 +243,12 @@ public class C4ViewAnimationSequence: C4Animation {
 /// Groups animations so that they can all be run at the same time. The completion call is dispatched when all the
 /// animations in the group have finished. This class ignores the duration property.
 public class C4ViewAnimationGroup: C4Animation {
-    private var animations: [C4ViewAnimation]
+    private var animations: [C4Animation]
     private var observers: [AnyObject] = []
     private var completed: [Bool]
 
     /// Initializes a set of animations to be executed at the same time.
-    /// 
+    ///
     /// ````
     /// let v = C4View(frame: C4Rect(0,0,100,100))
     /// canvas.add(v)
@@ -192,18 +263,19 @@ public class C4ViewAnimationGroup: C4Animation {
     ///     grp.animate()
     /// }
     /// ````
-    public init(animations: [C4ViewAnimation]) {
+    /// - parameter animations: An array of C4Animations
+    public init(animations: [C4Animation]) {
         self.animations = animations
         completed = [Bool](count: animations.count, repeatedValue: false)
     }
 
     ///  Calling this method will tell the receiver to begin animating.
-    public func animate() {
+    public override func animate() {
         if !observers.isEmpty {
             // Animation is already running
             return
         }
-        
+
         for i in 0..<animations.count {
             let animation = animations[i]
             let observer: AnyObject = animation.addCompletionObserver({
@@ -213,12 +285,11 @@ public class C4ViewAnimationGroup: C4Animation {
             animation.animate()
         }
     }
-    
+
     private func completedAnimation(index: Int) {
         let animation = animations[index]
         animation.removeCompletionObserver(observers[index])
         completed[index] = true
-        
         var allCompleted = true
         for c in completed {
             allCompleted = allCompleted && c
@@ -227,11 +298,10 @@ public class C4ViewAnimationGroup: C4Animation {
             cleanUp()
         }
     }
-    
+
     private func cleanUp() {
         observers.removeAll(keepCapacity: true)
         completed = [Bool](count: animations.count, repeatedValue: false)
         postCompletedEvent()
-        
     }
 }
