@@ -106,7 +106,7 @@
 					<array>
 						<string>WorkSpace.swift:comments</string>
 						<string>WorkSpace.swift:imports:importCocoa</string>
-						<string>WorkSpace.swift:implementation(___FILEBASENAME___: C4CanvasController)</string>
+						<string>WorkSpace.swift:implementation(___FILEBASENAME___: CanvasController)</string>
 						<string>WorkSpace.swift:implementation:methods:setup(override func setup(\))</string>
 						<string>WorkSpace.swift:implementation:methods:setup:body</string>
 					</array>

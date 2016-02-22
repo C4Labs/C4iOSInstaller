@@ -20,57 +20,65 @@
 	<array>
 		<string>Info.plist:UIMainStoryboardFile</string>
 		<string>Base.lproj/Main.storyboard</string>
-		<string>C4Color.swift</string>
-		<string>C4EventSource.swift</string>
-		<string>C4Foundation.swift</string>
-		<string>C4Math.swift</string>
-		<string>C4Path.swift</string>
-		<string>C4Point.swift</string>
-		<string>C4Rect.swift</string>
-		<string>C4Size.swift</string>
-		<string>C4Transform.swift</string>
-		<string>C4Vector.swift</string>
-		<string>C4Animation.swift</string>
-		<string>C4Arc.swift</string>
-		<string>C4AudioPlayer.swift</string>
-		<string>C4CanvasController.swift</string>
-		<string>C4Circle.swift</string>
-		<string>C4Curve.swift</string>
-		<string>C4Ellipse.swift</string>
-		<string>C4Filter.swift</string>
-		<string>C4Font.swift</string>
-		<string>C4Generator.swift</string>
-		<string>C4Gradient.swift</string>
-		<string>C4GradientLayer.swift</string>
-		<string>C4Image.swift</string>
-		<string>C4Image+Crop.swift</string>
-		<string>C4Image+Filter.swift</string>
-		<string>C4Image+Generator.swift</string>
-		<string>C4Line.swift</string>
-		<string>C4Movie.swift</string>
-		<string>C4Polygon.swift</string>
-		<string>C4QuadCurve.swift</string>
-		<string>C4Rectangle.swift</string>
-		<string>C4RegularPolygon.swift</string>
-		<string>C4Shape+Creation.swift</string>
-		<string>C4Shape.swift</string>
-		<string>C4ShapeLayer.swift</string>
-		<string>C4StoredAnimation.swift</string>
-		<string>C4Star.swift</string>
-		<string>C4TextShape.swift</string>
-		<string>C4Timer.swift</string>
-		<string>C4Triangle.swift</string>
-		<string>C4View.swift</string>
-		<string>C4View+Animation.swift</string>
-		<string>C4View+Border.swift</string>
-		<string>C4View+KeyValues.swift</string>
-		<string>C4View+Shadow.swift</string>
-		<string>C4ViewAnimation.swift</string>
-		<string>C4Wedge.swift</string>
+		<string>Color.swift</string>
+		<string>EventSource.swift</string>
+		<string>Foundation.swift</string>
+		<string>Math.swift</string>
+		<string>Path.swift</string>
+		<string>Point.swift</string>
+		<string>Rect.swift</string>
+		<string>Size.swift</string>
+		<string>Transform.swift</string>
+		<string>Vector.swift</string>
+		<string>Animation.swift</string>
+		<string>Arc.swift</string>
+		<string>AudioPlayer.swift</string>
+		<string>CanvasController.swift</string>
+		<string>Circle.swift</string>
+		<string>Curve.swift</string>
+		<string>Ellipse.swift</string>
+		<string>Filter.swift</string>
+		<string>Font.swift</string>
+		<string>Generator.swift</string>
+		<string>Gradient.swift</string>
+		<string>GradientLayer.swift</string>
+		<string>Image.swift</string>
+		<string>Image+Crop.swift</string>
+		<string>Image+Filter.swift</string>
+		<string>Image+Generator.swift</string>
+		<string>ImageLayer.swift</string>
+		<string>Line.swift</string>
+		<string>Layer.swift</string>
+		<string>Movie.swift</string>
+		<string>Pixel.swift</string>
+		<string>PlayerLayer.swift</string>
+		<string>Polygon.swift</string>
+		<string>QuadCurve.swift</string>
+		<string>Rectangle.swift</string>
+		<string>RegularPolygon.swift</string>
+		<string>ScreenRecorder.swift</string>
+		<string>Shape+Creation.swift</string>
+		<string>Shape.swift</string>
+		<string>ShapeLayer.swift</string>
+		<string>StoredAnimation.swift</string>
+		<string>Star.swift</string>
+		<string>TextShape.swift</string>
+		<string>Timer.swift</string>
+		<string>Triangle.swift</string>
+		<string>UIImage+Color.swift</string>
+		<string>UIImage+AddRemove.swift</string>
+		<string>View.swift</string>
+		<string>View+Animation.swift</string>
+		<string>View+Border.swift</string>
+		<string>View+KeyValues.swift</string>
+		<string>View+Render.swift</string>
+		<string>View+Shadow.swift</string>
+		<string>ViewAnimation.swift</string>
+		<string>Wedge.swift</string>
 		<string>Filters</string>
 		<string>UIGestureRecognizer+Closure.swift</string>
 		<string>UIViewController+C4View.swift</string>
-		<string>C4Loop.aif</string>
+		<string>Loop.aif</string>
 		<string>halo.mp4</string>
 		<string>haloGray.mp4</string>
 	</array>
@@ -87,473 +95,553 @@
 					<dict>
 						<key>*:implementation:methods:awakeFromNib:super</key>
 						<string>super.awakeFromNib()</string>
-						<key>C4Color.swift</key>
+						<key>Color.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/Core/C4Color.swift</string>
+							<string>./C4/Core/Color.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>Core</string>
 							</array>
 						</dict>
-						<key>C4EventSource.swift</key>
+						<key>EventSource.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/Core/C4EventSource.swift</string>
+							<string>./C4/Core/EventSource.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>Core</string>
 							</array>
 						</dict>
-						<key>C4Foundation.swift</key>
+						<key>Foundation.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/Core/C4Foundation.swift</string>
+							<string>./C4/Core/Foundation.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>Core</string>
 							</array>
 						</dict>
-						<key>C4Math.swift</key>
+						<key>Math.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/Core/C4Math.swift</string>
+							<string>./C4/Core/Math.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>Core</string>
 							</array>
 						</dict>
-						<key>C4Path.swift</key>
+						<key>Path.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/Core/C4Path.swift</string>
+							<string>./C4/Core/Path.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>Core</string>
 							</array>
 						</dict>
-						<key>C4Point.swift</key>
+						<key>Point.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/Core/C4Point.swift</string>
+							<string>./C4/Core/Point.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>Core</string>
 							</array>
 						</dict>
-						<key>C4Rect.swift</key>
+						<key>Rect.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/Core/C4Rect.swift</string>
+							<string>./C4/Core/Rect.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>Core</string>
 							</array>
 						</dict>
-						<key>C4Size.swift</key>
+						<key>Size.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/Core/C4Size.swift</string>
+							<string>./C4/Core/Size.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>Core</string>
 							</array>
 						</dict>
-						<key>C4Transform.swift</key>
+						<key>Transform.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/Core/C4Transform.swift</string>
+							<string>./C4/Core/Transform.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>Core</string>
 							</array>
 						</dict>
-						<key>C4Vector.swift</key>
+						<key>Vector.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/Core/C4Vector.swift</string>
+							<string>./C4/Core/Vector.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>Core</string>
 							</array>
 						</dict>
-						<key>C4Animation.swift</key>
+						<key>Animation.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Animation.swift</string>
+							<string>./C4/UI/Animation.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Arc.swift</key>
+						<key>Arc.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Arc.swift</string>
+							<string>./C4/UI/Arc.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4AudioPlayer.swift</key>
+						<key>AudioPlayer.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4AudioPlayer.swift</string>
+							<string>./C4/UI/AudioPlayer.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4CanvasController.swift</key>
+						<key>CanvasController.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4CanvasController.swift</string>
+							<string>./C4/UI/CanvasController.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Circle.swift</key>
+						<key>Circle.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Circle.swift</string>
+							<string>./C4/UI/Circle.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Curve.swift</key>
+						<key>Curve.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Curve.swift</string>
+							<string>./C4/UI/Curve.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Ellipse.swift</key>
+						<key>Ellipse.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Ellipse.swift</string>
+							<string>./C4/UI/Ellipse.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Filter.swift</key>
+						<key>Filter.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Filter.swift</string>
+							<string>./C4/UI/Filter.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Font.swift</key>
+						<key>Font.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Font.swift</string>
+							<string>./C4/UI/Font.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Generator.swift</key>
+						<key>Generator.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Generator.swift</string>
+							<string>./C4/UI/Generator.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Gradient.swift</key>
+						<key>Gradient.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Gradient.swift</string>
+							<string>./C4/UI/Gradient.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4GradientLayer.swift</key>
+						<key>GradientLayer.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4GradientLayer.swift</string>
+							<string>./C4/UI/GradientLayer.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Image+Crop.swift</key>
+						<key>Image+Crop.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Image+Crop.swift</string>
+							<string>./C4/UI/Image+Crop.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Image+Filter.swift</key>
+						<key>Image+Filter.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Image+Filter.swift</string>
+							<string>./C4/UI/Image+Filter.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Image+Generator.swift</key>
+						<key>Image+Generator.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Image+Generator.swift</string>
+							<string>./C4/UI/Image+Generator.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Image.swift</key>
+						<key>Image.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Image.swift</string>
+							<string>./C4/UI/Image.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Line.swift</key>
+						<key>ImageLayer.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Line.swift</string>
+							<string>./C4/UI/ImageLayer.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Movie.swift</key>
+						<key>Layer.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Movie.swift</string>
+							<string>./C4/UI/Layer.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Polygon.swift</key>
+						<key>Line.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Polygon.swift</string>
+							<string>./C4/UI/Line.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4QuadCurve.swift</key>
+						<key>Movie.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4QuadCurve.swift</string>
+							<string>./C4/UI/Movie.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Rectangle.swift</key>
+						<key>Pixel.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Rectangle.swift</string>
+							<string>./C4/UI/Pixel.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4RegularPolygon.swift</key>
+						<key>PlayerLayer.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4RegularPolygon.swift</string>
+							<string>./C4/UI/PlayerLayer.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Shape+Creation.swift</key>
+						<key>Polygon.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Shape+Creation.swift</string>
+							<string>./C4/UI/Polygon.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4StoredAnimation.swift</key>
+						<key>QuadCurve.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4StoredAnimation.swift</string>
+							<string>./C4/UI/QuadCurve.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Shape.swift</key>
+						<key>Rectangle.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Shape.swift</string>
+							<string>./C4/UI/Rectangle.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4ShapeLayer.swift</key>
+						<key>RegularPolygon.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4ShapeLayer.swift</string>
+							<string>./C4/UI/RegularPolygon.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Star.swift</key>
+						<key>ScreenRecorder.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Star.swift</string>
+							<string>./C4/UI/ScreenRecorder.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
+								<string>UI</string>
+							</array>
+						</dict>						
+						<key>Shape+Creation.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Shape+Creation.swift</string>
+							<key>Group</key>
+							<array>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4TextShape.swift</key>
+						<key>StoredAnimation.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4TextShape.swift</string>
+							<string>./C4/UI/StoredAnimation.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Timer.swift</key>
+						<key>Shape.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Timer.swift</string>
+							<string>./C4/UI/Shape.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Triangle.swift</key>
+						<key>ShapeLayer.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Triangle.swift</string>
+							<string>./C4/UI/ShapeLayer.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4View+Animation.swift</key>
+						<key>Star.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4View+Animation.swift</string>
+							<string>./C4/UI/Star.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4View+Border.swift</key>
+						<key>TextShape.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4View+Border.swift</string>
+							<string>./C4/UI/TextShape.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4View+KeyValues.swift</key>
+						<key>Timer.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4View+KeyValues.swift</string>
+							<string>./C4/UI/Timer.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4View+Shadow.swift</key>
+						<key>Triangle.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4View+Shadow.swift</string>
+							<string>./C4/UI/Triangle.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4View.swift</key>
+						<key>View+Animation.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4View.swift</string>
+							<string>./C4/UI/View+Animation.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4ViewAnimation.swift</key>
+						<key>UIImage+Color.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4ViewAnimation.swift</string>
+							<string>./C4/UI/UIImage+Color.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Wedge.swift</key>
+						<key>UIImage+AddRemove.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/C4Wedge.swift</string>
+							<string>./C4/UI/UIImage+AddRemove.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>View+Border.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/View+Border.swift</string>
+							<key>Group</key>
+							<array>
+								<string></string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>View+KeyValues.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/View+KeyValues.swift</string>
+							<key>Group</key>
+							<array>
+								<string></string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>View+Render.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/View+Render.swift</string>
+							<key>Group</key>
+							<array>
+								<string></string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>View+Shadow.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/View+Shadow.swift</string>
+							<key>Group</key>
+							<array>
+								<string></string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>View.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/View.swift</string>
+							<key>Group</key>
+							<array>
+								<string></string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>ViewAnimation.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/ViewAnimation.swift</string>
+							<key>Group</key>
+							<array>
+								<string></string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>Wedge.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Wedge.swift</string>
+							<key>Group</key>
+							<array>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -563,7 +651,7 @@
 							<string>./C4/UI/Filters</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -573,7 +661,7 @@
 							<string>./C4/UI/UIGestureRecognizer+Closure.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -583,11 +671,11 @@
 							<string>./C4/UI/UIViewController+C4View.swift</string>
 							<key>Group</key>
 							<array>
-								<string>C4</string>
+								<string></string>
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>C4Loop.aif</key>
+						<key>Loop.aif</key>
 						<dict>
 							<key>Path</key>
 							<string>./C4Loop.aif</string>
