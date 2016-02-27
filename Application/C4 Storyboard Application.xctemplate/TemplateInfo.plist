@@ -75,12 +75,22 @@
 		<string>View+Shadow.swift</string>
 		<string>ViewAnimation.swift</string>
 		<string>Wedge.swift</string>
-		<string>Filters</string>
 		<string>UIGestureRecognizer+Closure.swift</string>
 		<string>UIViewController+C4View.swift</string>
+		<string>UIView+AddRemove.swift</string>
 		<string>Loop.aif</string>
 		<string>halo.mp4</string>
 		<string>haloGray.mp4</string>
+		<string>Bloom.swift</string>
+		<string>Checkerboard.swift</string>
+		<string>ColorBurn.swift</string>
+		<string>DotScreen.swift</string>
+		<string>GaussianBlur.swift</string>
+		<string>HueAdjust.swift</string>
+		<string>LinearGradient.swift</string>
+		<string>Sepia.swift</string>
+		<string>Sharpen.swift</string>
+		<string>Twirl.swift</string>
 	</array>
 	<key>Options</key>
 	<array>
@@ -645,14 +655,114 @@
 								<string>UI</string>
 							</array>
 						</dict>
-						<key>Filters</key>
+						<key>Bloom.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>./C4/UI/Filters</string>
+							<string>./C4/UI/Filters/Bloom.swift</string>
 							<key>Group</key>
 							<array>
 								<string>C4</string>
 								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>Checkerboard.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/Checkerboard.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>ColorBurn.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/ColorBurn.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>DotScreen.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/DotScreen.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>GaussianBlur.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/GaussianBlur.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>HueAdjust.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/HueAdjust.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>LinearGradient.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/LinearGradient.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>Sepia.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/Sepia.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>Sharpen.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/Sharpen.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
+							</array>
+						</dict>
+						<key>Twirl.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/Filters/Twirl.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+								<string>Filters</string>
 							</array>
 						</dict>
 						<key>UIGestureRecognizer+Closure.swift</key>
@@ -669,6 +779,16 @@
 						<dict>
 							<key>Path</key>
 							<string>./C4/UI/UIViewController+C4View.swift</string>
+							<key>Group</key>
+							<array>
+								<string>C4</string>
+								<string>UI</string>
+							</array>
+						</dict>
+						<key>UIView+AddRemove.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>./C4/UI/UIView+AddRemove.swift</string>
 							<key>Group</key>
 							<array>
 								<string>C4</string>
