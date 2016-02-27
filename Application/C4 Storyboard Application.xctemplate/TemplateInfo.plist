@@ -101,7 +101,7 @@
 							<string>./C4/Core/Color.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>Core</string>
 							</array>
 						</dict>
@@ -111,7 +111,7 @@
 							<string>./C4/Core/EventSource.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>Core</string>
 							</array>
 						</dict>
@@ -121,7 +121,7 @@
 							<string>./C4/Core/Foundation.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>Core</string>
 							</array>
 						</dict>
@@ -131,7 +131,7 @@
 							<string>./C4/Core/Math.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>Core</string>
 							</array>
 						</dict>
@@ -141,7 +141,7 @@
 							<string>./C4/Core/Path.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>Core</string>
 							</array>
 						</dict>
@@ -151,7 +151,7 @@
 							<string>./C4/Core/Point.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>Core</string>
 							</array>
 						</dict>
@@ -161,7 +161,7 @@
 							<string>./C4/Core/Rect.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>Core</string>
 							</array>
 						</dict>
@@ -171,7 +171,7 @@
 							<string>./C4/Core/Size.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>Core</string>
 							</array>
 						</dict>
@@ -181,7 +181,7 @@
 							<string>./C4/Core/Transform.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>Core</string>
 							</array>
 						</dict>
@@ -191,7 +191,7 @@
 							<string>./C4/Core/Vector.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>Core</string>
 							</array>
 						</dict>
@@ -201,7 +201,7 @@
 							<string>./C4/UI/Animation.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -211,7 +211,7 @@
 							<string>./C4/UI/Arc.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -221,7 +221,7 @@
 							<string>./C4/UI/AudioPlayer.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -231,7 +231,7 @@
 							<string>./C4/UI/CanvasController.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -241,7 +241,7 @@
 							<string>./C4/UI/Circle.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -251,7 +251,7 @@
 							<string>./C4/UI/Curve.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -261,7 +261,7 @@
 							<string>./C4/UI/Ellipse.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -271,7 +271,7 @@
 							<string>./C4/UI/Filter.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -281,7 +281,7 @@
 							<string>./C4/UI/Font.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -291,7 +291,7 @@
 							<string>./C4/UI/Generator.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -301,7 +301,7 @@
 							<string>./C4/UI/Gradient.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -311,7 +311,7 @@
 							<string>./C4/UI/GradientLayer.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -321,7 +321,7 @@
 							<string>./C4/UI/Image+Crop.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -331,7 +331,7 @@
 							<string>./C4/UI/Image+Filter.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -341,7 +341,7 @@
 							<string>./C4/UI/Image+Generator.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -351,7 +351,7 @@
 							<string>./C4/UI/Image.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -361,7 +361,7 @@
 							<string>./C4/UI/ImageLayer.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -371,7 +371,7 @@
 							<string>./C4/UI/Layer.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -381,7 +381,7 @@
 							<string>./C4/UI/Line.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -391,7 +391,7 @@
 							<string>./C4/UI/Movie.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -401,7 +401,7 @@
 							<string>./C4/UI/Pixel.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -411,7 +411,7 @@
 							<string>./C4/UI/PlayerLayer.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -421,7 +421,7 @@
 							<string>./C4/UI/Polygon.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -431,7 +431,7 @@
 							<string>./C4/UI/QuadCurve.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -441,7 +441,7 @@
 							<string>./C4/UI/Rectangle.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -451,7 +451,7 @@
 							<string>./C4/UI/RegularPolygon.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -461,7 +461,7 @@
 							<string>./C4/UI/ScreenRecorder.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>						
@@ -471,7 +471,7 @@
 							<string>./C4/UI/Shape+Creation.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -481,7 +481,7 @@
 							<string>./C4/UI/StoredAnimation.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -491,7 +491,7 @@
 							<string>./C4/UI/Shape.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -501,7 +501,7 @@
 							<string>./C4/UI/ShapeLayer.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -511,7 +511,7 @@
 							<string>./C4/UI/Star.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -521,7 +521,7 @@
 							<string>./C4/UI/TextShape.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -531,7 +531,7 @@
 							<string>./C4/UI/Timer.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -541,7 +541,7 @@
 							<string>./C4/UI/Triangle.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -551,7 +551,7 @@
 							<string>./C4/UI/View+Animation.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -561,7 +561,7 @@
 							<string>./C4/UI/UIImage+Color.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -571,7 +571,7 @@
 							<string>./C4/UI/UIImage+AddRemove.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -581,7 +581,7 @@
 							<string>./C4/UI/View+Border.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -591,7 +591,7 @@
 							<string>./C4/UI/View+KeyValues.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -601,7 +601,7 @@
 							<string>./C4/UI/View+Render.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -611,7 +611,7 @@
 							<string>./C4/UI/View+Shadow.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -621,7 +621,7 @@
 							<string>./C4/UI/View.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -631,7 +631,7 @@
 							<string>./C4/UI/ViewAnimation.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -641,7 +641,7 @@
 							<string>./C4/UI/Wedge.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -651,7 +651,7 @@
 							<string>./C4/UI/Filters</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -661,7 +661,7 @@
 							<string>./C4/UI/UIGestureRecognizer+Closure.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>
@@ -671,7 +671,7 @@
 							<string>./C4/UI/UIViewController+C4View.swift</string>
 							<key>Group</key>
 							<array>
-								<string></string>
+								<string>C4</string>
 								<string>UI</string>
 							</array>
 						</dict>

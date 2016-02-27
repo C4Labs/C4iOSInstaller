@@ -30,6 +30,13 @@ public class Shape: View {
         override class func layerClass() -> AnyClass {
             return ShapeLayer.self
         }
+
+        override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+            if CGPathContainsPoint(shapeLayer.path, nil, point, shapeLayer.fillRule == kCAFillRuleNonZero ? false : true) {
+                return self
+            }
+            return nil
+        }
     }
 
     /// C4Shape's contents are drawn on a ShapeLayer.
@@ -99,21 +106,24 @@ public class Shape: View {
     ///An optional variable representing a gradient. If this is non-nil, then the shape will appear to be filled with a gradient.
     public var gradientFill: Gradient? {
         didSet {
-            if let fill = gradientFill {
-                if mask == nil {
-                    let m = Shape(self)
-                    m.fillColor = black
-                    m.strokeColor = black
-                    mask = m
-                }
-                fillColor = nil
-                shapeLayer.contents = fill.render()?.cgimage
-            } else {
-                let image = UIImage.createWithColor(UIColor.clearColor(), size: CGSize(width: 1, height: 1)).CGImage
-                shapeLayer.contents = image
+            guard gradientFill != nil else {
+                fillColor = clear
                 return
             }
+            let gim = gradientFill?.render()?.cgimage
 
+            //inverts coordinate for graphics context rendering
+            var b = bounds
+            b.origin.y = self.height - b.origin.y
+
+            UIGraphicsBeginImageContextWithOptions(CGSize(b.size), false, UIScreen.mainScreen().scale)
+            let context = UIGraphicsGetCurrentContext()
+
+            CGContextDrawTiledImage(context, CGRect(b), gim)
+            let uiimage = UIGraphicsGetImageFromCurrentImageContext()
+            let uicolor = UIColor(patternImage: uiimage)
+            fillColor = Color(uicolor)
+            UIGraphicsEndImageContext()
         }
     }
 
@@ -179,9 +189,6 @@ public class Shape: View {
         }
         set(color) {
             shapeLayer.fillColor = color?.CGColor
-            if color != nil {
-                gradientFill = nil
-            }
         }
     }
 
@@ -349,5 +356,12 @@ public class Shape: View {
 
         /// Specifies a square line cap style for endpoints for an open path when stroked.
         case Square
+    }
+
+    public override func hitTest(point: Point) -> Bool {
+        if let p = path {
+            return p.containsPoint(point)
+        }
+        return false
     }
 }
