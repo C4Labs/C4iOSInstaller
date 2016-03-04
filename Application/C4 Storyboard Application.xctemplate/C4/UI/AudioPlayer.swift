@@ -40,24 +40,39 @@ import AVFoundation
 public class AudioPlayer: NSObject, AVAudioPlayerDelegate {
     internal var player: AVAudioPlayer!
 
+    var filename: String!
+
     /// Initializes a new audio player from a given file name
     /// ````
     /// let ap = AudioPlayer("audioTrackFileName")
     /// ````
     public init?(_ name: String) {
-        self.player = nil
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("Couldn't set up AVAudioSession")
+        }
+
         super.init()
 
         guard let url = NSBundle.mainBundle().URLForResource(name, withExtension:nil) else {
+            print("Could not retrieve url for \(name)")
             return nil
         }
 
         guard let player = try? AVAudioPlayer(contentsOfURL: url) else {
+            print("Could not create player from contents of : \(url)")
             return nil
         }
 
         self.player = player
         player.delegate = self
+        self.filename = name
+    }
+
+    public convenience init?(copy original: AudioPlayer) {
+        self.init(original.filename)
     }
 
     /// Plays a sound asynchronously.

@@ -40,21 +40,22 @@ public class Star: Polygon {
     /// - parameter outerRadius: The radial distance from the center of the start to the outer points
     convenience public init(center: Point, pointCount: Int, innerRadius: Double, outerRadius: Double) {
         let wedgeAngle = 2.0 * M_PI / Double(pointCount)
-        var angle = M_PI_2
+        var angle = M_PI/Double(pointCount)-M_PI_2
 
         var pointArray = [Point]()
 
         for i in 0..<pointCount * 2 {
             angle += wedgeAngle / 2.0
             if i % 2 != 0 {
-                pointArray.append(Point(center.x + innerRadius * cos(angle), center.y + innerRadius * sin(angle)))
+                pointArray.append(Point(innerRadius * cos(angle), innerRadius * sin(angle)))
             } else {
-                pointArray.append(Point(center.x + outerRadius * cos(angle), center.y + outerRadius * sin(angle)))
+                pointArray.append(Point(outerRadius * cos(angle), outerRadius * sin(angle)))
             }
         }
 
         self.init(pointArray)
         self.close()
         self.fillColor = C4Blue
+        self.center = center
     }
 }
