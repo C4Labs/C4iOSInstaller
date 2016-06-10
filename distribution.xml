@@ -15,15 +15,15 @@
   <choice id="com.c4ios.installer.templates" visible="false">
     <pkg-ref id="com.c4ios.installer.templates"/>
   </choice>
-  <pkg-ref id="com.c4ios.installer.templates" version="1_1_0" onConclusion="none">INSTALL_TEMPLATES_1_1_0.pkg</pkg-ref>
+  <pkg-ref id="com.c4ios.installer.templates" version="1_1_1" onConclusion="none">INSTALL_TEMPLATES_1_1_1.pkg</pkg-ref>
   <choice id="com.c4ios.installer.base" visible="false">
     <pkg-ref id="com.c4ios.installer.base"/>
   </choice>
-  <pkg-ref id="com.c4ios.installer.base" version="1_1_0" onConclusion="none">INSTALL_BASE_1_1_0.pkg</pkg-ref>
+  <pkg-ref id="com.c4ios.installer.base" version="1_1_1" onConclusion="none">INSTALL_BASE_1_1_1.pkg</pkg-ref>
   <choice id="com.c4ios.installer.iOS" visible="false">
     <pkg-ref id="com.c4ios.installer.iOS"/>
   </choice>
-  <pkg-ref id="com.c4ios.installer.iOS" version="1_1_0" onConclusion="none">INSTALL_IOS_1_1_0.pkg</pkg-ref>
+  <pkg-ref id="com.c4ios.installer.iOS" version="1_1_1" onConclusion="none">INSTALL_IOS_1_1_1.pkg</pkg-ref>
   <title>C4 Xcode Templates</title>
   <background file="C4InstallerBackground@2x.tif" mime-type="image/png"/>
   <welcome file="welcome.rtf" mime-type="text/rtf"/>
