@@ -34,14 +34,14 @@ public struct GaussianBlur: Filter {
     public var radius: Double
 
     ///  Initializes a new filter
-    ///  - parameter radius: a Double value
+    /// - parameter radius: a Double value
     public init(radius: Double = 5.0) { self.radius = radius }
 
     /// Applies the properties of the receiver to create a new CIFilter object
     ///
     /// - parameter inputImage: The image to use as input to the filter.
     /// - returns: The new CIFilter object.
-    public func createCoreImageFilter(inputImage: CIImage) -> CIFilter {
+    public func createCoreImageFilter(_ inputImage: CIImage) -> CIFilter {
         let filter = CIFilter(name: filterName)!
         filter.setDefaults()
         filter.setValue(radius, forKey:"inputRadius")

@@ -29,7 +29,7 @@ public final class Timer: NSObject {
     public internal(set) var interval: Double
     var action: () -> ()
     /// The timer that the receiver manages
-    weak var timer: NSTimer?
+    weak var timer: Foundation.Timer?
 
     ///  Initializes a new timer.
     ///
@@ -38,10 +38,10 @@ public final class Timer: NSObject {
     ///      print("tick")
     ///  }
     ///  ````
-    ///  - parameter interval: the time between firing
-    ///  - parameter count:    the total number of times the timer should fire, defaults to Int.max
-    ///  - parameter action:   a block of code to execute
-    public init(interval: Double, count: Int = Int.max, action: () -> ()) {
+    /// - parameter interval: the time between firing
+    /// - parameter count:    the total number of times the timer should fire, defaults to Int.max
+    /// - parameter action:   a block of code to execute
+    public init(interval: Double, count: Int = Int.max, action: @escaping () -> ()) {
         self.action = action
         self.count = count
         self.interval = interval
@@ -51,7 +51,7 @@ public final class Timer: NSObject {
     ///  Tells the timer to fire, i.e. execute its block of code.
     public func fire() {
         action()
-        step++
+        step += 1
         if step >= count {
             stop()
         }
@@ -63,8 +63,8 @@ public final class Timer: NSObject {
             return // Timer already running
         }
 
-        let t = NSTimer(timeInterval: NSTimeInterval(interval), target: self, selector: "fire", userInfo: nil, repeats: true)
-        NSRunLoop.mainRunLoop().addTimer(t, forMode: NSDefaultRunLoopMode)
+        let t = Foundation.Timer(timeInterval: TimeInterval(interval), target: self, selector: #selector(Timer.fire), userInfo: nil, repeats: true)
+        RunLoop.main.add(t, forMode: RunLoopMode.defaultRunLoopMode)
         timer = t
     }
 

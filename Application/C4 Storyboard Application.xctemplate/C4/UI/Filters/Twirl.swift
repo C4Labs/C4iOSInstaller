@@ -31,7 +31,7 @@ public struct Twirl: Filter {
     public let filterName = "CITwirlDistortion"
     /// The center of the twirl effet. Defaults to {0,0}
     public var center: Point = Point()
-    /// The radius of the twirl effect. Defaults to 100.o
+    /// The radius of the twirl effect. Defaults to 100.0
     public var radius: Double = 100.0
     /// The angle of the twirl effect. Defaults to 𝞹
     public var angle: Double = M_PI
@@ -43,12 +43,14 @@ public struct Twirl: Filter {
     ///
     /// - parameter inputImage: The image to use as input to the filter.
     /// - returns: The new CIFilter object.
-    public func createCoreImageFilter(inputImage: CIImage) -> CIFilter {
+    public func createCoreImageFilter(_ inputImage: CIImage) -> CIFilter {
         let filter = CIFilter(name: filterName)!
         filter.setDefaults()
         filter.setValue(radius, forKey:"inputRadius")
         filter.setValue(angle, forKey:"inputAngle")
-        filter.setValue(CIVector(CGPoint: CGPoint(center)), forKey:"inputCenter")
+        let filterSize = inputImage.extent.size
+        let vector = CIVector(x: CGFloat(center.x) * filterSize.width, y: CGFloat(1.0 - center.y) * filterSize.height)
+        filter.setValue(vector, forKey:"inputCenter")
         filter.setValue(inputImage, forKey: "inputImage")
         return filter
     }

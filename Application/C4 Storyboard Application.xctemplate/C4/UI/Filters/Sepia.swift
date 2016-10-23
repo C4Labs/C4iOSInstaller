@@ -37,14 +37,14 @@ public struct Sepia: Filter {
 
     ///  Initializes a new filter, with a specified intensity.
     ///
-    ///  - parameter intensity: a Double value
+    /// - parameter intensity: a Double value
     public init(intensity: Double) { self.intensity = intensity }
 
     /// Applies the properties of the receiver to create a new CIFilter object
     ///
     /// - parameter inputImage: The image to use as input to the filter.
     /// - returns: The new CIFilter object.
-    public func createCoreImageFilter(inputImage: CIImage) -> CIFilter {
+    public func createCoreImageFilter(_ inputImage: CIImage) -> CIFilter {
         let filter = CIFilter(name: filterName)!
         filter.setDefaults()
         filter.setValue(intensity, forKey:"inputIntensity")

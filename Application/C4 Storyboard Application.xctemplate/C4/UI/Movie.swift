@@ -36,6 +36,21 @@ public class Movie: View {
     /// The default value of this property is `true`.
     public var loops: Bool = true
 
+    /// Mute/Unmute the audio track.
+    ///
+    /// The default value of this property is `false`.
+    public var muted: Bool {
+        get {
+            guard let p = player else {
+                return false
+            }
+            return p.isMuted
+        }
+        set {
+            player?.isMuted = newValue
+        }
+    }
+
     /// A variable that provides access to the width of the receiver. Animatable.
     /// The default value of this property is defined by the movie being created.
     /// Assigning a value to this property causes the receiver to change the width of its frame. If the receiver's
@@ -88,21 +103,6 @@ public class Movie: View {
         }
     }
 
-    /// Mute/Unmute the audio track.
-    ///
-    /// The default value of this property is `false`.
-    public var muted: Bool {
-        get {
-            guard let p = player else {
-                return false
-            }
-            return p.muted
-        }
-        set {
-            player?.muted = newValue
-        }
-    }
-
     var movieLayer: PlayerLayer {
         get {
             return self.movieView.movieLayer
@@ -113,12 +113,16 @@ public class Movie: View {
         return self.view as! MovieView // swiftlint:disable:this force_cast
     }
 
+    public var playing: Bool {
+        return player?.rate != 0.0
+    }
+
     class MovieView: UIView {
         var movieLayer: PlayerLayer {
             return self.layer as! PlayerLayer // swiftlint:disable:this force_cast
         }
 
-        override class func layerClass() -> AnyClass {
+        override class var layerClass: AnyClass {
             return PlayerLayer.self
         }
     }
@@ -127,7 +131,7 @@ public class Movie: View {
     /// - returns: A Double value representing the cumulative rotation of the view, measured in Radians.
     public override var rotation: Double {
         get {
-            if let number = movieLayer.valueForKeyPath(Layer.rotationKey) as? NSNumber {
+            if let number = movieLayer.value(forKeyPath: Layer.rotationKey) as? NSNumber {
                 return number.doubleValue
             }
             return  0.0
@@ -148,28 +152,26 @@ public class Movie: View {
             print("Couldn't set up AVAudioSession")
         }
 
-        guard let url = NSBundle.mainBundle().URLForResource(filename, withExtension: nil) else {
+        guard let url = Bundle.main.url(forResource: filename, withExtension: nil) else {
             print("Couldn't retrieve url for: \(filename)")
             return nil
         }
 
-        let asset = AVAsset(URL: url)
-        let tracks = asset.tracksWithMediaType(AVMediaTypeVideo)
+        let asset = AVAsset(url: url)
+        let tracks = asset.tracks(withMediaType: AVMediaTypeVideo)
 
-        //grab the movie track and size
         let movieTrack = tracks[0]
-        let size = Size(movieTrack.naturalSize)
-
-        self.init(frame: Rect(0, 0, Double(size.width), Double(size.height)))
+        self.init(frame: Rect(0, 0, Double(movieTrack.naturalSize.width), Double(movieTrack.naturalSize.height)))
         self.filename = filename
+
         //initialize player with item
         let newPlayer = AVQueuePlayer(playerItem: AVPlayerItem(asset: asset))
-        newPlayer.actionAtItemEnd = .Pause
+        newPlayer.actionAtItemEnd = .pause
         currentItem = newPlayer.currentItem
         player = newPlayer
 
         //runs an overrideable method for handling the end of the movie
-        on(event: AVPlayerItemDidPlayToEndTimeNotification) {
+        on(event: NSNotification.Name.AVPlayerItemDidPlayToEndTime.rawValue) {
             self.handleReachedEnd()
         }
 
@@ -178,6 +180,9 @@ public class Movie: View {
         movieLayer.videoGravity = AVLayerVideoGravityResize
 
         originalSize = self.size
+
+        // unmute
+        muted = false
     }
 
     /// Initializes a new Movie using the specified frame.
@@ -224,14 +229,14 @@ public class Movie: View {
             print("The current movie's player is not properly initialized")
             return
         }
-        p.seekToTime(CMTimeMake(0, 1))
+        p.seek(to: CMTimeMake(0, 1))
         p.pause()
     }
 
     /// The action to perform at the end of playback.
     ///
     /// - parameter action: A block of code to execute at the end of playback.
-    public func reachedEnd(action: ()->()) {
+    public func reachedEnd(_ action: (()->())?) {
         reachedEndAction = action
     }
 

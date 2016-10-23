@@ -85,30 +85,31 @@ public class TextShape: Shape {
         adjustToFitPath()
     }
 
-    internal class func createTextPath(text text: String, font: Font) -> Path? {
-        let ctfont = font.CTFont as CTFont?
+    internal class func createTextPath(text: String, font: Font) -> Path? {
+        let ctfont = font.ctFont as CTFont?
         if ctfont == nil {
             return nil
         }
 
         var unichars = [UniChar](text.utf16)
-        var glyphs = [CGGlyph](count: unichars.count, repeatedValue: 0)
+        var glyphs = [CGGlyph](repeating: 0, count: unichars.count)
         if !CTFontGetGlyphsForCharacters(ctfont!, &unichars, &glyphs, unichars.count) {
             // Failed to encode characters into glyphs
             return nil
         }
 
-        var advances = [CGSize](count: glyphs.count, repeatedValue: CGSize())
-        CTFontGetAdvancesForGlyphs(ctfont!, .Default, &glyphs, &advances, glyphs.count)
-        let textPath = CGPathCreateMutable()
-        var invert = CGAffineTransformMakeScale(1, -1)
+        var advances = [CGSize](repeating: CGSize(), count: glyphs.count)
+        CTFontGetAdvancesForGlyphs(ctfont!, .default, &glyphs, &advances, glyphs.count)
+        let textPath = CGMutablePath()
+        var invert = CGAffineTransform(scaleX: 1, y: -1)
         var origin = CGPoint()
-        for i in 0..<glyphs.count {
-            let glyphPath = CTFontCreatePathForGlyph(ctfont!, glyphs[i], &invert)
-            var translation = CGAffineTransformMakeTranslation(origin.x, origin.y)
-            CGPathAddPath(textPath, &translation, glyphPath)
-            origin.x += CGFloat(advances[i].width)
-            origin.y += CGFloat(advances[i].height)
+        for (advance, glyph) in zip(advances, glyphs) {
+            if let glyphPath = CTFontCreatePathForGlyph(ctfont!, glyph, &invert) {
+                let translation = CGAffineTransform(translationX: origin.x, y: origin.y)
+                textPath.addPath(glyphPath, transform: translation)
+            }
+            origin.x += CGFloat(advance.width)
+            origin.y += CGFloat(advance.height)
         }
         return Path(path: textPath)
     }

@@ -27,19 +27,25 @@ public class Shape: View {
             return self.layer as! ShapeLayer // swiftlint:disable:this force_cast
         }
 
-        override class func layerClass() -> AnyClass {
+        override class var layerClass: AnyClass {
             return ShapeLayer.self
         }
 
-        override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-            if CGPathContainsPoint(shapeLayer.path, nil, point, shapeLayer.fillRule == kCAFillRuleNonZero ? false : true) {
+        override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+            guard let path = shapeLayer.path else {
+                return nil
+            }
+
+            let fillRule = shapeLayer.fillRule == kCAFillRuleNonZero ? CGPathFillRule.evenOdd : CGPathFillRule.winding
+
+            if path.contains(point, using: fillRule, transform: CGAffineTransform.identity) {
                 return self
             }
             return nil
         }
     }
 
-    /// C4Shape's contents are drawn on a ShapeLayer.
+    /// Shape's contents are drawn on a ShapeLayer.
     public var shapeLayer: ShapeLayer {
         get {
             return self.shapeView.shapeLayer
@@ -60,7 +66,7 @@ public class Shape: View {
         lineCap = .Round
         lineJoin = .Round
 
-        let image = UIImage.createWithColor(UIColor.clearColor(), size: CGSize(width: 1, height: 1)).CGImage
+        let image = UIImage.createWithColor(UIColor.clear, size: CGSize(width: 1, height: 1)).cgImage
         shapeLayer.contents = image
     }
 
@@ -86,7 +92,7 @@ public class Shape: View {
         lineCap = .Round
         lineJoin = .Round
 
-        let image = UIImage.createWithColor(UIColor.clearColor(), size: CGSize(width: 1, height: 1)).CGImage
+        let image = UIImage.createWithColor(UIColor.clear, size: CGSize(width: 1, height: 1)).cgImage
         shapeLayer.contents = image
     }
 
@@ -94,11 +100,11 @@ public class Shape: View {
     /// - parameter shape: A Shape around which the new shape is created.
     public convenience init(copy original: Shape) {
         //If there is a scale transform we need to undo that
-        let t = CGAffineTransformInvert(original.view.transform)
+        let t = original.view.transform.inverted()
         let x = sqrt(t.a * t.a + t.c * t.c)
         let y = sqrt(t.b * t.b + t.d * t.d)
-        let s = CGAffineTransformMakeScale(x, y)
-        self.init(frame: Rect(CGRectApplyAffineTransform(original.view.frame, s)))
+        let s = CGAffineTransform(scaleX: x, y: y)
+        self.init(frame: Rect(original.view.frame.applying(s)))
 
         let disable = ShapeLayer.disableActions
         ShapeLayer.disableActions = true
@@ -123,22 +129,23 @@ public class Shape: View {
     ///An optional variable representing a gradient. If this is non-nil, then the shape will appear to be filled with a gradient.
     public var gradientFill: Gradient? {
         didSet {
-            guard gradientFill != nil else {
+            guard let gradientFill = gradientFill else {
                 fillColor = clear
                 return
             }
-            let gim = gradientFill?.render()?.cgimage
+
+            let gim = gradientFill.render()?.cgImage
 
             //inverts coordinate for graphics context rendering
             var b = bounds
             b.origin.y = self.height - b.origin.y
 
-            UIGraphicsBeginImageContextWithOptions(CGSize(b.size), false, UIScreen.mainScreen().scale)
+            UIGraphicsBeginImageContextWithOptions(CGSize(b.size), false, UIScreen.main.scale)
             let context = UIGraphicsGetCurrentContext()
 
-            CGContextDrawTiledImage(context, CGRect(b), gim)
+            context?.draw(gim!, in: CGRect(b), byTiling: true)
             let uiimage = UIGraphicsGetImageFromCurrentImageContext()
-            let uicolor = UIColor(patternImage: uiimage)
+            let uicolor = UIColor(patternImage: uiimage!)
             fillColor = Color(uicolor)
             UIGraphicsEndImageContext()
         }
@@ -159,7 +166,7 @@ public class Shape: View {
         if shapeLayer.path == nil {
             return
         }
-        view.bounds = CGPathGetPathBoundingBox(shapeLayer.path)
+        view.bounds = (shapeLayer.path?.boundingBoxOfPath)!
         view.frame = view.bounds
     }
 
@@ -185,28 +192,20 @@ public class Shape: View {
     /// The color to stroke the path, or nil for no fill. Defaults to opaque black. Animatable.
     public var strokeColor: Color? {
         get {
-            if let color = shapeLayer.strokeColor {
-                return Color(color)
-            } else {
-                return nil
-            }
+            return shapeLayer.strokeColor.map({ Color($0) })
         }
         set(color) {
-            shapeLayer.strokeColor = color?.CGColor
+            shapeLayer.strokeColor = color?.cgColor
         }
     }
 
     /// The color to fill the path, or nil for no fill. Defaults to opaque black. Animatable.
     public var fillColor: Color? {
         get {
-            if let color = shapeLayer.fillColor {
-                return Color(color)
-            } else {
-                return nil
-            }
+            return shapeLayer.fillColor.map({ Color($0) })
         }
         set(color) {
-            shapeLayer.fillColor = color?.CGColor
+            shapeLayer.fillColor = color?.cgColor
         }
     }
 
@@ -236,7 +235,7 @@ public class Shape: View {
     /// - returns: A Double value representing the cumulative rotation of the view, measured in Radians.
     public override var rotation: Double {
         get {
-            if let number = shapeLayer.valueForKeyPath(Layer.rotationKey) as? NSNumber {
+            if let number = shapeLayer.value(forKeyPath: Layer.rotationKey) as? NSNumber {
                 return number.doubleValue
             }
             return  0.0
@@ -273,8 +272,6 @@ public class Shape: View {
     public var lineCap: LineCap {
         get {
             switch shapeLayer.lineCap {
-            case kCALineCapButt:
-                return .Butt
             case kCALineCapRound:
                 return .Round
             case kCALineCapSquare:
@@ -299,8 +296,6 @@ public class Shape: View {
     public var lineJoin: LineJoin {
         get {
             switch shapeLayer.lineJoin {
-            case kCALineJoinMiter:
-                return .Miter
             case kCALineJoinRound:
                 return .Round
             case kCALineJoinBevel:
@@ -347,7 +342,7 @@ public class Shape: View {
 
     /// Returns true if there is no path.
     public func isEmpty() -> Bool {
-        return path == nil || path!.isEmpty()
+        return path?.isEmpty() ?? true
     }
 
 
@@ -376,10 +371,7 @@ public class Shape: View {
         case Square
     }
 
-    public override func hitTest(point: Point) -> Bool {
-        if let p = path {
-            return p.containsPoint(point)
-        }
-        return false
+    public override func hitTest(_ point: Point) -> Bool {
+        return path?.containsPoint(point) ?? false
     }
 }

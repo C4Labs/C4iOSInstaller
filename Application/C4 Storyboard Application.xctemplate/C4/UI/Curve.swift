@@ -27,6 +27,7 @@ public class Curve: Shape {
     public var endPoints = (Point(), Point()) {
         didSet {
             updatePath()
+            adjustToFitPath()
         }
     }
 
@@ -34,6 +35,7 @@ public class Curve: Shape {
     public var controlPoints = (Point(), Point()) {
         didSet {
             updatePath()
+            adjustToFitPath()
         }
     }
 
@@ -84,14 +86,16 @@ public class Curve: Shape {
         endPoints = (begin, end)
         controlPoints = (control0, control1)
         updatePath()
+        adjustToFitPath()
     }
 
     private var pauseUpdates = false
-    func batchUpdates(updates: Void -> Void) {
+    func batchUpdates(_ updates: (Void) -> Void) {
         pauseUpdates = true
         updates()
         pauseUpdates = false
         updatePath()
+        adjustToFitPath()
     }
 
     override func updatePath() {
@@ -99,16 +103,10 @@ public class Curve: Shape {
             return
         }
 
-        let curve = CGPathCreateMutable()
-        CGPathMoveToPoint(curve, nil,
-            CGFloat(endPoints.0.x), CGFloat(endPoints.0.y))
-        CGPathAddCurveToPoint(curve, nil,
-            CGFloat(controlPoints.0.x), CGFloat(controlPoints.0.y),
-            CGFloat(controlPoints.1.x), CGFloat(controlPoints.1.y),
-            CGFloat(endPoints.1.x), CGFloat(endPoints.1.y))
+        let curve = CGMutablePath()
+        curve.move(to: CGPoint(endPoints.0))
+        curve.addCurve(to: CGPoint(endPoints.1), control1: CGPoint(controlPoints.0), control2: CGPoint(controlPoints.1), transform: CGAffineTransform.identity)
 
-        self.frame = Rect(CGPathGetBoundingBox(curve))
-        self.path = Path(path: curve)
-        adjustToFitPath()
+        path = Path(path: curve)
     }
 }

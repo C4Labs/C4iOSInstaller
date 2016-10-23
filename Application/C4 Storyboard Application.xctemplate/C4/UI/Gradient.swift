@@ -26,7 +26,7 @@ public class Gradient: View {
             return self.layer as! GradientLayer // swiftlint:disable:this force_cast
         }
 
-        override class func layerClass() -> AnyClass {
+        override class var layerClass: AnyClass {
             return GradientLayer.self
         }
     }
@@ -43,20 +43,14 @@ public class Gradient: View {
     ///An array of Color objects defining the color of each gradient stop. Animatable.
     public var colors: [Color] {
         get {
-            if let cgcolors = gradientLayer.colors as? [CGColorRef] {
-                var array = [Color]()
-                for c in cgcolors {
-                    array.append(Color(c))
-                }
-                return array
+            if let cgcolors = gradientLayer.colors as? [CGColor] {
+                return cgcolors.map({ Color($0) })
             }
             return [C4Blue, C4Pink]
         } set {
             assert(newValue.count >= 2, "colors must have at least 2 elements")
-            var cgcolors = [CGColorRef]()
-            for c in newValue {
-                cgcolors.append(c.CGColor)
-            }
+
+            let cgcolors = newValue.map({ $0.cgColor })
             self.gradientLayer.colors = cgcolors
         }
     }
@@ -71,10 +65,7 @@ public class Gradient: View {
             }
             return []
         } set {
-            var numbers = [NSNumber]()
-            for n in newValue {
-                numbers.append(n)
-            }
+            let numbers = newValue.map({ NSNumber(value: $0) })
             gradientLayer.locations = numbers
         }
     }
@@ -105,7 +96,7 @@ public class Gradient: View {
     /// - returns: A Double value representing the cumulative rotation of the view, measured in Radians.
     public override var rotation: Double {
         get {
-            if let number = gradientLayer.valueForKeyPath(Layer.rotationKey) as? NSNumber {
+            if let number = gradientLayer.value(forKeyPath: Layer.rotationKey) as? NSNumber {
                 return number.doubleValue
             }
             return  0.0
@@ -117,9 +108,9 @@ public class Gradient: View {
 
     ///  Initializes a new Gradient.
     ///
-    ///  - parameter frame:     A Rect that defines the frame for the gradient's view.
-    ///  - parameter colors:    An array of Color objects that define the gradient's colors. Defaults to [C4Blue, C4Purple].
-    ///  - parameter locations: An array of Double values that define the location of each gradient stop. Defaults to [0,1]
+    /// - parameter frame:     A Rect that defines the frame for the gradient's view.
+    /// - parameter colors:    An array of Color objects that define the gradient's colors. Defaults to [C4Blue, C4Purple].
+    /// - parameter locations: An array of Double values that define the location of each gradient stop. Defaults to [0,1]
     public convenience override init(frame: Rect) {
         self.init()
         self.view = GradientView(frame: CGRect(frame))
